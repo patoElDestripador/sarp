@@ -1,7 +1,8 @@
 # Sarp: Sistema Avanzado de Recompensas y Puntuación para Coders
 **Descripción**
 
-Sarp es personal una aplicación web diseñada para revolucionar la manera en que los Trainers y el administrativo asignan y gestionan puntos para los Coders. Esta herramienta no solo facilita un proceso transparente y eficiente para la asignación de recompensas, sino que también integra capacidades avanzadas de seguimiento y análisis para impulsar la motivación y el rendimiento de los estudiantes en entornos de aprendizaje.
+Sarp es una aplicación web diseñada para transformar la forma en que los Trainers y el personal administrativo asignan y gestionan puntos para los Coders. No solo facilita un proceso transparente y eficiente para la asignación de recompensas, sino que también integra capacidades avanzadas de seguimiento y análisis para impulsar la motivación y el rendimiento de los estudiantes en entornos de aprendizaje de programación.
+
 
 **Características**
 
