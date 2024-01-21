@@ -1,0 +1,21 @@
+{
+    "name": "sarp",
+    "version": "1.0.0",
+    "description": "Sistema...",
+    "main": "app.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": ["sarp","riwiPoints","riwi","macondo"],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/patoElDestripador/sarp.git"
+    },
+    "author": "patoElDestripador",
+    "contributors": [
+      "Co-Autor Andres Felipe Patiño",
+      "Co-Autor Daniel Torres Monsalve",
+      "Co-Autor Johan Sebastian Arboleda Mazo"
+    ]
+  }
+  
