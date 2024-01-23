@@ -5,34 +5,89 @@
     --color3 : #7F7D96;
     --color4 : #5ACCA4; 
     --color5 : #6B5CFF; 
-    --color6 : #EAA2FC;
-    --color7 : #FFFFFF;
-    --color8 : #F9FAFC;
-    --color9 : #181E4B;
-    --color10 : #FE654F;
-    --color11 : #E6CA52;
+    --color6 : #3f2cfa; /*Nuevo color*/
+    --color7 : #EAA2FC;
+    --color8 : #FFFFFF;
+    --color9 : #F9FAFC;
+    --color10 : #181E4B;
+    --color11 : #FE654F;
+    --color12 : #E6CA52;
 }
 /* fin de colores */ 
 
 /* forma de implementacion*/
 /* color: var(--color2);*/ 
 
-.color5 {
-    background-color: var(--color5);
-    color: var(--color7);
+/* inicio estilos globales */
+
+* {
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body{
-    background-color: var(--color8);
+    background-color: var(--color9);
 }
 
-.colorParaElHeader {
-    background-color: hsla(60, 4%, 20%, 0.189);
+body::-webkit-scrollbar {
+    display: none;
+}
+/* fin estilos globales */
+
+/*Inicio cosas del header*/
+.paraElHeader {
+    background-color: hsla(60, 4%, 20%, 0.419);
+    backdrop-filter: blur(20px);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;  
+}
+
+.login-mdf-btn{
+    background-color: var(--color5);
+    color: var(--color8);
+    width: 150px;
+    height: 40px;
+    border-radius: 40px;
+}
+
+.login-mdf-btn:hover{  
+    background-color: var(--color6);
+    color: var(--color8);
+}
+
+.nosotros-mdf-btn{
+    background-color: var(--color5);
+
+}
+
+/* .nosotros-mdf-btn:hover{
+
+} */
+
+.dropdown-menu-mdf{
+    background-color: hsla(60, 4%, 20%, 0.419);
     backdrop-filter: blur(20px);
 }
 
-.colorParaElFooter {
-    background-color: var(--color2);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;    
+.dropdown-menu-mdf :hover{
+    background-color: hsla(60, 4%, 20%, 0.582);
+    backdrop-filter: blur(20px);
+    color: var(--color9);
 }
+/*fin cosas del header*/
+
+/*Inicio cosas del footer*/
+.paraElFooter {
+    background-color: var(--color2);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;    
+
+}
+
+.daiconSize{
+    width : 40px;
+    height : 40px;
+}
+.daiconSize:hover{
+    
+}
+/*fin Cosas del footer*/
