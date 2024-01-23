@@ -37,8 +37,8 @@ body::-webkit-scrollbar {
 .paraElHeader {
     background-color: hsla(60, 4%, 20%, 0.419);
     backdrop-filter: blur(20px);
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;  
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .login-mdf-btn{
@@ -46,7 +46,8 @@ body::-webkit-scrollbar {
     color: var(--color8);
     width: 150px;
     height: 40px;
-    border-radius: 40px;
+    border-radius: 20px;
+    font-weight: bold;
 }
 
 .login-mdf-btn:hover{  
@@ -54,16 +55,17 @@ body::-webkit-scrollbar {
     color: var(--color8);
 }
 
-.nosotros-mdf-btn{
-    background-color: var(--color5);
-
+.nosotros-mdf-txt{
+    font-weight: bold;
+    color: var(--color8);
 }
 
-/* .nosotros-mdf-btn:hover{
-
-} */
+.nosotros-mdf-txt:hover{
+    color: var(--color5);
+}
 
 .dropdown-menu-mdf{
+    font-weight: bold;
     background-color: hsla(60, 4%, 20%, 0.419);
     backdrop-filter: blur(20px);
 }
@@ -73,13 +75,26 @@ body::-webkit-scrollbar {
     backdrop-filter: blur(20px);
     color: var(--color9);
 }
+
+.icon-language :hover{
+    fill: var(--color5 );
+}
+.logoSarp {
+    width: 50px;
+    height: 50px;
+}
+
+.logoSarp:hover{
+    transform: scale(1.08);
+}
+
 /*fin cosas del header*/
 
 /*Inicio cosas del footer*/
 .paraElFooter {
     background-color: var(--color2);
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;    
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;    
 
 }
 
@@ -88,6 +103,39 @@ body::-webkit-scrollbar {
     height : 40px;
 }
 .daiconSize:hover{
-    
+        transform: scale(1.08);
 }
+.logoSarpFooter {
+    width: 100px;
+    height: 100px;
+}
+.logoSarpFooter:hover{
+    transform: scale(1.08);
+}
+.daIconFb {
+    fill: var(--color8)
+}
+.daIconFb:hover{
+    fill : #0866FF
+}
+
+.daIconIg {
+    fill: var(--color8)
+}
+
+.daIconIg:hover {
+
+}
+
+.daIconIn {
+    fill: var(--color8)
+}
+
+.daIconIn:hover {
+    fill: #0A66C2
+}
+
+
+
+
 /*fin Cosas del footer*/
