@@ -1,0 +1,38 @@
+/* paleta de colores */ 
+:root{
+    --color1: #141414;
+    --color2 : #282828;
+    --color3 : #7F7D96;
+    --color4 : #5ACCA4; 
+    --color5 : #6B5CFF; 
+    --color6 : #EAA2FC;
+    --color7 : #FFFFFF;
+    --color8 : #F9FAFC;
+    --color9 : #181E4B;
+    --color10 : #FE654F;
+    --color11 : #E6CA52;
+}
+/* fin de colores */ 
+
+/* forma de implementacion*/
+/* color: var(--color2);*/ 
+
+.color5 {
+    background-color: var(--color5);
+    color: var(--color7);
+}
+
+body{
+    background-color: var(--color8);
+}
+
+.colorParaElHeader {
+    background-color: hsla(60, 4%, 20%, 0.189);
+    backdrop-filter: blur(20px);
+}
+
+.colorParaElFooter {
+    background-color: var(--color2);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;    
+}
