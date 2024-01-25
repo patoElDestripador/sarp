@@ -12,6 +12,8 @@
     --color10 : #181E4B;
     --color11 : #FE654F;
     --color12 : #E6CA52;
+    --bs-border-radius : 20px;
+    --bs-btn-bg : #6B5CFF;
 }
 /* fin de colores */ 
 
@@ -123,9 +125,9 @@ body::-webkit-scrollbar {
     fill: var(--color8)
 }
 
-.daIconIg:hover {
+/*.daIconIg:hover {
 
-}
+}*/
 
 .daIconIn {
     fill: var(--color8)
@@ -135,7 +137,43 @@ body::-webkit-scrollbar {
     fill: #0A66C2
 }
 
-
-
-
 /*fin Cosas del footer*/
+
+/*Inicio Clases Perfil*/
+
+
+.imgfrontPage{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.imgUser{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    border-radius: 20px;
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/*Fin Clases Perfil*/
+
+/*Inicio Clases Puntajes*/
+
+.sizeFontPts{
+font-size: 5rem;
+color: var(--color11);
+}
+
