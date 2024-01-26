@@ -12,6 +12,10 @@
     --color10 : #181E4B;
     --color11 : #FE654F;
     --color12 : #E6CA52;
+    --bs-border-radius:20px;
+    --bs-border-width:0px;
+    --bs-btn-bg:#6B5CFF;
+    --bs-btn-hover-bg:#3f2cfa;
 }
 /* fin de colores */ 
 
@@ -31,6 +35,12 @@ body{
 body::-webkit-scrollbar {
     display: none;
 }
+
+.respetarElNavbar{
+    margin-top: 3%;
+}
+
+
 /* fin estilos globales */
 
 /*Inicio cosas del header*/
@@ -46,7 +56,6 @@ body::-webkit-scrollbar {
     color: var(--color8);
     width: 150px;
     height: 40px;
-    border-radius: 20px;
     font-weight: bold;
 }
 
@@ -82,6 +91,7 @@ body::-webkit-scrollbar {
 .logoSarp {
     width: 50px;
     height: 50px;
+    cursor: pointer;
 }
 
 .logoSarp:hover{
@@ -89,7 +99,6 @@ body::-webkit-scrollbar {
 }
 
 /*fin cosas del header*/
-
 /*Inicio cosas del footer*/
 .paraElFooter {
     background-color: var(--color2);
@@ -97,7 +106,6 @@ body::-webkit-scrollbar {
     border-top-right-radius: 20px;    
 
 }
-
 .daiconSize{
     width : 40px;
     height : 40px;
@@ -118,24 +126,97 @@ body::-webkit-scrollbar {
 .daIconFb:hover{
     fill : #0866FF
 }
-
 .daIconIg {
     fill: var(--color8)
 }
-
 .daIconIg:hover {
 
 }
-
 .daIconIn {
     fill: var(--color8)
 }
-
 .daIconIn:hover {
     fill: #0A66C2
 }
-
-
-
-
 /*fin Cosas del footer*/
+
+/* inicio contenedido de login*/
+.desing-icon-login{
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color9);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.desing-icon-login:hover{
+    transform: scale(1.08);
+}
+
+.daIconLogin{
+    width:2rem;
+    height:2rem;
+}
+
+.colorX{
+    fill: var(--color1);
+}
+
+.logoSarpLogin{
+    width: 70px;
+    height: 70px;
+}
+.logoSarpLogin:hover {
+    transform: scale(1.08);
+}
+.card-desing-login{
+    width: 22rem; 
+    height: 34rem;
+    background-color: var(--color2);
+    color: var(--color8);
+}
+
+.input-desing-login {
+    background-color: var(--color3);
+    height: 10px;
+}
+
+.input-desing-login:focus  {
+    background-color: var(--color3);
+    color: var(--color8);
+}
+
+.form-control{
+ height: 10px;
+}
+
+.login-mdf-btn-pag-login{
+        background-color: var(--color5);
+        color: var(--color8);
+        font-weight: bold;
+}
+.login-mdf-btn-pag-login:hover {
+    background-color: var(--color6);
+        color: var(--color8);
+}
+/*Lo que ahce esto es tomar la casilla pequeña de la el label y cambiar el color a el que nosotros especidfiquemos
+la clase es tomada directamente desde bootstrap*/
+.form-floating>.form-control:focus~label::after{
+    background-color: var(--color); 
+}
+.form-floating>.form-control:focus~label {
+    color: var(--color8);
+}
+
+.colorIMG{
+ background-color: #5ACCA4;
+ z-index: -999;
+ height: 300px;
+}
+
+.pruebaIMG{
+    z-index: 999;
+    margin-top: -200px;
+}
+
+/* fin contenedido de login*/
