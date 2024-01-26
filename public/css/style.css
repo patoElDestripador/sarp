@@ -15,6 +15,10 @@
     --bs-border-radius : 20px;
 }
 
+.container-fluid{
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
 /* fin de colores */ 
 
 /* forma de implementacion*/
@@ -204,10 +208,12 @@ body::-webkit-scrollbar {
     border-radius: 50%;
 }
 
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.height-table-profile{
+    height: 450px;
+}
+
+.height-table-ranking{
+    height: 350px;
 }
 
 .card{
