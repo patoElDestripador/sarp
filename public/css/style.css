@@ -14,11 +14,7 @@
     --color12 : #E6CA52;
     --bs-border-radius : 20px;
 }
-.btn.show{
-    background-color:#3f2cfa;
-    color: #FFFFFF;
-    border-color: #3f2cfa;
-}
+
 /* fin de colores */ 
 
 /* forma de implementacion*/
@@ -32,30 +28,48 @@
 
 /* Inicio estilos botones */
 
-.btn-light{
-    border: 0;
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #6B5CFF;
+    --bs-btn-border-color: #6B5CFF;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #3f2cfa;
+    --bs-btn-hover-border-color: #3f2cfa;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #3f2cfa;
+    --bs-btn-active-border-color: #3f2cfa;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
     width: 10rem;
-    height: auto;
-    background-color: var(--color5);
-    color: var(--color8);
+
+    
 }
 
-.btn-light:hover{  
-    background-color: var(--color6);
-    color: var(--color8);
-}
-
-.btn-outline{
-    border: 2px solid var(--color6);
-    width: 10rem;
-    height: auto;
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+    clear: both;
+    font-weight: 400;
     color: var(--color6);
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    border-radius: var(--bs-dropdown-item-border-radius, 20px);
 }
 
-.btn-outline:hover{  
-    background-color: var(--color5);
-    color: var(--color8);
+.dropdown-menu {
+    --bs-dropdown-link-hover-color: var(--color8);
+    --bs-dropdown-link-hover-bg: var(--color5);
+    --bs-dropdown-link-active-color: var(--color8);
+    --bs-dropdown-link-active-bg: var(--color6);
 }
+
 /* Fin estilos botones */
 
 body{
@@ -65,6 +79,23 @@ body{
 body::-webkit-scrollbar {
     display: none;
 }
+
+
+
+/*Inicio Clases Cards*/
+
+.sizeCard{
+    width: 18rem;
+}
+
+.card-dark{
+    color: var(--color9);
+    background-color: var(--color2);
+}
+
+/*Fin Clases*/
+
+
 /* fin estilos globales */
 
 /*Inicio cosas del header*/
@@ -157,8 +188,8 @@ body::-webkit-scrollbar {
 
 /*fin Cosas del footer*/
 
-/*Inicio Clases Perfil*/
 
+/*Inicio Clases Perfil*/
 
 .imgfrontPage{
     width: 100%;
@@ -218,13 +249,10 @@ font-size: 4rem;
 
 /*Fin Clases Puntajes*/
 
-
-/*Inicio Clases ranking*/
-
-.sizeCard{
-    width: 18rem;
-}
-
-.mover{
-translate: -20px;
+.background-image{
+    background-image: url("https://www.rover.com/blog/wp-content/uploads/dog-jumping-outside-min-1024x683.jpg");
+    width: 100vw;
+    height: 250px;
+    background-size: cover;
+    position:absolute; 
 }
