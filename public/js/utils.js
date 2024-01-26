@@ -33,5 +33,6 @@ let leDate = new Date();
 
   }
 
-
-
+function setSessionStorage(key,value) {return localStorage.setItem(key, JSON.stringify(value));}
+function getSessionStorage(key) {return localStorage.getItem(key);}
+function removeSessionStorage(key) {return localStorage.removeItem(key);}
