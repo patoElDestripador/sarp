@@ -13,9 +13,12 @@
     --color11 : #FE654F;
     --color12 : #E6CA52;
     --bs-border-radius : 20px;
-    --bs-btn-bg : #6B5CFF;
 }
-
+.btn.show{
+    background-color:#3f2cfa;
+    color: #FFFFFF;
+    border-color: #3f2cfa;
+}
 /* fin de colores */ 
 
 /* forma de implementacion*/
@@ -26,6 +29,34 @@
 * {
     font-family: 'Ubuntu', sans-serif;
 }
+
+/* Inicio estilos botones */
+
+.btn-light{
+    border: 0;
+    width: 10rem;
+    height: auto;
+    background-color: var(--color5);
+    color: var(--color8);
+}
+
+.btn-light:hover{  
+    background-color: var(--color6);
+    color: var(--color8);
+}
+
+.btn-outline{
+    border: 2px solid var(--color6);
+    width: 10rem;
+    height: auto;
+    color: var(--color6);
+}
+
+.btn-outline:hover{  
+    background-color: var(--color5);
+    color: var(--color8);
+}
+/* Fin estilos botones */
 
 body{
     background-color: var(--color9);
@@ -42,19 +73,6 @@ body::-webkit-scrollbar {
     backdrop-filter: blur(20px);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-}
-
-.btn-light{
-    border: 0;
-    width: 10rem;
-    height: auto;
-    background-color: var(--color5);
-    color: var(--color8);
-}
-
-.btn-light:hover{  
-    background-color: var(--color6);
-    color: var(--color8);
 }
 
 .nosotros-mdf-txt{
@@ -207,4 +225,6 @@ font-size: 4rem;
     width: 18rem;
 }
 
-
+.mover{
+translate: -20px;
+}
