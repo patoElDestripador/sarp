@@ -24,7 +24,7 @@
             <div class="mt-1">
               <p><a href="./about.html" class="p-2 nosotros-mdf-txt">Nosotros</a></p>
             </div>
-            <button class="btn login-mdf-btn p-2 " type="button">Login</button>
+            <button class="btn btn-light p-2 " type="button">Login</button>
             <div class="dropdown me-5">
                 <svg  type="button" xmlns="http://www.w3.org/2000/svg" class="dropdown-toggle daiconSize" data-bs-toggle="dropdown" viewBox="0 0 640 512"><path fill="#ffffff" d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6l.5.5c12.4-13.1 22.5-28.3 29.8-45H376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
               <ul class="dropdown-menu dropdown-menu-mdf mt-3">
@@ -44,42 +44,79 @@
 
 <!-- Inicio Perfil Usuario-->
 <div class="container-fluid text-center">
-  <div class="row justify-content-center"> 
-
+  <div class="row  justify-content-center"> 
     <!-- Inicio Informacion basica -->
-    <div class="col-md-4 col-md-4 d-flex justify-content-center">
-        <div class="card my-4 py-4">
-          <img src="https://soyunperro.com/wp-content/uploads/perrocontento.jpg" class=" mx-auto d-block card-img-top imgUser" alt="...">
-          <div class="card-body">
-            <h5 class="card-title fs-1 fw-bold">Mi nombre</h5>
-            <span id="userClass" class="badge text-bg-success fs-6">Coder</span>
-            <form> 
-              <fieldset disabled>
-                <div class="my-3">
-                  <div class="input-group mb-3">
-                    <div class="input-group-text">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256"><path fill="#7F7D96" d="M230.93 220a8 8 0 0 1-6.93 4H32a8 8 0 0 1-6.92-12c15.23-26.33 38.7-45.21 66.09-54.16a72 72 0 1 1 73.66 0c27.39 8.95 50.86 27.83 66.09 54.16a8 8 0 0 1 .01 8"/></svg></span>
+    <div class="col-md-4 my-4 sizeCard">
+      <div class="col py-4 d-flex justify-content-center">
+          <div class="card py-4">
+            <img src="https://soyunperro.com/wp-content/uploads/perrocontento.jpg" class=" mx-auto d-block card-img-top imgUser" alt="...">
+            <div class="card-body">
+              <h1 class="fw-bold">Mi nombre</h1>
+              <span id="userClass" class="badge text-bg-success fs-6">Coder</span>
+              <form> 
+                <fieldset disabled>
+                  <div class="my-3">
+                    <div class="input-group mb-3">
+                      <div class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256"><path fill="#7F7D96" d="M230.93 220a8 8 0 0 1-6.93 4H32a8 8 0 0 1-6.92-12c15.23-26.33 38.7-45.21 66.09-54.16a72 72 0 1 1 73.66 0c27.39 8.95 50.86 27.83 66.09 54.16a8 8 0 0 1 .01 8"/></svg></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="123456789" aria-label="documentId">
                     </div>
-                    <input type="text" class="form-control" placeholder="123456789" aria-label="documentId">
+        
+                    <div class="input-group mb-3">
+                      <div class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20"><path fill="#7F7D96" d="M3.87 4h13.25C18.37 4 19 4.59 19 5.79v8.42c0 1.19-.63 1.79-1.88 1.79H3.87c-1.25 0-1.88-.6-1.88-1.79V5.79c0-1.2.63-1.79 1.88-1.79m6.62 8.6l6.74-5.53c.24-.2.43-.66.13-1.07c-.29-.41-.82-.42-1.17-.17l-5.7 3.86L4.8 5.83c-.35-.25-.88-.24-1.17.17c-.3.41-.11.87.13 1.07z"/></svg>                          </div>
+                      <input type="text" class="form-control" placeholder="micorreo@ejemplo.com" aria-label="Email">
+                    </div>
+        
+                    <div class="input-group mb-3">
+                      <div class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="#7F7D96" fill-rule="evenodd" d="M10 6h4c2.828 0 4.243 0 5.121.879C20 7.757 20 9.172 20 12v1.056c0 2.405 0 3.608-.597 4.575c-.598.966-1.674 1.504-3.825 2.58c-1.756.878-2.634 1.317-3.578 1.317s-1.822-.439-3.578-1.317c-2.151-1.076-3.227-1.614-3.825-2.58C4 16.664 4 15.46 4 13.056V12c0-2.828 0-4.243.879-5.121C5.757 6 7.172 6 10 6m2 4c-.284 0-.474.34-.854 1.023l-.098.176c-.108.194-.162.29-.246.354c-.085.064-.19.088-.4.135l-.19.044c-.738.167-1.107.25-1.195.532c-.088.283.164.577.667 1.165l.13.152c.143.167.215.25.247.354c.032.104.021.215 0 .438l-.02.203c-.076.785-.114 1.178.115 1.352c.23.174.576.015 1.267-.303l.178-.082c.197-.09.295-.135.399-.135c.104 0 .202.045.399.135l.178.082c.691.319 1.037.477 1.267.303c.23-.174.191-.567.115-1.352l-.02-.203c-.021-.223-.032-.334 0-.438c.032-.103.104-.187.247-.354l.13-.152c.503-.588.755-.882.667-1.165c-.088-.282-.457-.365-1.195-.532l-.19-.044c-.21-.047-.315-.07-.4-.135c-.084-.064-.138-.16-.246-.354l-.098-.176C12.474 10.34 12.284 10 12 10" clip-rule="evenodd"/><path fill="#7F7D96" d="M11 2h2c1.886 0 2.828 0 3.414.586c.414.414.535 1.006.571 1.983c-.82-.07-1.791-.07-2.886-.069H9.9c-1.095 0-2.065 0-2.886.069c.035-.977.157-1.57.57-1.983C8.172 2 9.116 2 11 2"/></svg>                          </div>
+                      <input type="text" class="form-control"placeholder="Tesla" aria-label="Clan">
+                    </div>
                   </div>
-      
-                  <div class="input-group mb-3">
-                    <div class="input-group-text">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20"><path fill="#7F7D96" d="M3.87 4h13.25C18.37 4 19 4.59 19 5.79v8.42c0 1.19-.63 1.79-1.88 1.79H3.87c-1.25 0-1.88-.6-1.88-1.79V5.79c0-1.2.63-1.79 1.88-1.79m6.62 8.6l6.74-5.53c.24-.2.43-.66.13-1.07c-.29-.41-.82-.42-1.17-.17l-5.7 3.86L4.8 5.83c-.35-.25-.88-.24-1.17.17c-.3.41-.11.87.13 1.07z"/></svg>                          </div>
-                    <input type="text" class="form-control" placeholder="micorreo@ejemplo.com" aria-label="Email">
-                  </div>
-      
-                  <div class="input-group mb-3">
-                    <div class="input-group-text">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="#7F7D96" fill-rule="evenodd" d="M10 6h4c2.828 0 4.243 0 5.121.879C20 7.757 20 9.172 20 12v1.056c0 2.405 0 3.608-.597 4.575c-.598.966-1.674 1.504-3.825 2.58c-1.756.878-2.634 1.317-3.578 1.317s-1.822-.439-3.578-1.317c-2.151-1.076-3.227-1.614-3.825-2.58C4 16.664 4 15.46 4 13.056V12c0-2.828 0-4.243.879-5.121C5.757 6 7.172 6 10 6m2 4c-.284 0-.474.34-.854 1.023l-.098.176c-.108.194-.162.29-.246.354c-.085.064-.19.088-.4.135l-.19.044c-.738.167-1.107.25-1.195.532c-.088.283.164.577.667 1.165l.13.152c.143.167.215.25.247.354c.032.104.021.215 0 .438l-.02.203c-.076.785-.114 1.178.115 1.352c.23.174.576.015 1.267-.303l.178-.082c.197-.09.295-.135.399-.135c.104 0 .202.045.399.135l.178.082c.691.319 1.037.477 1.267.303c.23-.174.191-.567.115-1.352l-.02-.203c-.021-.223-.032-.334 0-.438c.032-.103.104-.187.247-.354l.13-.152c.503-.588.755-.882.667-1.165c-.088-.282-.457-.365-1.195-.532l-.19-.044c-.21-.047-.315-.07-.4-.135c-.084-.064-.138-.16-.246-.354l-.098-.176C12.474 10.34 12.284 10 12 10" clip-rule="evenodd"/><path fill="#7F7D96" d="M11 2h2c1.886 0 2.828 0 3.414.586c.414.414.535 1.006.571 1.983c-.82-.07-1.791-.07-2.886-.069H9.9c-1.095 0-2.065 0-2.886.069c.035-.977.157-1.57.57-1.983C8.172 2 9.116 2 11 2"/></svg>                          </div>
-                    <input type="text" class="form-control"placeholder="Tesla" aria-label="Clan">
-                  </div>
-                </div>
-              </fieldset>
-            </form>
+                </fieldset>
+              </form>
+            </div>
           </div>
         </div>
-    </div>
+        <div class="col d-flex justify-content-center">
+          <div class="card py-4">
+            <div class="card-body">
+              <h1 class="fw-bold focus">Ranking</h1>
+              <span id="userClass" class="badge text-bg-primary fs-6">2024</span>
+              <p class="fw-bold">Enero - Febrero</p>
+  
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Puesto</th>
+                    <th scope="col">Clan</th>
+                    <th scope="col">Total Pst</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>tesla</td>
+                    <td>2245</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>tesla</td>
+                    <td>2245</td>
+                  </tr>                  
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>tesla</td>
+                    <td>2245</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- Fin Informacion basica -->
 
     <!-- Inicio Seccion puntajes -->
@@ -90,10 +127,10 @@
         <div class="col d-flex col-md-3">
           <div class="card flex-fill border-0">
             <div class="card-body">
-                <div class="col">
-                  <h1 id="totalPtsPositive" class="text-center card-title fw-bold sizeFontPts positive">25</h1>
+                <div class="col positive">
+                  <h1 id="totalPtsPositive" class="text-center card-title fw-bold sizeFontPts">25</h1>
                   <div class="text-center">Total Pts</div>
-                  <h4 class="text-center text-wrap card-title fw-bold">Positivos</h4>
+                  <h2 class="fs-4 text-center text-wrap card-title fw-bold">Positivos</h>
                 </div>
             </div>
           </div>
@@ -104,10 +141,10 @@
           <div class="col d-flex col-md-3">
             <div class="card flex-fill border-0">
               <div class="card-body">
-                  <div class="col">
-                    <h1 id="totalPtsNegative" class="text-center card-title fw-bold sizeFontPts negative">25</h1>
+                  <div class="col negative">
+                    <h1 id="totalPtsNegative" class="text-center card-title fw-bold sizeFontPts">25</h1>
                     <div class="text-center">Total Pts</div>
-                    <h4 class="text-center text-wrap card-title fw-bold">Negativos</h4>
+                    <h2 class="fs-4 text-center text-wrap card-title fw-bold">Negativos</h2>
                   </div>
               </div>
             </div>
@@ -119,10 +156,10 @@
             
             <div class="card flex-fill border-0">
               <div class="card-body">
-                  <div class="col">
-                    <h1 id="totalPtsAvailable" class="text-center card-title fw-bold sizeFontPts available">25</h1>
+                  <div class="col available">
+                    <h1 id="totalPtsAvailable" class="text-center card-title fw-bold sizeFontPts ">25</h1>
                     <div class="text-center">Total Pts</div>
-                    <h4 class="text-center text-wrap card-title fw-bold">Disponibles</h4>
+                    <h2 class="fs-4 text-center text-wrap card-title fw-bold">Disponibles</h2>                  
                   </div>
               </div>
             </div>
@@ -202,6 +239,7 @@
       <!-- Fin Historico de puntos -->
     </div>
     <!-- Fin Seccion puntajes -->
+
   </div>
 </div>
 <!-- Fin Perfil Usuario-->

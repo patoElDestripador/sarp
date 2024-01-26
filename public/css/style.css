@@ -15,6 +15,7 @@
     --bs-border-radius : 20px;
     --bs-btn-bg : #6B5CFF;
 }
+
 /* fin de colores */ 
 
 /* forma de implementacion*/
@@ -43,16 +44,15 @@ body::-webkit-scrollbar {
     border-bottom-right-radius: 20px;
 }
 
-.login-mdf-btn{
+.btn-light{
+    border: 0;
+    width: 10rem;
+    height: auto;
     background-color: var(--color5);
     color: var(--color8);
-    width: 150px;
-    height: 40px;
-    border-radius: 20px;
-    font-weight: bold;
 }
 
-.login-mdf-btn:hover{  
+.btn-light:hover{  
     background-color: var(--color6);
     color: var(--color8);
 }
@@ -176,16 +176,20 @@ body::-webkit-scrollbar {
 font-size: 4rem;
 }
 
-.sizeFontPts.negative{
+.negative{
     color: var(--color11);
     }
 
-.sizeFontPts.positive{
+.positive{
     color: var(--color4);
     }
 
-.sizeFontPts.available{
+.available{
     color: var(--color6);
+    }
+
+.focus{
+    color: var(--color7);
     }
 
 .fondo{
@@ -195,4 +199,12 @@ font-size: 4rem;
 }
 
 /*Fin Clases Puntajes*/
+
+
+/*Inicio Clases ranking*/
+
+.sizeCard{
+    width: 18rem;
+}
+
 
