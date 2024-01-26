@@ -12,11 +12,10 @@
     --color10 : #181E4B;
     --color11 : #FE654F;
     --color12 : #E6CA52;
-    --bs-border-radius:20px;
+    --bs-border-radius: 20px;
     --bs-border-width:0px;
     --bs-btn-bg:#6B5CFF;
     --bs-btn-hover-bg:#3f2cfa;
-    --bs-border-radius : 20px;
     --bs-btn-bg : #6B5CFF;
 }
 /* fin de colores */ 
@@ -25,7 +24,6 @@
 /* color: var(--color2);*/ 
 
 /* inicio estilos globales */
-
 * {
     font-family: 'Ubuntu', sans-serif;
 }
@@ -41,8 +39,6 @@ body::-webkit-scrollbar {
 .respetarElNavbar{
     margin-top: 3%;
 }
-
-
 /* fin estilos globales */
 
 /*Inicio cosas del header*/
@@ -52,7 +48,6 @@ body::-webkit-scrollbar {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-
 .login-mdf-btn{
     background-color: var(--color5);
     color: var(--color8);
@@ -60,33 +55,27 @@ body::-webkit-scrollbar {
     height: 40px;
     font-weight: bold;
 }
-
 .login-mdf-btn:hover{  
     background-color: var(--color6);
     color: var(--color8);
 }
-
 .nosotros-mdf-txt{
     font-weight: bold;
     color: var(--color8);
 }
-
 .nosotros-mdf-txt:hover{
     color: var(--color5);
 }
-
 .dropdown-menu-mdf{
     font-weight: bold;
     background-color: hsla(60, 4%, 20%, 0.419);
     backdrop-filter: blur(20px);
 }
-
 .dropdown-menu-mdf :hover{
     background-color: hsla(60, 4%, 20%, 0.582);
     backdrop-filter: blur(20px);
     color: var(--color9);
 }
-
 .icon-language :hover{
     fill: var(--color5 );
 }
@@ -95,12 +84,11 @@ body::-webkit-scrollbar {
     height: 50px;
     cursor: pointer;
 }
-
 .logoSarp:hover{
     transform: scale(1.08);
 }
-
 /*fin cosas del header*/
+
 /*Inicio cosas del footer*/
 .paraElFooter {
     background-color: var(--color2);
@@ -131,9 +119,6 @@ body::-webkit-scrollbar {
 .daIconIg {
     fill: var(--color8)
 }
-/*.daIconIg:hover {
-
-}*/
 .daIconIn {
     fill: var(--color8)
 }
@@ -143,62 +128,49 @@ body::-webkit-scrollbar {
 /*fin Cosas del footer*/
 
 /*Inicio Clases Perfil*/
-
-
 .imgfrontPage{
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
-
 .imgUser{
     width: 10rem;
     height: 10rem;
     object-fit: cover;
     border-radius: 50%;
 }
-
 .center{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .card{
     display: flex;
     border-radius: 20px;
     border: none;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-
 /*Fin Clases Perfil*/
 
 /*Inicio Clases Puntajes*/
-
 .sizeFontPts{
 font-size: 4rem;
 }
-
 .sizeFontPts.negative{
     color: var(--color11);
-    }
-
+}
 .sizeFontPts.positive{
     color: var(--color4);
-    }
-
+}
 .sizeFontPts.available{
     color: var(--color6);
-    }
-
+}
 .fondo{
     width: 250px;
     height: 500px;
     border: 3px solid  #000000;
 }
-
 /*Fin Clases Puntajes*/
-
 
 /* inicio contenedido de login*/
 .desing-icon-login{
@@ -208,20 +180,16 @@ font-size: 4rem;
     border-radius: 50px;
     cursor: pointer;
 }
-
 .desing-icon-login:hover{
     transform: scale(1.08);
 }
-
 .daIconLogin{
     width:2rem;
     height:2rem;
 }
-
 .colorX{
     fill: var(--color1);
 }
-
 .logoSarpLogin{
     width: 70px;
     height: 70px;
@@ -235,21 +203,17 @@ font-size: 4rem;
     background-color: var(--color2);
     color: var(--color8);
 }
-
 .input-desing-login {
     background-color: var(--color3);
     height: 10px;
 }
-
 .input-desing-login:focus  {
     background-color: var(--color3);
     color: var(--color8);
 }
-
 .form-control{
- height: 10px;
+    height: 10px;
 }
-
 .login-mdf-btn-pag-login{
         background-color: var(--color5);
         color: var(--color8);
@@ -259,7 +223,7 @@ font-size: 4rem;
     background-color: var(--color6);
         color: var(--color8);
 }
-/*Lo que ahce esto es tomar la casilla pequeña de la el label y cambiar el color a el que nosotros especidfiquemos
+/*Lo que ahce esto es tomar la casilla pequeña de la el label y cambiar el color a el que nosotros especifiquemos
 la clase es tomada directamente desde bootstrap*/
 .form-floating>.form-control:focus~label::after{
     background-color: var(--color); 
@@ -267,16 +231,13 @@ la clase es tomada directamente desde bootstrap*/
 .form-floating>.form-control:focus~label {
     color: var(--color8);
 }
-
 .colorIMG{
- background-color: #5ACCA4;
- z-index: -999;
- height: 300px;
+    background-color: #5ACCA4;
+    z-index: -999;
+    height: 300px;
 }
-
 .pruebaIMG{
     z-index: 999;
     margin-top: -200px;
 }
-
 /* fin contenedido de login*/
