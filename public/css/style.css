@@ -50,8 +50,6 @@
     --bs-btn-disabled-bg: #0d6efd;
     --bs-btn-disabled-border-color: #0d6efd;
     width: 10rem;
-
-    
 }
 
 .dropdown-item {
@@ -294,9 +292,9 @@ font-size: 4rem;
     background-color: var(--color3);
     color: var(--color8);
 }
-.form-control{
+/* .form-control{
     height: 10px;
-}
+} */
 .login-mdf-btn-pag-login{
         background-color: var(--color5);
         color: var(--color8);
