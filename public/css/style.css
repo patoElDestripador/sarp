@@ -18,6 +18,10 @@
     --bs-btn-hover-bg:#3f2cfa;
 }
 
+.container-fluid{
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
 /* fin de colores */ 
 
 /* forma de implementacion*/
@@ -203,10 +207,12 @@ body::-webkit-scrollbar {
     object-fit: cover;
     border-radius: 50%;
 }
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.height-table-profile{
+    height: 450px;
+}
+
+.height-table-ranking{
+    height: 350px;
 }
 .card{
     display: flex;
@@ -318,3 +324,45 @@ la clase es tomada directamente desde bootstrap*/
     margin-top: -200px;
 }
 /* fin contenedido de login*/
+
+
+/*inicio dani*/
+/*Boton next carousel*/
+.carousel-control-next-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNFNkNBNTIiIGQ9Ik0yIDEyYTEwIDEwIDAgMCAwIDEwIDEwYTEwIDEwIDAgMCAwIDEwLTEwQTEwIDEwIDAgMCAwIDEyIDJBMTAgMTAgMCAwIDAgMiAxMm0yIDBhOCA4IDAgMCAxIDgtOGE4IDggMCAwIDEgOCA4YTggOCAwIDAgMS04IDhhOCA4IDAgMCAxLTgtOG02IDVsNS01bC01LTV6Ii8+PC9zdmc+);
+}
+/*=====================================================================================================================*/
+/*Boton prev carousel*/
+.carousel-control-prev-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNFNkNBNTIiIGQ9Ik0yMiAxMkExMCAxMCAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBtLTIgMGE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGE4IDggMCAwIDEgOCA4bS02LTVsLTUgNWw1IDV6Ii8+PC9zdmc+);
+}
+/*=====================================================================================================================*/
+/*Icono perder*/
+.iconosPerder {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmZTY1NGYiIGQ9Ik0xMiAyYzUuNSAwIDEwIDQuNSAxMCAxMHMtNC41IDEwLTEwIDEwUzIgMTcuNSAyIDEyUzYuNSAyIDEyIDJtMCAyYy0xLjkgMC0zLjYuNi00LjkgMS43bDExLjIgMTEuMmMxLTEuNCAxLjctMy4xIDEuNy00LjljMC00LjQtMy42LTgtOC04bTQuOSAxNC4zTDUuNyA3LjFDNC42IDguNCA0IDEwLjEgNCAxMmMwIDQuNCAzLjYgOCA4IDhjMS45IDAgMy42LS42IDQuOS0xLjciLz48L3N2Zz4=);
+}
+/*=====================================================================================================================*/
+/*Icono ganarr*/
+.iconosGanar{
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1YWNjYTQiIGQ9Ik0xMiAyQzYuNSAyIDIgNi41IDIgMTJzNC41IDEwIDEwIDEwczEwLTQuNSAxMC0xMFMxNy41IDIgMTIgMm0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04czggMy41OSA4IDhzLTMuNTkgOC04IDhtNC41OS0xMi40MkwxMCAxNC4xN2wtMi41OS0yLjU4TDYgMTNsNCA0bDgtOHoiLz48L3N2Zz4=);
+
+}
+/*=====================================================================================================================*/
+/*centar*/
+.centrar{
+    text-align: center;
+}
+.efecto:hover{
+    transform: scale(1.08)
+}
+.efecto2:hover{
+    transform: scale(1.5)
+}
+.bordo{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+}
+.bordo2{border-top-left-radius: 20px;
+    border-top-right-radius: 20px; }
+/*fin dani*/
