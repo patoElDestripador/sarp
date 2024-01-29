@@ -19,6 +19,8 @@
 }
 
 
+
+
 .container-fluid{
     --bs-gutter-x: 0;
     --bs-gutter-y: 0;
@@ -164,9 +166,6 @@ body::-webkit-scrollbar {
 .login-mdf-btn{
     background-color: var(--color5);
     color: var(--color8);
-    width: 150px;
-    height: 40px;
-    font-weight: bold;
 }
 .login-mdf-btn:hover{  
     background-color: var(--color6);
