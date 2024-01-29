@@ -223,7 +223,6 @@ body::-webkit-scrollbar {
     fill: var(--color8);
     transform: scale(1);
     transition: ease 0.3s;
-
 }
 
 .logoSarpFooter:hover {
