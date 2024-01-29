@@ -373,17 +373,18 @@ font-size: 4rem;
 }
 .card-desing-login{
     width: 22rem; 
-    height: 34rem;
     background-color: var(--color2);
     color: var(--color8);
 }
 .input-desing-login {
     background-color: var(--color3);
-    height: 10px;
+    border-radius: 50px;
+    border: none;
 }
 .input-desing-login:focus  {
     background-color: var(--color3);
     color: var(--color8);
+
 }
 
 .login-mdf-btn-pag-login{
