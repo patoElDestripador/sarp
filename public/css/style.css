@@ -13,10 +13,13 @@
     --color11 : #FE654F;
     --color12 : #E6CA52;
     --bs-border-radius: 20px;
-    --bs-border-width:0px;
-    --bs-btn-bg:#6B5CFF;
     --bs-btn-hover-bg:#3f2cfa;
+    --borderCard: 15px;
+    --bs-card-bg: #3f2cfa;
 }
+
+
+
 
 .container-fluid{
     --bs-gutter-x: 0;
@@ -140,11 +143,14 @@ body::-webkit-scrollbar {
 /*Inicio Clases Cards*/
 
 .sizeCard{
-    width: 18rem;
+    width: auto;
+    max-width: 300px;
+    min-width: 300px;
+
 }
 
 .card-dark{
-    color: var(--color9);
+    color: var(--color8);
     background-color: var(--color2);
 }
 
@@ -163,20 +169,17 @@ body::-webkit-scrollbar {
 .login-mdf-btn{
     background-color: var(--color5);
     color: var(--color8);
-    width: 150px;
-    height: 40px;
-    font-weight: bold;
 }
 .login-mdf-btn:hover{  
     background-color: var(--color6);
     color: var(--color8);
 }
 .nosotros-mdf-txt{
-    font-weight: bold;
     color: var(--color8);
 }
 .nosotros-mdf-txt:hover{
-    color: var(--color5);
+    color: var(--color6);
+    transition: ease 0.3s;
 }
 .dropdown-menu-mdf{
     font-weight: bold;
@@ -188,16 +191,20 @@ body::-webkit-scrollbar {
     backdrop-filter: blur(20px);
     color: var(--color9);
 }
-.icon-language :hover{
-    fill: var(--color5 );
-}
+
+
 .logoSarp {
     width: 50px;
     height: 50px;
     cursor: pointer;
+    fill: var(--color8);
+    transform: scale(1);
+    transition: ease 0.3s;
+
 }
 .logoSarp:hover{
     transform: scale(1.08);
+    transition: ease 0.3s;
 }
 /*fin cosas del header*/
 
@@ -206,37 +213,74 @@ body::-webkit-scrollbar {
     background-color: var(--color2);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;    
+}
 
-}
-.daiconSize{
-    width : 40px;
-    height : 40px;
-}
-.daiconSize:hover{
-        transform: scale(1.08);
-}
+
 .logoSarpFooter {
     width: 100px;
     height: 100px;
+    cursor: pointer;
+    fill: var(--color8);
+    transform: scale(1);
+    transition: ease 0.3s;
+
 }
-.logoSarpFooter:hover{
+
+.logoSarpFooter:hover {
+    fill: var(--color6);
     transform: scale(1.08);
+    transition: ease 0.3s;
+
 }
-.daIconFb {
-    fill: var(--color8)
+
+.daIcon {
+    fill: var(--color8);
+    transform: scale(1);
+    transition: ease 0.3s;
+
 }
-.daIconFb:hover{
-    fill : #0866FF
+
+.daIcon:hover {
+    fill: var(--color6);
+    transform: scale(1.08);
+    transition: ease 0.3s;
 }
-.daIconIg {
-    fill: var(--color8)
+
+.daIconTable {
+    width : 1.5em;
+    height: 1.5em;
+    fill: var(--color2);
+    transform: scale(1);
+    transition: ease 0.3s;
 }
-.daIconIn {
-    fill: var(--color8)
+
+.daIconTable:hover {
+    fill: var(--color6);
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
 }
-.daIconIn:hover {
-    fill: #0A66C2
+
+
+
+
+.animate{
+    animation: zoom-in-zoom-out 1s ease infinite;
+
 }
+
+@keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.08, 1.08);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+
 /*fin Cosas del footer*/
 
 
@@ -260,8 +304,9 @@ body::-webkit-scrollbar {
     height: 350px;
 }
 .card{
+    margin: 10px;
     display: flex;
-    border-radius: 20px;
+    border-radius: var(--bs-border-radius);
     border: none;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -300,6 +345,7 @@ font-size: 4rem;
     height: 250px;
     background-size: cover;
     position:absolute; 
+
 }/* inicio contenedido de login*/
 .desing-icon-login{
     width: 3rem;
@@ -327,21 +373,20 @@ font-size: 4rem;
 }
 .card-desing-login{
     width: 22rem; 
-    height: 34rem;
     background-color: var(--color2);
     color: var(--color8);
 }
 .input-desing-login {
     background-color: var(--color3);
-    height: 10px;
+    border-radius: 50px;
+    border: none;
 }
 .input-desing-login:focus  {
     background-color: var(--color3);
     color: var(--color8);
+
 }
-/* .form-control{
-    height: 10px;
-} */
+
 .login-mdf-btn-pag-login{
         background-color: var(--color5);
         color: var(--color8);
