@@ -13,7 +13,6 @@
     --color11 : #FE654F;
     --color12 : #E6CA52;
     --bs-border-radius: 20px;
-    --bs-border-width:0px;
     --bs-btn-bg:#6B5CFF;
     --bs-btn-hover-bg:#3f2cfa;
 }
@@ -339,9 +338,9 @@ font-size: 4rem;
     background-color: var(--color3);
     color: var(--color8);
 }
-/* .form-control{
-    height: 10px;
-} */
+
+
+
 .login-mdf-btn-pag-login{
         background-color: var(--color5);
         color: var(--color8);
