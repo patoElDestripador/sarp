@@ -338,6 +338,18 @@ font-size: 4rem;
 }
 /*Fin Clases Puntajes*/
 
+/*inicio Image 401*/
+.img401{
+    width: 20rem;
+}
+
+.text401{
+    font-size: 5rem;
+}
+/*Fin Image 401*/
+
+
+
 .background-image{
     background-image: url("https://www.rover.com/blog/wp-content/uploads/dog-jumping-outside-min-1024x683.jpg");
     width: 100vw;
