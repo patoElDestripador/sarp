@@ -143,8 +143,10 @@ body::-webkit-scrollbar {
 /*Inicio Clases Cards*/
 
 .sizeCard{
-    width: 18rem;
+    width: auto;
     max-width: 300px;
+    min-width: 300px;
+
 }
 
 .card-dark{
@@ -242,8 +244,25 @@ body::-webkit-scrollbar {
     fill: var(--color6);
     transform: scale(1.08);
     transition: ease 0.3s;
-
 }
+
+.daIconTable {
+    width : 1.5em;
+    height: 1.5em;
+    fill: var(--color2);
+    transform: scale(1);
+    transition: ease 0.3s;
+}
+
+.daIconTable:hover {
+    fill: var(--color6);
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+
+
 
 .animate{
     animation: zoom-in-zoom-out 1s ease infinite;
