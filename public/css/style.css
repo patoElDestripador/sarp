@@ -360,6 +360,7 @@ font-size: 4rem;
     height: 250px;
     background-size: cover;
     position:absolute; 
+    z-index: -1;
 
 }/* inicio contenedido de login*/
 .desing-icon-login{
@@ -387,10 +388,18 @@ font-size: 4rem;
     transform: scale(1.08);
 }
 .card-desing-login{
-    width: 22rem; 
-    background-color: var(--color2);
-    color: var(--color8);
+    background-image: url("https://soyunperro.com/wp-content/uploads/perrocontento.jpg");
+    background-repeat: no-repeat;
+    position: fixed;
 }
+
+.bottomright {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+  }
+
 .input-desing-login {
     background-color: var(--color3);
     border-radius: 50px;
