@@ -18,6 +18,10 @@
     --bs-card-bg: #3f2cfa;
 }
 
+.rounded{
+    border-radius: 20px;
+}
+
 
 
 
