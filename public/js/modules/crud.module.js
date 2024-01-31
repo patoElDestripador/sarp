@@ -31,6 +31,9 @@ class CrudModule {
     return data;
   }
 
+  //getCodersByClan()
+
+
   async getCoders() {
     let data = "";
     await fetch(`${urlBase}coders`, {

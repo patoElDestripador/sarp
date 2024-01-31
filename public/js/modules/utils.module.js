@@ -56,5 +56,8 @@
 
   }
   
+  export function hola(){
+    console.log("saludo")
+  }
   
   export default new UtilsModule();

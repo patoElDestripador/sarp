@@ -1,4 +1,4 @@
-import crud from './crud.module.js'
+import {} from './crud.module.js'
 import utils from './utils.module.js'
 
 class LoginModule {
