@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png">
-    <title>Usuarios</title>
+    <title>Coders</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body >
-<!-- header inicio -->                
+<!-- Header inicio -->                
 <header class="p-2 paraElHeader fixed-top">
   <div class="container-fluid d-flex ms-4">
       <a class="align-content-around flex-grow-1 ms-3" href="../index.html">
@@ -23,7 +23,7 @@
           <div class="mt-1">
           </div>
           <a href="./about.html" class=" fs-5 nosotros-mdf-txt fw-bold">Nosotros</a>
-          <button class="btn login-mdf-btn fw-bold btn-primary " type="button">Login</button>
+          <button class="btn login-mdf-btn fw-bold btn-primary" id="redirectbuttonidToLogin" type="button">Login</button>
           <div class="dropdown me-5">
               <svg type="button" xmlns="http://www.w3.org/2000/svg" class="daIcon dropdown-toggle daiconSize" data-bs-toggle="dropdown" width="40" height="32" viewBox="0 0 640 512"><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6l.5.5c12.4-13.1 22.5-28.3 29.8-45H376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
               <ul class="dropdown-menu mt-3">
@@ -34,17 +34,14 @@
       </div>
   </div>
   </header>
-
-
-<!-- Inicio Banner Usuario-->
-<!-- Fin Banner Usuario-->
+<!-- Header fin -->                
 
 <!-- Inicio Perfil Usuario-->
 <main>
     <div class="container-fluid">
       <div class="background-image rounded"></div>
       <div class="py-5">
-        <div class="row justify-content-center"> 
+        <div class="py-5 row justify-content-center"> 
           <!-- Inicio Informacion basica -->
           <div class="col-md-4 sizeCard text-center ">
             <div class="col py-4 d-flex justify-content-center ">
@@ -115,6 +112,9 @@
                   </div>
                 </div>
               </div>
+              <div class="d-grid d-flex justify-content-center">
+                <a href="./userProfileAdmin.html" class="btn btn-primary" type="button">Ir a perfil</a>
+              </div>
             </div>
           <!-- Fin Informacion basica -->
     
@@ -183,8 +183,8 @@
                   <nav class="navbar">
                     <div class="row overflow-hidden flex-fill">
                       <div class="col d-flex col-sm-12">
-                        <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-primary my-2" type="submit">Search</button>
+                        <input class="form-control m-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                        <button class="btn btn-primary my-2" type="submit">Buscar</button>
                       </div>
                     </div>
                   </nav>
@@ -268,7 +268,44 @@
           </div>
           <!-- Fin Seccion puntajes -->
     
-          <!-- Inicio Seccion informativa -->
+        <!-- Inicio Seccion enlaces de interes -->
+        <div class="row justify-content-center">
+          <h2 class="fs-1 fw-bold text-center my-5 ">Enlaces de interes</h2>
+          <div class="col-md-3 d-flex mb-3  my-sm-0 justify-content-evenly">
+            <div class="card">
+              <div class="card-body">
+                <h1 class="card-title fs-3 fw-bold">Coders</h1>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <div class="d-grid d-flex gap-2">
+                  <a href="./listCoder.html" class="btn btn-primary" type="button">Ver listado</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex mb-3 my-sm-0 justify-content-evenly">
+            <div class="card">
+              <div class="card-body">
+                <h1 class="card-title fs-3 fw-bold">Clanes</h1>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <div class="d-grid d-flex gap-2">
+                  <a href="./listClans.html" class="btn btn-primary" type="button">Ver listado</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex mb-3 my-sm-0 justify-content-evenly">
+            <div class="card">
+              <div class="card-body">
+                <h1 class="card-title fs-3 fw-bold">Trainers</h1>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <div class="d-grid d-flex gap-2">
+                  <a href="./listTrainer.html" class="btn btn-primary" type="button">Ver listado</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>    
+            
       <div class="row justify-content-center text-center my-5">
         <div class="col-sm-10 col-md-8 mb-3 my-sm-0">
           <div class="card card-dark">
@@ -306,9 +343,7 @@
 
 <!-- Scripts para funcionamiento de pagina-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/utils.js"></script>
-<script src="../js/crud.js"></script>
-<script src="../js/app.js"></script>
+<script src="../js/index.js" type="module" ></script>
 <script> 
 //dejar de codigo de pagina de ultimo siempre para poder hacer uso de funciones compartidas provinientes desde otros archivos 
 
