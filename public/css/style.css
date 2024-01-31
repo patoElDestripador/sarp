@@ -497,19 +497,15 @@ la clase es tomada directamente desde bootstrap
 /*=====================================================================================================================*/
 /*Icono perder*/
 .iconosPerder {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmZTY1NGYiIGQ9Ik0xMiAyYzUuNSAwIDEwIDQuNSAxMCAxMHMtNC41IDEwLTEwIDEwUzIgMTcuNSAyIDEyUzYuNSAyIDEyIDJtMCAyYy0xLjkgMC0zLjYuNi00LjkgMS43bDExLjIgMTEuMmMxLTEuNCAxLjctMy4xIDEuNy00LjljMC00LjQtMy42LTgtOC04bTQuOSAxNC4zTDUuNyA3LjFDNC42IDguNCA0IDEwLjEgNCAxMmMwIDQuNCAzLjYgOCA4IDhjMS45IDAgMy42LS42IDQuOS0xLjciLz48L3N2Zz4=);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+PHBhdGggZmlsbD0iI0ZFNjU0RiIgZD0iTTEyOCAyNGExMDQgMTA0IDAgMSAwIDEwNCAxMDRBMTA0LjExIDEwNC4xMSAwIDAgMCAxMjggMjRtMzcuNjYgMTMwLjM0YTggOCAwIDAgMS0xMS4zMiAxMS4zMkwxMjggMTM5LjMxbC0yNi4zNCAyNi4zNWE4IDggMCAwIDEtMTEuMzItMTEuMzJMMTE2LjY5IDEyOGwtMjYuMzUtMjYuMzRhOCA4IDAgMCAxIDExLjMyLTExLjMyTDEyOCAxMTYuNjlsMjYuMzQtMjYuMzVhOCA4IDAgMCAxIDExLjMyIDExLjMyTDEzOS4zMSAxMjhaIi8+PC9zdmc+);
 }
 /*=====================================================================================================================*/
-/*Icono ganarr*/
+/*Icono ganar*/
 .iconosGanar{
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1YWNjYTQiIGQ9Ik0xMiAyQzYuNSAyIDIgNi41IDIgMTJzNC41IDEwIDEwIDEwczEwLTQuNSAxMC0xMFMxNy41IDIgMTIgMm0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04czggMy41OSA4IDhzLTMuNTkgOC04IDhtNC41OS0xMi40MkwxMCAxNC4xN2wtMi41OS0yLjU4TDYgMTNsNCA0bDgtOHoiLz48L3N2Zz4=);
-
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1QUNDQTQiIGQ9Im0xMC42IDEzLjhsLTIuMTUtMi4xNXEtLjI3NS0uMjc1LS43LS4yNzV0LS43LjI3NXEtLjI3NS4yNzUtLjI3NS43dC4yNzUuN0w5LjkgMTUuOXEuMy4zLjcuM3QuNy0uM2w1LjY1LTUuNjVxLjI3NS0uMjc1LjI3NS0uN3QtLjI3NS0uN3EtLjI3NS0uMjc1LS43LS4yNzV0LS43LjI3NXpNMTIgMjJxLTIuMDc1IDAtMy45LS43ODh0LTMuMTc1LTIuMTM3cS0xLjM1LTEuMzUtMi4xMzctMy4xNzVUMiAxMnEwLTIuMDc1Ljc4OC0zLjl0Mi4xMzctMy4xNzVxMS4zNS0xLjM1IDMuMTc1LTIuMTM3VDEyIDJxMi4wNzUgMCAzLjkuNzg4dDMuMTc1IDIuMTM3cTEuMzUgMS4zNSAyLjEzOCAzLjE3NVQyMiAxMnEwIDIuMDc1LS43ODggMy45dC0yLjEzNyAzLjE3NXEtMS4zNSAxLjM1LTMuMTc1IDIuMTM4VDEyIDIyIi8+PC9zdmc+);
 }
 /*=====================================================================================================================*/
-/*centar*/
-.centrar{
-    text-align: center;
-}
+
 .efecto:hover{
     transform: scale(1.08)
 }
