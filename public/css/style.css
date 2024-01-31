@@ -332,12 +332,15 @@ body::-webkit-scrollbar {
 }
 .card{
     margin: 10px;
-    display: flex;
     border-radius: var(--bs-border-radius);
     border: none;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transform: scale(1);
     transition: ease 0.3s; 
+}
+
+.cardLogin{
+width: 25rem;
 }
 
 .card:hover {
@@ -520,4 +523,18 @@ la clase es tomada directamente desde bootstrap
 }
 .bordo2{border-top-left-radius: 20px;
     border-top-right-radius: 20px; }
+
+    .list-group-item {
+        color: var(--color2);
+        border-radius: var(--borderCard);
+        margin: 3px;
+    }
+
+
+
+.list-group-flush {
+    border-radius: 20px;
+}
+
+
 /*fin dani*/

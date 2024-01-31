@@ -13,163 +13,143 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body >
-    <!-- header inicio -->                
-    <header class="p-2 paraElHeader fixed-top">
-        <div class="container-fluid d-flex ms-4">
-            <a class="align-content-around flex-grow-1 ms-3" href="./index.html">
-                <img class="logoSarp" src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp" >
-            </a>
-            <div class="gap-2 justify-content-end d-flex flex-row mt-2 me-5 ">
-                <div class="mt-1">
-                    <p><a href="./about.html" class="fs-5 nosotros-mdf-txt ">Nosotros</a></p>
-                </div>
-                <button class="btn login-mdf-btn btn-primary " type="button">Login</button>
-                <div class="dropdown me-5">
-                    <svg  type="button" xmlns="http://www.w3.org/2000/svg" class="dropdown-toggle daiconSize" data-bs-toggle="dropdown" viewBox="0 0 640 512"><path fill="#ffffff" d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6l.5.5c12.4-13.1 22.5-28.3 29.8-45H376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
-                    <ul class="dropdown-menu dropdown-menu-mdf mt-3">
-                        <li><a class="dropdown-item" onclick="cambioIdioma()"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 36 36"><path fill="#B22334" d="M35.445 7C34.752 5.809 33.477 5 32 5H18v2zM0 25h36v2H0zm18-8h18v2H18zm0-4h18v2H18zM0 21h36v2H0zm4 10h28c1.477 0 2.752-.809 3.445-2H.555c.693 1.191 1.968 2 3.445 2M18 9h18v2H18z"/><path fill="#EEE" d="M.068 27.679c.017.093.036.186.059.277c.026.101.058.198.092.296c.089.259.197.509.333.743L.555 29h34.89l.002-.004a4.22 4.22 0 0 0 .332-.741a3.75 3.75 0 0 0 .152-.576c.041-.22.069-.446.069-.679H0c0 .233.028.458.068.679M0 23h36v2H0zm0-4v2h36v-2H18zm18-4h18v2H18zm0-4h18v2H18zM.555 7l-.003.005zM.128 8.044c.025-.102.06-.199.092-.297a3.78 3.78 0 0 0-.092.297M18 9h18c0-.233-.028-.459-.069-.68a3.606 3.606 0 0 0-.153-.576A4.21 4.21 0 0 0 35.445 7H18z"/><path fill="#3C3B6E" d="M18 5H4a4 4 0 0 0-4 4v10h18z"/><path fill="#FFF" d="m2.001 7.726l.618.449l-.236.725L3 8.452l.618.448l-.236-.725L4 7.726h-.764L3 7l-.235.726zm2 2l.618.449l-.236.725l.617-.448l.618.448l-.236-.725L6 9.726h-.764L5 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 9l-.235.726zm-8 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L5 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 13l-.235.726zm-6-6l.618.449l-.236.725L7 8.452l.618.448l-.236-.725L8 7.726h-.764L7 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 7l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 11l-.235.726zM6.383 12.9L7 12.452l.618.448l-.236-.725l.618-.449h-.764L7 11l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 11l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 11l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 15l-.235.726zM6.383 16.9L7 16.452l.618.448l-.236-.725l.618-.449h-.764L7 15l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 15l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 15l-.235.726z"/></svg> Ingles</a></li>
-                        <li><a class="dropdown-item" onclick="cambioIdioma()"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 64 64"><path fill="#2b3990" d="M0 25h64v17H0z"/><path fill="#f9cb38" d="M54 10H10C3.373 10 0 14.925 0 21v11h64V21c0-6.075-3.373-11-10-11"/><path fill="#ec1c24" d="M0 43c0 6.075 3.373 11 10 11h44c6.627 0 10-4.925 10-11v-1H0z"/></svg> Español</a></li>
-                    </ul>
-                </div>
+<!-- Header inicio -->                
+<header class="p-2 paraElHeader fixed-top">
+    <div class="container-fluid d-flex ms-4">
+        <a class="align-content-around flex-grow-1 ms-3" href="../index.html">
+            <img class="logoSarp" src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp" >
+        </a>
+        <div class="gap-3 justify-content-end d-flex flex-row mt-2 me-5 align-items-center justify-content-center">
+            <div class="mt-1">
+            </div>
+            <a href="./about.html" class=" fs-5 nosotros-mdf-txt fw-bold">Nosotros</a>
+            <button class="btn login-mdf-btn fw-bold btn-primary " type="button">Login</button>
+            <div class="dropdown me-5">
+                <svg type="button" xmlns="http://www.w3.org/2000/svg" class="daIcon dropdown-toggle daiconSize" data-bs-toggle="dropdown" width="40" height="32" viewBox="0 0 640 512"><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6l.5.5c12.4-13.1 22.5-28.3 29.8-45H376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+                <ul class="dropdown-menu mt-3">
+                    <li><a class="dropdown-item" onclick="cambioIdioma()"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 36 36"><path fill="#B22334" d="M35.445 7C34.752 5.809 33.477 5 32 5H18v2zM0 25h36v2H0zm18-8h18v2H18zm0-4h18v2H18zM0 21h36v2H0zm4 10h28c1.477 0 2.752-.809 3.445-2H.555c.693 1.191 1.968 2 3.445 2M18 9h18v2H18z"/><path fill="#EEE" d="M.068 27.679c.017.093.036.186.059.277c.026.101.058.198.092.296c.089.259.197.509.333.743L.555 29h34.89l.002-.004a4.22 4.22 0 0 0 .332-.741a3.75 3.75 0 0 0 .152-.576c.041-.22.069-.446.069-.679H0c0 .233.028.458.068.679M0 23h36v2H0zm0-4v2h36v-2H18zm18-4h18v2H18zm0-4h18v2H18zM.555 7l-.003.005zM.128 8.044c.025-.102.06-.199.092-.297a3.78 3.78 0 0 0-.092.297M18 9h18c0-.233-.028-.459-.069-.68a3.606 3.606 0 0 0-.153-.576A4.21 4.21 0 0 0 35.445 7H18z"/><path fill="#3C3B6E" d="M18 5H4a4 4 0 0 0-4 4v10h18z"/><path fill="#FFF" d="m2.001 7.726l.618.449l-.236.725L3 8.452l.618.448l-.236-.725L4 7.726h-.764L3 7l-.235.726zm2 2l.618.449l-.236.725l.617-.448l.618.448l-.236-.725L6 9.726h-.764L5 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 9l-.235.726zm-8 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L5 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 13l-.235.726zm-6-6l.618.449l-.236.725L7 8.452l.618.448l-.236-.725L8 7.726h-.764L7 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 7l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 11l-.235.726zM6.383 12.9L7 12.452l.618.448l-.236-.725l.618-.449h-.764L7 11l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 11l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 11l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 15l-.235.726zM6.383 16.9L7 16.452l.618.448l-.236-.725l.618-.449h-.764L7 15l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 15l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 15l-.235.726z"/></svg> Ingles</a></li>
+                    <li><a class="dropdown-item" onclick="cambioIdioma()"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 64 64"><path fill="#2b3990" d="M0 25h64v17H0z"/><path fill="#f9cb38" d="M54 10H10C3.373 10 0 14.925 0 21v11h64V21c0-6.075-3.373-11-10-11"/><path fill="#ec1c24" d="M0 43c0 6.075 3.373 11 10 11h44c6.627 0 10-4.925 10-11v-1H0z"/></svg> Español</a></li>
+                </ul>
             </div>
         </div>
+    </div>
     </header>
-    <!-- header fin -->
-    <!-- container inicio -->
-    
-        <div class="container"> 
-            <!--Section slider-->
-            <section>
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" style="margin-top: 74px;" >
-                    <div class="carousel-inner" >
-                        <!--PRIMER SLIDER-->
-                        <div class="carousel-item active bordo" style="background-color: #282828; color:#f9fafc;"> 
-                            <div class="row">                    
-                                <div class="row justify-content-center">
-                                    <div class="col-4 justify-content-center">
-                                        <h1 class="centrar">Sarp</h1>
-                                        <h2 class="centrar">Un sistema pensado para ti</h2>
-                                        <p class="centrar">¡Descubre una experiencia revolucionaria en la gestión de puntos para Coders con Sarp, nuestro innovador aplicativo web!</p>
-                                        <div class="centrar">
-                                            <button type="button" class="btn btn-primary col-md-6 "  style=" background-color: #6b5cff;">Nosotros</button>
-                                        </div>
-                                    </div>   
-                                    <div class="col-5">
-                                        <img src="./IMG_20240116_150533.jpg" class="col-md-8 float-md-end mb-3 ms-md-3 bordo" alt="...">
-                                    </div>                                 
-                                </div>                  
+  <!-- Header fin -->
+<!-- container inicio -->
+<main>  
+    <div class="container-fluid"> 
+        <!--Section slider-->
+        <section>
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" style="margin-top: 74px;" >
+                <div class="carousel-inner" >
+                    <!--PRIMER SLIDER-->
+                    <div class="carousel-item active bordo" style="background-color: #282828; color:#f9fafc;"> 
+                        <div class="row">                    
+                            <div class="row justify-content-center">
+                                <div class="col-4 justify-content-center">
+                                    <h1 class="centrar">Sarp</h1>
+                                    <h2 class="centrar">Un sistema pensado para ti</h2>
+                                    <p class="centrar">¡Descubre una experiencia revolucionaria en la gestión de puntos para Coders con Sarp, nuestro innovador aplicativo web!</p>
+                                    <div class="centrar">
+                                        <button type="button" class="btn btn-primary col-md-6 "  style=" background-color: #6b5cff;">Nosotros</button>
+                                    </div>
+                                </div>   
+                                <div class="col-5">
+                                    <img src="./IMG_20240116_150533.jpg" class="col-md-8 float-md-end mb-3 ms-md-3 bordo" alt="...">
+                                </div>                                 
+                            </div>                  
+                        </div>
+                    </div>
+                    <!--SEGUNDO SLIDER-->
+                    <div class="carousel-item bordo" style="background-color: #282828; color: #fff;">
+                        <div class="row">
+                            <div class="row justify-content-center">                   
+                                <div class="col-4 justify-content-center">
+                                    <h1 class="centrar">Inicia La Aventura</h1>
+                                    <p class="centrar">Simplificamos el proceso de asignación de puntos, permitiendo a los Trainers y al personal administrativo reconocer el esfuerzo y la excelencia de los estudiantes de manera eficiente. Sarp va más allá de proporcionar información en tiempo real</p>
+                                    <div class="centrar">
+                                        <button type="button" class="btn btn-primary col-md-6">Login</button>
+                                    </div>
+                                </div>    
+                                
+                                <div class="col-5">
+                                    <img src="./IMG_20240116_150533.jpg" class="col-md-8 float-md-end mb-3 ms-md-3"  alt="...">
+                                </div>   
+                                    
                             </div>
                         </div>
-                        <!--SEGUNDO SLIDER-->
-                        <div class="carousel-item bordo" style="background-color: #282828; color: #fff;">
-                            <div class="row">
-                                <div class="row justify-content-center">                   
-                                    <div class="col-4 justify-content-center">
-                                        <h1 class="centrar">Inicia La Aventura</h1>
-                                        <p class="centrar">Simplificamos el proceso de asignación de puntos, permitiendo a los Trainers y al personal administrativo reconocer el esfuerzo y la excelencia de los estudiantes de manera eficiente. Sarp va más allá de proporcionar información en tiempo real</p>
-                                        <div class="centrar">
-                                            <button type="button" class="btn btn-primary col-md-6">Login</button>
-                                        </div>
-                                    </div>    
-                                    
-                                    <div class="col-5">
-                                        <img src="./IMG_20240116_150533.jpg" class="col-md-8 float-md-end mb-3 ms-md-3"  alt="...">
-                                    </div>   
-                                        
-                                </div>
-                            </div>
-                        </div>                  
-                        <!--TERCER SLIDER-->
-                        <div class="carousel-item bordo" style="background-color: #7f7d96; color:#282828;">
-                            <div class="row">
-                                <div class="row justify-content-center"> 
-                                    <div class="col-4 justify-content-center">
-                                        <h1 class="centrar">Coder</h1>
-                                        <p class="centrar">Sumérgete en una experiencia de empoderamiento con Sarp, el aplicativo web diseñado exclusivamente para brindar a los Coders un acceso directo y claro a toda la información sobre sus puntos individuales y de clan!</p>
-                                        <div class="centrar">
-                                            <button type="button" class="btn btn-primary col-md-6">Login</button>
-                                        </div>
-                                    </div> 
-                                    <div class="col-5">
-                                        <img src="./IMG_20240116_150533.jpg" class="col-md-8 float-md-end mb-3 ms-md-3"  alt="...">
-                                    </div>                         
-                                </div>                       
-                            </div>                    
-                        </div>                     
-                    </div>
+                    </div>                  
+                    <!--TERCER SLIDER-->
+                    <div class="carousel-item bordo" style="background-color: #7f7d96; color:#282828;">
+                        <div class="row">
+                            <div class="row justify-content-center"> 
+                                <div class="col-4 justify-content-center">
+                                    <h1 class="centrar">Coder</h1>
+                                    <p class="centrar">Sumérgete en una experiencia de empoderamiento con Sarp, el aplicativo web diseñado exclusivamente para brindar a los Coders un acceso directo y claro a toda la información sobre sus puntos individuales y de clan!</p>
+                                    <div class="centrar">
+                                        <button type="button" class="btn btn-primary col-md-6">Login</button>
+                                    </div>
+                                </div> 
+                                <div class="col-5">
+                                    <img src="./IMG_20240116_150533.jpg" class="col-md-8 float-md-end mb-3 ms-md-3"  alt="...">
+                                </div>                         
+                            </div>                       
+                        </div>                    
+                    </div>                     
                 </div>
-            </section>   
-            <!-------------------------------------------------------------------------------------------------------------->
-            <!--Section ventajas y beneficios-->
-            <section style="background-color:#f9fafc; margin-top: 74px;"><!--inicio seccion-->
-                <h1 class="centrar">Ventajas y Beneficios</h1><!--titulo-->
-                <div id="carouselExampleDark" class="carousel carousel-dark slide"><!--Carrusel Auntomatico-->                        
-                        <div class="carousel-inner" class="centrar">   
-                            <!-------------------------------------------------------------------------------------------------------------->                                
-                            <!--PRIMER SLIDER-->
-                            <div class="carousel-item active">
-                                <div class="row" style="justify-content: center;">                             
-                                    <!-------------------------------------------------------------------------------------------------------------->   
-                                    <!--cards-->
-                                    <h1 class="centrar"> primer slider</h1>                                 
-                                    <div class="col-3 efecto">
-                                        <div class="card" style="width: 80%;">
-                                            <img src="./Logo_Sarp_W.jpg" class="card-img-top" alt="...">
-                                            <div class="card-body " style="background-color: black;">
-                                                <p class="card-text">
-                                                    <h1>card</h1>
-                                                </p>
-                                            </div>
+            </div>
+        </section>   
+        <!-------------------------------------------------------------------------------------------------------------->
+        <!--Section ventajas y beneficios-->
+        <section style="background-color:#f9fafc; margin-top: 74px;"><!--inicio seccion-->
+            <h1 class="centrar">Ventajas y Beneficios</h1><!--titulo-->
+            <div id="carouselExampleDark" class="carousel carousel-dark slide"><!--Carrusel Auntomatico-->                        
+                    <div class="carousel-inner" class="centrar">   
+                        <!-------------------------------------------------------------------------------------------------------------->                                
+                        <!--PRIMER SLIDER-->
+                        <div class="carousel-item active">
+                            <div class="row" style="justify-content: center;">                             
+                                <!-------------------------------------------------------------------------------------------------------------->   
+                                <!--cards-->
+                                <h1 class="centrar"> primer slider</h1>                                 
+                                <div class="col-3 efecto">
+                                    <div class="card" style="width: 80%;">
+                                        <img src="./Logo_Sarp_W.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body " style="background-color: black;">
+                                            <p class="card-text">
+                                                <h1>card</h1>
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="col-3 efecto">
-                                        <div class="card" style="width: 80%;">
-                                            <img src="./Logo_Sarp_W.jpg" class="card-img-top" alt="...">
-                                            <div class="card-body" style="background-color: black;">
-                                                <p class="card-text">
-                                                    <h1>card</h1>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 efecto">
-                                        <div class="card" style="width: 80%;">
-                                            <img src="./Logo_Sarp_W.jpg" class="card-img-top" alt="...">
-                                            <div class="card-body" style="background-color: black;">
-                                                <p class="card-text">
-                                                    <h1>card</h1>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>                               
                                 </div>
-                            </div>                
-                            <!--SECON SLIDER-->
-                            <div class="carousel-item">
-                                    <div class="row" style="justify-content: center;">
-                                        <h1 class="centrar"> segundo slider</h1>
-                                        <!--Cards-->
-                                        <div class="col-3 efecto">
-                                            <div class="card" style="width: 80%; ">
-                                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1YWNjYTQiIGQ9Ik0xMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBjMC0xLjE2LS4yMS0yLjMxLS42MS0zLjM5bC0xLjYgMS42Yy4xNC41OS4yMSAxLjE5LjIxIDEuNzlhOCA4IDAgMCAxLTggOGE4IDggMCAwIDEtOC04YTggOCAwIDAgMSA4LThjLjYgMCAxLjIuMDcgMS43OS4yMUwxNS40IDIuNkMxNC4zMSAyLjIxIDEzLjE2IDIgMTIgMm03IDBsLTQgNHYxLjVsLTIuNTUgMi41NUMxMi4zIDEwIDEyLjE1IDEwIDEyIDEwYTIgMiAwIDAgMC0yIDJhMiAyIDAgMCAwIDIgMmEyIDIgMCAwIDAgMi0yYzAtLjE1IDAtLjMtLjA1LS40NUwxNi41IDlIMThsNC00aC0zem0tNyA0YTYgNiAwIDAgMC02IDZhNiA2IDAgMCAwIDYgNmE2IDYgMCAwIDAgNi02aC0yYTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00eiIvPjwvc3ZnPg==" class="card-img-top" alt="...">
-                                                <div class="card-body" style="background-color: black;">
-                                                    <p class="card-text">
-                                                        <h1>primer cad</h1>
-                                                    </p>
-                                                </div>
+                                <div class="col-3 efecto">
+                                    <div class="card" style="width: 80%;">
+                                        <img src="./Logo_Sarp_W.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body" style="background-color: black;">
+                                            <p class="card-text">
+                                                <h1>card</h1>
+                                            </p>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 efecto">
+                                    <div class="card" style="width: 80%;">
+                                        <img src="./Logo_Sarp_W.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body" style="background-color: black;">
+                                            <p class="card-text">
+                                                <h1>card</h1>
+                                            </p>
                                         </div>
-                                        <div class="col-3 efecto">
-                                            <div class="card" style="width: 80%; ">
-                                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1YWNjYTQiIGQ9Ik0xMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBjMC0xLjE2LS4yMS0yLjMxLS42MS0zLjM5bC0xLjYgMS42Yy4xNC41OS4yMSAxLjE5LjIxIDEuNzlhOCA4IDAgMCAxLTggOGE4IDggMCAwIDEtOC04YTggOCAwIDAgMSA4LThjLjYgMCAxLjIuMDcgMS43OS4yMUwxNS40IDIuNkMxNC4zMSAyLjIxIDEzLjE2IDIgMTIgMm03IDBsLTQgNHYxLjVsLTIuNTUgMi41NUMxMi4zIDEwIDEyLjE1IDEwIDEyIDEwYTIgMiAwIDAgMC0yIDJhMiAyIDAgMCAwIDIgMmEyIDIgMCAwIDAgMi0yYzAtLjE1IDAtLjMtLjA1LS40NUwxNi41IDlIMThsNC00aC0zem0tNyA0YTYgNiAwIDAgMC02IDZhNiA2IDAgMCAwIDYgNmE2IDYgMCAwIDAgNi02aC0yYTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00eiIvPjwvc3ZnPg==" class="card-img-top" alt="...">
-                                                <div class="card-body" style="background-color: black;">
-                                                    <p class="card-text">
-                                                        <h1>primer cad</h1>
-                                                    </p>
-                                                </div>
-                                        </div>
-                                        </div>
-                                        <div class="col-3 efecto">
+                                    </div>
+                                </div>                               
+                            </div>
+                        </div>                
+                        <!--SECON SLIDER-->
+                        <div class="carousel-item">
+                                <div class="row" style="justify-content: center;">
+                                    <h1 class="centrar"> segundo slider</h1>
+                                    <!--Cards-->
+                                    <div class="col-3 efecto">
                                         <div class="card" style="width: 80%; ">
                                             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1YWNjYTQiIGQ9Ik0xMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBjMC0xLjE2LS4yMS0yLjMxLS42MS0zLjM5bC0xLjYgMS42Yy4xNC41OS4yMSAxLjE5LjIxIDEuNzlhOCA4IDAgMCAxLTggOGE4IDggMCAwIDEtOC04YTggOCAwIDAgMSA4LThjLjYgMCAxLjIuMDcgMS43OS4yMUwxNS40IDIuNkMxNC4zMSAyLjIxIDEzLjE2IDIgMTIgMm03IDBsLTQgNHYxLjVsLTIuNTUgMi41NUMxMi4zIDEwIDEyLjE1IDEwIDEyIDEwYTIgMiAwIDAgMC0yIDJhMiAyIDAgMCAwIDIgMmEyIDIgMCAwIDAgMi0yYzAtLjE1IDAtLjMtLjA1LS40NUwxNi41IDlIMThsNC00aC0zem0tNyA0YTYgNiAwIDAgMC02IDZhNiA2IDAgMCAwIDYgNmE2IDYgMCAwIDAgNi02aC0yYTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00eiIvPjwvc3ZnPg==" class="card-img-top" alt="...">
                                             <div class="card-body" style="background-color: black;">
@@ -178,143 +158,164 @@
                                                 </p>
                                             </div>
                                     </div>
+                                    </div>
+                                    <div class="col-3 efecto">
+                                        <div class="card" style="width: 80%; ">
+                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1YWNjYTQiIGQ9Ik0xMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBjMC0xLjE2LS4yMS0yLjMxLS42MS0zLjM5bC0xLjYgMS42Yy4xNC41OS4yMSAxLjE5LjIxIDEuNzlhOCA4IDAgMCAxLTggOGE4IDggMCAwIDEtOC04YTggOCAwIDAgMSA4LThjLjYgMCAxLjIuMDcgMS43OS4yMUwxNS40IDIuNkMxNC4zMSAyLjIxIDEzLjE2IDIgMTIgMm03IDBsLTQgNHYxLjVsLTIuNTUgMi41NUMxMi4zIDEwIDEyLjE1IDEwIDEyIDEwYTIgMiAwIDAgMC0yIDJhMiAyIDAgMCAwIDIgMmEyIDIgMCAwIDAgMi0yYzAtLjE1IDAtLjMtLjA1LS40NUwxNi41IDlIMThsNC00aC0zem0tNyA0YTYgNiAwIDAgMC02IDZhNiA2IDAgMCAwIDYgNmE2IDYgMCAwIDAgNi02aC0yYTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00eiIvPjwvc3ZnPg==" class="card-img-top" alt="...">
+                                            <div class="card-body" style="background-color: black;">
+                                                <p class="card-text">
+                                                    <h1>primer cad</h1>
+                                                </p>
+                                            </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-3 efecto">
+                                    <div class="card" style="width: 80%; ">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1YWNjYTQiIGQ9Ik0xMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBjMC0xLjE2LS4yMS0yLjMxLS42MS0zLjM5bC0xLjYgMS42Yy4xNC41OS4yMSAxLjE5LjIxIDEuNzlhOCA4IDAgMCAxLTggOGE4IDggMCAwIDEtOC04YTggOCAwIDAgMSA4LThjLjYgMCAxLjIuMDcgMS43OS4yMUwxNS40IDIuNkMxNC4zMSAyLjIxIDEzLjE2IDIgMTIgMm03IDBsLTQgNHYxLjVsLTIuNTUgMi41NUMxMi4zIDEwIDEyLjE1IDEwIDEyIDEwYTIgMiAwIDAgMC0yIDJhMiAyIDAgMCAwIDIgMmEyIDIgMCAwIDAgMi0yYzAtLjE1IDAtLjMtLjA1LS40NUwxNi41IDlIMThsNC00aC0zem0tNyA0YTYgNiAwIDAgMC02IDZhNiA2IDAgMCAwIDYgNmE2IDYgMCAwIDAgNi02aC0yYTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00eiIvPjwvc3ZnPg==" class="card-img-top" alt="...">
+                                        <div class="card-body" style="background-color: black;">
+                                            <p class="card-text">
+                                                <h1>primer cad</h1>
+                                            </p>
                                         </div>
-                                    </div>
-                            </div>
-                            <!--TERCER SLIDER-->
-                            <div class="carousel-item">
-                                <div class="row" style="justify-content: center;">
-                                    <h1 class="centrar">Tercer slider</h1>
-                                    <!--cards-->
-                                    <div class="col-3 efecto border">
-                                        <div class="card" style="width: 80%;">
-                                    <img src="./dfyme4z-6d81b3fc-828c-448d-977f-7595bd36db07.png" class="card-img-top" alt="...">
-                                    <div class="card-body" style="background-color: black;">
-                                        <p class="card-text">
-                                            <h1>
-                                                texto
-                                            </h1>
-                                            
-                                        </p>
-                                    </div>
-                                </div>
-                                    </div>
-                                    <div class="col-3 efecto">
-                                        <div class="card" style="width: 80%;">
-                                    <img src="./dfyme4z-6d81b3fc-828c-448d-977f-7595bd36db07.png" class="card-img-top" alt="...">
-                                    <div class="card-body" style="background-color: black;">
-                                        <p class="card-text">
-                                            <h1>
-                                                texto
-                                            </h1>
-                                            
-                                        </p>
-                                    </div>
-                                </div>
-                                    </div>
-                                    <div class="col-3 efecto">
-                                        <div class="card" style="width: 80%;">
-                                    <img src="./dfyme4z-6d81b3fc-828c-448d-977f-7595bd36db07.png" class="card-img-top" alt="...">
-                                    <div class="card-body" style="background-color: black;">
-                                        <p class="card-text">
-                                            <h1>
-                                                texto
-                                            </h1>
-                                            
-                                        </p>
-                                    </div>
                                 </div>
                                     </div>
                                 </div>
-                            </div>         
                         </div>
-                    <!--BOTONES CARRUSEL-->
-                    <div class="boton">
-                        <!--PREV-->
-                        <button class="carousel-control-prev efecto2" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">                    
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        </button>                     
-                        <!--NEXT-->
-                        <button class="carousel-control-next efecto2" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>                    
-                        </button>
-                    </div> 
-                </div>   
-            </section>   
-            <!-------------------------------------------------------------------------------------------------------------->
-            <!--Section login con imagen-->
-            <section>
-                <div class="row" style="background-color: #f9fafc ;color: #282828; margin-top: 80px;">                    
-                    <div class="row justify-content-center">
-                        <div class="col-4 justify-content-center">
-                            <h1 class="centrar">Sarp</h1>
-                            <h2 class="centrar">Un sistema pensado para ti</h2>
-                            <p class="centrar">¡Descubre una experiencia revolucionaria en la gestión de puntos para Coders con Sarp, nuestro innovador aplicativo web!</p>
-                            <div class="centrar">
-                                <button type="button" class="btn btn-primary col-md-6" ">Login</button>
+                        <!--TERCER SLIDER-->
+                        <div class="carousel-item">
+                            <div class="row" style="justify-content: center;">
+                                <h1 class="centrar">Tercer slider</h1>
+                                <!--cards-->
+                                <div class="col-3 efecto border">
+                                    <div class="card" style="width: 80%;">
+                                <img src="./dfyme4z-6d81b3fc-828c-448d-977f-7595bd36db07.png" class="card-img-top" alt="...">
+                                <div class="card-body" style="background-color: black;">
+                                    <p class="card-text">
+                                        <h1>
+                                            texto
+                                        </h1>
+                                        
+                                    </p>
+                                </div>
                             </div>
-                        </div>   
-                        <div class="col-5">
-                            <img src="./IMG_20240116_150533.jpg" class="col-md-8 float-md-end mb-3 ms-md-3" alt="...">
-                        </div>                                 
-                    </div>                  
-                </div>
-                
-            </section>
-            <!-------------------------------------------------------------------------------------------------------------->
-            <!--Section plan recompensas-->          
-            <section style="margin-top: 74px;">  
-                <h1 class="centrar">Plan De Recompensas</h1>          
-                <div class="row" style="justify-content: center;">
-                        <!--Ganar-->
-                        <div class="card col-5" >
+                                </div>
+                                <div class="col-3 efecto">
+                                    <div class="card" style="width: 80%;">
+                                <img src="./dfyme4z-6d81b3fc-828c-448d-977f-7595bd36db07.png" class="card-img-top" alt="...">
+                                <div class="card-body" style="background-color: black;">
+                                    <p class="card-text">
+                                        <h1>
+                                            texto
+                                        </h1>
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                                </div>
+                                <div class="col-3 efecto">
+                                    <div class="card" style="width: 80%;">
+                                <img src="./dfyme4z-6d81b3fc-828c-448d-977f-7595bd36db07.png" class="card-img-top" alt="...">
+                                <div class="card-body" style="background-color: black;">
+                                    <p class="card-text">
+                                        <h1>
+                                            texto
+                                        </h1>
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                        </div>         
+                    </div>
+                <!--BOTONES CARRUSEL-->
+                <div class="boton">
+                    <!--PREV-->
+                    <button class="carousel-control-prev efecto2" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">                    
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>                     
+                    <!--NEXT-->
+                    <button class="carousel-control-next efecto2" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>                    
+                    </button>
+                </div> 
+            </div>   
+        </section>   
+        <!-------------------------------------------------------------------------------------------------------------->
+        <!--Section login con imagen-->
+        <section>
+            <div class="row" style="background-color: #f9fafc ;color: #282828; margin-top: 80px;">                    
+                <div class="row justify-content-center">
+                    <div class="col-4 justify-content-center">
+                        <h1 class="centrar">Sarp</h1>
+                        <h2 class="centrar">Un sistema pensado para ti</h2>
+                        <p class="centrar">¡Descubre una experiencia revolucionaria en la gestión de puntos para Coders con Sarp, nuestro innovador aplicativo web!</p>
+                        <div class="centrar">
+                            <button type="button" class="btn btn-primary col-md-6" ">Login</button>
+                        </div>
+                    </div>   
+                    <div class="col-5">
+                        <img src="./IMG_20240116_150533.jpg" class="col-md-8 float-md-end mb-3 ms-md-3" alt="...">
+                    </div>                                 
+                </div>                  
+            </div>
+            
+        </section>
+        <!-------------------------------------------------------------------------------------------------------------->
+        <!--Section plan recompensas-->          
+        <section style="margin-top: 74px;">  
+            <h1 class="fw-bold centrar">Plan De Recompensas</h1>          
+            <div class="row" style="justify-content: center;">
+                    <!--Ganar-->
+                    <div class="card col-5 col-md-3 d-flex" >
+                        <div class="my-2">
                             <div class="card-body centrar">
-                                <h2 class="card-title">Ganar</h2>
+                                <h2 class="card-title fw-bold">Ganar</h2>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item" style="vertical-align:text-top;"> 
+                                <li class="list-group-item list-group-item-action style="vertical-align:text-top;"> 
                                     <div class="row">
                                         <div class="col-2"><span class="carousel-control-prev-icon iconosGanar"></span></div>
                                         <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
+                                <li class="list-group-item list-group-item-action">
                                     <div class="row">
                                         <div class="col-2"><span class="carousel-control-prev-icon iconosGanar"></span></div>
                                         <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
+                                <li class="list-group-item list-group-item-action">
                                 <div class="row">
                                         <div class="col-2"><span class="carousel-control-prev-icon iconosGanar"></span></div>
                                         <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
+                                <li class="list-group-item list-group-item-action">
                                     <div class="row">
                                         <div class="col-2"><span class="carousel-control-prev-icon iconosGanar"></span></div>
                                         <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
+                                <li class="list-group-item list-group-item-action">
                                     <div class="row">
                                         <div class="col-2"><span class="carousel-control-prev-icon iconosGanar"></span></div>
                                         <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
+                                <li class="list-group-item list-group-item-action">
                                     <div class="row">
                                         <div class="col-2"><span class="carousel-control-prev-icon iconosGanar"></span></div>
                                         <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
+                                <li class="list-group-item list-group-item-action">
                                     <div class="row">
                                         <div class="col-2"><span class="carousel-control-prev-icon iconosGanar"></span></div>
                                         <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
+                                <li class="list-group-item list-group-item-action">
                                     <div class="row">
                                         <div class="col-2"><span class="carousel-control-prev-icon iconosGanar"></span></div>
                                         <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
@@ -322,99 +323,96 @@
                                 </li>
                             </ul>
                         </div>
-                        <!--Perder-->
-                        <div class="card col-5" >
+                    </div>
+                    <!--Perder-->
+                    <div class="card col-5 col-md-3 d-flex align-self-center" >
+                        <div class="my-3">
                             <div class="card-body centrar">
-                                <h2 class="card-title">Perder</h2>
+                                <h2 class="card-title fw-bold">Perder</h2>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item" style="vertical-align:text-top;"> 
-                                    <div class="row">
-                                        <div class="col-2"><span class="carousel-control-prev-icon iconosPerder"></span></div>
-                                        <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
+                                <li class="list-group-item list-group-item-action"> 
+                                    <div class="row align-self-center">
+                                        <div class="col-2 align-self-center"><span class="carousel-control-prev-icon iconosPerder"></span></div>
+                                        <div class="col-10 align-self-center"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2"><span class="carousel-control-prev-icon iconosPerder"></span></div>
-                                        <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
-                                    </div></li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2"><span class="carousel-control-prev-icon iconosPerder"></span></div>
-                                        <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
+                                <li class="list-group-item list-group-item-action"> 
+                                    <div class="row align-self-center">
+                                        <div class="col-2 align-self-center"><span class="carousel-control-prev-icon iconosPerder"></span></div>
+                                        <div class="col-10 align-self-center"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2"><span class="carousel-control-prev-icon iconosPerder"></span></div>
-                                        <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
+                                <li class="list-group-item list-group-item-action"> 
+                                    <div class="row align-self-center">
+                                        <div class="col-2 align-self-center"><span class="carousel-control-prev-icon iconosPerder"></span></div>
+                                        <div class="col-10 align-self-center"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2"><span class="carousel-control-prev-icon iconosPerder"></span></div>
-                                        <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
+                                <li class="list-group-item list-group-item-action"> 
+                                    <div class="row align-self-center">
+                                        <div class="col-2 align-self-center"><span class="carousel-control-prev-icon iconosPerder"></span></div>
+                                        <div class="col-10 align-self-center"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2"><span class="carousel-control-prev-icon iconosPerder"></span></div>
-                                        <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
+                                <li class="list-group-item list-group-item-action"> 
+                                    <div class="row align-self-center">
+                                        <div class="col-2 align-self-center"><span class="carousel-control-prev-icon iconosPerder"></span></div>
+                                        <div class="col-10 align-self-center"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2"><span class="carousel-control-prev-icon iconosPerder"></span></div>
-                                        <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
+                                <li class="list-group-item list-group-item-action"> 
+                                    <div class="row align-self-center">
+                                        <div class="col-2 align-self-center"><span class="carousel-control-prev-icon iconosPerder"></span></div>
+                                        <div class="col-10 align-self-center"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-2"><span class="carousel-control-prev-icon iconosPerder"></span></div>
-                                        <div class="col-10"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
+                                <li class="list-group-item list-group-item-action"> 
+                                    <div class="row align-self-center">
+                                        <div class="col-2 align-self-center"><span class="carousel-control-prev-icon iconosPerder"></span></div>
+                                        <div class="col-10 align-self-center"><p>Aqui Va El Texto Que Queremos Agregar</p></div>
                                     </div>
                                 </li>
                             </ul>
-                            
                         </div>
-                </div>
-            </section>
-            <!-------------------------------------------------------------------------------------------------------------->
-            <!--Section login + texto-->
-
-
-
-        <div class="row justify-content-center text-center my-5">
-            <div class="col-sm-10 col-md-8 mb-3 my-sm-0">
-              <div class="card card-dark">
-                <div class="card-body">
-                  <h1 class="card-title fs-1 fw-bold focus">SARP</h1>
-                  <h2 class="card-text">Un sistema pensado para ti</h2>
-                  <p class="card-text">¡Descubre una experiencia revolucionaria en la gestión de puntos para Coders con Sarp, nuestro innovador aplicativo web!</p>
-                  <a href="./html/login.html" class="btn btn-primary">Login</a>
-                </div>
-              </div>
+                        
+                    </div>
             </div>
-          </div>
+        </section>
+        <!-------------------------------------------------------------------------------------------------------------->
+        <!--Section login + texto-->
+
+
+
+    <div class="row justify-content-center text-center my-5">
+        <div class="col-sm-10 col-md-8 mb-3 my-sm-0">
+            <div class="card card-dark">
+            <div class="card-body">
+                <h1 class="card-title fs-1 fw-bold focus">Sarp</h1>
+                <h2 class="card-text">Un sistema pensado para ti</h2>
+                <p class="card-text">¡Descubre una experiencia revolucionaria en la gestión de puntos para Coders con Sarp, nuestro innovador aplicativo web!</p>
+                <a href="./html/login.html" class="btn btn-primary">Login</a>
+            </div>
+            </div>
         </div>
-    <!-- container fin -->
-
-    <!-- footer inicio -->
-    <footer class="py-3 mt-4 paraElFooter">
-        <a href="./index.html" class="nav justify-content-center pb-3">
-            <img class="logoSarpFooter" src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp">
-        </a>
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="https://www.instagram.com/riwi.io/" target="_blank" class="nav-link px-2 text-body-secondary" ><svg xmlns="http://www.w3.org/2000/svg" class="daiconSize daIconIg"  viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg></a></li>
-          <li class="nav-item"><a href="https://www.facebook.com/people/Riwi/100092420949391/?locale=es_LA" target="_blank" class="nav-link px-2 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" class="daiconSize daIconFb" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02"/></svg></a></li>
-          <li class="nav-item"><a href="https://www.linkedin.com/company/riwi-io/" target="_blank" class="nav-link px-2 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" class="daiconSize daIconIn" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg></a></li>
-          <li class="nav-item"><a href="https://twitter.com/InfoRiwi4424" target="_blank" class="nav-link px-2 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" class="daiconSize" viewBox="0 0 24 24"><path fill="#ffffff" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a></li>
-        </ul>
-
-        <p class="text-center text-light">Hecho con <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 128 128"><path fill="#DB0A28" d="M64.8 120.71c3.68 0 32.11-24.18 48.7-44.07c15.96-19.14 10.2-41.74 6.69-48.03c-4.15-7.43-56.94 17.01-56.94 17.01S14.07 17.99 10.39 23.99C5.4 32.13-1.59 53.54 12.52 73.45C27.5 94.6 60.85 120.71 64.8 120.71"/><path fill="#FF262E" d="M64.55 114.2s52.26-38.68 56.75-62.3c4.25-22.37-4.45-33.22-15.16-38.45C78.99.19 65.29 26.21 64 26.21S49.95.14 23.7 11.42C9.24 17.63 3.18 34.53 8.91 53.57c8.41 27.94 55.64 60.63 55.64 60.63"/></svg>  Coder.</p>
-        <p class="text-center text-light">© 2023 SARP, Inc.</p>
-      </footer>
+        </div>
+    </div>
+</main>
+<!-- container fin -->
+<!-- footer inicio -->
+<footer class="py-2 mt-4 paraElFooter">
+    <a href="./index.html" class="nav justify-content-center pt-3">
+        <img class="logoSarpFooter" src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp">
+    </a>
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3 align-items-center">
+      <li class="nav-item"><a href="https://www.instagram.com/riwi.io/" target="_blank" class="daIcon nav-link px-2 text-body-secondary" ><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M13.028 2c1.125.003 1.696.009 2.189.023l.194.007c.224.008.445.018.712.03c1.064.05 1.79.218 2.427.465c.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428c.012.266.022.487.03.712l.006.194c.015.492.021 1.063.023 2.188l.001.746v1.31a78.831 78.831 0 0 1-.023 2.188l-.006.194c-.008.225-.018.446-.03.712c-.05 1.065-.22 1.79-.466 2.428a4.883 4.883 0 0 1-1.153 1.772a4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.427.465a72.11 72.11 0 0 1-.712.03l-.194.006c-.493.014-1.064.021-2.189.023l-.746.001h-1.309a78.43 78.43 0 0 1-2.189-.023l-.194-.006a63.036 63.036 0 0 1-.712-.031c-1.064-.05-1.79-.218-2.428-.465a4.889 4.889 0 0 1-1.771-1.153a4.904 4.904 0 0 1-1.154-1.772c-.247-.637-.415-1.363-.465-2.428a74.1 74.1 0 0 1-.03-.712l-.005-.194A79.047 79.047 0 0 1 2 13.028v-2.056a78.82 78.82 0 0 1 .022-2.188l.007-.194c.008-.225.018-.446.03-.712c.05-1.065.218-1.79.465-2.428A4.88 4.88 0 0 1 3.68 3.678a4.897 4.897 0 0 1 1.77-1.153c.638-.247 1.363-.415 2.428-.465c.266-.012.488-.022.712-.03l.194-.006a79 79 0 0 1 2.188-.023zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10m0 2a3 3 0 1 1 .001 6a3 3 0 0 1 0-6m5.25-3.5a1.25 1.25 0 0 0 0 2.5a1.25 1.25 0 0 0 0-2.5"/></svg></a></li>
+      <li class="nav-item"><a href="https://www.facebook.com/people/Riwi/100092420949391/?locale=es_LA" target="_blank" class="daIcon nav-link p-1 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" viewBox="0 0 464 488"><path d="M462 78q0-30-23-53T386 2H78Q48 2 25 25T2 78v308q0 30 23 53t53 23h154V288h-56v-76h56v-30q0-39 25.5-68.5T318 84h62v76h-62q-5 0-9.5 6t-4.5 15v31h76v76h-76v174h82q30 0 53-23t23-53z"/></svg></a></li>
+      <li class="nav-item"><a href="https://twitter.com/InfoRiwi4424" target="_blank" class="daIcon nav-link px-2 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm297.1 84L257.3 234.6L379.4 396h-95.6L209 298.1L123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5l78.2-89.5zm-37.8 251.6L153.4 142.9h-28.3l171.8 224.7h26.3z"/></svg></a></li>
+    </ul>
+    <p class="text-center text-light ">Hecho con <svg class="animate" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 128 128"><path fill="#DB0A28" d="M64.8 120.71c3.68 0 32.11-24.18 48.7-44.07c15.96-19.14 10.2-41.74 6.69-48.03c-4.15-7.43-56.94 17.01-56.94 17.01S14.07 17.99 10.39 23.99C5.4 32.13-1.59 53.54 12.52 73.45C27.5 94.6 60.85 120.71 64.8 120.71"/><path fill="#FF262E" d="M64.55 114.2s52.26-38.68 56.75-62.3c4.25-22.37-4.45-33.22-15.16-38.45C78.99.19 65.29 26.21 64 26.21S49.95.14 23.7 11.42C9.24 17.63 3.18 34.53 8.91 53.57c8.41 27.94 55.64 60.63 55.64 60.63"/></svg> Coder.</p>
+    <p class="text-center text-light">© 2023 SARP Inc.</p>
+  </footer>
+  <!-- footer fin -->
     <!-- footer fin -->
 
 <!-- Scripts para funcionamiento de pagina-->
