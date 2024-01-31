@@ -16,6 +16,11 @@
     --bs-btn-hover-bg:#3f2cfa;
     --borderCard: 15px;
     --bs-card-bg: #3f2cfa;
+    --bs-body-color: #282828;
+}
+
+.rounded{
+    border-radius: 20px;
 }
 
 
@@ -52,7 +57,15 @@
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #0d6efd;
     --bs-btn-disabled-border-color: #0d6efd;
-    width: 10rem;  
+    width: 10rem; 
+    transform: scale(1);
+    transition: ease 0.3s; 
+}
+
+.btn-primary:hover {
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
 }
 
 .btn-success {
@@ -70,6 +83,14 @@
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #198754;
     --bs-btn-disabled-border-color: #198754;
+    transform: scale(1);
+    transition: ease 0.3s; 
+}
+
+.btn-success:hover {
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
 }
 
 .btn-info {
@@ -87,7 +108,16 @@
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #EAA2FC;
     --bs-btn-disabled-border-color: #EAA2FC;
+    transform: scale(1);
+    transition: ease 0.3s; 
 }
+
+.btn-info:hover {
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
 
 .dropdown-item {
     display: block;
@@ -223,7 +253,6 @@ body::-webkit-scrollbar {
     fill: var(--color8);
     transform: scale(1);
     transition: ease 0.3s;
-
 }
 
 .logoSarpFooter:hover {
@@ -260,8 +289,6 @@ body::-webkit-scrollbar {
     transition: ease 0.3s;
     cursor: pointer;
 }
-
-
 
 
 .animate{
@@ -305,11 +332,26 @@ body::-webkit-scrollbar {
 }
 .card{
     margin: 10px;
-    display: flex;
     border-radius: var(--bs-border-radius);
     border: none;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transform: scale(1);
+    transition: ease 0.3s; 
 }
+
+.cardLogin{
+width: 25rem;
+}
+
+.card:hover {
+    transform: scale(1.004);
+    transition: ease 0.3s;
+    box-shadow: 0px 0px 10px 0px rgba(107,92,255,0.54);
+}
+
+
+
+
 /*Fin Clases Perfil*/
 
 /*Inicio Clases Puntajes*/
@@ -339,31 +381,47 @@ font-size: 4rem;
 }
 /*Fin Clases Puntajes*/
 
+/*inicio Image 401*/
+.img401{
+    width: 20rem;
+}
+
+.text401{
+    font-size: 5rem;
+}
+/*Fin Image 401*/
+
+
+
 .background-image{
     background-image: url("https://www.rover.com/blog/wp-content/uploads/dog-jumping-outside-min-1024x683.jpg");
     width: 100vw;
     height: 250px;
     background-size: cover;
     position:absolute; 
+    z-index: -1;
 
 }/* inicio contenedido de login*/
 .desing-icon-login{
     width: 3rem;
     height: 3rem;
     background-color: var(--color9);
-    border-radius: 50px;
+    border-radius: 100%;
     cursor: pointer;
+    transition: ease 0.3s;
+
 }
 .desing-icon-login:hover{
     transform: scale(1.08);
+    transition: ease 0.3s;
+
 }
 .daIconLogin{
     width:2rem;
     height:2rem;
+    padding: 1px;
 }
-.colorX{
-    fill: var(--color1);
-}
+
 .logoSarpLogin{
     width: 70px;
     height: 70px;
@@ -372,18 +430,28 @@ font-size: 4rem;
     transform: scale(1.08);
 }
 .card-desing-login{
-    width: 22rem; 
-    height: 34rem;
-    background-color: var(--color2);
-    color: var(--color8);
+    background-image: url("https://soyunperro.com/wp-content/uploads/perrocontento.jpg");
+    background-repeat: no-repeat;
+    position: fixed;
 }
+
+.bottomright {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+  }
+
 .input-desing-login {
     background-color: var(--color3);
-    height: 10px;
+    border-radius: 50px;
+    border: none;
+    color: var(--color8);
 }
+
+/*
 .input-desing-login:focus  {
     background-color: var(--color3);
-    color: var(--color8);
 }
 
 .login-mdf-btn-pag-login{
@@ -396,13 +464,14 @@ font-size: 4rem;
         color: var(--color8);
 }
 /*Lo que ahce esto es tomar la casilla pequeña de la el label y cambiar el color a el que nosotros especifiquemos
-la clase es tomada directamente desde bootstrap*/
+la clase es tomada directamente desde bootstrap
 .form-floating>.form-control:focus~label::after{
     background-color: var(--color); 
 }
 .form-floating>.form-control:focus~label {
     color: var(--color8);
-}
+}*/
+
 .colorIMG{
     background-color: #5ACCA4;
     z-index: -999;
@@ -428,19 +497,15 @@ la clase es tomada directamente desde bootstrap*/
 /*=====================================================================================================================*/
 /*Icono perder*/
 .iconosPerder {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmZTY1NGYiIGQ9Ik0xMiAyYzUuNSAwIDEwIDQuNSAxMCAxMHMtNC41IDEwLTEwIDEwUzIgMTcuNSAyIDEyUzYuNSAyIDEyIDJtMCAyYy0xLjkgMC0zLjYuNi00LjkgMS43bDExLjIgMTEuMmMxLTEuNCAxLjctMy4xIDEuNy00LjljMC00LjQtMy42LTgtOC04bTQuOSAxNC4zTDUuNyA3LjFDNC42IDguNCA0IDEwLjEgNCAxMmMwIDQuNCAzLjYgOCA4IDhjMS45IDAgMy42LS42IDQuOS0xLjciLz48L3N2Zz4=);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+PHBhdGggZmlsbD0iI0ZFNjU0RiIgZD0iTTEyOCAyNGExMDQgMTA0IDAgMSAwIDEwNCAxMDRBMTA0LjExIDEwNC4xMSAwIDAgMCAxMjggMjRtMzcuNjYgMTMwLjM0YTggOCAwIDAgMS0xMS4zMiAxMS4zMkwxMjggMTM5LjMxbC0yNi4zNCAyNi4zNWE4IDggMCAwIDEtMTEuMzItMTEuMzJMMTE2LjY5IDEyOGwtMjYuMzUtMjYuMzRhOCA4IDAgMCAxIDExLjMyLTExLjMyTDEyOCAxMTYuNjlsMjYuMzQtMjYuMzVhOCA4IDAgMCAxIDExLjMyIDExLjMyTDEzOS4zMSAxMjhaIi8+PC9zdmc+);
 }
 /*=====================================================================================================================*/
-/*Icono ganarr*/
+/*Icono ganar*/
 .iconosGanar{
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1YWNjYTQiIGQ9Ik0xMiAyQzYuNSAyIDIgNi41IDIgMTJzNC41IDEwIDEwIDEwczEwLTQuNSAxMC0xMFMxNy41IDIgMTIgMm0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04czggMy41OSA4IDhzLTMuNTkgOC04IDhtNC41OS0xMi40MkwxMCAxNC4xN2wtMi41OS0yLjU4TDYgMTNsNCA0bDgtOHoiLz48L3N2Zz4=);
-
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1QUNDQTQiIGQ9Im0xMC42IDEzLjhsLTIuMTUtMi4xNXEtLjI3NS0uMjc1LS43LS4yNzV0LS43LjI3NXEtLjI3NS4yNzUtLjI3NS43dC4yNzUuN0w5LjkgMTUuOXEuMy4zLjcuM3QuNy0uM2w1LjY1LTUuNjVxLjI3NS0uMjc1LjI3NS0uN3QtLjI3NS0uN3EtLjI3NS0uMjc1LS43LS4yNzV0LS43LjI3NXpNMTIgMjJxLTIuMDc1IDAtMy45LS43ODh0LTMuMTc1LTIuMTM3cS0xLjM1LTEuMzUtMi4xMzctMy4xNzVUMiAxMnEwLTIuMDc1Ljc4OC0zLjl0Mi4xMzctMy4xNzVxMS4zNS0xLjM1IDMuMTc1LTIuMTM3VDEyIDJxMi4wNzUgMCAzLjkuNzg4dDMuMTc1IDIuMTM3cTEuMzUgMS4zNSAyLjEzOCAzLjE3NVQyMiAxMnEwIDIuMDc1LS43ODggMy45dC0yLjEzNyAzLjE3NXEtMS4zNSAxLjM1LTMuMTc1IDIuMTM4VDEyIDIyIi8+PC9zdmc+);
 }
 /*=====================================================================================================================*/
-/*centar*/
-.centrar{
-    text-align: center;
-}
+
 .efecto:hover{
     transform: scale(1.08)
 }
@@ -454,4 +519,18 @@ la clase es tomada directamente desde bootstrap*/
 }
 .bordo2{border-top-left-radius: 20px;
     border-top-right-radius: 20px; }
+
+    .list-group-item {
+        color: var(--color2);
+        border-radius: var(--borderCard);
+        margin: 3px;
+    }
+
+
+
+.list-group-flush {
+    border-radius: 20px;
+}
+
+
 /*fin dani*/
