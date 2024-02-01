@@ -1,6 +1,6 @@
 import utils from './modules/utils.module.js'
 import login from './modules/login.module.js'
-import dataController from './modules/dataController.module.js'
+//import dataController from './modules/dataController.module.js'
 
 let actualPage = document.querySelector("title").text
 
@@ -12,8 +12,8 @@ if(actualPage == "login"){
 
 }
 
+//dataController.listCodersByClan()
 //Globales
-dataController.listCodersByClan()
 
 
 document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
@@ -27,4 +27,17 @@ document.getElementById("redirectbuttonidToLogin")?.addEventListener("click",()=
 document.getElementById("redirectbuttonidToIndex")?.addEventListener("click",()=>{
     location.href ="../index.html";
 })
+
+
+//button cambiar idioma
+document.getElementById("buttonIdChangeLangEng")?.addEventListener("click",()=>{
+    //funcion para cambiar lenguaje a ingles
+});
+document.getElementById("buttonIdChangeLangEs")?.addEventListener("click",()=>{
+    //funcion para cambiar lenguaje a spanish
+});
+document.getElementById("idCorazon")?.addEventListener("click",()=>{
+    //funcion secreta
+});
+
 
