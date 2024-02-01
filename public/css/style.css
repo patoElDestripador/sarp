@@ -19,28 +19,6 @@
     --bs-body-color: #282828;
 }
 
-.rounded{
-    border-radius: 20px;
-}
-
-.roundedTop{
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 40%;
-}
-
-.arrow{
-    opacity: 0;
-}
-
-.arrow:hover{
-    opacity: 1;
-}
-
-
-.container-fluid{
-    --bs-gutter-x: 0;
-    --bs-gutter-y: 0;
-}
 /* fin de colores */ 
 
 /* forma de implementacion*/
@@ -71,6 +49,7 @@ body::-webkit-scrollbar {
     position:absolute; 
     z-index: -1;
 }
+
 
 /* Inicio estilos botones */
 
@@ -150,7 +129,6 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
-
 .dropdown-item {
     display: block;
     width: 100%;
@@ -176,6 +154,28 @@ body::-webkit-scrollbar {
 /* Fin estilos botones */
 
 /* Inicio estilos indicadores y selectores */
+.rounded{
+    border-radius: 20px;
+}
+
+.roundedTop{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 20rem;
+}
+
+.arrow{
+    opacity: 0.5;
+}
+
+.arrow:hover{
+    opacity: 1;
+}
+
+
+.container-fluid{
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
 
 .daIcon {
     fill: var(--color8);
@@ -229,6 +229,36 @@ option {
 .form-select:hover {
     color: var(--color5);
 }
+
+/* Inicio estilo items home */
+
+.list-group-item {
+    color: var(--color2);
+    border-radius: var(--borderCard);
+    margin: 3px;
+}
+
+.list-group-flush {
+    border-radius: 20px;
+}
+
+/* Fin estilo items home */
+
+
+/* Inicio  slides */
+.carousel-control-prev-icon{
+    height: 80px;
+    padding-left: 80px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNFNkNBNTIiIGQ9Im0zLjU1IDEybDcuMzUgNy4zNXEuMzc1LjM3NS4zNjMuODc1dC0uMzg4Ljg3NXEtLjM3NS4zNzUtLjg3NS4zNzV0LS44NzUtLjM3NWwtNy43LTcuNjc1cS0uMy0uMy0uNDUtLjY3NVQuODI1IDEycTAtLjM3NS4xNS0uNzV0LjQ1LS42NzVsNy43LTcuN3EuMzc1LS4zNzUuODg4LS4zNjN0Ljg4Ny4zODhxLjM3NS4zNzUuMzc1Ljg3NXQtLjM3NS44NzV6Ii8+PC9zdmc+);
+}
+
+.carousel-control-next-icon{
+    height: 80px;
+    padding-left: 80px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNFNkNBNTIiIGQ9Im0xNC40NzUgMTJsLTcuMzUtNy4zNXEtLjM3NS0uMzc1LS4zNjMtLjg4OHQuMzg4LS44ODdxLjM3NS0uMzc1Ljg4OC0uMzc1dC44ODcuMzc1bDcuNjc1IDcuN3EuMy4zLjQ1LjY3NXQuMTUuNzVxMCAuMzc1LS4xNS43NXQtLjQ1LjY3NWwtNy43IDcuN3EtLjM3NS4zNzUtLjg3NS4zNjNUNy4xNSAyMS4xcS0uMzc1LS4zNzUtLjM3NS0uODg4dC4zNzUtLjg4N3oiLz48L3N2Zz4=);
+}
+
+/* Fin estilo slides */
 
 
 /*Inicio Clases Cards*/
@@ -384,7 +414,8 @@ width: 25rem;
 
 .slideHome{
     width: 100%;
-    min-height: 500px;
+    height: 500px;
+
     background-size: cover;
 }
 
@@ -482,35 +513,3 @@ font-size: 4rem;
 }
 
 /* fin contenedido de login*/
-
-/* Inicio estilo slides */
-.carousel-control-prev-icon{
-    width: 100px;
-    height: 200px;
-    padding-left: 100px;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNFNkNBNTIiIGQ9Im0zLjU1IDEybDcuMzUgNy4zNXEuMzc1LjM3NS4zNjMuODc1dC0uMzg4Ljg3NXEtLjM3NS4zNzUtLjg3NS4zNzV0LS44NzUtLjM3NWwtNy43LTcuNjc1cS0uMy0uMy0uNDUtLjY3NVQuODI1IDEycTAtLjM3NS4xNS0uNzV0LjQ1LS42NzVsNy43LTcuN3EuMzc1LS4zNzUuODg4LS4zNjN0Ljg4Ny4zODhxLjM3NS4zNzUuMzc1Ljg3NXQtLjM3NS44NzV6Ii8+PC9zdmc+);
-}
-
-.carousel-control-next-icon{
-    width: 100px;
-    height: 200px;
-    padding-left: 100px;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNFNkNBNTIiIGQ9Im0xNC40NzUgMTJsLTcuMzUtNy4zNXEtLjM3NS0uMzc1LS4zNjMtLjg4OHQuMzg4LS44ODdxLjM3NS0uMzc1Ljg4OC0uMzc1dC44ODcuMzc1bDcuNjc1IDcuN3EuMy4zLjQ1LjY3NXQuMTUuNzVxMCAuMzc1LS4xNS43NXQtLjQ1LjY3NWwtNy43IDcuN3EtLjM3NS4zNzUtLjg3NS4zNjNUNy4xNSAyMS4xcS0uMzc1LS4zNzUtLjM3NS0uODg4dC4zNzUtLjg4N3oiLz48L3N2Zz4=);
-}
-
-/* Fin estilo slides */
-
-
-/* Inicio estilo items home */
-
-.list-group-item {
-    color: var(--color2);
-    border-radius: var(--borderCard);
-    margin: 3px;
-}
-
-.list-group-flush {
-    border-radius: 20px;
-}
-
-/* Fin estilo items home */
