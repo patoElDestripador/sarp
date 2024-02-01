@@ -3,6 +3,8 @@ import login from './modules/login.module.js'
 //import dataController from './modules/dataController.module.js'
 
 let actualPage = document.querySelector("title").text
+let actualPageId = document.getElementById("pagName")
+//let { value } = document.getElementById("pagName").attributes.getNamedItem("value")
 
 //Section to addEnventListeners
 
@@ -21,7 +23,13 @@ document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
 });
 
 document.getElementById("redirectbuttonidToLogin")?.addEventListener("click",()=>{
-    location.href ="./login.html";
+    let { value } = actualPageId.attributes.getNamedItem("value")
+
+    if (value != "01") {
+        location.href = "./login.html";
+    } else {
+        location.href = "./html/login.html";
+    }
 })
 
 document.getElementById("redirectbuttonidToIndex")?.addEventListener("click",()=>{
