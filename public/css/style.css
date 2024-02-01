@@ -41,6 +41,15 @@ body::-webkit-scrollbar {
     margin-top: 3%;
 }
 
+.navbar-nav .nav-link.active {
+    color: var(--color8);
+}
+
+.navbar-nav .nav-link.active:hover {
+    color: var(--color6);
+}
+
+
 .background-image{
     background-image: url("https://www.rover.com/blog/wp-content/uploads/dog-jumping-outside-min-1024x683.jpg");
     width: 100vw;
@@ -49,7 +58,6 @@ body::-webkit-scrollbar {
     position:absolute; 
     z-index: -1;
 }
-
 
 /* Inicio estilos botones */
 
@@ -129,6 +137,10 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
+ul {
+    list-style: none;
+}
+
 .dropdown-item {
     display: block;
     width: 100%;
@@ -150,6 +162,70 @@ body::-webkit-scrollbar {
     --bs-dropdown-link-active-color: var(--color8);
     --bs-dropdown-link-active-bg: var(--color6);
 }
+
+.navbar {
+    padding-right: 5px;
+    --bs-navbar-toggler-padding-y: 0rem;
+    --bs-navbar-toggler-padding-x: 0rem;
+    --bs-navbar-toggler-icon-bg: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTYuNSAyQTQuNSA0LjUgMCAwIDAgMiA2LjV2NWEyLjQ5NiAyLjQ5NiAwIDAgMS0xLTJ2LTNBNS41IDUuNSAwIDAgMSA2LjUgMWgzYy44MTggMCAxLjU0NC4zOTMgMiAxek00LjA2MSA2LjM5NUEzLjAwMSAzLjAwMSAwIDAgMSA3IDRoNi41YTIuNDk2IDIuNDk2IDAgMCAwLTItMUg3YTQgNCAwIDAgMC00IDR2NC41YzAgLjgxOC4zOTMgMS41NDQgMSAyVjdjMC0uMjA3LjAyMS0uNDEuMDYxLS42MDVNNy41IDVBMi41IDIuNSAwIDAgMCA1IDcuNXY1QTIuNSAyLjUgMCAwIDAgNy41IDE1aDVhMi41IDIuNSAwIDAgMCAyLjUtMi41di01QTIuNSAyLjUgMCAwIDAgMTIuNSA1eiIvPjwvc3ZnPg==);
+    --bs-navbar-toggler-border-color:rgba(25, 0, 255, 0);
+}
+
+.navbar-toggler {
+    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+    font-size: var(--bs-navbar-toggler-font-size);
+    line-height: 1;
+    padding: 5px;
+    margin: 5px;
+    color: #ffffff00;
+}
+
+.navbar-toggler {
+    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+    font-size: var(--bs-navbar-toggler-font-size);
+    line-height: 1;
+    padding: 5px;
+    margin: 5px;
+}
+
+/* Inicio Clases del toggler*/
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 2.5em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: var(--color8);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+/* Fin Clases del toggler*/
 
 /* Fin estilos botones */
 
@@ -187,6 +263,7 @@ body::-webkit-scrollbar {
     fill: var(--color6);
     transform: scale(1.08);
     transition: ease 0.3s;
+    color: var(--color6);
 }
 
 .daIconTable {
