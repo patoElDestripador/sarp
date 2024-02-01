@@ -16,15 +16,9 @@
     --bs-btn-hover-bg:#3f2cfa;
     --borderCard: 15px;
     --bs-card-bg: #3f2cfa;
+    --bs-body-color: #282828;
 }
 
-
-
-
-.container-fluid{
-    --bs-gutter-x: 0;
-    --bs-gutter-y: 0;
-}
 /* fin de colores */ 
 
 /* forma de implementacion*/
@@ -34,6 +28,28 @@
 * {
     font-family: 'Ubuntu', sans-serif;
 }
+
+body{
+    background-color: var(--color9);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.respetarElNavbar{
+    margin-top: 3%;
+}
+
+.background-image{
+    background-image: url("https://www.rover.com/blog/wp-content/uploads/dog-jumping-outside-min-1024x683.jpg");
+    width: 100vw;
+    height: 250px;
+    background-size: cover;
+    position:absolute; 
+    z-index: -1;
+}
+
 
 /* Inicio estilos botones */
 
@@ -52,7 +68,15 @@
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #0d6efd;
     --bs-btn-disabled-border-color: #0d6efd;
-    width: 10rem;  
+    width: 10rem; 
+    transform: scale(1);
+    transition: ease 0.3s; 
+}
+
+.btn-primary:hover {
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
 }
 
 .btn-success {
@@ -70,6 +94,14 @@
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #198754;
     --bs-btn-disabled-border-color: #198754;
+    transform: scale(1);
+    transition: ease 0.3s; 
+}
+
+.btn-success:hover {
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
 }
 
 .btn-info {
@@ -87,6 +119,14 @@
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #EAA2FC;
     --bs-btn-disabled-border-color: #EAA2FC;
+    transform: scale(1);
+    transition: ease 0.3s; 
+}
+
+.btn-info:hover {
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
 }
 
 .dropdown-item {
@@ -111,6 +151,59 @@
     --bs-dropdown-link-active-bg: var(--color6);
 }
 
+/* Fin estilos botones */
+
+/* Inicio estilos indicadores y selectores */
+.rounded{
+    border-radius: 20px;
+}
+
+.roundedTop{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 20rem;
+}
+
+.arrow{
+    opacity: 0.5;
+}
+
+.arrow:hover{
+    opacity: 1;
+}
+
+
+.container-fluid{
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
+
+.daIcon {
+    fill: var(--color8);
+    transform: scale(1);
+    transition: ease 0.3s;
+}
+
+.daIcon:hover {
+    fill: var(--color6);
+    transform: scale(1.08);
+    transition: ease 0.3s;
+}
+
+.daIconTable {
+    width : 1.5em;
+    height: 1.5em;
+    fill: var(--color2);
+    transform: scale(1);
+    transition: ease 0.3s;
+}
+
+.daIconTable:hover {
+    fill: var(--color6);
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
 option {
     font-weight: normal;
     display: block;
@@ -120,24 +213,52 @@ option {
     border-radius: var(--bs-border-radius);
 }
 
+.carousel-indicators [data-bs-target] {
+    width: 5px;
+    height: 5px;
+    padding: 5px;
+    background-color: var(--color12);
+    border-radius: 100%;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--color5);
+}
+
 .form-select:hover {
     color: var(--color5);
 }
 
-/* Fin estilos botones */
+/* Inicio estilo items home */
 
-body{
-    background-color: var(--color9);
+.list-group-item {
+    color: var(--color2);
+    border-radius: var(--borderCard);
+    margin: 3px;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+.list-group-flush {
+    border-radius: 20px;
 }
 
-.respetarElNavbar{
-    margin-top: 3%;
+/* Fin estilo items home */
+
+
+/* Inicio  slides */
+.carousel-control-prev-icon{
+    height: 80px;
+    padding-left: 80px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNFNkNBNTIiIGQ9Im0zLjU1IDEybDcuMzUgNy4zNXEuMzc1LjM3NS4zNjMuODc1dC0uMzg4Ljg3NXEtLjM3NS4zNzUtLjg3NS4zNzV0LS44NzUtLjM3NWwtNy43LTcuNjc1cS0uMy0uMy0uNDUtLjY3NVQuODI1IDEycTAtLjM3NS4xNS0uNzV0LjQ1LS42NzVsNy43LTcuN3EuMzc1LS4zNzUuODg4LS4zNjN0Ljg4Ny4zODhxLjM3NS4zNzUuMzc1Ljg3NXQtLjM3NS44NzV6Ii8+PC9zdmc+);
 }
 
+.carousel-control-next-icon{
+    height: 80px;
+    padding-left: 80px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNFNkNBNTIiIGQ9Im0xNC40NzUgMTJsLTcuMzUtNy4zNXEtLjM3NS0uMzc1LS4zNjMtLjg4OHQuMzg4LS44ODdxLjM3NS0uMzc1Ljg4OC0uMzc1dC44ODcuMzc1bDcuNjc1IDcuN3EuMy4zLjQ1LjY3NXQuMTUuNzVxMCAuMzc1LS4xNS43NXQtLjQ1LjY3NWwtNy43IDcuN3EtLjM3NS4zNzUtLjg3NS4zNjNUNy4xNSAyMS4xcS0uMzc1LS4zNzUtLjM3NS0uODg4dC4zNzUtLjg4N3oiLz48L3N2Zz4=);
+}
+
+/* Fin estilo slides */
 
 
 /*Inicio Clases Cards*/
@@ -146,7 +267,6 @@ body::-webkit-scrollbar {
     width: auto;
     max-width: 300px;
     min-width: 300px;
-
 }
 
 .card-dark{
@@ -154,7 +274,26 @@ body::-webkit-scrollbar {
     background-color: var(--color2);
 }
 
-/*Fin Clases*/
+.card{
+    margin: 10px;
+    border-radius: var(--bs-border-radius);
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transform: scale(1);
+    transition: ease 0.3s; 
+}
+
+.card:hover {
+    transform: scale(1.004);
+    transition: ease 0.3s;
+    box-shadow: 0px 0px 10px 0px rgba(107,92,255,0.54);
+}
+
+.cardLogin{
+width: 25rem;
+}
+
+/*Fin Clases Cards*/
 
 
 /* fin estilos globales */
@@ -192,7 +331,6 @@ body::-webkit-scrollbar {
     color: var(--color9);
 }
 
-
 .logoSarp {
     width: 50px;
     height: 50px;
@@ -209,12 +347,12 @@ body::-webkit-scrollbar {
 /*fin cosas del header*/
 
 /*Inicio cosas del footer*/
+
 .paraElFooter {
     background-color: var(--color2);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;    
 }
-
 
 .logoSarpFooter {
     width: 100px;
@@ -223,7 +361,6 @@ body::-webkit-scrollbar {
     fill: var(--color8);
     transform: scale(1);
     transition: ease 0.3s;
-
 }
 
 .logoSarpFooter:hover {
@@ -232,37 +369,6 @@ body::-webkit-scrollbar {
     transition: ease 0.3s;
 
 }
-
-.daIcon {
-    fill: var(--color8);
-    transform: scale(1);
-    transition: ease 0.3s;
-
-}
-
-.daIcon:hover {
-    fill: var(--color6);
-    transform: scale(1.08);
-    transition: ease 0.3s;
-}
-
-.daIconTable {
-    width : 1.5em;
-    height: 1.5em;
-    fill: var(--color2);
-    transform: scale(1);
-    transition: ease 0.3s;
-}
-
-.daIconTable:hover {
-    fill: var(--color6);
-    transform: scale(1.08);
-    transition: ease 0.3s;
-    cursor: pointer;
-}
-
-
-
 
 .animate{
     animation: zoom-in-zoom-out 1s ease infinite;
@@ -285,6 +391,7 @@ body::-webkit-scrollbar {
 
 
 /*Inicio Clases Perfil*/
+
 .imgfrontPage{
     width: 100%;
     height: 300px;
@@ -303,13 +410,20 @@ body::-webkit-scrollbar {
 .height-table-ranking{
     height: 350px;
 }
-.card{
-    margin: 10px;
-    display: flex;
-    border-radius: var(--bs-border-radius);
-    border: none;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+
+.slideHome{
+    width: 100%;
+    height: 500px;
+
+    background-size: cover;
 }
+
+.imgMedium{
+    width: auto;
+}
+
+
 /*Fin Clases Perfil*/
 
 /*Inicio Clases Puntajes*/
@@ -339,31 +453,38 @@ font-size: 4rem;
 }
 /*Fin Clases Puntajes*/
 
-.background-image{
-    background-image: url("https://www.rover.com/blog/wp-content/uploads/dog-jumping-outside-min-1024x683.jpg");
-    width: 100vw;
-    height: 250px;
-    background-size: cover;
-    position:absolute; 
+/*inicio Image 401*/
+.img401{
+    width: 20rem;
+}
 
-}/* inicio contenedido de login*/
+.text401{
+    font-size: 5rem;
+}
+/*Fin Image 401*/
+
+
+/* inicio contenido de login*/
 .desing-icon-login{
     width: 3rem;
     height: 3rem;
     background-color: var(--color9);
-    border-radius: 50px;
+    border-radius: 100%;
     cursor: pointer;
+    transition: ease 0.3s;
+
 }
 .desing-icon-login:hover{
     transform: scale(1.08);
+    transition: ease 0.3s;
+
 }
 .daIconLogin{
     width:2rem;
     height:2rem;
+    padding: 1px;
 }
-.colorX{
-    fill: var(--color1);
-}
+
 .logoSarpLogin{
     width: 70px;
     height: 70px;
@@ -372,47 +493,25 @@ font-size: 4rem;
     transform: scale(1.08);
 }
 .card-desing-login{
-    width: 22rem; 
-    background-color: var(--color2);
-    color: var(--color8);
+    background-image: url("https://soyunperro.com/wp-content/uploads/perrocontento.jpg");
+    background-repeat: no-repeat;
+    position: fixed;
 }
+
+.bottomright {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+  }
+
 .input-desing-login {
     background-color: var(--color3);
     border-radius: 50px;
     border: none;
-}
-.input-desing-login:focus  {
-    background-color: var(--color3);
-    color: var(--color8);
-
-}
-
-.login-mdf-btn-pag-login{
-        background-color: var(--color5);
-        color: var(--color8);
-        font-weight: bold;
-}
-.login-mdf-btn-pag-login:hover {
-    background-color: var(--color6);
-        color: var(--color8);
-}
-/*Lo que ahce esto es tomar la casilla pequeña de la el label y cambiar el color a el que nosotros especifiquemos
-la clase es tomada directamente desde bootstrap*/
-.form-floating>.form-control:focus~label::after{
-    background-color: var(--color); 
-}
-.form-floating>.form-control:focus~label {
     color: var(--color8);
 }
-.colorIMG{
-    background-color: #5ACCA4;
-    z-index: -999;
-    height: 300px;
-}
-.pruebaIMG{
-    z-index: 999;
-    margin-top: -200px;
-}
+
 /* fin contenedido de login*/
 
 
@@ -429,19 +528,15 @@ la clase es tomada directamente desde bootstrap*/
 /*=====================================================================================================================*/
 /*Icono perder*/
 .iconosPerder {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmZTY1NGYiIGQ9Ik0xMiAyYzUuNSAwIDEwIDQuNSAxMCAxMHMtNC41IDEwLTEwIDEwUzIgMTcuNSAyIDEyUzYuNSAyIDEyIDJtMCAyYy0xLjkgMC0zLjYuNi00LjkgMS43bDExLjIgMTEuMmMxLTEuNCAxLjctMy4xIDEuNy00LjljMC00LjQtMy42LTgtOC04bTQuOSAxNC4zTDUuNyA3LjFDNC42IDguNCA0IDEwLjEgNCAxMmMwIDQuNCAzLjYgOCA4IDhjMS45IDAgMy42LS42IDQuOS0xLjciLz48L3N2Zz4=);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+PHBhdGggZmlsbD0iI0ZFNjU0RiIgZD0iTTEyOCAyNGExMDQgMTA0IDAgMSAwIDEwNCAxMDRBMTA0LjExIDEwNC4xMSAwIDAgMCAxMjggMjRtMzcuNjYgMTMwLjM0YTggOCAwIDAgMS0xMS4zMiAxMS4zMkwxMjggMTM5LjMxbC0yNi4zNCAyNi4zNWE4IDggMCAwIDEtMTEuMzItMTEuMzJMMTE2LjY5IDEyOGwtMjYuMzUtMjYuMzRhOCA4IDAgMCAxIDExLjMyLTExLjMyTDEyOCAxMTYuNjlsMjYuMzQtMjYuMzVhOCA4IDAgMCAxIDExLjMyIDExLjMyTDEzOS4zMSAxMjhaIi8+PC9zdmc+);
 }
 /*=====================================================================================================================*/
-/*Icono ganarr*/
+/*Icono ganar*/
 .iconosGanar{
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1YWNjYTQiIGQ9Ik0xMiAyQzYuNSAyIDIgNi41IDIgMTJzNC41IDEwIDEwIDEwczEwLTQuNSAxMC0xMFMxNy41IDIgMTIgMm0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04czggMy41OSA4IDhzLTMuNTkgOC04IDhtNC41OS0xMi40MkwxMCAxNC4xN2wtMi41OS0yLjU4TDYgMTNsNCA0bDgtOHoiLz48L3N2Zz4=);
-
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1QUNDQTQiIGQ9Im0xMC42IDEzLjhsLTIuMTUtMi4xNXEtLjI3NS0uMjc1LS43LS4yNzV0LS43LjI3NXEtLjI3NS4yNzUtLjI3NS43dC4yNzUuN0w5LjkgMTUuOXEuMy4zLjcuM3QuNy0uM2w1LjY1LTUuNjVxLjI3NS0uMjc1LjI3NS0uN3QtLjI3NS0uN3EtLjI3NS0uMjc1LS43LS4yNzV0LS43LjI3NXpNMTIgMjJxLTIuMDc1IDAtMy45LS43ODh0LTMuMTc1LTIuMTM3cS0xLjM1LTEuMzUtMi4xMzctMy4xNzVUMiAxMnEwLTIuMDc1Ljc4OC0zLjl0Mi4xMzctMy4xNzVxMS4zNS0xLjM1IDMuMTc1LTIuMTM3VDEyIDJxMi4wNzUgMCAzLjkuNzg4dDMuMTc1IDIuMTM3cTEuMzUgMS4zNSAyLjEzOCAzLjE3NVQyMiAxMnEwIDIuMDc1LS43ODggMy45dC0yLjEzNyAzLjE3NXEtMS4zNSAxLjM1LTMuMTc1IDIuMTM4VDEyIDIyIi8+PC9zdmc+);
 }
 /*=====================================================================================================================*/
-/*centar*/
-.centrar{
-    text-align: center;
-}
+
 .efecto:hover{
     transform: scale(1.08)
 }
@@ -460,4 +555,18 @@ la clase es tomada directamente desde bootstrap*/
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+    .list-group-item {
+        color: var(--color2);
+        border-radius: var(--borderCard);
+        margin: 3px;
+    }
+
+
+
+.list-group-flush {
+    border-radius: 20px;
+}
+
+
 /*fin dani*/
