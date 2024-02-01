@@ -455,4 +455,9 @@ la clase es tomada directamente desde bootstrap*/
 }
 .bordo2{border-top-left-radius: 20px;
     border-top-right-radius: 20px; }
+
+.imagenNosotro{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 /*fin dani*/
