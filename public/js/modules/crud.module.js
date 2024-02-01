@@ -30,6 +30,18 @@ class CrudModule {
       .catch((err) => erroRequest("getCoders", err));
     return data;
   }
+  async getRolByIdUSer(id) {
+    let data = "";
+    await fetch(`${this.urlBase}permisos?id_usuario=${id}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => erroRequest("getRolByIdUSer", err));
+    return data;
+  }
 
   //getCodersByClan()
 
@@ -58,18 +70,7 @@ class CrudModule {
       .catch((err) => erroRequest("getClanes", err));
     return data;
   }
-  async getRol() {
-    let data = "";
-    await fetch(`${urlBase}rol`, {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        data = res;
-      })
-      .catch((err) => erroRequest("getRol", err));
-    return data;
-  }
+
   async getArea() {
     let data = "";
     await fetch(`${urlBase}area`, {

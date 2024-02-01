@@ -1,4 +1,4 @@
-import {} from './crud.module.js'
+import crud from './crud.module.js'
 import utils from './utils.module.js'
 
 class LoginModule {
@@ -9,21 +9,29 @@ class LoginModule {
     }
 
   async validateLogin() {
-    console.log("entro aki");
-      this.email= "SofiaMartínezRuiz@gmail.com" //document.getElementById("inputIdEmailLogin");
-      this.password = 12345678 //document.getElementById("inputIdPasswordLogin");
-    let crudUser = await crud.GetUserByEmail(this.email)
-
-    if(crudUser.correo == this.email && crudUser.password == this.password )
-        utils.setSessionStorage("user",crudUser)
-        createTrainerPage()
-    location.href ="./listTrainer.html";
-      if(crudUser.rol == "trainer" ){
-      }else if(crudUser.rol == "admin" ){
+    console.log("sd")
+    this.email= document.getElementById("inputIdEmailLogin").value;
+    this.password = document.getElementById("inputIdPasswordLogin").value;
+    let crudUser = await crud.getUserByEmail(this.email)
+    console.log("cuando no encunetra",crudUser)
+    if(crudUser && crudUser.correo == this.email && crudUser.password == this.password ){
+      //createTrainerPage()
+      let permits  = await crud.getRolByIdUSer(crudUser.id_usuario);
+      let temporaryArray = []
+      permits.forEach(e=>{temporaryArray.push(e.id_rol)})
+      let newUser = {...crudUser,permisos :temporaryArray};
+      
+      //utils.setSessionStorage("user",crudUser);
+      //location.href ="./listTrainer.html";
+      /*       if(crudUser. == "trainer" ){
+      }else if(crudUser == "admin" ){
         location.href ="./listTrainer.html";
-      }
+      }*/
+
+    }else {
+      console.log("nada pai no existe");
     }
-  
+  }
   validateRolLogin() {
     let user = JSON.parse(utils.getSessionStorage("user"))
     console.log(user)

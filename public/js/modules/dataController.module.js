@@ -2,7 +2,7 @@
 import crudModule from "./crud.module";
 
 class DataControllerModule {
-
+  constructor(){}
 
   async listCodersByClan() {
     await crudModule.getClanes()
@@ -18,5 +18,5 @@ class DataControllerModule {
 }
 
 
-export dafault new DataControllerModule();
+export default new DataControllerModule();
 
