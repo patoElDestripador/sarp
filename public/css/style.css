@@ -23,7 +23,18 @@
     border-radius: 20px;
 }
 
+.roundedTop{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 40%;
+}
 
+.arrow{
+    opacity: 0;
+}
+
+.arrow:hover{
+    opacity: 1;
+}
 
 
 .container-fluid{
@@ -38,6 +49,27 @@
 /* inicio estilos globales */
 * {
     font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    background-color: var(--color9);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.respetarElNavbar{
+    margin-top: 3%;
+}
+
+.background-image{
+    background-image: url("https://www.rover.com/blog/wp-content/uploads/dog-jumping-outside-min-1024x683.jpg");
+    width: 100vw;
+    height: 250px;
+    background-size: cover;
+    position:absolute; 
+    z-index: -1;
 }
 
 /* Inicio estilos botones */
@@ -141,6 +173,37 @@
     --bs-dropdown-link-active-bg: var(--color6);
 }
 
+/* Fin estilos botones */
+
+/* Inicio estilos indicadores y selectores */
+
+.daIcon {
+    fill: var(--color8);
+    transform: scale(1);
+    transition: ease 0.3s;
+}
+
+.daIcon:hover {
+    fill: var(--color6);
+    transform: scale(1.08);
+    transition: ease 0.3s;
+}
+
+.daIconTable {
+    width : 1.5em;
+    height: 1.5em;
+    fill: var(--color2);
+    transform: scale(1);
+    transition: ease 0.3s;
+}
+
+.daIconTable:hover {
+    fill: var(--color6);
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
 option {
     font-weight: normal;
     display: block;
@@ -150,24 +213,22 @@ option {
     border-radius: var(--bs-border-radius);
 }
 
+.carousel-indicators [data-bs-target] {
+    width: 5px;
+    height: 5px;
+    padding: 5px;
+    background-color: var(--color12);
+    border-radius: 100%;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--color5);
+}
+
 .form-select:hover {
     color: var(--color5);
 }
-
-/* Fin estilos botones */
-
-body{
-    background-color: var(--color9);
-}
-
-body::-webkit-scrollbar {
-    display: none;
-}
-
-.respetarElNavbar{
-    margin-top: 3%;
-}
-
 
 
 /*Inicio Clases Cards*/
@@ -176,7 +237,6 @@ body::-webkit-scrollbar {
     width: auto;
     max-width: 300px;
     min-width: 300px;
-
 }
 
 .card-dark{
@@ -184,7 +244,26 @@ body::-webkit-scrollbar {
     background-color: var(--color2);
 }
 
-/*Fin Clases*/
+.card{
+    margin: 10px;
+    border-radius: var(--bs-border-radius);
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transform: scale(1);
+    transition: ease 0.3s; 
+}
+
+.card:hover {
+    transform: scale(1.004);
+    transition: ease 0.3s;
+    box-shadow: 0px 0px 10px 0px rgba(107,92,255,0.54);
+}
+
+.cardLogin{
+width: 25rem;
+}
+
+/*Fin Clases Cards*/
 
 
 /* fin estilos globales */
@@ -222,7 +301,6 @@ body::-webkit-scrollbar {
     color: var(--color9);
 }
 
-
 .logoSarp {
     width: 50px;
     height: 50px;
@@ -239,12 +317,12 @@ body::-webkit-scrollbar {
 /*fin cosas del header*/
 
 /*Inicio cosas del footer*/
+
 .paraElFooter {
     background-color: var(--color2);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;    
 }
-
 
 .logoSarpFooter {
     width: 100px;
@@ -261,35 +339,6 @@ body::-webkit-scrollbar {
     transition: ease 0.3s;
 
 }
-
-.daIcon {
-    fill: var(--color8);
-    transform: scale(1);
-    transition: ease 0.3s;
-
-}
-
-.daIcon:hover {
-    fill: var(--color6);
-    transform: scale(1.08);
-    transition: ease 0.3s;
-}
-
-.daIconTable {
-    width : 1.5em;
-    height: 1.5em;
-    fill: var(--color2);
-    transform: scale(1);
-    transition: ease 0.3s;
-}
-
-.daIconTable:hover {
-    fill: var(--color6);
-    transform: scale(1.08);
-    transition: ease 0.3s;
-    cursor: pointer;
-}
-
 
 .animate{
     animation: zoom-in-zoom-out 1s ease infinite;
@@ -312,6 +361,7 @@ body::-webkit-scrollbar {
 
 
 /*Inicio Clases Perfil*/
+
 .imgfrontPage{
     width: 100%;
     height: 300px;
@@ -330,28 +380,11 @@ body::-webkit-scrollbar {
 .height-table-ranking{
     height: 350px;
 }
-.card{
-    margin: 10px;
-    border-radius: var(--bs-border-radius);
-    border: none;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    transform: scale(1);
-    transition: ease 0.3s; 
-}
 
-.cardLogin{
-width: 25rem;
-}
-
-.card:hover {
-    transform: scale(1.004);
-    transition: ease 0.3s;
-    box-shadow: 0px 0px 10px 0px rgba(107,92,255,0.54);
-}
 
 .slideHome{
     width: 100%;
-    height: 500px;
+    min-height: 500px;
     background-size: cover;
 }
 
@@ -400,16 +433,7 @@ font-size: 4rem;
 /*Fin Image 401*/
 
 
-
-.background-image{
-    background-image: url("https://www.rover.com/blog/wp-content/uploads/dog-jumping-outside-min-1024x683.jpg");
-    width: 100vw;
-    height: 250px;
-    background-size: cover;
-    position:absolute; 
-    z-index: -1;
-
-}/* inicio contenedido de login*/
+/* inicio contenido de login*/
 .desing-icon-login{
     width: 3rem;
     height: 3rem;
@@ -457,42 +481,9 @@ font-size: 4rem;
     color: var(--color8);
 }
 
-/*
-.input-desing-login:focus  {
-    background-color: var(--color3);
-}
-
-.login-mdf-btn-pag-login{
-        background-color: var(--color5);
-        color: var(--color8);
-        font-weight: bold;
-}
-.login-mdf-btn-pag-login:hover {
-    background-color: var(--color6);
-        color: var(--color8);
-}
-/*Lo que ahce esto es tomar la casilla pequeña de la el label y cambiar el color a el que nosotros especifiquemos
-la clase es tomada directamente desde bootstrap
-.form-floating>.form-control:focus~label::after{
-    background-color: var(--color); 
-}
-.form-floating>.form-control:focus~label {
-    color: var(--color8);
-}*/
-
-.colorIMG{
-    background-color: #5ACCA4;
-    z-index: -999;
-    height: 300px;
-}
-.pruebaIMG{
-    z-index: 999;
-    margin-top: -200px;
-}
 /* fin contenedido de login*/
 
-
-/*inicio dani*/
+/* Inicio estilo slides */
 .carousel-control-prev-icon{
     width: 100px;
     height: 200px;
@@ -507,33 +498,19 @@ la clase es tomada directamente desde bootstrap
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNFNkNBNTIiIGQ9Im0xNC40NzUgMTJsLTcuMzUtNy4zNXEtLjM3NS0uMzc1LS4zNjMtLjg4OHQuMzg4LS44ODdxLjM3NS0uMzc1Ljg4OC0uMzc1dC44ODcuMzc1bDcuNjc1IDcuN3EuMy4zLjQ1LjY3NXQuMTUuNzVxMCAuMzc1LS4xNS43NXQtLjQ1LjY3NWwtNy43IDcuN3EtLjM3NS4zNzUtLjg3NS4zNjNUNy4xNSAyMS4xcS0uMzc1LS4zNzUtLjM3NS0uODg4dC4zNzUtLjg4N3oiLz48L3N2Zz4=);
 }
 
+/* Fin estilo slides */
 
-/*=====================================================================================================================*/
-/*Icono ganar*/
-.iconosGanar{
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM1QUNDQTQiIGQ9Im0xMC42IDEzLjhsLTIuMTUtMi4xNXEtLjI3NS0uMjc1LS43LS4yNzV0LS43LjI3NXEtLjI3NS4yNzUtLjI3NS43dC4yNzUuN0w5LjkgMTUuOXEuMy4zLjcuM3QuNy0uM2w1LjY1LTUuNjVxLjI3NS0uMjc1LjI3NS0uN3QtLjI3NS0uN3EtLjI3NS0uMjc1LS43LS4yNzV0LS43LjI3NXpNMTIgMjJxLTIuMDc1IDAtMy45LS43ODh0LTMuMTc1LTIuMTM3cS0xLjM1LTEuMzUtMi4xMzctMy4xNzVUMiAxMnEwLTIuMDc1Ljc4OC0zLjl0Mi4xMzctMy4xNzVxMS4zNS0xLjM1IDMuMTc1LTIuMTM3VDEyIDJxMi4wNzUgMCAzLjkuNzg4dDMuMTc1IDIuMTM3cTEuMzUgMS4zNSAyLjEzOCAzLjE3NVQyMiAxMnEwIDIuMDc1LS43ODggMy45dC0yLjEzNyAzLjE3NXEtMS4zNSAxLjM1LTMuMTc1IDIuMTM4VDEyIDIyIi8+PC9zdmc+);
+
+/* Inicio estilo items home */
+
+.list-group-item {
+    color: var(--color2);
+    border-radius: var(--borderCard);
+    margin: 3px;
 }
-/*=====================================================================================================================*/
-
-.bordo{
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    
-}
-.bordo2{border-top-left-radius: 20px;
-    border-top-right-radius: 20px; }
-
-    .list-group-item {
-        color: var(--color2);
-        border-radius: var(--borderCard);
-        margin: 3px;
-    }
-
-
 
 .list-group-flush {
     border-radius: 20px;
 }
 
-
-/*fin dani*/
+/* Fin estilo items home */
