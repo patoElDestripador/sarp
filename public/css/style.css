@@ -595,7 +595,9 @@ font-size: 4rem;
 
 
 .efecto:hover{
-    transform: scale(1.08)
+    transform: scale(1.004);
+    transition: ease 0.3s;
+    box-shadow: 0px 0px 10px 0px rgba(107,92,255,0.54);
 }
 .efecto2:hover{
     transform: scale(1.5)
