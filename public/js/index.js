@@ -1,6 +1,6 @@
 import utils from './modules/utils.module.js'
 import login from './modules/login.module.js'
-//import dataController from './modules/dataController.module.js'
+import dataController from './modules/dataController.module.js'
 
 let actualPage = document.querySelector("title").text
 let actualPageId = document.getElementById("pagName")
@@ -8,6 +8,8 @@ let actualPageId = document.getElementById("pagName")
 
 //Section to addEnventListeners
 
+//dataController.setPointsInCard(40)
+//dataController.setCodersInList()
 
 if(actualPage == "login"){
 
@@ -35,7 +37,6 @@ document.getElementById("redirectbuttonidToLogin")?.addEventListener("click",()=
 document.getElementById("redirectbuttonidToIndex")?.addEventListener("click",()=>{
     location.href ="../index.html";
 })
-
 
 //button cambiar idioma
 document.getElementById("buttonIdChangeLangEng")?.addEventListener("click",()=>{
