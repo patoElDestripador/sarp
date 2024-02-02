@@ -7,7 +7,8 @@ class LoginModule {
       this.email = ""
       this.password = ""
     }
-
+  
+  
   async validateLogin() {
     console.log("sd")
     this.email= document.getElementById("inputIdEmailLogin").value;
@@ -20,7 +21,7 @@ class LoginModule {
       let temporaryArray = []
       permits.forEach(e=>{temporaryArray.push(e.id_rol)})
       let newUser = {...crudUser,permisos :temporaryArray};
-      
+
       //utils.setSessionStorage("user",crudUser);
       //location.href ="./listTrainer.html";
       /*       if(crudUser. == "trainer" ){
@@ -50,12 +51,12 @@ class LoginModule {
     "correo": "admin.admin@riwi.io.com",
     "password": 789456123,
     "img": "https://imgdb.net/storage/uploads/60cd0f9f76145fc6a1fd28332d0c1b9d7918bb5848a5956acec4e5e8cd783267.png",
-    "id": "6a24"
+    "id": "6a24",
+    rol : 1
   }
 
 
 */
-
 
 
 export default new LoginModule()
