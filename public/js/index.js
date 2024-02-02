@@ -38,7 +38,6 @@ document.getElementById("redirectbuttonidToIndex")?.addEventListener("click",()=
     location.href ="../index.html";
 })
 
-
 //button cambiar idioma
 document.getElementById("buttonIdChangeLangEng")?.addEventListener("click",()=>{
     //funcion para cambiar lenguaje a ingles
