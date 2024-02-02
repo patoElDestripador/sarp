@@ -8,8 +8,8 @@ let actualPageId = document.getElementById("pagName")
 
 //Section to addEnventListeners
 
-dataController.setPointsInCard(40)
-
+//dataController.setPointsInCard(40)
+//dataController.setCodersInList()
 
 if(actualPage == "login"){
 

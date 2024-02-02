@@ -42,6 +42,19 @@ class CrudModule {
       .catch((err) => erroRequest("getRolByIdUSer", err));
     return data;
   }
+  async getClanById(id) {
+    let urlBase = "http://localhost:3000/";
+    let data = "";
+    await fetch(`${urlBase}clanes?id_clan=${id}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => erroRequest("getClanById", err));
+    return data;
+  }
   
   async getRiwiPointsByUserid(idCoder) {
     let urlBase = "http://localhost:3000/";
@@ -59,6 +72,7 @@ class CrudModule {
 
 
   async getCoders() {
+    let urlBase = "http://localhost:3000/";
     let data = "";
     await fetch(`${urlBase}coders`, {
       method: "GET",
