@@ -26,6 +26,8 @@
 
 /* inicio estilos globales */
 * {
+    margin: 0;
+    padding: 0;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -235,8 +237,8 @@ ul {
 }
 
 .roundedTop{
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 20rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 10rem;
 }
 
 .arrow{
