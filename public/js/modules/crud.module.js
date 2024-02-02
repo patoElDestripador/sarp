@@ -1,7 +1,7 @@
 class CrudModule {
   constructor() {
-    this.urlBase = "https://sarpbackendv1.onrender.com/"; //  directo en la web "No guarda o actualiza cambios "
-    //let urlBase = "http://localhost:3000/";
+   // this.urlBase = "https://sarpbackendv1.onrender.com/"; //  directo en la web "No guarda o actualiza cambios "
+    this.urlBase = "http://localhost:3000/"; // local
   }
 
   //geters
@@ -42,7 +42,19 @@ class CrudModule {
       .catch((err) => erroRequest("getRolByIdUSer", err));
     return data;
   }
+  
+  async getRiwiPointsByUserid(idCoder) {
+    let urlBase = "http://localhost:3000/";
+    let data = "";
 
+    await fetch(`${urlBase}riwi_points?id_coder=${idCoder}`)
+      .then((response) => response.json())
+      .then((res) => {
+          data =  res;
+      })
+      .catch((err) => erroRequest("getRiwiPointsByUserid", err))
+      return data
+  }
   //getCodersByClan()
 
 
@@ -70,7 +82,6 @@ class CrudModule {
       .catch((err) => erroRequest("getClanes", err));
     return data;
   }
-
   async getArea() {
     let data = "";
     await fetch(`${urlBase}area`, {
@@ -368,17 +379,17 @@ class CrudModule {
 
   //delete in this case is change status
 
-  clanes;
-  rol;
-  area;
-  permisos;
-  trainers;
-  usuario;
-  coders;
-  riwi_points;
+  //clanes;
+  //rol;
+  //area;
+  //permisos;
+  //trainers;
+  //usuario;
+  //coders;
+  //riwi_points;
 
   erroRequest(locateError, error) {
-    
+    console.log("error detectado ",locateError,error);
   }
 }
 

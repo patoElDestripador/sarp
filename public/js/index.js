@@ -1,12 +1,14 @@
 import utils from './modules/utils.module.js'
 import login from './modules/login.module.js'
-//import dataController from './modules/dataController.module.js'
+import dataController from './modules/dataController.module.js'
 
 let actualPage = document.querySelector("title").text
 let actualPageId = document.getElementById("pagName")
 //let { value } = document.getElementById("pagName").attributes.getNamedItem("value")
 
 //Section to addEnventListeners
+
+dataController.setPointsInCard(40)
 
 
 if(actualPage == "login"){
