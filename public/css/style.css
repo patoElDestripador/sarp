@@ -53,7 +53,7 @@ body::-webkit-scrollbar {
 
 
 .background-image{
-    background-image: url("../img/Portada-2.svg");
+    background-image: url("../img/Portada.svg");
     width: 100vw;
     height: 250px;
     background-size: cover;
@@ -498,6 +498,7 @@ width: 25rem;
     height: 600px;
     min-height: 600px;
     background-size: cover;
+    background-image: url(../img/Portada-2.svg);
 }
 
 .imgMedium{
