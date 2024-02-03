@@ -53,6 +53,15 @@ document.getElementById("idCorazon")?.addEventListener("click",()=>{
 const menu=document.querySelector(".menu");
 const toggle=document.querySelector(".toggle");
 toggle.addEventListener("click",()=>{
-  menu.classList.toggle("active");
+menu.classList.toggle("active");
 })
+
+// velocidad Slide
+const myCarouselElement = document.querySelector('#carouselHome')
+
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+interval: 3000,
+touch: false
+})
+
 
