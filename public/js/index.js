@@ -9,7 +9,9 @@ let actualPageId = document.getElementById("pagName")
 //Section to addEnventListeners
 
 //dataController.setPointsInCard(40)
-//dataController.setCodersInList()
+//dataController.setCodersInList() // Lista coders
+dataController.setTrainerInList() // lista trainers
+
 
 if(actualPage == "login"){
 
