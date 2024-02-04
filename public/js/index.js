@@ -10,6 +10,7 @@ let actualPageId = document.getElementById("pagName")
 
 //dataController.setPointsInCard(40)
 //dataController.setCodersInList()
+//dataController.setClansInList()
 
 if(actualPage == "login"){
 

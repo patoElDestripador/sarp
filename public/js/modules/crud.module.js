@@ -1,14 +1,28 @@
 class CrudModule {
   constructor() {
-   // this.urlBase = "https://sarpbackendv1.onrender.com/"; //  directo en la web "No guarda o actualiza cambios "
+   //this.urlBase = "https://sarpbackendv1.onrender.com/"; //  directo en la web "No guarda o actualiza cambios "
     this.urlBase = "http://localhost:3000/"; // local
   }
 
   //geters
+  //===============================================================================================================================================================================//
   async getUserByEmail(email) {
     let urlBase = "https://sarpbackendv1.onrender.com/";
     let user = "";
     await fetch(`${urlBase}usuario?correo=${email}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        user = data[0];
+      })
+      .catch((err) => console.error(err));
+    return user;
+  }
+  async getUserByid(id) {
+    let urlBase = "https://sarpbackendv1.onrender.com/";
+    let user = "";
+    await fetch(`${urlBase}usuario?id_usuario=${id}}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -30,6 +44,7 @@ class CrudModule {
       .catch((err) => erroRequest("getCoders", err));
     return data;
   }
+  
   async getRolByIdUSer(id) {
     let data = "";
     await fetch(`${this.urlBase}permisos?id_usuario=${id}`, {
@@ -54,8 +69,7 @@ class CrudModule {
       })
       .catch((err) => erroRequest("getClanById", err));
     return data;
-  }
-  
+  }  
   async getRiwiPointsByUserid(idCoder) {
     let urlBase = "http://localhost:3000/";
     let data = "";
@@ -69,7 +83,6 @@ class CrudModule {
       return data
   }
   //getCodersByClan()
-
 
   async getCoders() {
     let urlBase = "http://localhost:3000/";
@@ -85,6 +98,8 @@ class CrudModule {
     return data;
   }
   async getClanes() {
+    let urlBase = "http://localhost:3000/"
+    console.log("aqui va")
     let data = "";
     await fetch(`${urlBase}clanes`, {
       method: "GET",
@@ -156,7 +171,6 @@ class CrudModule {
       .catch((err) => erroRequest("getRiwiPoints", err));
     return data;
   }
-
   //seters
 
   async setCoders(dataSend) {
