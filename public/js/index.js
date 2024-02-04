@@ -9,8 +9,8 @@ let actualPageId = document.getElementById("pagName")
 //Section to addEnventListeners
 
 //dataController.setPointsInCard(40)
-dataController.setCodersInList() // Lista coders
-//dataController.setTrainerInList() // Lista trainers
+//dataController.setCodersInList() // Lista coders
+dataController.setTrainerInList() // Lista trainers
 
 
 dataController.setCodersHistoryPoints() // Lista historico en coders
