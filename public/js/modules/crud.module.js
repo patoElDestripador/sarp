@@ -83,7 +83,7 @@ class CrudModule {
   async getClanById(id) {
     let urlBase = "http://localhost:3000/";
     let data = "";
-    await fetch(`${urlBase}clanes?id_clan=${id}`, {
+    await fetch(`${urlBase}clanes?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())

@@ -10,10 +10,10 @@ class DataControllerModule {
 
   }
 
-  async setPointsInCard(id_coder){
+  async setPointsInCard(id){
     let puntosPositivos = 0;
     let puntosNegativos = 0;
-    let points = await crudModule.getRiwiPointsByUserid(id_coder);
+    let points = await crudModule.getRiwiPointsByUserid(id);
     points.forEach(element => {
         puntosPositivos += element.punto_positivo
         puntosNegativos += !parseInt(element.punto_negativo) ? 0 : element.punto_negativo
@@ -34,8 +34,8 @@ class DataControllerModule {
     let contador = 1;
     coders.forEach(async (element) =>{
       let email = await crudModule.getUserById(element.id_usuario)
-      let nombreClan = await crudModule.getClanById(element.Id_clan)
-      let puntosCoder = await crudModule.getRiwiPointsByUserid(element.id_coder)
+      let nombreClan = await crudModule.getClanById(element.id)
+      let puntosCoder = await crudModule.getRiwiPointsByUserid(element.id)
       
     let puntosPositivos = 0;
     let puntosNegativos = 0;
@@ -50,7 +50,7 @@ class DataControllerModule {
     <td class="text-center">${element.documento}</td>
     <td>${element.nombre}</td>
     <td>${email.correo}</td>
-    <td class="text-center">${nombreClan[0].nombre}</td>
+    <td class="text-center">${nombreClan.nombre}</td>
     <td class="fw-bold text-center">${totalPuntos}</td>
     <td class="text-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="daIconTable" viewBox="0 0 20 20"><g><path d="M11.937 4.5H8.062A2.003 2.003 0 0 1 10 2a2.003 2.003 0 0 1 1.937 2.5Z"/><path d="M4.5 5.5a1 1 0 0 1 0-2h11a1 1 0 1 1 0 2h-11Z"/><path fill-rule="evenodd" d="M14.5 18.5a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1v10.5a1 1 0 0 0 1 1h9Zm-2-10a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7ZM10 8a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 1 0v-7A.5.5 0 0 0 10 8Zm-3.5.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7Z" clip-rule="evenodd"/></g></svg>
@@ -66,12 +66,12 @@ contador ++
   async setTrainerInList () {
     let tBody = document.getElementById("historyTrainers")
     let trainers = await crudModule.getTrainers()
-    let contador = 1;
+    let contador = 3;
     trainers.forEach(async (element) => {
-      let materia = await crudModule.getAreaById(element.id_area)
+      let materia = await crudModule.getAreaById(element.id)
       tBody.innerHTML += `
       <tr>
-      <th scope="row" class="text-center">${contador}</th>
+        <th scope="row" class="text-center">${contador}</th>
         <td class="text-center">${element.documento}</td>
         <td>${element.nombre}</td>
         <td>${materia.nombre}</td>
@@ -86,23 +86,24 @@ contador ++
   })
   }
 
-    // Historico users
+  // Historico users
 async setCodersHistoryPoints () {
   let tBody = document.getElementById("codersHistoryPoints")
-  let idUserLogIn = 67;
+  let idUserLogIn = 70; // este dato se debe traer del session storage
   let contador = 1;
-  coders.forEach((element) => {
-    let historyPoints = await crudModule.getRiwiPointsByUserid(idUserLogIn)
-      tBody.innerHTML`
+  let historyPoints = await crudModule.getRiwiPointsByUserid(idUserLogIn)
+  historyPoints.forEach(async (element) => {
+      tBody.innerHTML +=`
       <tr>
-      <th class="text-center" scope="row"${element.fecha_ingreso}</th>
-      <td>${element.observacion}</td>
-      <td>${element.id_trainer}</td>
-      <td class="fw-bold">${element.punto_negativo} ${element.punto_positivo}</td>
+        <th scope="row" class="text-center">${contador}</th>
+        <td class="text-center">${element.fecha_ingreso}</td>
+        <td>${element.motivo_puntual}</td>
+        <td>${element.observacion}</td>
+        <td>${element.id}</td>
+        <td class="fw-bold">${element.punto_negativo} ${element.punto_positivo}</td>
       </tr>
       `
       contador ++;
-
   })
 }
 
