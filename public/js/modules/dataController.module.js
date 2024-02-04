@@ -63,7 +63,7 @@ contador ++
   }
 
   // Lista Trainers
-  async setTrainerInList (){
+  async setTrainerInList () {
     let tBody = document.getElementById("historyTrainers")
     let trainers = await crudModule.getTrainers()
     let contador = 1;
@@ -85,7 +85,31 @@ contador ++
     contador ++;
   })
   }
+
+    // Historico users
+async setCodersHistoryPoints () {
+  let tBody = document.getElementById("codersHistoryPoints")
+  let idUserLogIn = 67;
+  let contador = 1;
+  coders.forEach((element) => {
+    let historyPoints = await crudModule.getRiwiPointsByUserid(idUserLogIn)
+      tBody.innerHTML`
+      <tr>
+      <th class="text-center" scope="row"${element.fecha_ingreso}</th>
+      <td>${element.observacion}</td>
+      <td>${element.id_trainer}</td>
+      <td class="fw-bold">${element.punto_negativo} ${element.punto_positivo}</td>
+      </tr>
+      `
+      contador ++;
+
+  })
 }
+
+
+
+}
+
 
 
 export default new DataControllerModule();

@@ -10,7 +10,10 @@ let actualPageId = document.getElementById("pagName")
 
 //dataController.setPointsInCard(40)
 //dataController.setCodersInList() // Lista coders
-dataController.setTrainerInList() // lista trainers
+//dataController.setTrainerInList() // Lista trainers
+
+
+dataController.setCodersHistoryPoints() // Lista historico en coders
 
 
 if(actualPage == "login"){
