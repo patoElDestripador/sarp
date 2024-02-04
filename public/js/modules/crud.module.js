@@ -1,6 +1,6 @@
 class CrudModule {
   constructor() {
-   // this.urlBase = "https://sarpbackendv1.onrender.com/"; //  directo en la web "No guarda o actualiza cambios "
+   //this.urlBase = "https://sarpbackendv1.onrender.com/"; //  directo en la web "No guarda o actualiza cambios "
     this.urlBase = "http://localhost:3000/"; // local
   }
 
@@ -70,6 +70,7 @@ class CrudModule {
       .catch((err) => erroRequest("getTrainers", err));
     return data;
   }
+  
   async getRolByIdUSer(id) {
     let urlBase = "http://localhost:3000/";
     let data = "";
@@ -110,7 +111,6 @@ class CrudModule {
   }
 
   //getCodersByClan()
-
 
   async getCoders() {
     let urlBase = "http://localhost:3000/";

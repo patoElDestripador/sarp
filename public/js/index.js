@@ -17,6 +17,8 @@ dataController.setTrainerInList() // Lista trainers
 
 dataController.setCodersHistoryPoints() // Lista historico en coders
 
+//dataController.setCodersInList()
+//dataController.setClansInList()
 
 if(actualPage == "login"){
 
