@@ -70,7 +70,7 @@ class CrudModule {
       .catch((err) => erroRequest("getTrainers", err));
     return data;
   }
-  async getRolByIdUSer(id) {
+  async getPermitsByIdUSer(id) {
     let urlBase = "http://localhost:3000/";
     let data = "";
     await fetch(`${urlBase}permits?id=${id}`, {
@@ -80,8 +80,22 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getRolByIdUSer", err));
+      .catch((err) => erroRequest("getPermitsByIdUSer", err));
     return data;
+  }
+
+  async getRolByIdUSer(id) {
+    let urlBase = "http://localhost:3000/";
+    let data = "";
+    await fetch(`${urlBase}roles?id=${id}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => erroRequest("getRolByIdUSer", err));
+      return data;
   }
 
   async getClansById(id) {

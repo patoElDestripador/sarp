@@ -75,10 +75,10 @@
         <div class="col-md-4 sizeCard">
           <div class="col py-4 d-flex justify-content-center ">
               <div class="card py-4">
-                <img src="https://soyunperro.com/wp-content/uploads/perrocontento.jpg" class=" mx-auto d-block card-img-top imgUser" alt="...">
+                <img id="imgUser" src="" class="p-1 mx-auto d-block card-img-top imgUser" alt="...">
                 <div class="card-body">
-                  <h3 id="name" class="fw-bold text-center">Juan Perez</h3>
-                  <div class="text-center"><span id="rolUser" class="fs-5 badge rounded-pill text-bg-success">Coder</span></div> 
+                  <h3 id="name" class="fw-bold text-center"></h3>
+                  <div class="text-center"><span id="rolUser" class="fs-5 badge rounded-pill text-bg-success"></span></div> 
                   <form> 
                     <fieldset disabled>
                       <div class="my-3" >
@@ -86,19 +86,19 @@
                           <div class="input-group-text">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#7F7D96" d="M20 4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm-9 9H9v2h2zm8 0h-6v2h6zM7 9H5v2h2zm12 0H9v2h10z"/></svg>                            
                           </div>
-                          <input id="documentId" type="text" class="form-control" placeholder="123456789" label aria-label="documentId">
+                          <input id="documentId" type="text" class="form-control" placeholder="" label aria-label="documentId">
                         </div>
                         <div class="input-group mb-3">
                           <div class="input-group-text">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20"><path fill="#7F7D96" d="M3.87 4h13.25C18.37 4 19 4.59 19 5.79v8.42c0 1.19-.63 1.79-1.88 1.79H3.87c-1.25 0-1.88-.6-1.88-1.79V5.79c0-1.2.63-1.79 1.88-1.79m6.62 8.6l6.74-5.53c.24-.2.43-.66.13-1.07c-.29-.41-.82-.42-1.17-.17l-5.7 3.86L4.8 5.83c-.35-.25-.88-.24-1.17.17c-.3.41-.11.87.13 1.07z"/></svg>                          
                           </div>
-                          <input id="email" type="email" class="form-control" placeholder="micorreo@ejemplo.com" aria-label="Email">
+                          <input id="email" type="text" class="form-control" placeholder="" aria-label="Email">
                         </div>
                         <div class="input-group mb-3">
                           <div class="input-group-text">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#7F7D96" fill-rule="evenodd" d="M10 6h4c2.828 0 4.243 0 5.121.879C20 7.757 20 9.172 20 12v1.056c0 2.405 0 3.608-.597 4.575c-.598.966-1.674 1.504-3.825 2.58c-1.756.878-2.634 1.317-3.578 1.317s-1.822-.439-3.578-1.317c-2.151-1.076-3.227-1.614-3.825-2.58C4 16.664 4 15.46 4 13.056V12c0-2.828 0-4.243.879-5.121C5.757 6 7.172 6 10 6m2 4c-.284 0-.474.34-.854 1.023l-.098.176c-.108.194-.162.29-.246.354c-.085.064-.19.088-.4.135l-.19.044c-.738.167-1.107.25-1.195.532c-.088.283.164.577.667 1.165l.13.152c.143.167.215.25.247.354c.032.104.021.215 0 .438l-.02.203c-.076.785-.114 1.178.115 1.352c.23.174.576.015 1.267-.303l.178-.082c.197-.09.295-.135.399-.135c.104 0 .202.045.399.135l.178.082c.691.319 1.037.477 1.267.303c.23-.174.191-.567.115-1.352l-.02-.203c-.021-.223-.032-.334 0-.438c.032-.103.104-.187.247-.354l.13-.152c.503-.588.755-.882.667-1.165c-.088-.282-.457-.365-1.195-.532l-.19-.044c-.21-.047-.315-.07-.4-.135c-.084-.064-.138-.16-.246-.354l-.098-.176C12.474 10.34 12.284 10 12 10" clip-rule="evenodd"/><path fill="#7F7D96" d="M11 2h2c1.886 0 2.828 0 3.414.586c.414.414.535 1.006.571 1.983c-.82-.07-1.791-.07-2.886-.069H9.9c-1.095 0-2.065 0-2.886.069c.035-.977.157-1.57.57-1.983C8.172 2 9.116 2 11 2"/></svg>                          
                           </div>
-                          <input id="imgUser" type="url" class="form-control" placeholder="Clan" aria-label="Clan">
+                          <input id="clanUser" type="text" class="form-control" placeholder="" aria-label="Clan">
                         </div>
                       </div>
                     </fieldset>
@@ -199,7 +199,6 @@
               <div class="my-2"> 
               </div>
 
-
               <div class="card-body">
                 <div class="flex-fill">
                   <nav class="navbar">
@@ -236,8 +235,10 @@
                     <table class="table table-striped table-hover">
                       <thead class="table-dark">
                         <tr>
+                          <th scope="col">#</th>
                           <th scope="col">Fecha</th>
                           <th scope="col">Concepto</th>
+                          <th scope="col">Observación</th>
                           <th scope="col">Asignado por</th>
                           <th scope="col">Total Pts</th>
                         </tr>

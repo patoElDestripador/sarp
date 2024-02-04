@@ -492,6 +492,7 @@ width: 25rem;
     height: 10rem;
     object-fit: cover;
     border-radius: 50%;
+    background-color: var(--color2);
 }
 .height-table-profile{
     height: 450px;
