@@ -103,9 +103,9 @@ class DataControllerModule {
   }
 
   // Profile coders
-async setCodersHistoryPoints () {
+  // El idUserLogin se debe traer del session storage 
+async setCodersHistoryPoints (idUserLogin=4) {
   let tBody = document.getElementById("codersHistoryPoints")
-  let idUserLogin = 5; // este dato se debe traer del session storage
   let contador = 1;
   let puntosPositivos = 0;
   let puntosNegativos = 0;
