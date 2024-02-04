@@ -3,17 +3,20 @@ import login from './modules/login.module.js'
 import dataController from './modules/dataController.module.js'
 
 let actualPage = document.querySelector("title").text
-let actualPageId = document.getElementById("pagName")
+let actualPageId = document.getElementById("pagNameId")
 //let { value } = document.getElementById("pagName").attributes.getNamedItem("value")
 
 //Section to addEnventListeners
 
 //dataController.setPointsInCard(40)
-//dataController.setCodersInList()
+
+
+console.log("agd ", actualPageId.value)
 
 if(actualPage == "login"){
 
-
+}else if(actualPage == "Coders"){
+    //dataController.setCodersInList()
 }
 
 //dataController.listCodersByClan()
@@ -49,4 +52,13 @@ document.getElementById("idCorazon")?.addEventListener("click",()=>{
     //funcion secreta
 });
 
+document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(1)
+});
+document.getElementById("idListCatByPoints")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(2)
+});
+document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(3)
+});
 

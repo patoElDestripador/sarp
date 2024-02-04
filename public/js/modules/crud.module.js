@@ -20,7 +20,7 @@ class CrudModule {
   }
   async getCodersById(id) {
     let data = "";
-    await fetch(`${urlBase}coders?id_coder=${id}`, {
+    await fetch(`${urlBase}coders?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -45,7 +45,7 @@ class CrudModule {
   async getClanById(id) {
     let urlBase = "http://localhost:3000/";
     let data = "";
-    await fetch(`${urlBase}clanes?id_clan=${id}`, {
+    await fetch(`${urlBase}clans?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -63,7 +63,18 @@ class CrudModule {
     await fetch(`${urlBase}riwi_points?id_coder=${idCoder}`)
       .then((response) => response.json())
       .then((res) => {
-          data =  res;
+        let points = {
+          postivePoints : 0,
+          negativePoints : 0,
+          totalPoints : 0
+        }
+        if(res.lenght != 0){
+          res.forEach(element => {
+            points.puntosPositivos += element.punto_positivo
+            points.puntosNegativos += !parseInt(element.punto_negativo) ? 0 : element.punto_negativo
+          })
+        }
+        data = points
       })
       .catch((err) => erroRequest("getRiwiPointsByUserid", err))
       return data
