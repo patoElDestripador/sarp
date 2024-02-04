@@ -1,21 +1,34 @@
 {
-    "name": "sarp",
-    "version": "1.0.0",
-    "description": "Sistema...",
-    "main": "app.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": ["sarp","riwiPoints","riwi","macondo"],
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/patoElDestripador/sarp.git"
-    },
-    "author": "patoElDestripador",
-    "contributors": [
-      "Co-Autor Andres Felipe Patiño",
-      "Co-Autor Daniel Torres Monsalve",
-      "Co-Autor Johan Sebastian Arboleda Mazo"
-    ]
-  }
-  
+  "name": "sarp",
+  "version": "1.0.0",
+  "description": "Sistema...",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sarp",
+    "riwiPoints",
+    "riwi",
+    "macondo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patoElDestripador/sarp.git"
+  },
+  "author": "patoElDestripador",
+  "contributors": [
+    "Co-Autor Andres Felipe Patiño",
+    "Co-Autor Daniel Torres Monsalve",
+    "Co-Autor Johan Sebastian Arboleda Mazo"
+  ],
+  "dependencies": {
+    "json": "^11.0.0",
+    "server": "^1.0.38"
+  },
+  "bugs": {
+    "url": "https://github.com/patoElDestripador/sarp/issues"
+  },
+  "homepage": "https://github.com/patoElDestripador/sarp#readme",
+  "license": "ISC"
+}

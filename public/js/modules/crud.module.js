@@ -4,9 +4,9 @@ class CrudModule {
     this.urlBase = "http://localhost:3000/"; // local
   }
 
-  //geters
+  // Getters
   async getUserByEmail(email) {
-    let urlBase = "https://sarpbackendv1.onrender.com/";
+    let urlBase = "http://localhost:3000/";
     let user = "";
     await fetch(`${urlBase}usuario?correo=${email}`, {
       method: "GET",
@@ -18,7 +18,34 @@ class CrudModule {
       .catch((err) => console.error(err));
     return user;
   }
+  async getAreaById(id) {
+    let urlBase = "http://localhost:3000/";
+    let user = "";
+    await fetch(`${urlBase}areas?id=${id}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        user = data[0];
+      })
+      .catch((err) => console.error("getAreaById", err));
+    return user;
+  }
+  async getUserById(id) {
+    let urlBase = "http://localhost:3000/";
+    let user = "";
+    await fetch(`${urlBase}users?id=${id}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        user = data[0];
+      })
+      .catch((err) => console.error("getUserById",err));
+    return user;
+  }
   async getCodersById(id) {
+    let urlBase = "http://localhost:3000/";
     let data = "";
     await fetch(`${urlBase}coders?id=${id}`, {
       method: "GET",
@@ -27,12 +54,26 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getCoders", err));
+      .catch((err) => erroRequest("getCoder", err));
+    return data;
+  }
+  async getTrainersById(id) {
+    let urlBase = "http://localhost:3000/";
+    let data = "";
+    await fetch(`${urlBase}trainers?id=${id}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => erroRequest("getTrainers", err));
     return data;
   }
   async getRolByIdUSer(id) {
+    let urlBase = "http://localhost:3000/";
     let data = "";
-    await fetch(`${this.urlBase}permisos?id_usuario=${id}`, {
+    await fetch(`${urlBase}clanes?id_clan=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -42,43 +83,32 @@ class CrudModule {
       .catch((err) => erroRequest("getRolByIdUSer", err));
     return data;
   }
-  async getClanById(id) {
-    let urlBase = "http://localhost:3000/";
-    let data = "";
-    await fetch(`${urlBase}clans?id=${id}`, {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        data = res;
-      })
-      .catch((err) => erroRequest("getClanById", err));
-    return data;
+
+  async getClansById(id) {
+  let urlBase = "http://localhost:3000/";
+  let data = ''
+  await fetch(`${urlBase}clans?id=${id}`)
+  .then((response) => response.json())
+  .then((res) => {
+    data = res;
+  })
+  .catch((err) => erroRequest("getClansById", err));
+  return data;
   }
-  
-  async getRiwiPointsByUserid(idCoder) {
+
+  async getRiwiPointsByUserid(id) {
     let urlBase = "http://localhost:3000/";
     let data = "";
 
     await fetch(`${urlBase}riwi_points?id_coder=${idCoder}`)
       .then((response) => response.json())
       .then((res) => {
-        let points = {
-          postivePoints : 0,
-          negativePoints : 0,
-          totalPoints : 0
-        }
-        if(res.lenght != 0){
-          res.forEach(element => {
-            points.puntosPositivos += element.punto_positivo
-            points.puntosNegativos += !parseInt(element.punto_negativo) ? 0 : element.punto_negativo
-          })
-        }
-        data = points
+          data =  res;
       })
       .catch((err) => erroRequest("getRiwiPointsByUserid", err))
       return data
   }
+
   //getCodersByClan()
 
 
@@ -95,16 +125,16 @@ class CrudModule {
       .catch((err) => erroRequest("getCoders", err));
     return data;
   }
-  async getClanes() {
+  async getClans() {
     let data = "";
-    await fetch(`${urlBase}clanes`, {
+    await fetch(`${urlBase}clans`, {
       method: "GET",
     })
       .then((response) => response.json())
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getClanes", err));
+      .catch((err) => erroRequest("getClans", err));
     return data;
   }
   async getArea() {
@@ -132,6 +162,7 @@ class CrudModule {
     return data;
   }
   async getTrainers() {
+    let urlBase = "http://localhost:3000/";
     let data = "";
     await fetch(`${urlBase}trainers`, {
       method: "GET",
@@ -143,7 +174,7 @@ class CrudModule {
       .catch((err) => erroRequest("getTrainers", err));
     return data;
   }
-  async getUsuario() {
+  async 1() {
     let data = "";
     await fetch(`${urlBase}usuario`, {
       method: "GET",
@@ -168,7 +199,7 @@ class CrudModule {
     return data;
   }
 
-  //seters
+  // Seters
 
   async setCoders(dataSend) {
     let data = "";
@@ -285,7 +316,7 @@ class CrudModule {
     return data;
   }
 
-  //updates
+  // Updates
 
   async updateCoders(dataSend) {
     let data = "";

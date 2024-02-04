@@ -11,7 +11,12 @@ let actualPageId = document.getElementById("pagNameId")
 //dataController.setPointsInCard(40)
 
 
-console.log("agd ", actualPageId.value)
+console.log("agd ", actualPageId.value) // Lista coders
+dataController.setTrainerInList() // Lista trainers
+
+
+dataController.setCodersHistoryPoints() // Lista historico en coders
+
 
 if(actualPage == "login"){
 
@@ -51,6 +56,21 @@ document.getElementById("buttonIdChangeLangEs")?.addEventListener("click",()=>{
 document.getElementById("idCorazon")?.addEventListener("click",()=>{
     //funcion secreta
 });
+
+// Menu toggle
+const menu=document.querySelector(".menu");
+const toggle=document.querySelector(".toggle");
+toggle.addEventListener("click",()=>{
+menu.classList.toggle("active");
+})
+
+// velocidad Slide
+const myCarouselElement = document.querySelector('#carouselHome')
+
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+interval: 3000,
+touch: false
+})
 
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1)
