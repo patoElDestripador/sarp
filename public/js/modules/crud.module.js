@@ -1,4 +1,4 @@
-let urlBase = "http://localhost:3000/"; 
+let urlBase = "http://localhost:3000/";
 class CrudModule {
   constructor() {
    //this.urlBase = "https://sarpbackendv1.onrender.com/"; //  directo en la web "No guarda o actualiza cambios "
@@ -8,7 +8,7 @@ class CrudModule {
   // Getters
   async getUserByEmail(email) {
     let user = "";
-    await fetch(`${urlBase}usuario?correo=${email}`, {
+    await fetch(`${urlBase}users?email=${email}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -18,6 +18,7 @@ class CrudModule {
       .catch((err) => console.error(err));
     return user;
   }
+
   async getAreaById(id) {
 
     let user = "";
@@ -85,7 +86,7 @@ class CrudModule {
   }
 
   async getRolByIdUSer(id) {
-    let urlBase = "http://localhost:3000/";
+
     let data = "";
     await fetch(`${urlBase}roles?id=${id}`, {
       method: "GET",
@@ -107,21 +108,30 @@ class CrudModule {
   .catch((err) => erroRequest("getClansById", err));
   return data;
   }
-  async getRiwiPointsByUserid(id) {
-
+  
+  async getRiwiPointsByUserid(id){
     let data = "";
     await fetch(`${urlBase}riwi_points?id=${idCoder}`)
       .then((response) => response.json())
       .then((res) => {
-        //aki iba funcion que sumaba los riwi points
-          data =  res;
+        let riwiPoints = {
+          positivePoints,
+          negativePoints,
+          total
+        }
+        res.forEach(element => {
+        riwiPoints.positivePoints += element.positive_point
+        riwiPoints.negativePoints += !parseInt(element.negative_point) ? 0 : element.negative_point
+        })
+        riwiPoints.total = riwiPoints.positivePoints - riwiPoints.negativePoints
+          data =  riwiPoints;
       })
       .catch((err) => erroRequest("getRiwiPointsByUserid", err))
       return data
   }
 
   async getRiwiPointsByTrainer(id) {
-    let urlBase = "http://localhost:3000/";
+
     let data = "";
     await fetch(`${urlBase}riwi_points?id_trainers=${id}`)
     .then((response) => response.json())

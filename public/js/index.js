@@ -3,8 +3,7 @@ import login from './modules/login.module.js'
 import dataController from './modules/dataController.module.js'
 
 let actualPage = document.querySelector("title").text
-let actualPageId = document.getElementById("pagNameId")
-//let { value } = document.getElementById("pagName").attributes.getNamedItem("value")
+ let { value }   = document.getElementById("pagName").attributes.getNamedItem("value")
 
 //Section to addEnventListeners
 
@@ -13,6 +12,15 @@ let actualPageId = document.getElementById("pagNameId")
 //dataController.setTrainerInList() // Lista trainers
 //dataController.setInformationCoder() // Lista historico en coders
 //dataController.setInformationTrainer() // Lista historico en coders
+
+
+let validateLenguge = utils.getSessionStorage("leng")
+if (!validateLenguge) {
+    utils.setSessionStorage("leng","es")
+}
+
+//login.validateStatusLogin();
+
 
 if(actualPage == "login"){
 
@@ -24,22 +32,47 @@ if(actualPage == "login"){
 //Globales
 
 
+
+
+document.getElementById("buttonIdChangeLangEs")?.addEventListener("click", () => {
+    utils.setSessionStorage("leng", "es")
+    console.log(value)
+
+    ///si esta aqui al hacer el cambio se tomna el valor de la pagina actual y se redirecciona segun el valor se obtiene el path y se envia 
+})
+document.getElementById("buttonIdChangeLangEn")?.addEventListener("click", () => {
+    utils.setSessionStorage("leng", "en")
+    console.log(value)
+    
+})
+
+
+
 document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
     login.validateLogin()
 });
 
 document.getElementById("redirectbuttonidToLogin")?.addEventListener("click",()=>{
-    let { value } = actualPageId.attributes.getNamedItem("value")
-
-    if (value != "01") {
-        location.href = "./login.html";
-    } else {
-        location.href = "./html/login.html";
+    let language = utils.getSessionStorage("leng")
+    if(language == "es"){
+        if (value != "01") {
+            location.href = "./login.html";
+        } else {
+            location.href = "./html/login.html";
+        }
+    }else if (language == "en") {
+        console.log("emtro")
+        window.location.href ="../html/en/login.html";
     }
 })
 
-document.getElementById("redirectbuttonidToIndex")?.addEventListener("click",()=>{
-    location.href ="../index.html";
+document.getElementById("redirectbuttonidToIndex")?.addEventListener("click", () => {
+    let language = utils.getSessionStorage("leng")
+    if (language == "es") {
+        location.href ="../../index.html";
+    } else if (language == "en") {
+        location.href ="../../html/en/index.html";
+    }
 })
 
 //button cambiar idioma
@@ -54,10 +87,11 @@ document.getElementById("idCorazon")?.addEventListener("click",()=>{
 });
 
 // Menu toggle
-const menu=document.querySelector(".menu");
-const toggle=document.querySelector(".toggle");
-toggle.addEventListener("click",()=>{
-menu.classList.toggle("active");
+const menu =document.querySelector(".menu");
+const toggle = document.querySelector(".toggle");
+
+toggle?.addEventListener("click",()=>{
+    menu.classList.toggle("active");
 })
 
 // velocidad Slide
@@ -77,4 +111,15 @@ document.getElementById("idListCatByPoints")?.addEventListener("click",()=>{
 document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(3)
 });
+
+
+
+
+
+
+
+
+
+
+
 
