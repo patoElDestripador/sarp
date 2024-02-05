@@ -60,7 +60,7 @@ class CrudModule {
   async getTrainersById(id) {
     let urlBase = "http://localhost:3000/";
     let data = "";
-    await fetch(`${urlBase}trainers?id=${id}`, {
+    await fetch(`${urlBase}trainers?id_user=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -119,6 +119,18 @@ class CrudModule {
       data = res;
     })
       .catch((err) => erroRequest("getRiwiPointsByUserid", err));
+      return data
+  }
+
+  async getRiwiPointsByTrainer(id) {
+    let urlBase = "http://localhost:3000/";
+    let data = "";
+    await fetch(`${urlBase}riwi_points?id_trainers=${id}`)
+    .then((response) => response.json())
+    .then((res) => {
+      data = res;
+    })
+      .catch((err) => erroRequest("getRiwiPointsByTrainer", err));
       return data
   }
 

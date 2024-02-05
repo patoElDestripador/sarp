@@ -11,7 +11,8 @@ let actualPageId = document.getElementById("pagName")
 //dataController.setPointsInCard(40)
 //dataController.setCodersInList() // Lista coders
 //dataController.setTrainerInList() // Lista trainers
-dataController.setCodersHistoryPoints() // Lista historico en coders
+//dataController.setInformationCoder() // Lista historico en coders
+dataController.setInformationTrainer() // Lista historico en coders
 
 
 if(actualPage == "login"){
