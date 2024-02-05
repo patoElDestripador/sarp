@@ -650,8 +650,8 @@ font-size: 4rem;
 .menu{
     position:fixed;
     top: 60%;
-    width:280px;
-    height:280px;
+    width:200px;
+    height:200px;
     right: 0px;
     display:flex;
     align-items:center;

@@ -177,6 +177,6 @@ const htmlContent = `
   }
 
   // Fin Menu Toggle
-*/
+  */
 
   export default new UtilsModule();

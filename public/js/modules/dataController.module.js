@@ -74,6 +74,10 @@ class DataControllerModule {
       contador ++;
     } 
   }
+
+
+  
+
   // Profile coders
   // El idUserLogin se debe traer del session storage 
   async setInformationCoder(idUserLogin=8) {
@@ -119,7 +123,8 @@ class DataControllerModule {
   }
   // Profile Trainer
   // El idUserLogin se debe traer del session storage 
-  async setInformationTrainer(idUserLogin=219) {    
+  async setInformationTrainer(idUserLogin=218525) {   
+    this.setPointsInCard(idUserLogin) 
     let tBody = document.getElementById("informationTrainer")
     let contador = 1;
     let puntosPositivos = 0;
