@@ -11,7 +11,7 @@ let actualPage = document.querySelector("title").text
 //dataController.setCodersInList() // Lista coders
 //dataController.setTrainerInList() // Lista trainers
 //dataController.setInformationCoder() // Lista historico en coders
-//dataController.setInformationTrainer() // Lista historico en coders
+dataController.setInformationTrainer() // Lista historico en coders
 
 
 let validateLenguge = utils.getSessionStorage("leng")
@@ -122,4 +122,24 @@ document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
 
 
 
+document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(1)
+});
+document.getElementById("idListCatByPoints")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(2)
+});
+document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(3)
+});
+
+
+
+
+
+
+
+
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+popoverTriggerList
+  popover
 
