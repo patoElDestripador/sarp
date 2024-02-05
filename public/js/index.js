@@ -9,16 +9,10 @@ let actualPageId = document.getElementById("pagNameId")
 //Section to addEnventListeners
 
 //dataController.setPointsInCard(40)
-
-
-console.log("agd ", actualPageId.value) // Lista coders
-dataController.setTrainerInList() // Lista trainers
-
-
-dataController.setCodersHistoryPoints() // Lista historico en coders
-
-//dataController.setCodersInList()
-//dataController.setClansInList()
+//dataController.setCodersInList() // Lista coders
+//dataController.setTrainerInList() // Lista trainers
+//dataController.setInformationCoder() // Lista historico en coders
+//dataController.setInformationTrainer() // Lista historico en coders
 
 if(actualPage == "login"){
 

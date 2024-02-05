@@ -492,6 +492,7 @@ width: 25rem;
     height: 10rem;
     object-fit: cover;
     border-radius: 50%;
+    background-color: var(--color2);
 }
 .height-table-profile{
     height: 450px;
@@ -648,20 +649,22 @@ font-size: 4rem;
 
 .menu{
     position:fixed;
+    top: 60%;
     width:280px;
     height:280px;
+    right: 0px;
     display:flex;
-    align-items:end;
-    justify-content:end;
+    align-items:center;
+    justify-content:center;
     z-index: 3;
   }
   .menu .toggle{
     position:relative;
     height:60px;
     width:60px;
-    background:#fff;
+    background: var(--color7);
     border-radius:50%;
-    box-shadow:0 3px 4px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 20px 0px var(--color3);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -670,12 +673,14 @@ font-size: 4rem;
     cursor:pointer;
     transition:1.25s;
     z-index:5;
-  }
+    transition: ease 0.3s; 
+}
+
   .menu.active .toggle{
     transform:rotate(360deg);
-    box-shadow: 0 6px 8px rgba(0,0,0,0.15),
-      0 0 0 2px #333,
-      0 0 0 8px #fff;
+    box-shadow: 0px 0px 20px 0px var(--color6);
+    transform: scale(1.08);
+    transition: ease 0.3s;
   }
   .menu li{
     position:absolute;
@@ -686,9 +691,10 @@ font-size: 4rem;
     transform-origin:140px;
     scale:0;
     transition-delay: calc(0.06s * var(--i));
+    
   }
   .menu.active li{
-    scale:1; /*Tamaño*/
+    scale:0.9; /*Tamaño*/
   }
   .menu li a{
     position:relative;
@@ -702,14 +708,14 @@ font-size: 4rem;
     justify-content:center;
     border-radius:50%;
     font-size:1.75rem;
-    color:var(--clr);
-     box-shadow:0 3px 4px rgba(0,0,0,0.15);
+    color:var(--color11);
+    box-shadow: 0px 0px 20px 0px var(--color3);
     transition:0.5s;
+
   }
   .menu li:hover a{
     font-size:2.5rem;
-    box-shadow:0 0 0 2px var(--clr),
-      0 0 0 6px #fff;
+    box-shadow: 0px 0px 20px 0px var(--color6);
   }
 
   /* fin toggle menu */
