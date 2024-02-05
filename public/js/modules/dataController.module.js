@@ -6,27 +6,16 @@ class DataControllerModule {
 
   async listCodersByClan() {
     await crudModule.getClans()
-
-
   }
-
   async setPointsInCard(id){
-    let puntosPositivos = 0;
-    let puntosNegativos = 0;
-    let points = await crudModule.getRiwiPointsByUserid(id);
-    points.forEach(element => {
-        puntosPositivos += element.positive_point
-        puntosNegativos += !parseInt(element.negative_point) ? 0 : element.negative_point
-    })
-    document.getElementById("totalPtsPositive").innerText = puntosPositivos
-    document.getElementById("totalPtsNegative").innerText = puntosNegativos
-    
-    return points
+    let {positivepoints,negativePoints,total} = await crudModule.getRiwiPointsByUserid(id);
+    document.getElementById("totalPtsPositive").innerText = positivepoints
+    document.getElementById("totalPtsNegative").innerText = negativePoints
     //document.getElementById("totalPtsAvailable")
-
-
+    //total
+    return points
   }
-
+  
   // Listar Coders
   async setCodersInList(){
     let tBody = document.getElementById("historyCoders")
@@ -87,53 +76,51 @@ class DataControllerModule {
   }
 
 
-
   
 
   // Profile coders
   // El idUserLogin se debe traer del session storage 
-async setInformationCoder(idUserLogin=8) {
-  // if (idUserLogin =)
-  let tBody = document.getElementById("informationCoder")
-  let contador = 1;
-  let puntosPositivos = 0;
-  let puntosNegativos = 0;
+  async setInformationCoder(idUserLogin=8) {
+    // if (idUserLogin =)
+    let tBody = document.getElementById("informationCoder")
+    let contador = 1;
+    let puntosPositivos = 0;
+    let puntosNegativos = 0;
 
-  let dataUser = await crudModule.getUserById(idUserLogin)
-  let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id)
-  let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol)
-  let dataUsersProfile = await crudModule.getCodersById(idUserLogin)
-  let dataPoints = await crudModule.getRiwiPointsByUserid(dataUsersProfile[0].id)
-  let dataClans = await crudModule.getClansById(dataUsersProfile[0].id_clan)
-  let dataTrainer = await crudModule.getTrainersById(dataPoints[0].id_trainers)
-  
-  // Se completan los datos en la card del perfil
-  document.getElementById("emailUser").placeholder  = dataUser.email
-  document.getElementById("imgUser").setAttribute ("src", dataUser.img)
-  document.getElementById("rolUser").innerText = dataRol[0].name
-  document.getElementById("nameUser").innerText = dataUsersProfile[0].name
-  document.getElementById("documentId").placeholder  = dataUsersProfile[0].document
-  document.getElementById("clanUser").placeholder = dataClans[0].name
-  
-  // Se completan los datos en la el historico de puntos
-  for (const element of dataPoints){
-    puntosPositivos = parseInt(element.positive_point) || 0;
-    puntosNegativos = parseInt(element.negative_point) || 0;
+    let dataUser = await crudModule.getUserById(idUserLogin)
+    let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id)
+    let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol)
+    let dataUsersProfile = await crudModule.getCodersById(idUserLogin)
+    let dataPoints = await crudModule.getRiwiPointsByUserid(dataUsersProfile[0].id)
+    let dataClans = await crudModule.getClansById(dataUsersProfile[0].id_clan)
+    let dataTrainer = await crudModule.getTrainersById(dataPoints[0].id_trainers)
     
-    tBody.innerHTML +=`
-    <tr>
-      <th scope="row" class="text-center">${contador}</th>
-      <td class="fw-bold text-center">${element.date_created}</td>
-      <td>${element.specific_reason}</td>
-      <td>${element.observation}</td>
-      <td>${dataTrainer[0].name}</td>
-      <td class="fw-bold text-center">${puntosPositivos + puntosNegativos}</td>
-    </tr>
-    `
-    contador ++;
+    // Se completan los datos en la card del perfil
+    document.getElementById("emailUser").placeholder  = dataUser.email
+    document.getElementById("imgUser").setAttribute ("src", dataUser.img)
+    document.getElementById("rolUser").innerText = dataRol[0].name
+    document.getElementById("nameUser").innerText = dataUsersProfile[0].name
+    document.getElementById("documentId").placeholder  = dataUsersProfile[0].document
+    document.getElementById("clanUser").placeholder = dataClans[0].name
+    
+    // Se completan los datos en la el historico de puntos
+    for (const element of dataPoints){
+      puntosPositivos = parseInt(element.positive_point) || 0;
+      puntosNegativos = parseInt(element.negative_point) || 0;
+      
+      tBody.innerHTML +=`
+      <tr>
+        <th scope="row" class="text-center">${contador}</th>
+        <td class="fw-bold text-center">${element.date_created}</td>
+        <td>${element.specific_reason}</td>
+        <td>${element.observation}</td>
+        <td>${dataTrainer[0].name}</td>
+        <td class="fw-bold text-center">${puntosPositivos + puntosNegativos}</td>
+      </tr>
+      `
+      contador ++;
+    }
   }
-}
-
   // Profile Trainer
   // El idUserLogin se debe traer del session storage 
   async setInformationTrainer(idUserLogin=218525) {   
@@ -178,7 +165,6 @@ async setInformationCoder(idUserLogin=8) {
       contador ++;
     }
   }
-
 }
 
 
