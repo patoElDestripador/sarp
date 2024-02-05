@@ -10,35 +10,77 @@ class LoginModule {
   
   
   async validateLogin() {
-    console.log("sd")
     this.email= document.getElementById("inputIdEmailLogin").value;
     this.password = document.getElementById("inputIdPasswordLogin").value;
     let crudUser = await crud.getUserByEmail(this.email)
-    console.log("cuando no encunetra",crudUser)
-    if(crudUser && crudUser.correo == this.email && crudUser.password == this.password ){
-      //createTrainerPage()
-      let permits  = await crud.getRolByIdUSer(crudUser.id_usuario);
-      let temporaryArray = []
-      permits.forEach(e=>{temporaryArray.push(e.id_rol)})
-      let newUser = {...crudUser,permisos :temporaryArray};
-
-      //utils.setSessionStorage("user",crudUser);
-      //location.href ="./listTrainer.html";
-      /*       if(crudUser. == "trainer" ){
-      }else if(crudUser == "admin" ){
-        location.href ="./listTrainer.html";
-      }*/
-
+    if(crudUser && crudUser.email == this.email && crudUser.password == this.password ){
+      let permits  = await crud.getRolByIdUSer(crudUser.id);
+      let temporaryArray = [];
+      permits.forEach(e=>{temporaryArray.push(e.id)})
+      let newUser = {...crudUser,rol :temporaryArray[0]};
+      utils.setSessionStorage("user",newUser);
+      if (newUser.rol == "1") {
+        location.href ="./userProfileCoder.html";
+      } else if (newUser.rol == "2") {
+        //location.href ="./listTrainer.html";
+      } else if (newUser.rol == "3") {
+        location.href ="./userProfileAdmin.html";
+      }
     }else {
-      console.log("nada pai no existe");
+      Swal.fire({
+        position: "top-end",
+        icon: "info",
+        title: "El correo o la contraseña no son correctos",
+        showConfirmButton: false,
+        timer: 1000
+      });
     }
   }
-  validateRolLogin() {
-    let user = JSON.parse(utils.getSessionStorage("user"))
-    console.log(user)
-    if(user){
-      
+
+  validateStatusLogin() {
+    /*
+      1 = coder 
+      2 = trainer 
+      3 = admin
+    */
+
+
+    /*
+    01 : Index  - public
+    02 : about  - public
+    03 : error401 - public
+    04 : listClans - just admin and trainer
+    05 : listCoder - just admin and trainer
+    06 : listTrainer - just admin
+    07 : login      - public
+    08 : userProfileAdmin - just admin
+    09 : userProfileCoder - just coder
+    */
+    let { value } = document.getElementById("pagName").attributes.getNamedItem("value");
+    let publicAccess = ["01","02","03","07"]
+    let adminAccess = [];
+    let trainerAccess = [];
+    let codeAccess = [];
+
+    if (publicAccess.includes(value)) {
+      console.log("si")
+    } else {
+      let user = JSON.parse(utils.getSessionStorage("user"))
+      if(user){
+        if (!user.rol == 1 && coder.includes(value)) {
+        location.href ="./erro401.html";
+        }
+        if (!user.rol == 2 && adminAccess.includes(value)) {
+        location.href ="./erro401.html";
+        }
+        if (!user.rol == 1 && codeAccess.includes(value)) {
+        location.href ="./erro401.html";
+        }
+      } else{
+        location.href ="./erro401.html";
+      }
     }
+
     
   }
 

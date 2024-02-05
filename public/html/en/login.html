@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" id="pagName" value="07">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body >
+
+<!-- header inicio -->                
+<header class="py-2 px-3 paraElHeader fixed-top">
+  <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+          <div class="navbar-brand flex-grow-1">
+              <a class="align-content-around mx-3" href="./index.html">
+                  <img class="logoSarp"  src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp" >
+              </a>
+          </div>      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="daIcon nav-link" >
+              <label class="hamburger">
+                  <input type="checkbox">
+                  <svg viewBox="0 0 32 32">
+                      <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                      <path class="line" d="M7 16 27 16"></path>
+                  </svg>
+                  </label>
+          </span>
+          </button>
+          <div class="collapse navbar-collapse mt-2 justify-content-end" id="navbarNav">
+          <ul class= "p-0 m-0 d-flex justify-content-center">
+              <li class="nav-item mx-2 my-1">
+                  <a href="./about.html" class="nav-item nav-link active fs-5 nosotros-mdf-txt fw-bold daIcon">About us</a>        
+              </li>
+          </ul>
+          <ul class= "p-0 m-0 d-flex justify-content-center">
+              <li class="nav-item mx-2 my-1">
+                  <span class="dropdown">
+                      <svg type="button" xmlns="http://www.w3.org/2000/svg" class="daIcon dropdown-toggle daiconSize" data-bs-toggle="dropdown" width="40" height="32" viewBox="0 0 640 512"><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6l.5.5c12.4-13.1 22.5-28.3 29.8-45H376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+                    <ul class="dropdown-menu mt-3">
+                      <li><a class="dropdown-item" id="buttonIdChangeLangEs"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 64 64"><path fill="#2b3990" d="M0 25h64v17H0z"/><path fill="#f9cb38" d="M54 10H10C3.373 10 0 14.925 0 21v11h64V21c0-6.075-3.373-11-10-11"/><path fill="#ec1c24" d="M0 43c0 6.075 3.373 11 10 11h44c6.627 0 10-4.925 10-11v-1H0z"/></svg> Spanish</a></li>
+                      <li><a class="dropdown-item" id="buttonIdChangeLangEn" ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 36 36"><path fill="#B22334" d="M35.445 7C34.752 5.809 33.477 5 32 5H18v2zM0 25h36v2H0zm18-8h18v2H18zm0-4h18v2H18zM0 21h36v2H0zm4 10h28c1.477 0 2.752-.809 3.445-2H.555c.693 1.191 1.968 2 3.445 2M18 9h18v2H18z"/><path fill="#EEE" d="M.068 27.679c.017.093.036.186.059.277c.026.101.058.198.092.296c.089.259.197.509.333.743L.555 29h34.89l.002-.004a4.22 4.22 0 0 0 .332-.741a3.75 3.75 0 0 0 .152-.576c.041-.22.069-.446.069-.679H0c0 .233.028.458.068.679M0 23h36v2H0zm0-4v2h36v-2H18zm18-4h18v2H18zm0-4h18v2H18zM.555 7l-.003.005zM.128 8.044c.025-.102.06-.199.092-.297a3.78 3.78 0 0 0-.092.297M18 9h18c0-.233-.028-.459-.069-.68a3.606 3.606 0 0 0-.153-.576A4.21 4.21 0 0 0 35.445 7H18z"/><path fill="#3C3B6E" d="M18 5H4a4 4 0 0 0-4 4v10h18z"/><path fill="#FFF" d="m2.001 7.726l.618.449l-.236.725L3 8.452l.618.448l-.236-.725L4 7.726h-.764L3 7l-.235.726zm2 2l.618.449l-.236.725l.617-.448l.618.448l-.236-.725L6 9.726h-.764L5 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 9l-.235.726zm-8 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L5 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 13l-.235.726zm-6-6l.618.449l-.236.725L7 8.452l.618.448l-.236-.725L8 7.726h-.764L7 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 7l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 11l-.235.726zM6.383 12.9L7 12.452l.618.448l-.236-.725l.618-.449h-.764L7 11l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 11l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 11l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 15l-.235.726zM6.383 16.9L7 16.452l.618.448l-.236-.725l.618-.449h-.764L7 15l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 15l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 15l-.235.726z"/></svg> English</a></li>
+                    </ul>
+                  </span>
+              </li>
+          </ul>
+          <ul class= "p-0 m-0 d-flex justify-content-center">
+              <li class="nav-item mx-2 my-1">
+                  <button class="btn login-mdf-btn fw-bold btn-primary" id="redirectbuttonidToIndex" type="button">Home</button>
+              </li>
+          </ul>
+          </div>
+      </div>
+      </nav>
+</header>
+<!-- header fin --> 
+
+<!-- Inicio Banner Usuario-->
+<!-- Fin Banner Usuario-->
+
+<!-- Inicio Perfil Usuario-->
+<main>
+    <div class="container-fluid">
+      <div class="background-image roundedBanner"></div>
+      <div class="py-5">
+        <div class="row py-5 justify-content-center d-flex flex-md-row flex-column flex-column-reverse flex-sm-column flex-sm-column-reverse flex-xs-column flex-xs-column-reverse">
+          <!-- Inicio Login -->
+          <div class="col col-md-4 m-1 align-self-center mt-5 justify-content-center">
+            <div class="card">
+              <div class="card-body">
+                <h1 class="card-title fs-1 fw-bold focus text-center text-md-start">Join SARP</h1>
+                <p class="card-text text-center text-md-start">Let's transform education together through motivation and transparency - discover the power of educational incentives with SARP!</p>
+              </div>
+            </div>
+            </div>
+
+            <div class="col col-md-4 m-1 mt-5 d-flex justify-content-center">
+              <div class="card card-dark cardLogin" >
+                <div class="card-body m-4">
+                  <form> 
+                    <fieldset>
+                      <div class="my-3">
+                        <h1 class="fw-bold focus my-3 card-title">Login</h1>
+                        <div class="my-3">
+                          <div class="my-2">
+                            <label for="label-desing-login">Email</label>
+                            <input id="inputIdEmailLogin" type="email" class="form-control input-desing-login flex-fill" placeholder="Email">
+                          </div>
+                          <div class="my-2">
+                            <label for="label-desing-login">Password</label>
+                            <input id="inputIdPasswordLogin" type="password" class="form-control input-desing-login flex-fill" placeholder="Password">
+                          </div>
+                        </div>
+                        <div class="d-grid d-flex justify-content-center">
+                          <a id="buttonIdLogin" class="btn btn-primary flex-fill" type="button">Login</a>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                    <div class=" align-items-center justify-content-center">
+                      <a href="#" class="card-link text-center link-light">Forgot your password?</a>
+                      <p class="card-title my-3">Sign in with:</p>
+                      <ul class="nav justify-content-center border-bottom pb-3 gap-3">
+                        <li class="nav-item desing-icon-login"><a id="functionDisable" class="nav-link px-2 text-body-secondary"><svg class="daIconLogin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 262"><path fill="#4285F4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"/><path fill="#34A853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"/><path fill="#FBBC05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z"/><path fill="#EB4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"/></svg></a></li>
+                        <li class="nav-item desing-icon-login"><a id="functionDisable" class="nav-link px-2 text-body-secondary"><svg class="daIconLogin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="#1877F2" d="M256 128C256 57.308 198.692 0 128 0C57.308 0 0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"/><path fill="#FFF" d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A128.959 128.959 0 0 0 128 256a128.9 128.9 0 0 0 20-1.555V165z"/></svg></a></li>
+                        <li class="nav-item desing-icon-login"><a id="functionDisable" class="nav-link px-2 text-body-secondary"><svg class="daIconLogin " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a></li>
+                      </ul>
+                    </div>
+                    <div class="my-3">
+                      <a href="./index.html" class="nav justify-content-center">
+                        <img class="daIcon logoSarpLogin" src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <!-- Fin Login -->
+        </div>
+      </div>
+    
+    </div>
+  <!-- Fin Perfil Usuario-->
+  <!-- container fin -->
+</main>
+
+<!-- footer inicio -->
+<footer class="py-2 mt-4 paraElFooter">
+  <a href="./index.html" class="nav justify-content-center pt-3">
+      <img class="logoSarpFooter" src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp">
+  </a>
+  <ul class="nav justify-content-center border-bottom pb-3 mb-3 align-items-center">
+  <li class="nav-item"><a href="https://www.instagram.com/riwi.io/" target="_blank" class="daIcon nav-link px-2 text-body-secondary" ><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M13.028 2c1.125.003 1.696.009 2.189.023l.194.007c.224.008.445.018.712.03c1.064.05 1.79.218 2.427.465c.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428c.012.266.022.487.03.712l.006.194c.015.492.021 1.063.023 2.188l.001.746v1.31a78.831 78.831 0 0 1-.023 2.188l-.006.194c-.008.225-.018.446-.03.712c-.05 1.065-.22 1.79-.466 2.428a4.883 4.883 0 0 1-1.153 1.772a4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.427.465a72.11 72.11 0 0 1-.712.03l-.194.006c-.493.014-1.064.021-2.189.023l-.746.001h-1.309a78.43 78.43 0 0 1-2.189-.023l-.194-.006a63.036 63.036 0 0 1-.712-.031c-1.064-.05-1.79-.218-2.428-.465a4.889 4.889 0 0 1-1.771-1.153a4.904 4.904 0 0 1-1.154-1.772c-.247-.637-.415-1.363-.465-2.428a74.1 74.1 0 0 1-.03-.712l-.005-.194A79.047 79.047 0 0 1 2 13.028v-2.056a78.82 78.82 0 0 1 .022-2.188l.007-.194c.008-.225.018-.446.03-.712c.05-1.065.218-1.79.465-2.428A4.88 4.88 0 0 1 3.68 3.678a4.897 4.897 0 0 1 1.77-1.153c.638-.247 1.363-.415 2.428-.465c.266-.012.488-.022.712-.03l.194-.006a79 79 0 0 1 2.188-.023zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10m0 2a3 3 0 1 1 .001 6a3 3 0 0 1 0-6m5.25-3.5a1.25 1.25 0 0 0 0 2.5a1.25 1.25 0 0 0 0-2.5"/></svg></a></li>
+  <li class="nav-item"><a href="https://www.facebook.com/people/Riwi/100092420949391/?locale=es_LA" target="_blank" class="daIcon nav-link p-1 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" viewBox="0 0 464 488"><path d="M462 78q0-30-23-53T386 2H78Q48 2 25 25T2 78v308q0 30 23 53t53 23h154V288h-56v-76h56v-30q0-39 25.5-68.5T318 84h62v76h-62q-5 0-9.5 6t-4.5 15v31h76v76h-76v174h82q30 0 53-23t23-53z"/></svg></a></li>
+  <li class="nav-item"><a href="https://twitter.com/InfoRiwi4424" target="_blank" class="daIcon nav-link px-2 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm297.1 84L257.3 234.6L379.4 396h-95.6L209 298.1L123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5l78.2-89.5zm-37.8 251.6L153.4 142.9h-28.3l171.8 224.7h26.3z"/></svg></a></li>
+  </ul>
+  <p class="text-center text-light ">Made with <svg class="animate" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 128 128"><path fill="#DB0A28" d="M64.8 120.71c3.68 0 32.11-24.18 48.7-44.07c15.96-19.14 10.2-41.74 6.69-48.03c-4.15-7.43-56.94 17.01-56.94 17.01S14.07 17.99 10.39 23.99C5.4 32.13-1.59 53.54 12.52 73.45C27.5 94.6 60.85 120.71 64.8 120.71"/><path fill="#FF262E" d="M64.55 114.2s52.26-38.68 56.75-62.3c4.25-22.37-4.45-33.22-15.16-38.45C78.99.19 65.29 26.21 64 26.21S49.95.14 23.7 11.42C9.24 17.63 3.18 34.53 8.91 53.57c8.41 27.94 55.64 60.63 55.64 60.63"/></svg> Coder.</p>
+  <p class="text-center text-light">© 2024 SARP Inc.</p>
+</footer>
+<!-- footer fin -->
+<!-- Scripts para funcionamiento de pagina-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../js/index.js" type="module" ></script>
+<script> 
+//dejar de codigo de pagina de ultimo siempre para poder hacer uso de funciones compartidas provinientes desde otros archivos 
+</script>
+</body>
+</html>

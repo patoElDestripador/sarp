@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" id="pagName" value="06">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png">
+    <title>Trainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body >
+  
+<!-- header inicio -->                
+<header class="py-2 px-3 paraElHeader fixed-top">
+  <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+          <div class="navbar-brand flex-grow-1">
+              <a class="align-content-around mx-3" href="./index.html">
+                  <img class="logoSarp"  src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp" >
+              </a>
+          </div>      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="daIcon nav-link" >
+              <label class="hamburger">
+                  <input type="checkbox">
+                  <svg viewBox="0 0 32 32">
+                      <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                      <path class="line" d="M7 16 27 16"></path>
+                  </svg>
+                  </label>
+          </span>
+          </button>
+          <div class="collapse navbar-collapse mt-2 justify-content-end" id="navbarNav">
+          <ul class= "p-0 m-0 d-flex justify-content-center">
+              <li class="nav-item mx-2 my-1">
+                  <a href="./about.html" class="nav-item nav-link active fs-5 nosotros-mdf-txt fw-bold daIcon">About us</a>        
+              </li>
+          </ul>
+          <ul class= "p-0 m-0 d-flex justify-content-center">
+              <li class="nav-item mx-2 my-1">
+                  <span class="dropdown">
+                      <svg type="button" xmlns="http://www.w3.org/2000/svg" class="daIcon dropdown-toggle daiconSize" data-bs-toggle="dropdown" width="40" height="32" viewBox="0 0 640 512"><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6l.5.5c12.4-13.1 22.5-28.3 29.8-45H376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+                    <ul class="dropdown-menu mt-3">
+                      <li><a class="dropdown-item" id="buttonIdChangeLangEs"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 64 64"><path fill="#2b3990" d="M0 25h64v17H0z"/><path fill="#f9cb38" d="M54 10H10C3.373 10 0 14.925 0 21v11h64V21c0-6.075-3.373-11-10-11"/><path fill="#ec1c24" d="M0 43c0 6.075 3.373 11 10 11h44c6.627 0 10-4.925 10-11v-1H0z"/></svg> Spanish</a></li>
+                      <li><a class="dropdown-item" id="buttonIdChangeLangEn" ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 36 36"><path fill="#B22334" d="M35.445 7C34.752 5.809 33.477 5 32 5H18v2zM0 25h36v2H0zm18-8h18v2H18zm0-4h18v2H18zM0 21h36v2H0zm4 10h28c1.477 0 2.752-.809 3.445-2H.555c.693 1.191 1.968 2 3.445 2M18 9h18v2H18z"/><path fill="#EEE" d="M.068 27.679c.017.093.036.186.059.277c.026.101.058.198.092.296c.089.259.197.509.333.743L.555 29h34.89l.002-.004a4.22 4.22 0 0 0 .332-.741a3.75 3.75 0 0 0 .152-.576c.041-.22.069-.446.069-.679H0c0 .233.028.458.068.679M0 23h36v2H0zm0-4v2h36v-2H18zm18-4h18v2H18zm0-4h18v2H18zM.555 7l-.003.005zM.128 8.044c.025-.102.06-.199.092-.297a3.78 3.78 0 0 0-.092.297M18 9h18c0-.233-.028-.459-.069-.68a3.606 3.606 0 0 0-.153-.576A4.21 4.21 0 0 0 35.445 7H18z"/><path fill="#3C3B6E" d="M18 5H4a4 4 0 0 0-4 4v10h18z"/><path fill="#FFF" d="m2.001 7.726l.618.449l-.236.725L3 8.452l.618.448l-.236-.725L4 7.726h-.764L3 7l-.235.726zm2 2l.618.449l-.236.725l.617-.448l.618.448l-.236-.725L6 9.726h-.764L5 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 9l-.235.726zm-8 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L5 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 13l-.235.726zm-6-6l.618.449l-.236.725L7 8.452l.618.448l-.236-.725L8 7.726h-.764L7 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 7l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 11l-.235.726zM6.383 12.9L7 12.452l.618.448l-.236-.725l.618-.449h-.764L7 11l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 11l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 11l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 15l-.235.726zM6.383 16.9L7 16.452l.618.448l-.236-.725l.618-.449h-.764L7 15l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 15l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 15l-.235.726z"/></svg> English</a></li>
+                    </ul>
+                  </span>
+              </li>
+          </ul>
+          <ul class= "p-0 m-0 d-flex justify-content-center">
+              <li class="nav-item mx-2 my-1">
+                  <button class="btn login-mdf-btn fw-bold btn-primary" id="redirectbuttonidToLogin" type="button">Login</button>
+              </li>
+          </ul>
+          </div>
+      </div>
+      </nav>
+</header>
+<!-- header fin --> 
+
+<!-- Inicio Perfil Usuario-->
+<main class="listCoders">
+    <div class="container-fluid">
+      <div class="background-image roundedBanner"></div>
+      <div class="py-5">
+        <div class="py-5 row justify-content-center"> 
+          <!-- Inicio Informacion basica -->
+          <div class="col-md-4 sizeCard text-center ">
+            <div class="col py-4 d-flex justify-content-center ">
+                <div class="card py-4">
+                  <div class="card-body">
+                    <h3 class="fw-bold">Create or edit Trainer</h3>
+                    <form> 
+                      <fieldset>
+                        <div class="my-3">
+                          <div class="input-group mb-3">
+                            <div class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#7F7D96" d="M20 4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm-9 9H9v2h2zm8 0h-6v2h6zM7 9H5v2h2zm12 0H9v2h10z"/></svg>                            </div>
+                            <input id="documentId" type="text" class="form-control" placeholder="Document" label aria-label="documentId">
+                          </div>
+                          <div class="input-group mb-3">
+                            <div class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="#7F7D96" d="M230.93 220a8 8 0 0 1-6.93 4H32a8 8 0 0 1-6.92-12c15.23-26.33 38.7-45.21 66.09-54.16a72 72 0 1 1 73.66 0c27.39 8.95 50.86 27.83 66.09 54.16a8 8 0 0 1 .01 8"/></svg></span>
+                            </div>
+                            <input id="name" type="text" class="form-control" placeholder="Full name" aria-label="Nombres y Apellidos">
+                          </div>
+                          <div class="input-group mb-3">
+                            <div class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20"><path fill="#7F7D96" d="M3.87 4h13.25C18.37 4 19 4.59 19 5.79v8.42c0 1.19-.63 1.79-1.88 1.79H3.87c-1.25 0-1.88-.6-1.88-1.79V5.79c0-1.2.63-1.79 1.88-1.79m6.62 8.6l6.74-5.53c.24-.2.43-.66.13-1.07c-.29-.41-.82-.42-1.17-.17l-5.7 3.86L4.8 5.83c-.35-.25-.88-.24-1.17.17c-.3.41-.11.87.13 1.07z"/></svg>                          
+                            </div>
+                            <input id="email" type="email" class="form-control" placeholder="MyEmail@Example.com" aria-label="Email">
+                          </div>
+                          <div class="input-group mb-3">
+                            <div class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#7F7D96" d="M7 13.846q-.77 0-1.308-.538q-.538-.539-.538-1.308t.538-1.308q.539-.538 1.308-.538t1.308.538q.538.539.538 1.308t-.538 1.308q-.539.538-1.308.538m0 2.885q1.675 0 2.927-.946t1.608-2.285h2.85l1.069.82q.111.072.229.116q.117.043.26.043t.259-.043q.117-.044.229-.136l1.357-1.05l1.212.933q.13.086.28.14q.149.052.291.027q.142-.025.276-.084q.134-.058.24-.17l1.442-1.536q.125-.131.178-.268q.053-.136.053-.298q0-.161-.056-.295q-.056-.134-.18-.259l-.699-.698q-.13-.13-.28-.186q-.149-.056-.31-.056h-8.7q-.35-1.315-1.594-2.273Q8.698 7.269 7 7.269q-2 0-3.365 1.366Q2.269 10 2.269 12t1.366 3.365Q5 16.731 7 16.731"/></svg>                            
+                            </div>
+                            <input id="password" type="password" class="form-control" placeholder="Password" aria-label="Password">
+                          </div>
+                          <div class="input-group mb-3">
+                            <div class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none"><path fill="#7F7D96" fill-rule="evenodd" d="M3.172 3.172C2 4.343 2 6.229 2 10v4c0 3.771 0 5.657 1.172 6.828C4.343 22 6.229 22 10 22h4c3.771 0 5.657 0 6.828-1.172C22 19.657 22 17.771 22 14v-4c0-2.84 0-4.61-.5-5.811V17a3.62 3.62 0 0 1-2.56-1.06l-.752-.752c-.722-.722-1.082-1.082-1.491-1.234a2 2 0 0 0-1.394 0c-.409.152-.77.512-1.49 1.234l-.114.113c-.585.585-.878.878-1.189.932a1 1 0 0 1-.699-.134c-.268-.166-.431-.547-.758-1.308L11 14.667c-.75-1.75-1.124-2.624-1.778-2.952a2 2 0 0 0-1.065-.205c-.729.062-1.401.735-2.747 2.08L3.5 15.5V2.887a2.85 2.85 0 0 0-.328.285" clip-rule="evenodd"/><path stroke="#7F7D96" stroke-width="2" d="M3 10c0-1.914.002-3.249.138-4.256c.131-.978.372-1.496.74-1.865c.37-.37.888-.61 1.866-.741C6.751 3.002 8.086 3 10 3h4c1.914 0 3.249.002 4.256.138c.978.131 1.496.372 1.865.74c.37.37.61.888.742 1.866C20.998 6.751 21 8.086 21 10v4c0 1.914-.002 3.249-.137 4.256c-.132.978-.373 1.496-.742 1.865c-.369.37-.887.61-1.865.742c-1.007.135-2.342.137-4.256.137h-4c-1.914 0-3.249-.002-4.256-.137c-.978-.132-1.496-.373-1.865-.742c-.37-.369-.61-.887-.741-1.865C3.002 17.249 3 15.914 3 14z"/><circle cx="15" cy="9" r="2" fill="#7F7D96"/></g></svg>
+                            </div>
+                            <input id="imgUser" type="url" class="form-control" placeholder="Url Profile Img" aria-label="Imagen de perfil">
+                          </div>
+                          <div class="input-group mb-3">
+                            <div class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#7F7D96" fill-rule="evenodd" d="M10 6h4c2.828 0 4.243 0 5.121.879C20 7.757 20 9.172 20 12v1.056c0 2.405 0 3.608-.597 4.575c-.598.966-1.674 1.504-3.825 2.58c-1.756.878-2.634 1.317-3.578 1.317s-1.822-.439-3.578-1.317c-2.151-1.076-3.227-1.614-3.825-2.58C4 16.664 4 15.46 4 13.056V12c0-2.828 0-4.243.879-5.121C5.757 6 7.172 6 10 6m2 4c-.284 0-.474.34-.854 1.023l-.098.176c-.108.194-.162.29-.246.354c-.085.064-.19.088-.4.135l-.19.044c-.738.167-1.107.25-1.195.532c-.088.283.164.577.667 1.165l.13.152c.143.167.215.25.247.354c.032.104.021.215 0 .438l-.02.203c-.076.785-.114 1.178.115 1.352c.23.174.576.015 1.267-.303l.178-.082c.197-.09.295-.135.399-.135c.104 0 .202.045.399.135l.178.082c.691.319 1.037.477 1.267.303c.23-.174.191-.567.115-1.352l-.02-.203c-.021-.223-.032-.334 0-.438c.032-.103.104-.187.247-.354l.13-.152c.503-.588.755-.882.667-1.165c-.088-.282-.457-.365-1.195-.532l-.19-.044c-.21-.047-.315-.07-.4-.135c-.084-.064-.138-.16-.246-.354l-.098-.176C12.474 10.34 12.284 10 12 10" clip-rule="evenodd"/><path fill="#7F7D96" d="M11 2h2c1.886 0 2.828 0 3.414.586c.414.414.535 1.006.571 1.983c-.82-.07-1.791-.07-2.886-.069H9.9c-1.095 0-2.065 0-2.886.069c.035-.977.157-1.57.57-1.983C8.172 2 9.116 2 11 2"/></svg>                          
+                            </div>
+                            <select class="form-select" id="idSelectArea" aria-label="Materia">
+                              <option select>Subject</option>
+                              <option value="1">Software Development</option>
+                              <option value="2">Review</option>
+                              <option value="3">Life Skills</option>
+                              <option value="4">English</option>
+                              <option value="5">Coordination</option>
+                              <option value="6">Culture and Permanence</option>
+                              </select>
+                          </div>
+                          <div class="input-group mb-3">
+                            <div class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path fill="#7F7D96" d="M8 30H2v-6h6zm-4-2h2v-2H4zm15 2h-6v-6h6zm-4-2h2v-2h-2zm15 2h-6v-6h6zm-4-2h2v-2h-2zM16 10a4 4 0 1 1 4-4a4.005 4.005 0 0 1-4 4m0-6a2 2 0 1 0 2 2a2.002 2.002 0 0 0-2-2m10 12h-5a4.005 4.005 0 0 1-4-4h-2a4.005 4.005 0 0 1-4 4H6a2.002 2.002 0 0 0-2 2v4h2v-4h5a5.97 5.97 0 0 0 4-1.54V22h2v-5.54A5.97 5.97 0 0 0 21 18h5v4h2v-4a2.002 2.002 0 0 0-2-2"/></svg>
+                            </div>
+                            <select class="form-select" id="idSelectRol" aria-label="Clan">
+                              <option select>Rol</option>
+                              <option value="1">Coder</option>
+                              <option value="2">Trainer</option>
+                              <option value="3">Admin</option>
+                              </select>
+                          </div>
+                          <div class="d-grid d-flex justify-content-center">
+                            <a href="#" class="btn btn-primary" type="button">Create or update</a>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- Fin Informacion basica -->
+    
+          <div class="col-sm-6 d-grid col-md-8 overflow-hidden my-4">
+            <!-- Inicio Historico de puntos -->
+            <div class="card flex-fill justify-content-center col-md-11">
+              <h2 class="fs-1 fw-bold d-fill my-3 text-center">Informe General Trainer</h2>
+                <div class="my-2 text-center">
+                  <a href="#" class="btn btn btn-primary m-2" type="button"><svg class="bi me-3" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="14" stroke-dashoffset="14" d="M6 19h12"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.4s" values="14;0"/></path><path stroke-dasharray="18" stroke-dashoffset="18" d="M12 4 h2 v6 h2.5 L12 14.5M12 4 h-2 v6 h-2.5 L12 14.5"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="18;0"/><animate attributeName="d" calcMode="linear" dur="1.5s" keyTimes="0;0.7;1" repeatCount="indefinite" values="M12 4 h2 v6 h2.5 L12 14.5M12 4 h-2 v6 h-2.5 L12 14.5;M12 4 h2 v3 h2.5 L12 11.5M12 4 h-2 v3 h-2.5 L12 11.5;M12 4 h2 v6 h2.5 L12 14.5M12 4 h-2 v6 h-2.5 L12 14.5"/></path></g></svg>Report</a>
+                  <a href="#" class="btn btn-success m-2" type="button"><svg  class="bi me-3" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><mask id="IconifyId18d47b58fd0627ed7176"><g fill="#fff"><circle cx="12" cy="10" r="6"/><rect width="9" height="8" x="8" y="12"/><rect width="17" height="12" x="1" y="8" rx="6"><animate attributeName="x" dur="24s" repeatCount="indefinite" values="1;0;1;2;1"/></rect><rect width="17" height="10" x="6" y="10" rx="5"><animate attributeName="x" dur="15s" repeatCount="indefinite" values="6;5;6;7;6"/></rect></g><circle cx="12" cy="10" r="4"/><rect width="8" height="8" x="8" y="10"/><rect width="11" height="8" x="3" y="10" rx="4"><animate attributeName="x" dur="24s" repeatCount="indefinite" values="3;2;3;4;3"/></rect><rect width="13" height="6" x="8" y="12" rx="3"><animate attributeName="x" dur="15s" repeatCount="indefinite" values="8;7;8;9;8"/></rect><g fill="#fff"><rect width="3" height="4" x="10.5" y="12"/><path d="M12 9L16 13H8L12 9Z"><animateMotion calcMode="linear" dur="1.5s" keyPoints="0;0.25;0.5;0.75;1" keyTimes="0;0.1;0.5;0.8;1" path="M0 0v-1v2z" repeatCount="indefinite"/></path></g></mask><rect width="24" height="24" fill="#ffffff" mask="url(#IconifyId18d47b58fd0627ed7176)"/></svg>Load Pts</a>
+                  <a href="#" class="btn btn-info m-2" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#ffffff" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg>Rate</a>
+                </div>
+                <div class="my-2"> 
+                </div>
+              <div class="card-body">
+                <div class="flex-fill">
+                  <nav class="navbar">
+                    <div class="row overflow-hidden flex-fill">
+                      <div class="col d-flex col-sm-12">
+                        <input class="form-control m-2" type="search" placeholder="Search" aria-label="Buscar">
+                        <button class="btn btn-primary my-2" type="submit">Search</button>
+                      </div>
+                    </div>
+                  </nav>
+                  <div class="col g-2 flex-fill text-center">
+                    <div class="">
+                      <div class="btn-group p-2" role="group">
+                          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                          </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" id="idListCatBySubject">Subject</a></li>
+                          <li><a class="dropdown-item" id="idListCatByAz">Item 2</a></li>
+                        </ul>
+                      </div>
+                      <div class="btn-group z-3" role="group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          Property
+                        </button>
+                        <ul class="dropdown-menu"  id="containerDropdownItemForCategory">
+                          <li><a class="dropdown-item" href="#">Item 1</a></li>
+                          <li><a class="dropdown-item" href="#">Item 2</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive my-3 height-table-profile">
+                    <table class="table table-striped table-hover">
+                      <thead class="table-dark text-center">
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Document</th>
+                          <th scope="col">Full name</th>
+                          <th scope="col">subject</th>
+                          <th scope="col">Total Pts</th>
+                          <th scope="col">Options</th>
+                        </tr>
+                      </thead>
+                      <tbody id="historyTrainers">
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fin Historico de puntos -->
+          </div>
+          <!-- Fin Seccion puntajes -->
+    
+        <!-- Inicio Seccion enlaces de interes -->
+        <div class="row justify-content-center">
+          <h1 class="fs-1 fw-bold text-center mt-5 ">Links of interest</h1>
+          <h5 class="text-center">Everything in one click, everything under control!</h5>
+          <p></p>
+          <div class="col-md-3 d-flex mb-3  my-sm-0 justify-content-evenly">
+            <div class="card">
+              <div class="card-body">
+                <h1 class="card-title fs-3 fw-bold">Coders</h1>
+                <p class="card-text">Assign points, create and update users, download reports.</p>
+                <div class="d-grid d-flex gap-2">
+                  <a href="./listCoder.html" class="btn btn-primary" type="button">See list</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex mb-3 my-sm-0 justify-content-evenly">
+            <div class="card">
+              <div class="card-body">
+                <h1 class="card-title fs-3 fw-bold">Clanes</h1>
+                <p class="card-text">Assign points, create and update Clans, download reports.</p>
+                <div class="d-grid d-flex gap-2">
+                  <a href="./listClans.html" class="btn btn-primary" type="button">See list</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex mb-3 my-sm-0 justify-content-evenly">
+            <div class="card">
+              <div class="card-body">
+                <h1 class="card-title fs-3 fw-bold">Trainers</h1>
+                <p class="card-text">Reset points, create and update trainers, download reports.</p>
+                <div class="d-grid d-flex gap-2">
+                  <a href="./listTrainer.html" class="btn btn-primary" type="button">See list</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>    
+        <div class="row justify-content-center text-center my-5">
+          <div class="col-sm-10 col-md-8 mb-3 my-sm-0">
+            <div class="card card-dark">
+              <div class="card-body">
+                <h1 class="card-title fs-1 fw-bold focus">Points program</h1>
+                <p class="card-text">
+                  Discover the power of motivation with our RiwiPoints Program! At SARP, we transform your learning into an exciting adventure, where every line of code brings you closer to incredible rewards..</p>
+                <a href="#" class="btn btn-primary">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- Fin Seccion enlaces de interes -->
+        </div>
+      </div>
+    
+    </div>
+  <!-- Fin Perfil Usuario-->
+  <!-- container fin -->
+</main>
+
+<!-- footer inicio -->
+<footer class="py-2 mt-4 paraElFooter">
+  <a href="./index.html" class="nav justify-content-center pt-3">
+      <img class="logoSarpFooter" src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp">
+  </a>
+  <ul class="nav justify-content-center border-bottom pb-3 mb-3 align-items-center">
+  <li class="nav-item"><a href="https://www.instagram.com/riwi.io/" target="_blank" class="daIcon nav-link px-2 text-body-secondary" ><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M13.028 2c1.125.003 1.696.009 2.189.023l.194.007c.224.008.445.018.712.03c1.064.05 1.79.218 2.427.465c.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428c.012.266.022.487.03.712l.006.194c.015.492.021 1.063.023 2.188l.001.746v1.31a78.831 78.831 0 0 1-.023 2.188l-.006.194c-.008.225-.018.446-.03.712c-.05 1.065-.22 1.79-.466 2.428a4.883 4.883 0 0 1-1.153 1.772a4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.427.465a72.11 72.11 0 0 1-.712.03l-.194.006c-.493.014-1.064.021-2.189.023l-.746.001h-1.309a78.43 78.43 0 0 1-2.189-.023l-.194-.006a63.036 63.036 0 0 1-.712-.031c-1.064-.05-1.79-.218-2.428-.465a4.889 4.889 0 0 1-1.771-1.153a4.904 4.904 0 0 1-1.154-1.772c-.247-.637-.415-1.363-.465-2.428a74.1 74.1 0 0 1-.03-.712l-.005-.194A79.047 79.047 0 0 1 2 13.028v-2.056a78.82 78.82 0 0 1 .022-2.188l.007-.194c.008-.225.018-.446.03-.712c.05-1.065.218-1.79.465-2.428A4.88 4.88 0 0 1 3.68 3.678a4.897 4.897 0 0 1 1.77-1.153c.638-.247 1.363-.415 2.428-.465c.266-.012.488-.022.712-.03l.194-.006a79 79 0 0 1 2.188-.023zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10m0 2a3 3 0 1 1 .001 6a3 3 0 0 1 0-6m5.25-3.5a1.25 1.25 0 0 0 0 2.5a1.25 1.25 0 0 0 0-2.5"/></svg></a></li>
+  <li class="nav-item"><a href="https://www.facebook.com/people/Riwi/100092420949391/?locale=es_LA" target="_blank" class="daIcon nav-link p-1 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" viewBox="0 0 464 488"><path d="M462 78q0-30-23-53T386 2H78Q48 2 25 25T2 78v308q0 30 23 53t53 23h154V288h-56v-76h56v-30q0-39 25.5-68.5T318 84h62v76h-62q-5 0-9.5 6t-4.5 15v31h76v76h-76v174h82q30 0 53-23t23-53z"/></svg></a></li>
+  <li class="nav-item"><a href="https://twitter.com/InfoRiwi4424" target="_blank" class="daIcon nav-link px-2 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm297.1 84L257.3 234.6L379.4 396h-95.6L209 298.1L123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5l78.2-89.5zm-37.8 251.6L153.4 142.9h-28.3l171.8 224.7h26.3z"/></svg></a></li>
+  </ul>
+  <p class="text-center text-light ">Made with <svg class="animate" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 128 128"><path fill="#DB0A28" d="M64.8 120.71c3.68 0 32.11-24.18 48.7-44.07c15.96-19.14 10.2-41.74 6.69-48.03c-4.15-7.43-56.94 17.01-56.94 17.01S14.07 17.99 10.39 23.99C5.4 32.13-1.59 53.54 12.52 73.45C27.5 94.6 60.85 120.71 64.8 120.71"/><path fill="#FF262E" d="M64.55 114.2s52.26-38.68 56.75-62.3c4.25-22.37-4.45-33.22-15.16-38.45C78.99.19 65.29 26.21 64 26.21S49.95.14 23.7 11.42C9.24 17.63 3.18 34.53 8.91 53.57c8.41 27.94 55.64 60.63 55.64 60.63"/></svg> Coder.</p>
+  <p class="text-center text-light">© 2024 SARP Inc.</p>
+</footer>
+<!-- footer fin -->
+<!-- Scripts para funcionamiento de pagina-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../js/index.js" type="module" ></script>
+<script> 
+//dejar de codigo de pagina de ultimo siempre para poder hacer uso de funciones compartidas provinientes desde otros archivos 
+</script>
+</body>
+</html>

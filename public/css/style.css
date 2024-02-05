@@ -53,7 +53,7 @@ body::-webkit-scrollbar {
 
 
 .background-image{
-    background-image: url("https://www.rover.com/blog/wp-content/uploads/dog-jumping-outside-min-1024x683.jpg");
+    background-image: url("../img/Portada.svg");
     width: 100vw;
     height: 250px;
     background-size: cover;
@@ -239,6 +239,15 @@ ul {
 .roundedTop{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 10rem;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.roundedBanner{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10rem;
+    border-bottom-right-radius: 20px;
 }
 
 .arrow{
@@ -331,6 +340,7 @@ option {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNFNkNBNTIiIGQ9Im0zLjU1IDEybDcuMzUgNy4zNXEuMzc1LjM3NS4zNjMuODc1dC0uMzg4Ljg3NXEtLjM3NS4zNzUtLjg3NS4zNzV0LS44NzUtLjM3NWwtNy43LTcuNjc1cS0uMy0uMy0uNDUtLjY3NVQuODI1IDEycTAtLjM3NS4xNS0uNzV0LjQ1LS42NzVsNy43LTcuN3EuMzc1LS4zNzUuODg4LS4zNjN0Ljg4Ny4zODhxLjM3NS4zNzUuMzc1Ljg3NXQtLjM3NS44NzV6Ii8+PC9zdmc+);
 }
 
+
 .carousel-control-next-icon{
     height: 80px;
     padding-left: 80px;
@@ -411,6 +421,7 @@ width: 25rem;
 }
 
 .logoSarp {
+    background-image: url("https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png");
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -481,6 +492,7 @@ width: 25rem;
     height: 10rem;
     object-fit: cover;
     border-radius: 50%;
+    background-color: var(--color2);
 }
 .height-table-profile{
     height: 450px;
@@ -493,9 +505,10 @@ width: 25rem;
 
 .slideHome{
     width: 100%;
-    height: 500px;
-
+    height: 600px;
+    min-height: 600px;
     background-size: cover;
+    background-image: url(../img/Portada-2.svg);
 }
 
 .imgMedium{
@@ -603,9 +616,22 @@ font-size: 4rem;
     transform: scale(1.5)
 }
 
-.imagenNosotro{
+.imgAbout{
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.cardImage{
+
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        transform: scale(1);
+        transition: ease 0.3s; 
+}
+
+.cardImage:hover{
+    transform: scale(1.004);
+    transition: ease 0.3s;
+    box-shadow: 0px 0px 10px 0px rgba(107,92,255,0.54);
 }
 
 .list-group-item {
@@ -618,4 +644,78 @@ font-size: 4rem;
     border-radius: 20px;
 }
 
-/*fin dani*/
+
+/* Inicio toggle menu */
+
+.menu{
+    position:fixed;
+    top: 60%;
+    width:200px;
+    height:200px;
+    right: 0px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index: 3;
+  }
+  .menu .toggle{
+    position:relative;
+    height:60px;
+    width:60px;
+    background: var(--color7);
+    border-radius:50%;
+    box-shadow: 0px 0px 20px 0px var(--color3);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#333;
+    font-size:2rem;
+    cursor:pointer;
+    transition:1.25s;
+    z-index:5;
+    transition: ease 0.3s; 
+}
+
+  .menu.active .toggle{
+    transform:rotate(360deg);
+    box-shadow: 0px 0px 20px 0px var(--color6);
+    transform: scale(1.08);
+    transition: ease 0.3s;
+  }
+  .menu li{
+    position:absolute;
+    left:0;
+    list-style:none;
+    transition:0.5s;
+    transform:rotate(calc(360deg/8 * var(--i)));
+    transform-origin:140px;
+    scale:0;
+    transition-delay: calc(0.06s * var(--i));
+    
+  }
+  .menu.active li{
+    scale:0.9; /*Tamaño*/
+  }
+  .menu li a{
+    position:relative;
+    display:flex;
+    transform:rotate(calc(360deg/-8 * var(--i)));
+    width:60px;
+    height:60px;
+    background-color:#FFF;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:1.75rem;
+    color:var(--color11);
+    box-shadow: 0px 0px 20px 0px var(--color3);
+    transition:0.5s;
+
+  }
+  .menu li:hover a{
+    font-size:2.5rem;
+    box-shadow: 0px 0px 20px 0px var(--color6);
+  }
+
+  /* fin toggle menu */
