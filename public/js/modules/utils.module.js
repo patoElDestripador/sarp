@@ -44,7 +44,7 @@
     }
     setSessionStorage(key,value) {return localStorage.setItem(key, JSON.stringify(value));}
     
-    getSessionStorage(key) { return localStorage.getItem(key); }
+    getSessionStorage(key) { return JSON.parse(localStorage.getItem(key)); }
 
     removeSessionStorage(key) { return localStorage.removeItem(key); }
 
@@ -54,14 +54,102 @@
       //En este caso esta promesa devuelve una accion a ejecutar es decir si debemos de redirigir o guardar informacion la tratariamos aqui 
     }
 
+    urlOfThePagesBecauseICanTThinkAnymoreDesu() {
+    /*
+      1 = coder 
+      2 = trainer 
+      3 = admin
+    */
+    /*
+    01 : Index  - public
+    02 : about  - public
+    03 : error401 - public
+    04 : listClans - just admin and trainer
+    05 : listCoder - just admin and trainer
+    06 : listTrainer - just admin
+    07 : login      - public
+    08 : userProfileAdmin - just admin
+    09 : userProfileCoder - just coder
+    */
+      
+    let UrlPages = [
+      {
+        name: "index",
+        id: "01",
+        urlEn:"../html/en/index.html" ,
+        urlEs:"./index.html", 
+        urlEs2:"../index.html"
+      },
+      {
+        name: "about",
+        id: "02",
+        urlEn:"../html/en/about.html" ,
+        urlEs:"./about.html"
+      },
+      {
+        name: "error401",
+        id: "03",
+        urlEn:"../html/en/error401.html" ,
+        urlEs:"./error401.html"
+      },
+      {
+        name: "listClans",
+        id: "04",
+        urlEn:"../html/en/listClans.html" ,
+        urlEs:"./listClans.html"
+      },
+      {
+        name: "listCoder",
+        id: "05",
+        urlEn:"../html/en/listCoder.html" ,
+        urlEs:"./listCoder.html"
+      },
+      {
+        name: "listTrainer",
+        id: "06",
+        urlEn:"../html/en/listTrainer.html" , 
+        urlEs:"./listTrainer.html"
+      },
+      {
+        name: "login",
+        id: "07",
+        urlEn:"../html/en/login.html" ,
+        urlEs:"./login.html"
+      },
+      {
+        name: "userProfileAdmin",
+        id: "08",
+        urlEn:"../html/en/userProfileAdmin.html" ,
+        urlEs:"./userProfileAdmin.html"
+      },
+      {
+        name: "userProfileCoder",
+        id: "09",
+        urlEn:"../html/en/userProfileCoder.html",
+        urlEs:"./userProfileCoder.html"
+      },
+      {
+        name: "userProfileTrainer",
+        id: "10",
+        urlEn:"../html/en/userProfileTrainer.html" ,
+        urlEs:"./userProfileTrainer.html"
+      } 
+      ]
 
 
+    let publicAccess = ["01", "02", "03", "07"];
+    let adminAccess = [];
+    let trainerAccess = [];
+    let codeAccess = [];
+
+    }
 
   
   }
 
 // Inicio Menu Toggle
 
+/*
 const htmlContent = `
   <div class="toggle"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256"><path fill="#141414" d="M228 128a12 12 0 0 1-12 12h-76v76a12 12 0 0 1-24 0v-76H40a12 12 0 0 1 0-24h76V40a12 12 0 0 1 24 0v76h76a12 12 0 0 1 12 12"/></svg></div>
   <li style="--i:-2;--clr:#141414"  >
@@ -89,6 +177,6 @@ const htmlContent = `
   }
 
   // Fin Menu Toggle
-  
+  */
 
   export default new UtilsModule();

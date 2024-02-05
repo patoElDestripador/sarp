@@ -1,14 +1,14 @@
+let urlBase = "http://localhost:3000/";
 class CrudModule {
   constructor() {
-   // this.urlBase = "https://sarpbackendv1.onrender.com/"; //  directo en la web "No guarda o actualiza cambios "
+   //this.urlBase = "https://sarpbackendv1.onrender.com/"; //  directo en la web "No guarda o actualiza cambios "
     this.urlBase = "http://localhost:3000/"; // local
   }
 
   // Getters
   async getUserByEmail(email) {
-    let urlBase = "http://localhost:3000/";
     let user = "";
-    await fetch(`${urlBase}usuario?correo=${email}`, {
+    await fetch(`${urlBase}users?email=${email}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -18,8 +18,9 @@ class CrudModule {
       .catch((err) => console.error(err));
     return user;
   }
+
   async getAreaById(id) {
-    let urlBase = "http://localhost:3000/";
+
     let user = "";
     await fetch(`${urlBase}areas?id=${id}`, {
       method: "GET",
@@ -32,7 +33,7 @@ class CrudModule {
     return user;
   }
   async getUserById(id) {
-    let urlBase = "http://localhost:3000/";
+
     let user = "";
     await fetch(`${urlBase}users?id=${id}`, {
       method: "GET",
@@ -45,7 +46,7 @@ class CrudModule {
     return user;
   }
   async getCodersById(id) {
-    let urlBase = "http://localhost:3000/";
+
     let data = "";
     await fetch(`${urlBase}coders?id=${id}`, {
       method: "GET",
@@ -58,7 +59,7 @@ class CrudModule {
     return data;
   }
   async getTrainersById(id) {
-    let urlBase = "http://localhost:3000/";
+
     let data = "";
     await fetch(`${urlBase}trainers?id_user=${id}`, {
       method: "GET",
@@ -71,9 +72,9 @@ class CrudModule {
     return data;
   }
   async getPermitsByIdUSer(id) {
-    let urlBase = "http://localhost:3000/";
+
     let data = "";
-    await fetch(`${urlBase}permits?id=${id}`, {
+    await fetch(`${urlBase}clans?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -85,7 +86,7 @@ class CrudModule {
   }
 
   async getRolByIdUSer(id) {
-    let urlBase = "http://localhost:3000/";
+
     let data = "";
     await fetch(`${urlBase}roles?id=${id}`, {
       method: "GET",
@@ -97,9 +98,7 @@ class CrudModule {
       .catch((err) => erroRequest("getRolByIdUSer", err));
       return data;
   }
-
   async getClansById(id) {
-  let urlBase = "http://localhost:3000/";
   let data = ''
   await fetch(`${urlBase}clans?id=${id}`)
   .then((response) => response.json())
@@ -109,21 +108,30 @@ class CrudModule {
   .catch((err) => erroRequest("getClansById", err));
   return data;
   }
-
-  async getRiwiPointsByUserid(id) {
-    let urlBase = "http://localhost:3000/";
+  
+  async getRiwiPointsByUserid(id){
     let data = "";
-    await fetch(`${urlBase}riwi_points?id=${id}`)
-    .then((response) => response.json())
-    .then((res) => {
-      data = res;
-    })
-      .catch((err) => erroRequest("getRiwiPointsByUserid", err));
+    await fetch(`${urlBase}riwi_points?id=${idCoder}`)
+      .then((response) => response.json())
+      .then((res) => {
+        let riwiPoints = {
+          positivePoints,
+          negativePoints,
+          total
+        }
+        res.forEach(element => {
+        riwiPoints.positivePoints += element.positive_point
+        riwiPoints.negativePoints += !parseInt(element.negative_point) ? 0 : element.negative_point
+        })
+        riwiPoints.total = riwiPoints.positivePoints - riwiPoints.negativePoints
+          data =  riwiPoints;
+      })
+      .catch((err) => erroRequest("getRiwiPointsByUserid", err))
       return data
   }
 
   async getRiwiPointsByTrainer(id) {
-    let urlBase = "http://localhost:3000/";
+
     let data = "";
     await fetch(`${urlBase}riwi_points?id_trainers=${id}`)
     .then((response) => response.json())
@@ -136,9 +144,8 @@ class CrudModule {
 
   //getCodersByClan()
 
-
   async getCoders() {
-    let urlBase = "http://localhost:3000/";
+
     let data = "";
     await fetch(`${urlBase}coders`, {
       method: "GET",
@@ -164,7 +171,7 @@ class CrudModule {
   }
   async getArea() {
     let data = "";
-    await fetch(`${urlBase}area`, {
+    await fetch(`${urlBase}areas`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -174,9 +181,9 @@ class CrudModule {
       .catch((err) => erroRequest("getArea", err));
     return data;
   }
-  async getPermisos() {
+  async getPermits() {
     let data = "";
-    await fetch(`${urlBase}permisos`, {
+    await fetch(`${urlBase}permits`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -187,7 +194,7 @@ class CrudModule {
     return data;
   }
   async getTrainers() {
-    let urlBase = "http://localhost:3000/";
+
     let data = "";
     await fetch(`${urlBase}trainers`, {
       method: "GET",
@@ -242,7 +249,7 @@ class CrudModule {
   }
   async setClanes(dataSend) {
     let data = "";
-    await fetch(`${urlBase}clanes/`, {
+    await fetch(`${urlBase}clans/`, {
       method: "POST",
       headers: { "Content-type": "aplication/json" },
       body: JSON.stringify(dataSend),
@@ -270,7 +277,7 @@ class CrudModule {
   }
   async setArea(dataSend) {
     let data = "";
-    await fetch(`${urlBase}area/`, {
+    await fetch(`${urlBase}areas/`, {
       method: "POST",
       headers: { "Content-type": "aplication/json" },
       body: JSON.stringify(dataSend),
@@ -284,7 +291,7 @@ class CrudModule {
   }
   async setPermisos(dataSend) {
     let data = "";
-    await fetch(`${urlBase}permisos/`, {
+    await fetch(`${urlBase}permits/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -359,7 +366,7 @@ class CrudModule {
   }
   async updateClanes(dataSend) {
     let data = "";
-    await fetch(`${urlBase}clanes/`, {
+    await fetch(`${urlBase}clans/`, {
       method: "PUT",
       headers: { "Content-type": "aplication/json" },
       body: JSON.stringify(dataSend),
@@ -387,7 +394,7 @@ class CrudModule {
   }
   async updateArea(dataSend) {
     let data = "";
-    await fetch(`${urlBase}area/`, {
+    await fetch(`${urlBase}areas/`, {
       method: "PUT",
       headers: { "Content-type": "aplication/json" },
       body: JSON.stringify(dataSend),
@@ -401,7 +408,7 @@ class CrudModule {
   }
   async updatePermisos(dataSend) {
     let data = "";
-    await fetch(`${urlBase}permisos`, {
+    await fetch(`${urlBase}permits`, {
       method: "POST",
       headers: {
         "Content/-Type": "applicatioPUTon",
@@ -460,10 +467,10 @@ class CrudModule {
 
   //delete in this case is change status
 
-  //clanes;
+  //clans;
   //rol;
-  //area;
-  //permisos;
+  //areas;
+  //permits;
   //trainers;
   //usuario;
   //coders;
