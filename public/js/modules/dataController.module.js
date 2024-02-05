@@ -86,9 +86,15 @@ class DataControllerModule {
     } 
   }
 
+  // Editar Coders
+
+  async editCoders (id){
+    let dataCoder = await crudModule.getCodersById(id)
+  }
 
 
-  
+
+
 
   // Profile coders
   // El idUserLogin se debe traer del session storage 
