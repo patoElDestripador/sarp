@@ -12,7 +12,7 @@ let actualPageId = document.getElementById("pagName")
 //dataController.setCodersInList() // Lista coders
 //dataController.setTrainerInList() // Lista trainers
 //dataController.setInformationCoder() // Lista historico en coders
-//dataController.setInformationTrainer() // Lista historico en coders
+dataController.setInformationTrainer() // Lista historico en coders
 
 if(actualPage == "login"){
 
@@ -67,4 +67,7 @@ interval: 3000,
 touch: false
 })
 
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+popoverTriggerList
+  popover
 
