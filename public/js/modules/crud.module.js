@@ -88,7 +88,7 @@ class CrudModule {
   async getRolByIdUSer(id) {
 
     let data = "";
-    await fetch(`${urlBase}roles?id=${id}`, {
+    await fetch(`${urlBase}permits?id_user=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
