@@ -15,7 +15,7 @@ let actualPage = document.querySelector("title").text
 //dataController.setCodersInList() // Lista coders
 //dataController.setTrainerInList() // Lista trainers
 //dataController.setInformationCoder() // Lista historico en coders
-dataController.setInformationTrainer() // Lista historico en coders
+ // Lista historico en coders
 
 
 let validateLenguge = utils.getSessionStorage("leng")
@@ -105,7 +105,7 @@ if (value === "01") {
 } else if (value === "04") {
 
 } else if (value === "05") {
-
+    //dataController.setInformationTrainer(user)
 } else if (value === "06") {
 //dataController.setTrainerInList()
 } else if (value === "07") {
@@ -275,6 +275,7 @@ const htmlContent = `
 
 
 
+
 // Menu toggle
 const menu =document.querySelector(".menu");
 const toggle = document.querySelector(".toggle");
@@ -286,13 +287,7 @@ toggle?.addEventListener("click",()=>{
 
 
 
-// velocidad Slide
-const myCarouselElement = document.querySelector('#carouselHome')
 
-const carousel = new bootstrap.Carousel(myCarouselElement, {
-interval: 3000,
-touch: false
-})
 
 //inicio de listado de categorias
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
@@ -501,6 +496,13 @@ document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
 
 
 
+document.getElementById("idrateCoder")?.addEventListener("click",()=>{
+    dataController.searchCoderTorate()
+});
+
+
+
+
 
 
 
@@ -509,3 +511,11 @@ const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]
 popoverTriggerList
   popover
 
+
+  // velocidad Slide
+const myCarouselElement = document.querySelector('#carouselHome')
+
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+interval: 3000,
+touch: false
+})

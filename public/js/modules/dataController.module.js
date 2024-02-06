@@ -8,12 +8,13 @@ class DataControllerModule {
     await crudModule.getClans()
   }
   async setPointsInCard(id){
-    let {positivepoints,negativePoints,total} = await crudModule.getRiwiPointsByUserid(id);
-    document.getElementById("totalPtsPositive").innerText = positivepoints
-    document.getElementById("totalPtsNegative").innerText = negativePoints
+    let validation = !document.getElementById("totalPtsPositive") ? 0 : true
+    if(validation){
+      let {positivepoints,negativePoints,total} = await crudModule.getRiwiPointsByUserid(id);
+      document.getElementById("totalPtsPositive").innerText = positivepoints
+      document.getElementById("totalPtsNegative").innerText = negativePoints
+    }
     //document.getElementById("totalPtsAvailable")
-    //total
-    return points
   }
   
   // Listar Coders
@@ -129,7 +130,8 @@ class DataControllerModule {
   }
   // Profile Trainer
   // El idUserLogin se debe traer del session storage 
-  async setInformationTrainer(idUserLogin=218525) {   
+  async setInformationTrainer(user) {   
+    let idUserLogin = user.rol
     this.setPointsInCard(idUserLogin) 
     let tBody = document.getElementById("informationTrainer")
     let contador = 1;
@@ -137,10 +139,12 @@ class DataControllerModule {
     let puntosNegativos = 0;
 
     let dataUser = await crudModule.getUserById(idUserLogin)
+    console.log(dataUser)
     let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id)
     let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol)
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
-    let dataArea = await crudModule.getAreaById(dataUsersProfile[0].id_area)
+    console.log(dataUsersProfile)
+    let dataArea = await crudModule.getAreaById(dataUsersProfile[0].id_areas)
     let dataPoint = await crudModule.getRiwiPointsByTrainer(dataUsersProfile[0].id)
     // console.log(dataCoders)
     
@@ -272,6 +276,57 @@ class DataControllerModule {
     }
     //fin de list propierty
     //``
+
+    searchCoderTorate(){
+          Swal.fire({
+      title: "Agregar Riwi point",
+      text: "Busca por documento o por nombre",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off"
+      },
+      showCancelButton: true,
+      confirmButtonText: "buscar",
+      showLoaderOnConfirm: true,
+      preConfirm: async (login) => {
+        try {
+            let buscarCoder = await  crudModule.getCoders()
+            console.log(buscarCoder)
+            let buscar = () => {
+              return buscarCoder.filter(user => {
+                return user.name.startsWith(usuario) || user.document.startsWith(usuario) 
+              });
+            };
+
+            let input = document.getElementById("swal2-input")
+            input.setAttribute("list","browsers")
+            input.innerHTML += `<datalist id="browsers">
+              <option value="Chrome"></option>
+              <option value="Firefox"></option>
+              <option value="Internet Explorer"></option>
+              <option value="Opera"></option>
+              <option value="Safari"></option>
+              <option value="Microsoft Edge"></option>
+            </datalist>`
+
+            buscar()
+        } catch (error) {
+          Swal.showValidationMessage(`
+            Request failed: ${error}
+          `);
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+      }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: `${result.value.login}'s avatar`,
+          imageUrl: result.value.avatar_url
+        });
+      }
+      });
+     }
+
 }
 
 
