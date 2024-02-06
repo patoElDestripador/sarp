@@ -76,13 +76,43 @@ class DataControllerModule {
   }
 
   // Editar Coders
-
-  async editCoders (id){
+  async editCoders (id=5){
     let dataCoder = await crudModule.getCodersById(id)
+    let dataUser = await crudModule.getUserById(dataCoder[0].id_user)
+    let dataClan = await crudModule.getClansById(dataCoder[0].id_clan)
+    let dataPermits = await crudModule.getPermitsByIdUSer(dataCoder[0].id)
+    document.getElementById("documentId").value = dataCoder[0].document
+    document.getElementById("name").value = dataCoder[0].name
+    document.getElementById("email").value = dataUser.email
+    document.getElementById("password").value = dataUser.password
+    document.getElementById("imgUser").value = dataUser.img
+    document.getElementById("idSelectClan").value = dataClan[0].id
+    document.getElementById("idSelectRol").value = dataPermits[0].id_rol
+    document.getElementById("idCoder").value = dataCoder[0].id
+  }
+  
+  async updateCodersById(dataSend, iduser){
+    console.log(dataClan)
+    let id = document.getElementById("idCoder")
+    let documentId = document.getElementById("documentId").value
+    let name = document.getElementById("name").value
+    let email = document.getElementById("email").value
+    let password = document.getElementById("password").value
+    let imgUser = document.getElementById("imgUser").value
+    let clan = document.getElementById("idSelectClan").value
+    let rol = document.getElementById("idSelectRol").value
+
+    let dataCoder = { id_clan: clan, name: name, document: documentId };
+    let dataUser = { email: email, password: password, img: imgUser };
+    let dataPermit = { id_rol: rol };
+
+    let updatedDataCoder = await crudModule.updateUserById(dataCoder);
+    let updatedDataUser = await crudModule.updateUserById(dataCoder); // Asumiendo que tienes funciones separadas para cada tipo
+    let updatedDataPermit = await crudModule.updatePermitById(dataCoder);
+
   }
 
-
-
+  
 
   // Profile coders
   // El idUserLogin se debe traer del session storage 
@@ -94,8 +124,8 @@ class DataControllerModule {
     let puntosNegativos = 0;
 
     let dataUser = await crudModule.getUserById(idUserLogin)
-    let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id)
-    let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol)
+    let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id) // Revisar
+    let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
     let dataUsersProfile = await crudModule.getCodersById(idUserLogin)
     let dataPoints = await crudModule.getRiwiPointsByUserid(dataUsersProfile[0].id)
     let dataClans = await crudModule.getClansById(dataUsersProfile[0].id_clan)
@@ -129,7 +159,7 @@ class DataControllerModule {
   }
   // Profile Trainer
   // El idUserLogin se debe traer del session storage 
-  async setInformationTrainer(idUserLogin=218525) {   
+  async setInformationTrainer(idUserLogin=220) {   
     this.setPointsInCard(idUserLogin) 
     let tBody = document.getElementById("informationTrainer")
     let contador = 1;
@@ -137,12 +167,11 @@ class DataControllerModule {
     let puntosNegativos = 0;
 
     let dataUser = await crudModule.getUserById(idUserLogin)
-    let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id)
-    let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol)
+    let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id) //Revisar
+    let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
     let dataArea = await crudModule.getAreaById(dataUsersProfile[0].id_area)
     let dataPoint = await crudModule.getRiwiPointsByTrainer(dataUsersProfile[0].id)
-    // console.log(dataCoders)
     
     // Se completan los datos en la card del perfil
     document.getElementById("emailUser").placeholder  = dataUser.email
