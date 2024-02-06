@@ -15,7 +15,7 @@ let actualPage = document.querySelector("title").text
 //dataController.setCodersInList() // Lista coders
 //dataController.setTrainerInList() // Lista trainers
 //dataController.setInformationCoder() // Lista historico en coders
-//dataController.setInformationTrainer() // Lista historico en coders
+dataController.setInformationTrainer() // Lista historico en coders
 
 
 let validateLenguge = utils.getSessionStorage("leng")
@@ -391,4 +391,121 @@ document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
 
 
 
+//inicio de listado de categorias
+document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(1,validateLenguge)
+});
+document.getElementById("idListCatByPoints")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(2,validateLenguge)
+});
+document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(3,validateLenguge)
+});
+document.getElementById("idListCatBySubject")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(4,validateLenguge)
+});
+
+
+document.getElementById("selectionNavItem1")?.addEventListener("click",()=>{
+    //logout
+    let language = utils.getSessionStorage("leng")
+    utils.removeSessionStorage("user")
+    if(language == "es"){
+        location.href =APP_URL2+"index.html";
+    }else{
+        location.href =APP_URL+"en/index.html";
+    }
+});
+
+document.getElementById("selectionNavItem2")?.addEventListener("click",()=>{
+    let language = utils.getSessionStorage("leng")
+    if(language == "es"){
+        location.href =APP_URL2+"index.html";
+    }else{
+        location.href =APP_URL+"en/index.html";
+    }
+});
+document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
+    console.log("entro aki")
+    let language = utils.getSessionStorage("leng")
+    if(language == "es"){
+        Swal.fire({
+            title: "Crear nuevo usuario",
+            text: "¿Que usuario tipo deseas crear?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Coder",
+            denyButtonText: `Trainer`,
+            cancelButtonColor: "#3085d6",
+            confirmButtonColor: "#3085d6"
+          }).then((result) => {
+            if (result.isConfirmed) {
+                location.href =  APP_URL + "listCoder.html";
+            } else if (result.isDenied) {
+                location.href =  APP_URL + "listTrainer.html";
+            }
+          });
+    }else{
+        Swal.fire({
+            title: "Do you want to save the changes?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Save",
+            denyButtonText: `Don't save`
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire("Saved!", "", "success");
+            } else if (result.isDenied) {
+              Swal.fire("Changes are not saved", "", "info");
+            }
+          });
+    }
+});
+document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
+    let language = utils.getSessionStorage("leng")
+    if(language == "es"){
+        location.href =APP_URL+"index.html";
+    }else{
+        location.href =APP_URL+"en/index.html";
+    }
+});
+document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
+    let language = utils.getSessionStorage("leng")
+    if(lenguage == "es"){
+        location.href =APP_URL+"index.html";
+    }else{
+        location.href =APP_URL+"en/index.html";
+    }
+});
+
+
+
+
+
+
+
+
+
+
+document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(1)
+});
+document.getElementById("idListCatByPoints")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(2)
+});
+document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
+    dataController.listInSelectPropierty(3)
+});
+
+
+
+
+
+
+
+
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+popoverTriggerList
+  popover
 

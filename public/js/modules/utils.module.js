@@ -147,7 +147,4 @@
   
   }
 
-
-
-
   export default new UtilsModule();
