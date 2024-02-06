@@ -9,9 +9,9 @@ let actualPage = document.querySelector("title").text
 
 //dataController.setPointsInCard(40)
 //dataController.setCodersInList() // Lista coders
-dataController.setTrainerInList() // Lista trainers
+//dataController.setTrainerInList() // Lista trainers
 //dataController.setInformationCoder() // Lista historico en coders
-dataController.setInformationTrainer() // Lista historico en coders
+//dataController.setInformationTrainer() // Lista historico en coders
 //dataController.editCoders() // Edita Coders
 //dataController.updateCodersById(dataSend)
 

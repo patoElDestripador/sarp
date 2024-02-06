@@ -61,6 +61,12 @@ body::-webkit-scrollbar {
     z-index: -1;
 }
 
+.imgLogin{
+width: 35rem;
+padding: 30px;
+
+}
+
 /* Inicio estilos botones */
 
 .btn-primary {
