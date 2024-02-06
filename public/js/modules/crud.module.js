@@ -74,7 +74,7 @@ class CrudModule {
   async getPermitsByIdUSer(id) {
 
     let data = "";
-    await fetch(`${urlBase}clans?id=${id}`, {
+    await fetch(`${urlBase}permits?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -350,9 +350,9 @@ class CrudModule {
 
   // Updates
 
-  async updateCoders(dataSend) {
+  async updateCodersById(dataSend, id) {
     let data = "";
-    await fetch(`${urlBase}coders/`, {
+    await fetch(`${urlBase}coders?id=${id}`, {
       method: "PUT",
       headers: { "Content-type": "aplication/json" },
       body: JSON.stringify(dataSend),
