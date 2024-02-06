@@ -1,5 +1,6 @@
 import crud from './crud.module.js'
 import utils from './utils.module.js'
+const APP_URL= "http://127.0.0.1:5500/public/html/";
 
 class LoginModule {
 
@@ -16,15 +17,16 @@ class LoginModule {
     if(crudUser && crudUser.email == this.email && crudUser.password == this.password ){
       let permits  = await crud.getRolByIdUSer(crudUser.id);
       let temporaryArray = [];
-      permits.forEach(e=>{temporaryArray.push(e.id)})
+      permits.forEach(e=>{temporaryArray.push(e.id_rol)})
       let newUser = {...crudUser,rol :temporaryArray[0]};
+      console.log("holi",newUser)
       utils.setSessionStorage("user",newUser);
       if (newUser.rol == "1") {
-        location.href ="./userProfileCoder.html";
+        location.href = APP_URL + "userProfileCoder.html";
       } else if (newUser.rol == "2") {
         //location.href ="./listTrainer.html";
       } else if (newUser.rol == "3") {
-        location.href ="./userProfileAdmin.html";
+        location.href = APP_URL + "userProfileAdmin.html";
       }
     }else {
       Swal.fire({

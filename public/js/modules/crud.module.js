@@ -55,7 +55,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getCoder", err));
+      .catch((err) => this.erroRequest("getCoder", err));
     return data;
   }
   async getTrainersById(id) {
@@ -68,7 +68,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getTrainers", err));
+      .catch((err) => this.erroRequest("getTrainers", err));
     return data;
   }
   async getPermitsByIdUSer(id) {
@@ -81,21 +81,21 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getPermitsByIdUSer", err));
+      .catch((err) => this.erroRequest("getPermitsByIdUSer", err));
     return data;
   }
 
   async getRolByIdUSer(id) {
 
     let data = "";
-    await fetch(`${urlBase}roles?id=${id}`, {
+    await fetch(`${urlBase}permits?id_user=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getRolByIdUSer", err));
+      .catch((err) => this.erroRequest("getRolByIdUSer", err));
       return data;
   }
   async getClansById(id) {
@@ -105,19 +105,19 @@ class CrudModule {
   .then((res) => {
     data = res;
   })
-  .catch((err) => erroRequest("getClansById", err));
+  .catch((err) => this.erroRequest("getClansById", err));
   return data;
   }
   
   async getRiwiPointsByUserid(id){
     let data = "";
-    await fetch(`${urlBase}riwi_points?id=${idCoder}`)
+    await fetch(`${urlBase}riwi_points?id=${id}`)
       .then((response) => response.json())
       .then((res) => {
         let riwiPoints = {
-          positivePoints,
-          negativePoints,
-          total
+          positivePoints: 0,
+          negativePoints: 0,
+          total: 0
         }
         res.forEach(element => {
         riwiPoints.positivePoints += element.positive_point
@@ -126,7 +126,7 @@ class CrudModule {
         riwiPoints.total = riwiPoints.positivePoints - riwiPoints.negativePoints
           data =  riwiPoints;
       })
-      .catch((err) => erroRequest("getRiwiPointsByUserid", err))
+      .catch((err) => this.erroRequest("getRiwiPointsByUserid", err))
       return data
   }
 
@@ -138,7 +138,7 @@ class CrudModule {
     .then((res) => {
       data = res;
     })
-      .catch((err) => erroRequest("getRiwiPointsByTrainer", err));
+      .catch((err) => this.erroRequest("getRiwiPointsByTrainer", err));
       return data
   }
 
@@ -154,7 +154,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getCoders", err));
+      .catch((err) => this.erroRequest("getCoders", err));
     return data;
   }
   async getClans() {
@@ -166,7 +166,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getClans", err));
+      .catch((err) => this.erroRequest("getClans", err));
     return data;
   }
   async getArea() {
@@ -178,7 +178,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getArea", err));
+      .catch((err) => this.erroRequest("getArea", err));
     return data;
   }
   async getPermits() {
@@ -190,7 +190,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getPermisos", err));
+      .catch((err) => this.erroRequest("getPermisos", err));
     return data;
   }
   async getTrainers() {
@@ -203,7 +203,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getTrainers", err));
+      .catch((err) => this.erroRequest("getTrainers", err));
     return data;
   }
   async 1() {
@@ -215,7 +215,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getUsuario", err));
+      .catch((err) => this.erroRequest("getUsuario", err));
     return data;
   }
   async getRiwiPoints() {
@@ -227,7 +227,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("getRiwiPoints", err));
+      .catch((err) => this.erroRequest("getRiwiPoints", err));
     return data;
   }
 
@@ -244,7 +244,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("setCoders", err));
+      .catch((err) => this.erroRequest("setCoders", err));
     return data;
   }
   async setClanes(dataSend) {
@@ -258,7 +258,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("setClanes", err));
+      .catch((err) => this.erroRequest("setClanes", err));
     return data;
   }
   async setRol(dataSend) {
@@ -272,7 +272,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("setRol", err));
+      .catch((err) => this.erroRequest("setRol", err));
     return data;
   }
   async setArea(dataSend) {
@@ -286,7 +286,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("setArea", err));
+      .catch((err) => this.erroRequest("setArea", err));
     return data;
   }
   async setPermisos(dataSend) {
@@ -302,7 +302,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("setPermisos", err));
+      .catch((err) => this.erroRequest("setPermisos", err));
     return data;
   }
   async setTrainers(dataSend) {
@@ -316,7 +316,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("setTrainers", err));
+      .catch((err) => this.erroRequest("setTrainers", err));
     return data;
   }
   async setUsuario(dataSend) {
@@ -330,7 +330,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("setUsuario", err));
+      .catch((err) => this.erroRequest("setUsuario", err));
     return data;
   }
   async setRiwiPoints(dataSend) {
@@ -344,7 +344,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("setRiwiPoints", err));
+      .catch((err) => this.erroRequest("setRiwiPoints", err));
     return data;
   }
 
@@ -361,7 +361,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("updateCodersById", err));
+      .catch((err) => this.erroRequest("updateCoders", err));
     return data;
   }
   async updateClanes(dataSend) {
@@ -375,7 +375,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("updateClanes", err));
+      .catch((err) => this.erroRequest("updateClanes", err));
     return data;
   }
   async updateRol(dataSend) {
@@ -389,7 +389,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("updateRol", err));
+      .catch((err) => this.erroRequest("updateRol", err));
     return data;
   }
   async updateArea(dataSend) {
@@ -403,7 +403,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("updateArea", err));
+      .catch((err) => this.erroRequest("updateArea", err));
     return data;
   }
   async updatePermisos(dataSend) {
@@ -419,7 +419,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("updatePermisos", err));
+      .catch((err) => this.erroRequest("updatePermisos", err));
     return data;
   }
   async updateTrainers(dataSend) {
@@ -433,7 +433,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("updateTrainers", err));
+      .catch((err) => this.erroRequest("updateTrainers", err));
     return data;
   }
   async updateUsuario(dataSend) {
@@ -447,7 +447,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("updateUsuario", err));
+      .catch((err) => this.erroRequest("updateUsuario", err));
     return data;
   }
   async updateRiwiPoints(dataSend) {
@@ -461,7 +461,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => erroRequest("updateRiwiPoints", err));
+      .catch((err) => this.erroRequest("updateRiwiPoints", err));
     return data;
   }
 
