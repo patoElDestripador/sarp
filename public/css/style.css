@@ -292,6 +292,13 @@ ul {
     cursor: pointer;
 }
 
+.iconHome{
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    padding: 5px;
+}
+
 option {
     font-weight: normal;
     display: block;
@@ -354,8 +361,14 @@ option {
 
 .sizeCard{
     width: auto;
+    max-width: 200px;
+    min-width: 200px;
+}
+
+.sizeCardProfile{
+    width: auto;
     max-width: 300px;
-    min-width: 300px;
+    min-width: 300px;  
 }
 
 .card-dark{
