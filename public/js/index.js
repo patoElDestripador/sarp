@@ -28,8 +28,8 @@ function validationAccess() {
     let user = utilsModule.getSessionStorage("user")
     user = !user ? 0 : user
     let publicAccess = ["01", "02", "03", "07"];
-    let adminAccess = ["08","04","05","06",];
-    let trainerAccess = ["10","04","05",];
+    let adminAccess = ["08","04","05","06"];
+    let trainerAccess = ["10","04","05"];
     let coderAccess = ["09","04"];
     if (!publicAccess.includes(value) && user != 0){
         if (user.rol == "1") {
@@ -90,7 +90,6 @@ esta les devolvera el siguiente objeto donde se encuntra el id del usaurio y el 
     "img": "https://imgdb.net/storage/uploads/60cd0f9f76145fc6a1fd28332d0c1b9d7918bb5848a5956acec4e5e8cd783267.png",
     "rol": 3
 }
-
 */
 if (value === "01") {
 
@@ -128,9 +127,6 @@ dataController.setTrainerInList()
 //dataController.listCodersByClan()
 
 //Globales
-
-
-
 
 document.getElementById("buttonIdChangeLangEs")?.addEventListener("click", () => {
     utils.setSessionStorage("leng", "es")
@@ -251,6 +247,8 @@ document.getElementById("idCorazon")?.addEventListener("click",()=>{
 });
 
 // Inicio Menu Toggle
+
+
 const htmlContent = `
   <div class="toggle"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256"><path fill="#141414" d="M228 128a12 12 0 0 1-12 12h-76v76a12 12 0 0 1-24 0v-76H40a12 12 0 0 1 0-24h76V40a12 12 0 0 1 24 0v76h76a12 12 0 0 1 12 12"/></svg></div>
   <li style="--i:-2;--clr:#141414"  >
@@ -277,7 +275,9 @@ const htmlContent = `
     menuToggleElement.innerHTML = htmlContent;
   } else {
     console.log('No se encontró el elemento con el id "menuToggle".');
-  }
+  } 
+
+
 
   // Fin Menu Toggle
 
@@ -427,6 +427,7 @@ document.getElementById("selectionNavItem2")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
+
 document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
     console.log("entro aki")
     let language = utils.getSessionStorage("leng")
@@ -514,7 +515,6 @@ document.getElementById("idrateCoder")?.addEventListener("click",()=>{
 });
 
 
-  // velocidad Slide
 const myCarouselElement = document.querySelector('#carouselHome')
 if (myCarouselElement){
     const carousel = new bootstrap.Carousel(myCarouselElement, {
