@@ -99,24 +99,17 @@ if (value === "01") {
 
 } else if (value === "04") {
     
-    document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
-        dataController.crearClans()
-    });
+
 
 } else if (value === "05") {
+    //dataController.setInformationTrainer(user)
+
 dataController.setCodersInList() 
 dataController.listClansInselect()
 dataController.setCodersInList() // Lista coders
-    dataController.editCoders() // Edita Coders
-    dataController.updateCoders() // Actualiza coders
-    document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
-        dataController.crearCoders()
-    });
 } else if (value === "06") {
 dataController.setTrainerInList() 
-    dataController.setTrainerInList() // Lista trainers
-    dataController.editTrainer(user=222) // Edita trainers
-    dataController.updateTrainers() // Actualiza trainers
+dataController.setTrainerInList() // Lista trainers
 
 } else if (value === "07") {
 
@@ -530,3 +523,10 @@ if (myCarouselElement){
     touch: false
 }) 
 }
+
+document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
+    dataController.crearCoders()
+});
+document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
+    dataController.crearClans()
+});
