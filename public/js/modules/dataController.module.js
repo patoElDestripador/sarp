@@ -54,7 +54,7 @@ async setTrainerInList() {
   
   for (const element of trainers) {
     let dataArea = await crudModule.getAreaById(element.id); 
-    let areaName = dataArea[0].name;
+    //let areaName = dataArea[0].name;
 
     tBody.innerHTML += `
     <tr>
@@ -506,15 +506,13 @@ async setTrainerInList() {
     let point = document.getElementById("point").value 
     let typePoint = document.getElementById("point") 
     let Concept = document.getElementById("").value
-    let observation = document.getElementById("").value
-
-
-
-
+    let observation = document.getElementById("").valu
   }
 
   loadModalList(){
     let modal = document.getElementById("idmodalBody")
+    let title = document.getElementById("idModalTitle")
+    title.innerText = "Buscar Coder" 
     modal.innerHTML = `
     
     <div class="card-body">
@@ -523,7 +521,7 @@ async setTrainerInList() {
         <div class="row overflow-hidden flex-fill">
           <div class="col d-flex col-sm-12">
             <input class="form-control m-2 " type="search" placeholder="Buscar"  id="idSearchRate" aria-label="Buscar">
-            <button class="btn btn-primary my-2" type="submit">Buscar</button>
+            <button class="btn btn-primary my-2" type="button" id="idSearchRateButton" >Buscar</button>
           </div>
         </div>
       </nav>
