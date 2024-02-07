@@ -22,7 +22,7 @@ class DataControllerModule {
     let tBody = document.getElementById("historyCoders")
     let coders = await crudModule.getCoders()
     let contador = 1;
-
+    
     for (const element of coders) {
       let dataEmail = await crudModule.getUserById(element.id);
       let puntosCoder = await crudModule.getRiwiPointsByUserid(element.id);
