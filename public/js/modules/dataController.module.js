@@ -302,7 +302,7 @@ async setTrainerInList() {
     
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
     document.getElementById("emailUser").placeholder  = "admin@riwi.io.com"
-    document.getElementById("imgUser").setAttribute ("src", "https://imgdb.net/storage/uploads/60cd0f9f76145fc6a1fd28332d0c1b9d7918bb5848a5956acec4e5e8cd783267.png")
+    document.getElementById("imgUser").setAttribute ("src", "http://www.marketingtool.online/en/face-generator/img/faces/avatar-11275282410ba32d3bac1efbf87b208b.jpg")
     document.getElementById("nameUser").innerText = "Admin"
     document.getElementById("documentId").placeholder  = "3333335"
     document.getElementById("materiaUser").placeholder = "Admin"
