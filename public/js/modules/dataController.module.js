@@ -435,18 +435,6 @@ class DataControllerModule {
   async crearClans(){
     let nameClan=document.getElementById('name')
     let imgClan=document.getElementById('imgUser')
-    //Validacion no exista datos iguales
-    /*
-    let clan= await crudModule.getUsuario()
-          clan.forEach(resul=>{
-            console.log(clan)
-              if(resul.name === nameClan.value || resul.img === imgClan.value){
-                alert("Este Correo Ya Esta Registrado")
-                location.href=""   
-              }else{
-              }
-        })
-        */
 
     let dataSend ={
       name:nameClan.value,
