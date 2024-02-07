@@ -98,6 +98,7 @@ if (value === "01") {
 } else if (value === "03") {
 
 } else if (value === "04") {
+    dataController.setClansInList()
     
 
 
@@ -113,7 +114,9 @@ dataController.setTrainerInList() // Lista trainers
 } else if (value === "07") {
 
 } else if (value === "08") {
+    
     dataController.setInformationTrainer(user) // Lista información en Trainers
+  
 
 } else if (value === "09") {
     dataController.setInformationCoder(user.id) // Lista información en coders

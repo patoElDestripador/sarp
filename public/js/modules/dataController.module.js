@@ -314,19 +314,21 @@ class DataControllerModule {
     let clan3=0
     let clan4=0
     let coders = await crudModule.getCoders()
+    console.log(coders)
     coders.forEach(async (resultado) =>{
-        if (resultado.Id_clan == 1){ clan1++} 
-        else if(resultado.Id_clan == 2){clan2++}
-        else if(resultado.Id_clan == 3){clan3++}
-        else if(resultado.Id_clan == 4){clan4++}
+        if (resultado.id_clan == 1){ clan1++} 
+        else if(resultado.id_clan == 2){clan2++}
+        else if(resultado.id_clan == 3){clan3++}
+        else if(resultado.id_clan == 4){clan4++}
     })
-    let clans = await crudModule.getClanes()
+    let clans = await crudModule.getClans()
+    console.log(clans)
     clans.forEach(async (element) =>{ 
-        if (element.id_clan == 1){
+        if (element.id == 1){
             tBody.innerHTML += `
               <tr>
                 <th scope="row">${contador}</th>
-                <td>${element.nombre}</td>
+                <td>${element.name}</td>
                 <td>${clan1}</td>
                 <td>${0}</td>
                 <td>
@@ -334,11 +336,11 @@ class DataControllerModule {
                   <svg xmlns="http://www.w3.org/2000/svg" class="daIconTable" viewBox="0 0 24 24"><path d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h8.925l-2 2H5v14h14v-6.95l2-2V19q0 .825-.587 1.413T19 21zm4-7v-2.425q0-.4.15-.763t.425-.637l8.6-8.6q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.137.738t-.438.662l-8.6 8.6q-.275.275-.637.438t-.763.162H10q-.425 0-.712-.288T9 14m12.025-9.6l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z"/></svg>                          </td>
               </tr>`
             contador ++
-        }else if (element.id_clan == 2){
+        }else if (element.id == 2){
           tBody.innerHTML += `
           <tr>
             <th scope="row">${contador}</th>
-            <td>${element.nombre}</td>
+            <td>${element.name}</td>
             <td>${clan2}</td>
             <td>${0}</td>
             <td>
@@ -347,11 +349,11 @@ class DataControllerModule {
           </tr>`
           contador ++
 
-        }else if (element.id_clan == 3){
+        }else if (element.id == 3){
           tBody.innerHTML += `
           <tr>
             <th scope="row">${contador}</th>
-            <td>${element.nombre}</td>
+            <td>${element.name}</td>
             <td>${clan3}</td>
             <td>${0}</td>
             <td>
@@ -359,11 +361,11 @@ class DataControllerModule {
               <svg xmlns="http://www.w3.org/2000/svg" class="daIconTable" viewBox="0 0 24 24"><path d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h8.925l-2 2H5v14h14v-6.95l2-2V19q0 .825-.587 1.413T19 21zm4-7v-2.425q0-.4.15-.763t.425-.637l8.6-8.6q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.137.738t-.438.662l-8.6 8.6q-.275.275-.637.438t-.763.162H10q-.425 0-.712-.288T9 14m12.025-9.6l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z"/></svg>                          </td>
           </tr> `
           contador ++
-         }else if (element.id_clan == 4){
+         }else if (element.id == 4){
             tBody.innerHTML += `
               <tr>
                 <th scope="row">${contador}</th>
-                <td>${element.nombre}</td>
+                <td>${element.name}</td>
                 <td>${clan4}</td>
                 <td>${0}</td>
                 <td>
@@ -385,18 +387,8 @@ class DataControllerModule {
     let newClan=document.getElementById('idSelectClan')   
     let newRol = document.getElementById('idSelectRol')
     console.log("aqui va el programa")
-    //Validacion no exista datos iguales
-    /*
-    let users= await crudModule.getUsuario()
-      users.forEach(resul=>{
-        console.log(users.correo)
-          if(resul.correo == newCorreo.value || resul.img==newImg.value){
-            alert("Este Correo Ya Esta Registrado")
-            location.href=""   
-          }else{
-          }
-    })
-    */
+    
+    
         
     let dataSend = { 
 
@@ -433,6 +425,23 @@ class DataControllerModule {
   //===============================================================================================================//
   //Crear Clanes
   async crearClans(){
+    let nameClan=document.getElementById('name')
+    let imgClan=document.getElementById('imgUser')
+
+    let dataSend ={
+      name:nameClan.value,
+      date_created:utils.obtenerFecha(),
+      date_retirement: null,
+      status:true
+    }
+    console.log(dataSend)
+  //
+    let clans= await crudModule.setClanes(dataSend)
+    console.log(clans)
+  }
+  //===============================================================================================================//
+  //Crear trainers
+  async crearTrainers(){
     let nameClan=document.getElementById('name')
     let imgClan=document.getElementById('imgUser')
 

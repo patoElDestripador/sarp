@@ -180,6 +180,7 @@ class CrudModule {
   //getCodersByClan()
 
   async getCoders() {
+    
 
     let data = "";
     await fetch(`${urlBase}coders`, {
@@ -193,6 +194,7 @@ class CrudModule {
     return data;
   }
   async getClans() {
+    let urlBase = "http://localhost:3000/";
     let data = "";
     await fetch(`${urlBase}clans`, {
       method: "GET",
