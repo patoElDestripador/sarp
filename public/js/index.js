@@ -98,11 +98,20 @@ if (value === "01") {
 } else if (value === "03") {
 
 } else if (value === "04") {
+    
+    document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
+        dataController.crearClans()
+    });
 
 } else if (value === "05") {
 dataController.setCodersInList() 
 dataController.listClansInselect()
 dataController.setCodersInList() // Lista coders
+    dataController.editCoders() // Edita Coders
+    dataController.updateCoders() // Actualiza coders
+    document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
+        dataController.crearCoders()
+    });
 } else if (value === "06") {
 dataController.setTrainerInList() 
     dataController.setTrainerInList() // Lista trainers
@@ -244,6 +253,7 @@ document.getElementById("buttonIdChangeLangEs")?.addEventListener("click",()=>{
 document.getElementById("idCorazon")?.addEventListener("click",()=>{
     //funcion secreta
 });
+
 
 // Inicio Menu Toggle
 
@@ -485,6 +495,7 @@ document.getElementById("idListCatByPoints")?.addEventListener("click",()=>{
 document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(3)
 });
+
 
 
 document.getElementById("idSearchRate")?.addEventListener("keypress", e=>{
