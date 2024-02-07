@@ -103,23 +103,29 @@ if (value === "01") {
 
 
 } else if (value === "05") {
+    dataController.setCodersInList() // Lista coders
+    //dataController.editCoders() // Edita Coders
+    //dataController.updateCoders() // Actualiza coders
     //dataController.setInformationTrainer(user)
 
 dataController.setCodersInList() 
+dataController.listClansInselect()
 dataController.setCodersInList() // Lista coders
 } else if (value === "06") {
 dataController.setTrainerInList() 
+    dataController.setTrainerInList() // Lista trainers
+    //dataController.editTrainer() // Edita trainers
+    //dataController.updateTrainers() // Actualiza trainers
 dataController.setTrainerInList() // Lista trainers
 
 } else if (value === "07") {
 
 } else if (value === "08") {
-    
-    dataController.setInformationTrainer(user) // Lista información en Trainers
-  
+dataController.setInformationAdmin(user.id) // Lista información en Trainers
+dataController.setTrainerInList()
 
 } else if (value === "09") {
-    dataController.setInformationCoder(user.id) // Lista información en coders
+    dataController.setInformationCoder(id) // Lista información en coders
 
 } else if (value === "10") {
 
@@ -272,34 +278,23 @@ const htmlContent = `
   </li>
   `;
 
-
-  const menuToggleElement  = document.getElementById("menuToggle");
-
-  if (menuToggleElement) {
-    menuToggleElement.innerHTML = htmlContent;
-  } else {
-    console.log('No se encontró el elemento con el id "menuToggle".');
-  } 
-
-
-
-  // Fin Menu Toggle
-
-
-
-
-
 // Menu toggle
-const menu =document.querySelector(".menu");
-const toggle = document.querySelector(".toggle");
+if(user && user.rol != 1){
+    const menuToggleElement  = document.getElementById("menuToggle");
+    if (menuToggleElement) {
+        menuToggleElement.innerHTML = htmlContent;
+    } else {
+        console.log('No se encontró el elemento con el id "menuToggle".');
+    } 
+}
 
+const menu =document.querySelector(".menu");
+const toggle = document.querySelector(".toggle");    
 toggle?.addEventListener("click",()=>{
     menu.classList.toggle("active");
 })
 
 
-
-
 //inicio de listado de categorias
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1,validateLenguge)
@@ -379,13 +374,8 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
-document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
-    let language = utils.getSessionStorage("leng")
-    if(lenguage == "es"){
-        location.href =APP_URL+"index.html";
-    }else{
-        location.href =APP_URL+"en/index.html";
-    }
+document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{    
+
 });
 
 
@@ -422,7 +412,6 @@ document.getElementById("selectionNavItem1")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
-
 document.getElementById("selectionNavItem2")?.addEventListener("click",()=>{
     let language = utils.getSessionStorage("leng")
     if(language == "es"){
@@ -431,7 +420,6 @@ document.getElementById("selectionNavItem2")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
-
 document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
     console.log("entro aki")
     let language = utils.getSessionStorage("leng")
@@ -454,17 +442,17 @@ document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
           });
     }else{
         Swal.fire({
-            title: "Do you want to save the changes?",
+            title: "Create new user",
+            text: "What type of user do you want to create?",
             showDenyButton: true,
             showCancelButton: true,
-            confirmButtonText: "Save",
-            denyButtonText: `Don't save`
+            confirmButtonText: "Coder",
+            denyButtonText: `Trainer`,
           }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-              Swal.fire("Saved!", "", "success");
+                location.href =  APP_URL + "listCoder.html";
             } else if (result.isDenied) {
-              Swal.fire("Changes are not saved", "", "info");
+                location.href =  APP_URL + "listTrainer.html";
             }
           });
     }
@@ -472,25 +460,14 @@ document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
 document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
     let language = utils.getSessionStorage("leng")
     if(language == "es"){
-        location.href =APP_URL+"index.html";
+        location.href =APP_URL2+"listCoder.html";
     }else{
-        location.href =APP_URL+"en/index.html";
+        location.href =APP_URL+"en/listCoder.html";
     }
 });
 document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
-    let language = utils.getSessionStorage("leng")
-    if(lenguage == "es"){
-        location.href =APP_URL+"index.html";
-    }else{
-        location.href =APP_URL+"en/index.html";
-    }
+    dataController.loadModalList()
 });
-
-
-
-
-
-
 
 
 
@@ -513,9 +490,29 @@ document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
 
 
 
+document.getElementById("idSearchRate")?.addEventListener("keypress", e=>{
+    addEventListener("keyup",e=>{
+        document.getElementById("idlistRateCoders").innerHTML = ""
+      dataController.searchAndlistCoder()
+    })
+  })
+document.getElementById("idSearchCoder")?.addEventListener("keypress", e=>{
+    addEventListener("keyup",e=>{
+        dataController.searchAndlistCoder()
+    })
+})
+
+
+function selectionCoder(id) {
+     //borrar el modal body y cargar la card info de el coder 
+    dataController.editCoders(id)
+
+}
 
 
 document.getElementById("idrateCoder")?.addEventListener("click",()=>{
+    console.log("hoas")
+    dataController.loadModalList()
     dataController.searchCoderTorate()
 });
 
