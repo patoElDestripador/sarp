@@ -12,12 +12,7 @@ let actualPage = document.querySelector("title").text
 //Section to addEnventListeners
 
 //dataController.setPointsInCard(40)
-//dataController.setCodersInList() // Lista coders
-//dataController.setTrainerInList() // Lista trainers
-//dataController.setInformationCoder() // Lista historico en coders
- // Lista historico en coders
-//dataController.editCoders() // Edita Coders
-//dataController.updateCodersById(dataSend)
+
 
 let validateLenguge = utils.getSessionStorage("leng")
 if (!validateLenguge) {
@@ -26,17 +21,8 @@ if (!validateLenguge) {
 
 //login.validateStatusLogin();
 
-let user = utilsModule.getSessionStorage("user") // este es el usuario registrado actualmente
-/*
-esto es lo que continee user
-{
-    "id":"40",
-    "email":"EstebanGallardoCordero@gmail.com",
-    "password":"12345678",
-    "img":"https://imgdb.net/storage/uploads/60cd0f9f76145fc6a1fd28332d0c1b9d7918bb5848a5956acec4e5e8cd783267.png",
-    "rol":1
-}
-*/
+let user = utilsModule.getSessionStorage("user")
+//console.log(user)
 
 function validationAccess() {
     let user = utilsModule.getSessionStorage("user")
@@ -114,15 +100,21 @@ if (value === "01") {
 } else if (value === "04") {
 
 } else if (value === "05") {
-//dataController.setInformationTrainer()
+    dataController.setCodersInList() // Lista coders
+    dataController.editCoders() // Edita Coders
+    dataController.updateCoders() // Actualiza coders
 } else if (value === "06") {
-//dataController.setTrainerInList()
+    dataController.setTrainerInList() // Lista trainers
+    dataController.editTrainer(user=222) // Edita trainers
+    dataController.updateTrainers() // Actualiza trainers
 
 } else if (value === "07") {
 
 } else if (value === "08") {
+    dataController.setInformationTrainer(user) // Lista información en Trainers
 
 } else if (value === "09") {
+    dataController.setInformationCoder() // Lista información en coders
 
 } else if (value === "10") {
 
@@ -131,6 +123,7 @@ if (value === "01") {
 //Fin de cagadores de pagina
 
 //dataController.listCodersByClan()
+
 //Globales
 
 document.getElementById("buttonIdChangeLangEs")?.addEventListener("click", () => {
@@ -218,6 +211,9 @@ function pageRedirectionEn(){
 document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
     login.validateLogin()
 });
+document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
+    login.validateLogin()
+});
 
 document.getElementById("redirectbuttonidToLogin")?.addEventListener("click",()=>{
     let language = utils.getSessionStorage("leng")
@@ -296,14 +292,6 @@ toggle?.addEventListener("click",()=>{
 })
 
 
-/*
-Con esto se lista en el menu
-
-<!-- inicio Toggle menu fin -->
-<div id="menuToggle" class="menu justify-content-end px-4">
-</div>
-<!-- Fin Toggle menu fin -->
-*/
 
 
 //inicio de listado de categorias
@@ -500,7 +488,13 @@ document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
 
 
 
+document.getElementById("idEditCoder")?.addEventListener("click",()=>{
+    dataController.updateCoders()
+});
 
+// document.getElementById("")?.addEventListener("click",()=>{
+//     dataController.editCoders()
+// });
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1)
 });
@@ -519,39 +513,10 @@ document.getElementById("idrateCoder")?.addEventListener("click",()=>{
 });
 
 
-
-
-
-
-
-/*
-const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-popoverTriggerList
-popover
-*/
-// velocidad Slide dejar a lo ultimo
-
-
 const myCarouselElement = document.querySelector('#carouselHome')
-if (myCarouselElement) {
+if (myCarouselElement){
     const carousel = new bootstrap.Carousel(myCarouselElement, {
     interval: 3000,
     touch: false
-    })
+}) 
 }
-
-/*
-Muchachos les comparto los usuarios 
-
-Usuario admin  : 
-"email": "admin@riwi.io.com",
-"password": "789456123"
-
-Usuario Coder :
-"email": "EstebanGallardoCordero@gmail.com",
- "password": "12345678"
-
-usuario Trainer : 
-"email": "robinson.arroyo@riwi.io.com",
-"password": "12345678"
-*/
