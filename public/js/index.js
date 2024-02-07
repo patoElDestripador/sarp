@@ -101,9 +101,8 @@ if (value === "01") {
 
 } else if (value === "05") {
 dataController.setCodersInList() 
+dataController.listClansInselect()
 dataController.setCodersInList() // Lista coders
-    dataController.editCoders() // Edita Coders
-    dataController.updateCoders() // Actualiza coders
 } else if (value === "06") {
 dataController.setTrainerInList() 
     dataController.setTrainerInList() // Lista trainers

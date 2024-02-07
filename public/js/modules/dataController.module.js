@@ -27,7 +27,7 @@ class DataControllerModule {
       let dataEmail = await crudModule.getUserById(element.id);
       let puntosCoder = await crudModule.getRiwiPointsByUserid(element.id);
       let clans = await crudModule.getClansById(element.id_clan)
-
+      console.log(element)
       console.log(puntosCoder)
       tBody.innerHTML += `
         <tr>
@@ -305,20 +305,20 @@ class DataControllerModule {
 
   // Funcion para listar clanes
   async setClansInList(){
-    let tBody = document.getElementById("pointsHistoryClans")
-    let contador = 1
-    let clan1 =0
-    let clan2 =0
-    let clan3=0
-    let clan4=0
-    let coders = await crudModule.getCoders()
+    let tBody = document.getElementById("pointsHistoryClans");
+    let contador = 1;
+    let clan1 =0;
+    let clan2 =0;
+    let clan3=0;
+    let clan4=0;
+    let coders = await crudModule.getCoders();
     coders.forEach(async (resultado) =>{
-        if (resultado.Id_clan == 1){ clan1++} 
+        if (resultado.Id_clan == 1){ clan1++}
         else if(resultado.Id_clan == 2){clan2++}
         else if(resultado.Id_clan == 3){clan3++}
         else if(resultado.Id_clan == 4){clan4++}
-    })
-    let clans = await crudModule.getClanes()
+    });
+    let clans = await crudModule.getClans();
     clans.forEach(async (element) =>{ 
         if (element.id_clan == 1){
             tBody.innerHTML += `
@@ -371,67 +371,85 @@ class DataControllerModule {
           contador ++
         }
       });
-    }
+  }
     //Inicio de list porpierty
-    listInSelectPropierty(level,language){
-      let propiertys = document.getElementById("containerDropdownItemForCategory")
-      if(level == 1 && language == "es"){
-        //clan
-      }else if(level == 1 && language == "en"){
+  listInSelectPropierty(level,language){
+    let propiertys = document.getElementById("containerDropdownItemForCategory")
+    if(level == 1 && language == "es"){
+      //clan
+    }else if(level == 1 && language == "en"){
 
-      }
-      if(level == 2 && language == "es"){
-        propiertys.innerHtml = `
-        <li><a class="dropdown-item" href="#">Mayor</a></li>
-        <li><a class="dropdown-item" href="#">Menor</a></li>
-        `
-      }else if(level == 2 && language == "en"){
-        
-      }
-      if(level == 3 && language == "es"){
-        propiertys.innerHtml = `
-        <li><a class="dropdown-item" href="#">A-Z</a></li>
-        <li><a class="dropdown-item" href="#">Z-A</a></li>
-        `
-      }  
-      if(level == 4 && language == "es"){
-        //materia
-        propiertys.innerHtml = `
-        <li><a class="dropdown-item" href="#"></a></li>
-        `
-      }else if(level == 4 && language == "en"){
-      }
     }
+    if(level == 2 && language == "es"){
+      propiertys.innerHtml = `
+      <li><a class="dropdown-item" href="#">Mayor</a></li>
+      <li><a class="dropdown-item" href="#">Menor</a></li>
+      `
+    }else if(level == 2 && language == "en"){
+      
+    }
+    if(level == 3 && language == "es"){
+      propiertys.innerHtml = `
+      <li><a class="dropdown-item" href="#">A-Z</a></li>
+      <li><a class="dropdown-item" href="#">Z-A</a></li>
+      `
+    }  
+    if(level == 4 && language == "es"){
+      //materia
+      propiertys.innerHtml = `
+      <li><a class="dropdown-item" href="#"></a></li>
+      `
+    }else if(level == 4 && language == "en"){
+    }
+  }
     //fin de list propierty
     //``
-    async searchAndlistCoder(){
-      let tbodyList = document.getElementById("idlistRateCoders")
+  async searchAndlistCoder(){
+      let tbodyList = document.getElementById("idlistRateCoders");
       let contador = 1;
-      let coders = await this.filterCoderBynameOrDocument()
-      tbodyList.innerHTML =""
-      coders.forEach(async element => {
-        let {total} = await crudModule.getOnlyRiwiPointsByUserid(element.id);
-        tbodyList.innerHTML +=`
-        <tr>
-          <th scope="row">${contador}</th>
-          <td>${element.name}</td>
-          <td>${element.document}</td>
-          <td>${total}</td>
-          <td><button class="btn btn-info m-2" onclick="selectionCoder('${element.id}')" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#ffffff" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg>Puntuar</a></td>
-        </tr>
-        `
-        contador++
-      });
+      let coders = await this.filterCoderBynameOrDocument();
+      tbodyList.innerHTML = "";
+      for (const element of coders) {
+        tbodyList.innerHTML +=  `
+          <tr>
+            <th scope="row">${contador}</th>
+            <td>${element.name}</td>
+            <td>${element.document}</td>
+            <td><button class="btn btn-info m-2" onclick="selectionCoder('${element.id}')" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#ffffff" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg>Puntuar</a></td>
+          </tr>
+        `;
+        contador++;
+      }
+  }
 
-    }
-
-   async filterCoderBynameOrDocument(){
+  async filterCoderBynameOrDocument(){
     let usuario = (document.getElementById("idSearchRate").value).toLowerCase()
       let buscarCoder = await crudModule.getCoders();
       return buscarCoder.filter(user => {
         return user.name.toLowerCase().startsWith(usuario) || user.document.startsWith(usuario) 
       })
-    }
+  }
+
+
+  async listClansInselect(){
+    let clans =  await crudModule.getClans()
+    let listClans = document.getElementById("idSelectClan")
+    listClans.innerHTML = `<option select>Clan</option>`
+    clans.forEach(element => {
+      listClans.innerHTML += `<option value="${element.id}">${element.name}</option>`
+    });
+  }
+
+  setPointsToCoder(){
+    let point = document.getElementById("point").value 
+    let typePoint = document.getElementById("point") 
+    let Concept = document.getElementById("").value
+    let observation = document.getElementById("").value
+
+
+
+
+  }
 
 }
 
