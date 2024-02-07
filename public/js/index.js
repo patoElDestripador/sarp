@@ -104,9 +104,16 @@ if (value === "01") {
 } else if (value === "03") {
 
 } else if (value === "04") {
+    
+    document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
+        dataController.crearClans()
+    });
 
 } else if (value === "05") {
     //dataController.setInformationTrainer(user)
+    document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
+        dataController.crearCoders()
+    });
 } else if (value === "06") {
 //dataController.setTrainerInList()
 } else if (value === "07") {
@@ -241,6 +248,7 @@ document.getElementById("buttonIdChangeLangEs")?.addEventListener("click",()=>{
 document.getElementById("idCorazon")?.addEventListener("click",()=>{
     //funcion secreta
 });
+
 
 // Inicio Menu Toggle
 const htmlContent = `
@@ -493,6 +501,7 @@ document.getElementById("idListCatByPoints")?.addEventListener("click",()=>{
 document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(3)
 });
+
 
 
 

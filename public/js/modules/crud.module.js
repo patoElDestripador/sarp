@@ -206,9 +206,10 @@ class CrudModule {
       .catch((err) => this.erroRequest("getTrainers", err));
     return data;
   }
-  async 1() {
+  async getUsuario() {
+    let urlBase = "http://localhost:3000/"
     let data = "";
-    await fetch(`${urlBase}usuario`, {
+    await fetch(`${urlBase}users `, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -321,7 +322,7 @@ class CrudModule {
   }
   async setUsuario(dataSend) {
     let data = "";
-    await fetch(`${urlBase}usuario/`, {
+    await fetch(`${urlBase}users/`, {
       method: "POST",
       headers: { "Content-type": "aplication/json" },
       body: JSON.stringify(dataSend),

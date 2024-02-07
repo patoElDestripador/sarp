@@ -1,5 +1,6 @@
 
 import crudModule from "./crud.module.js";
+import utils from "./utils.module.js";
 
 class DataControllerModule {
   constructor(){}
@@ -204,7 +205,8 @@ class DataControllerModule {
       contador ++;
     }
   }
-
+  //===============================================================================================================//
+  //Lista Clanes
   async setClansInList(){
     let tBody = document.getElementById("pointsHistoryClans")
     let contador = 1
@@ -273,6 +275,93 @@ class DataControllerModule {
         }
       });
     }
+  //===============================================================================================================//
+  //Crear Coders
+  async crearCoders(){   
+    let newDocumento=document.getElementById('documentId')
+    let newName =document.getElementById('name')
+    let newCorreo = document.getElementById('email')
+    let newPassword =document.getElementById('password')
+    let newImg = document.getElementById('imgUser')
+    let newClan=document.getElementById('idSelectClan')   
+    let newRol = document.getElementById('idSelectRol')
+    console.log("aqui va el programa")
+    //Validacion no exista datos iguales
+    /*
+    let users= await crudModule.getUsuario()
+      users.forEach(resul=>{
+        console.log(users.correo)
+          if(resul.correo == newCorreo.value || resul.img==newImg.value){
+            alert("Este Correo Ya Esta Registrado")
+            location.href=""   
+          }else{
+          }
+    })
+    */
+        
+    let dataSend = { 
+
+      correo: newCorreo.value,
+      password: newPassword.value,
+      img: newImg.value,
+
+    };
+    console.log(dataSend)
+    let usuario = await crudModule.setUsuario(dataSend)  
+    console.log(usuario.id)
+    let datasend2 ={
+      
+      id_user:usuario.id,
+      id_rol:newRol.value,
+      fecha_creacion:utils.obtenerFecha(),
+      estado:true,
+    }
+    console.log(datasend2)
+
+    let coder = await crudModule.setCoders(datasend2)
+    let datasend3={
+      documento:newDocumento.value,
+      id_user:coder.id_user,
+      id_clan:newClan.value,
+      nombre:newName.value,
+      fecha_creacion:coder.fecha_creacion,
+      fecha_retiro:undefined,
+      estado:coder.estado
+    
+    }
+    console.log(datasend3)
+    }
+  //===============================================================================================================//
+  //Crear Clanes
+  async crearClans(){
+    let nameClan=document.getElementById('name')
+    let imgClan=document.getElementById('imgUser')
+    //Validacion no exista datos iguales
+    /*
+    let clan= await crudModule.getUsuario()
+          clan.forEach(resul=>{
+            console.log(clan)
+              if(resul.name === nameClan.value || resul.img === imgClan.value){
+                alert("Este Correo Ya Esta Registrado")
+                location.href=""   
+              }else{
+              }
+        })
+        */
+
+    let dataSend ={
+      name:nameClan.value,
+      date_created:utils.obtenerFecha(),
+      date_retirement: null,
+      status:true
+    }
+    console.log(dataSend)
+  //
+    let clans= await crudModule.setClanes(dataSend)
+    console.log(clans)
+  }
+
+
     //Inicio de list porpierty
     listInSelectPropierty(level,language){
       let propiertys = document.getElementById("containerDropdownItemForCategory")
