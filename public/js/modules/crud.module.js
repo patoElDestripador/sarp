@@ -32,6 +32,19 @@ class CrudModule {
     return data;
   }
 
+  async getTrainerByDocument(document) {
+    let data = "";
+    await fetch(`${urlBase}trainers?document=${document}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => this.erroRequest("getTrainerByDocument", err));
+    return data;
+  }
+
   async getAreaById(id) {
 
     let user = "";
@@ -121,26 +134,31 @@ class CrudModule {
   return data;
   }
   
-  async getRiwiPointsByUserid(id){
-    let data = "";
-    await fetch(`${urlBase}riwi_points?id=${id}`)
-      .then((response) => response.json())
-      .then((res) => {
-        let riwiPoints = {
-          positivePoints: 0,
-          negativePoints: 0,
-          total: 0
-        }
-        res.forEach(element => {
-        riwiPoints.positivePoints += element.positive_point
-        riwiPoints.negativePoints += !parseInt(element.negative_point) ? 0 : element.negative_point
-        })
-        riwiPoints.total = riwiPoints.positivePoints - riwiPoints.negativePoints
-          data =  riwiPoints;
-      })
-      .catch((err) => this.erroRequest("getRiwiPointsByUserid", err))
-      return data
+  async getRiwiPointsByUserid(id) {
+    try {
+      const response = await fetch(`${urlBase}riwi_points?id=${id}`);
+      const puntosCoder = await response.json();
+      
+      let positivePoints = 0;
+      let negativePoints = 0;
+  
+      puntosCoder.forEach((element) => {
+        positivePoints += parseInt(element.positive_point) || 0;
+        negativePoints += parseInt(element.negative_point) || 0;
+      });
+  
+      let riwiPointsTotal = positivePoints - negativePoints;
+  
+      return {
+        positivePoints: positivePoints,
+        negativePoints: negativePoints,
+        riwiPointsTotal: riwiPointsTotal
+      };
+    } catch (error) {
+      console.error("Error al procesar getRiwiPointsByUserid:", error);
+    }
   }
+  
 
   async getRiwiPointsByTrainer(id) {
 
@@ -148,7 +166,7 @@ class CrudModule {
     await fetch(`${urlBase}riwi_points?id_trainers=${id}`)
     .then((response) => response.json())
     .then((res) => {
-      data = res;
+      
     })
       .catch((err) => this.erroRequest("getRiwiPointsByTrainer", err));
       return data
@@ -377,6 +395,20 @@ class CrudModule {
     return data;
   }
 
+  async updateTrainersById(dataSend, id) {
+    let data = "";
+    await fetch(`${urlBase}trainers/${id}`, {
+      method: "PUT",
+      headers: { "Content-type": "aplication/json" },
+      body: JSON.stringify(dataSend),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => this.erroRequest("updateTrainersById", err));
+    return data;
+  }
   async updateUsersById(dataSend, id) {
     let data = "";
     await fetch(`${urlBase}users/${id}`, {
@@ -466,20 +498,7 @@ class CrudModule {
       .catch((err) => this.erroRequest("updatePermitById", err));
     return data;
   }
-  async updateTrainers(dataSend) {
-    let data = "";
-    await fetch(`${urlBase}trainers/`, {
-      method: "PUT",
-      headers: { "Content-type": "aplication/json" },
-      body: JSON.stringify(dataSend),
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        data = res;
-      })
-      .catch((err) => this.erroRequest("updateTrainers", err));
-    return data;
-  }
+
   async updateUsuario(dataSend) {
     let data = "";
     await fetch(`${urlBase}usuario/`, {

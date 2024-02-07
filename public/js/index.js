@@ -12,10 +12,6 @@ let actualPage = document.querySelector("title").text
 //Section to addEnventListeners
 
 //dataController.setPointsInCard(40)
-//dataController.setCodersInList() // Lista coders
-dataController.setTrainerInList() // Lista trainers
-//dataController.setInformationCoder() // Lista historico en coders
-// // Lista historico en coders
 
 
 let validateLenguge = utils.getSessionStorage("leng")
@@ -105,15 +101,21 @@ if (value === "01") {
 } else if (value === "04") {
 
 } else if (value === "05") {
-    //dataController.setInformationTrainer(user)
+    dataController.setCodersInList() // Lista coders
     dataController.editCoders() // Edita Coders
+    dataController.updateCoders() // Actualiza coders
 } else if (value === "06") {
-//dataController.setTrainerInList()
+    dataController.setTrainerInList() // Lista trainers
+    dataController.editTrainer(user=222) // Edita trainers
+    dataController.updateTrainers() // Actualiza trainers
+
 } else if (value === "07") {
 
 } else if (value === "08") {
+    dataController.setInformationTrainer(user) // Lista información en Trainers
 
 } else if (value === "09") {
+    dataController.setInformationCoder() // Lista información en coders
 
 } else if (value === "10") {
 
@@ -122,6 +124,7 @@ if (value === "01") {
 //Fin de cagadores de pagina
 
 //dataController.listCodersByClan()
+
 //Globales
 
 
@@ -209,6 +212,9 @@ function pageRedirectionEn(){
 
 
 
+document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
+    login.validateLogin()
+});
 document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
     login.validateLogin()
 });
