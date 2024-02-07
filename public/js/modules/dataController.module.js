@@ -23,8 +23,8 @@ class DataControllerModule {
     let tBody = document.getElementById("historyCoders")
     let coders = await crudModule.getCoders()
     let contador = 1;
-
-    for (const element of coders) {
+    tBody.innerHTML  = "" 
+    coders.forEach(async element =>{
       let dataEmail = await crudModule.getUserById(element.id);
       let puntosCoder = await crudModule.getRiwiPointsByUserid(element.id);
       let clans = await crudModule.getClansById(element.id_clan)
@@ -33,7 +33,7 @@ class DataControllerModule {
             <th scope="row" class="text-center">${contador}</th>
             <td class="text-center">${element.document}</td>
             <td>${element.name}</td>
-            <td>${dataEmail.email}</td>
+            <td>${dataEmail[0].email}</td>
             <td class="text-center">${clans[0].name}</td>
             <td class="fw-bold text-center">${puntosCoder.riwiPointsTotal}</td>
             <td class="text-center">
@@ -43,7 +43,7 @@ class DataControllerModule {
           </tr>
         `  
         contador ++
-      }
+    })
   }
 
   // Listar Trainers
@@ -235,8 +235,6 @@ async setTrainerInList() {
     // Se completan los datos en la el historico de puntos
     for (const element of dataPoints){
       let dataTrainer = await crudModule.getTrainersById(element.id_trainers)
-      console.log(element.id_trainers)
-      console.log(dataTrainer)
       puntosPositivos = parseInt(element.positive_point) || 0;
       puntosNegativos = parseInt(element.negative_point) || 0;
       
@@ -267,7 +265,6 @@ async setTrainerInList() {
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
     let dataUser = await crudModule.getUserById(idUserLogin.id)
     let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser[0].id) //Revisar
-    console.log(dataPermits)
     let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
     let dataArea = await crudModule.getAreaById(dataUsersProfile[0].id_areas)
     let dataPoint = await crudModule.getRiwiPointsByTrainer(dataUsersProfile[0].id)
@@ -379,21 +376,7 @@ async setTrainerInList() {
     let newPassword =document.getElementById('password')
     let newImg = document.getElementById('imgUser')
     let newClan=document.getElementById('idSelectClan')   
-    let newRol = document.getElementById('idSelectRol')
-    console.log("aqui va el programa")
-    //Validacion no exista datos iguales
-    /*
-    let users= await crudModule.getUsuario()
-      users.forEach(resul=>{
-        console.log(users.correo)
-          if(resul.correo == newCorreo.value || resul.img==newImg.value){
-            alert("Este Correo Ya Esta Registrado")
-            location.href=""   
-          }else{
-          }
-    })
-    */
-        
+    let newRol = document.getElementById('idSelectRol') 
     let dataSend = { 
 
       correo: newCorreo.value,
@@ -401,9 +384,7 @@ async setTrainerInList() {
       img: newImg.value,
 
     };
-    console.log(dataSend)
     let usuario = await crudModule.setUsuario(dataSend)  
-    console.log(usuario.id)
     let datasend2 ={
       
       id_user:usuario.id,
@@ -411,7 +392,6 @@ async setTrainerInList() {
       fecha_creacion:utils.obtenerFecha(),
       estado:true,
     }
-    console.log(datasend2)
 
     let coder = await crudModule.setCoders(datasend2)
     let datasend3={
@@ -424,7 +404,6 @@ async setTrainerInList() {
       estado:coder.estado
     
     }
-    console.log(datasend3)
     }
   //===============================================================================================================//
   //Crear Clanes
@@ -438,10 +417,8 @@ async setTrainerInList() {
       date_retirement: null,
       status:true
     }
-    console.log(dataSend)
   //
     let clans= await crudModule.setClanes(dataSend)
-    console.log(clans)
   }
 
 
