@@ -12,9 +12,7 @@ let actualPage = document.querySelector("title").text
 //Section to addEnventListeners
 
 //dataController.setPointsInCard(40)
-//dataController.setCodersInList() // Lista coders
-dataController.setTrainerInList() // Lista trainers
-//dataController.setInformationCoder() // Lista historico en coders
+//// Lista historico en coders
  // Lista historico en coders
 //dataController.editCoders() // Edita Coders
 //dataController.updateCodersById(dataSend)
@@ -106,15 +104,17 @@ if (value === "01") {
 } else if (value === "04") {
 
 } else if (value === "05") {
-    //dataController.setInformationTrainer(user)
+dataController.setCodersInList() 
+//dataController.setInformationTrainer(user)
 } else if (value === "06") {
+dataController.setTrainerInList() 
 //dataController.setTrainerInList()
 } else if (value === "07") {
 
 } else if (value === "08") {
 
 } else if (value === "09") {
-
+    dataController.setInformationCoder(user.id) 
 } else if (value === "10") {
 
 }
@@ -507,16 +507,11 @@ document.getElementById("idrateCoder")?.addEventListener("click",()=>{
 
 
 
-
-const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-popoverTriggerList
-  popover
-
-
   // velocidad Slide
 const myCarouselElement = document.querySelector('#carouselHome')
-
-const carousel = new bootstrap.Carousel(myCarouselElement, {
-interval: 3000,
-touch: false
-})
+if(myCarouselElement){
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+        interval: 3000,
+        touch: false
+        })
+}
