@@ -36,51 +36,6 @@ class LoginModule {
     }
   }
 
-  validateStatusLogin(){
-    /*
-      1 = coder 
-      2 = trainer 
-      3 = admin
-    */
-
-
-    /*
-    01 : Index  - public
-    02 : about  - public
-    03 : error401 - public
-    04 : listClans - just admin and trainer
-    05 : listCoder - just admin and trainer
-    06 : listTrainer - just admin
-    07 : login      - public
-    08 : userProfileAdmin - just admin
-    09 : userProfileCoder - just coder
-    */
-  
-    let { value } = document.getElementById("pagName").attributes.getNamedItem("value");
-    let publicAccess = ["01","02","03","07"]
-    let adminAccess = [];
-    let trainerAccess = [];
-    let codeAccess = [];
-
-    if (publicAccess.includes(value)) {
-      console.log("si")
-    } else {
-      let user = JSON.parse(utils.getSessionStorage("user"))
-      if(user){
-        if (!user.rol == 1 && coder.includes(value)) {
-        location.href ="./erro401.html";
-        }
-        if (!user.rol == 2 && adminAccess.includes(value)) {
-        location.href ="./erro401.html";
-        }
-        if (!user.rol == 1 && codeAccess.includes(value)) {
-        location.href ="./erro401.html";
-        }
-      } else{
-        location.href ="./erro401.html";
-      }
-    }
-  }
 }
 
 /*
