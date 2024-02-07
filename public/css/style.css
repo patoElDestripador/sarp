@@ -241,6 +241,12 @@ ul {
 
 /* Fin estilos botones */
 
+.Addpositive{
+    background-color: var(--color9);
+    width: 10rem;
+    height: 10rem;
+}
+
 
 /* Inicio estilos de alert */
 
