@@ -100,10 +100,12 @@ if (value === "01") {
 } else if (value === "04") {
 
 } else if (value === "05") {
-    dataController.setCodersInList() // Lista coders
+dataController.setCodersInList() 
+dataController.setCodersInList() // Lista coders
     dataController.editCoders() // Edita Coders
     dataController.updateCoders() // Actualiza coders
 } else if (value === "06") {
+dataController.setTrainerInList() 
     dataController.setTrainerInList() // Lista trainers
     dataController.editTrainer(user=222) // Edita trainers
     dataController.updateTrainers() // Actualiza trainers
@@ -114,7 +116,7 @@ if (value === "01") {
     dataController.setInformationTrainer(user) // Lista información en Trainers
 
 } else if (value === "09") {
-    dataController.setInformationCoder() // Lista información en coders
+    dataController.setInformationCoder(user.id) // Lista información en coders
 
 } else if (value === "10") {
 
