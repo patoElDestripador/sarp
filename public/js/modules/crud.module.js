@@ -144,8 +144,8 @@ class CrudModule {
           total: 0
         }
         res.forEach(element => {
-        riwiPoints.positivePoints += !parseInt(element.positive_point) ? 0 : element.positive_point
-        riwiPoints.negativePoints += !parseInt(element.negative_point) ? 0 : element.negative_point
+        riwiPoints.positivePoints += !parseInt(element.positive_point) || 0 
+        riwiPoints.negativePoints += !parseInt(element.negative_point) || 0
         })
         console.log()
         riwiPoints.total = riwiPoints.positivePoints - riwiPoints.negativePoints
