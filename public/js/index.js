@@ -13,7 +13,7 @@ let actualPage = document.querySelector("title").text
 
 //dataController.setPointsInCard(40)
 //dataController.setCodersInList() // Lista coders
-//dataController.setTrainerInList() // Lista trainers
+dataController.setTrainerInList() // Lista trainers
 //dataController.setInformationCoder() // Lista historico en coders
 // // Lista historico en coders
 
@@ -284,8 +284,6 @@ const toggle = document.querySelector(".toggle");
 toggle?.addEventListener("click",()=>{
     menu.classList.toggle("active");
 })
-
-
 
 
 

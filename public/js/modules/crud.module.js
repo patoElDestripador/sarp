@@ -376,6 +376,21 @@ class CrudModule {
       .catch((err) => this.erroRequest("updateCoders", err));
     return data;
   }
+
+  async updateUsersById(dataSend, id) {
+    let data = "";
+    await fetch(`${urlBase}users/${id}`, {
+      method: "PUT",
+      headers: { "Content-type": "aplication/json" },
+      body: JSON.stringify(dataSend),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => this.erroRequest("updateUsersById", err));
+    return data;
+  }
   async updateClanes(dataSend) {
     let data = "";
     await fetch(`${urlBase}clans/`, {

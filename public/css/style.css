@@ -19,6 +19,10 @@
     --bs-body-color: #282828;
 }
 
+.overflow {
+    overflow: hidden;
+}
+
 /* fin de colores */ 
 
 /* forma de implementacion*/
@@ -236,6 +240,26 @@ ul {
 /* Fin Clases del toggler*/
 
 /* Fin estilos botones */
+
+
+/* Inicio estilos de alert */
+
+.my-popup {
+border-radius: var(--bs-border-radius);
+position: fixed;
+z-index: 4;
+overflow: hidden;
+}
+
+.miContainer{
+    position: fixed;
+}
+.my-title {
+    color: var(--color2);
+    }
+
+/* Fin estilos de alert */
+
 
 /* Inicio estilos indicadores y selectores */
 .rounded{
@@ -458,6 +482,7 @@ width: 25rem;
 /*Inicio cosas del footer*/
 
 .paraElFooter {
+    min-height: 100%;
     background-color: var(--color2);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;    

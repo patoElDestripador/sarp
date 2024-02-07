@@ -130,10 +130,9 @@ class DataControllerModule {
     };
 
     await crudModule.updateCodersById(dataCoder,idUser[0].id);
-    await crudModule.updateUserById(dataUser, idUser)
-    let hola = await crudModule.updatePermitById(dataPermit,idUser);
+    await crudModule.updateUsersById(dataUser,idUser[0].id_user)
+    await crudModule.updatePermitById(dataPermit,idUser);
 
-    console.log(idUser)
 
     document.getElementById("documentId").value = ""
     document.getElementById("name").value = ""
@@ -148,7 +147,7 @@ class DataControllerModule {
 
   // Profile coders
   // El idUserLogin se debe traer del session storage 
-  async setInformationCoder(idUserLogin=8) {
+  async setInformationCoder(idUserLogin=10) {
     // if (idUserLogin =)
     let tBody = document.getElementById("informationCoder")
     let contador = 1;
