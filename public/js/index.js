@@ -16,8 +16,7 @@ let actualPage = document.querySelector("title").text
 //dataController.setTrainerInList() // Lista trainers
 //dataController.setInformationCoder() // Lista historico en coders
 // // Lista historico en coders
-//dataController.editCoders() // Edita Coders
-//dataController.updateCodersById(dataSend)
+
 
 let validateLenguge = utils.getSessionStorage("leng")
 if (!validateLenguge) {
@@ -27,7 +26,7 @@ if (!validateLenguge) {
 //login.validateStatusLogin();
 
 let user = utilsModule.getSessionStorage("user")
-console.log(user)
+//console.log(user)
 
 function validationAccess() {
     let user = utilsModule.getSessionStorage("user")
@@ -107,6 +106,7 @@ if (value === "01") {
 
 } else if (value === "05") {
     //dataController.setInformationTrainer(user)
+    dataController.editCoders() // Edita Coders
 } else if (value === "06") {
 //dataController.setTrainerInList()
 } else if (value === "07") {
@@ -483,7 +483,13 @@ document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
 
 
 
+document.getElementById("idEditCoder")?.addEventListener("click",()=>{
+    dataController.updateCoders()
+});
 
+// document.getElementById("")?.addEventListener("click",()=>{
+//     dataController.editCoders()
+// });
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1)
 });
@@ -502,21 +508,11 @@ document.getElementById("idrateCoder")?.addEventListener("click",()=>{
 });
 
 
-
-
-
-
-
-
-const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-popoverTriggerList
-  popover
-
-
   // velocidad Slide
 const myCarouselElement = document.querySelector('#carouselHome')
-
-const carousel = new bootstrap.Carousel(myCarouselElement, {
-interval: 3000,
-touch: false
-})
+if (myCarouselElement){
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+    interval: 3000,
+    touch: false
+}) 
+}

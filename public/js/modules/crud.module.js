@@ -19,6 +19,19 @@ class CrudModule {
     return user;
   }
 
+  async getCodersByDocument(document) {
+    let data = "";
+    await fetch(`${urlBase}coders?document=${document}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => this.erroRequest("getCodersByDocument", err));
+    return data;
+  }
+
   async getAreaById(id) {
 
     let user = "";
@@ -33,7 +46,6 @@ class CrudModule {
     return user;
   }
   async getUserById(id) {
-
     let user = "";
     await fetch(`${urlBase}users?id=${id}`, {
       method: "GET",
@@ -352,7 +364,7 @@ class CrudModule {
 
   async updateCodersById(dataSend, id) {
     let data = "";
-    await fetch(`${urlBase}coders?id=${id}`, {
+    await fetch(`${urlBase}coders/${id}`, {
       method: "PUT",
       headers: { "Content-type": "aplication/json" },
       body: JSON.stringify(dataSend),
@@ -420,6 +432,23 @@ class CrudModule {
         data = res;
       })
       .catch((err) => this.erroRequest("updatePermisos", err));
+    return data;
+  }
+
+  async updatePermitById(dataSend, id) {
+    let data = "";
+    await fetch(`${urlBase}permits/id=${id}`, {
+      method: "PUT",
+      headers: {
+        "Content/-Type": "applicatioPUTon",
+      },
+      body: JSON.stringify(dataSend),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => this.erroRequest("updatePermitById", err));
     return data;
   }
   async updateTrainers(dataSend) {

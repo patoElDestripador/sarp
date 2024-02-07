@@ -77,40 +77,71 @@ class DataControllerModule {
   }
 
   // Editar Coders
-  async editCoders (id=5){
+  async editCoders (id=8){
     let dataCoder = await crudModule.getCodersById(id)
     let dataUser = await crudModule.getUserById(dataCoder[0].id_user)
     let dataClan = await crudModule.getClansById(dataCoder[0].id_clan)
     let dataPermits = await crudModule.getPermitsByIdUSer(dataCoder[0].id)
-    document.getElementById("documentId").value = dataCoder[0].document
+    
+    document.getElementById("documentId").value = (dataCoder[0].document)
     document.getElementById("name").value = dataCoder[0].name
     document.getElementById("email").value = dataUser.email
     document.getElementById("password").value = dataUser.password
     document.getElementById("imgUser").value = dataUser.img
     document.getElementById("idSelectClan").value = dataClan[0].id
     document.getElementById("idSelectRol").value = dataPermits[0].id_rol
-    document.getElementById("idCoder").value = dataCoder[0].id
   }
   
-  async updateCodersById(dataSend, iduser){
-    console.log(dataClan)
-    let id = document.getElementById("idCoder")
+  async updateCoders(){
     let documentId = document.getElementById("documentId").value
+    let idUser = await crudModule.getCodersByDocument(documentId)
+    let user = idUser[0].id_user
     let name = document.getElementById("name").value
     let email = document.getElementById("email").value
     let password = document.getElementById("password").value
     let imgUser = document.getElementById("imgUser").value
     let clan = document.getElementById("idSelectClan").value
     let rol = document.getElementById("idSelectRol").value
+    
+    let dataCoder = { 
+      id: idUser.id, 
+      id_user:  user,
+      id_clan: clan, 
+      name: name, 
+      document: documentId,
+      date_created: idUser.date_created,
+      date_retirement: idUser.date_retirement,
+      status: idUser.status
+    };
 
-    let dataCoder = { id_clan: clan, name: name, document: documentId };
-    let dataUser = { email: email, password: password, img: imgUser };
-    let dataPermit = { id_rol: rol };
+    let dataUser = {  
+      id: idUser.id,
+      email: email, 
+      password: password, 
+      img: imgUser 
+    };
 
-    let updatedDataCoder = await crudModule.updateUserById(dataCoder);
-    let updatedDataUser = await crudModule.updateUserById(dataCoder); // Asumiendo que tienes funciones separadas para cada tipo
-    let updatedDataPermit = await crudModule.updatePermitById(dataCoder);
+    let dataPermit = { 
+      id: idUser.id,
+      id_user: idUser.id,
+      id_rol: rol,
+      date_created: idUser.date_created,
+      status: idUser.status
+    };
 
+    await crudModule.updateCodersById(dataCoder,idUser[0].id);
+    await crudModule.updateUserById(dataUser, idUser)
+    let hola = await crudModule.updatePermitById(dataPermit,idUser);
+
+    console.log(idUser)
+
+    document.getElementById("documentId").value = ""
+    document.getElementById("name").value = ""
+    document.getElementById("email").value = ""
+    document.getElementById("password").value = ""
+    document.getElementById("imgUser").value = ""
+    document.getElementById("idSelectClan").value = ""
+    document.getElementById("idSelectRol").value = ""
   }
 
   
@@ -346,14 +377,14 @@ class DataControllerModule {
         }
       },
       allowOutsideClick: () => !Swal.isLoading()
-      }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: `${result.value.login}'s avatar`,
-          imageUrl: result.value.avatar_url
+        }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: `${result.value.login}'s avatar`,
+            imageUrl: result.value.avatar_url
+          });
+        }
         });
-      }
-      });
      }
 
 }
