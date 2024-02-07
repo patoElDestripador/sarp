@@ -12,12 +12,7 @@ let actualPage = document.querySelector("title").text
 //Section to addEnventListeners
 
 //dataController.setPointsInCard(40)
-//dataController.setCodersInList() // Lista coders
-dataController.setTrainerInList() // Lista trainers
-//dataController.setInformationCoder() // Lista historico en coders
- // Lista historico en coders
-//dataController.editCoders() // Edita Coders
-//dataController.updateCodersById(dataSend)
+
 
 let validateLenguge = utils.getSessionStorage("leng")
 if (!validateLenguge) {
@@ -27,14 +22,14 @@ if (!validateLenguge) {
 //login.validateStatusLogin();
 
 let user = utilsModule.getSessionStorage("user")
-console.log(user)
+//console.log(user)
 
 function validationAccess() {
     let user = utilsModule.getSessionStorage("user")
     user = !user ? 0 : user
     let publicAccess = ["01", "02", "03", "07"];
-    let adminAccess = ["08","04","05","06",];
-    let trainerAccess = ["10","04","05",];
+    let adminAccess = ["08","04","05","06"];
+    let trainerAccess = ["10","04","05"];
     let coderAccess = ["09","04"];
     if (!publicAccess.includes(value) && user != 0){
         if (user.rol == "1") {
@@ -95,7 +90,6 @@ esta les devolvera el siguiente objeto donde se encuntra el id del usaurio y el 
     "img": "https://imgdb.net/storage/uploads/60cd0f9f76145fc6a1fd28332d0c1b9d7918bb5848a5956acec4e5e8cd783267.png",
     "rol": 3
 }
-
 */
 if (value === "01") {
 
@@ -110,17 +104,26 @@ if (value === "01") {
     });
 
 } else if (value === "05") {
-    //dataController.setInformationTrainer(user)
+dataController.setCodersInList() 
+dataController.setCodersInList() // Lista coders
+    dataController.editCoders() // Edita Coders
+    dataController.updateCoders() // Actualiza coders
     document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
         dataController.crearCoders()
     });
 } else if (value === "06") {
-//dataController.setTrainerInList()
+dataController.setTrainerInList() 
+    dataController.setTrainerInList() // Lista trainers
+    dataController.editTrainer(user=222) // Edita trainers
+    dataController.updateTrainers() // Actualiza trainers
+
 } else if (value === "07") {
 
 } else if (value === "08") {
+    dataController.setInformationTrainer(user) // Lista información en Trainers
 
 } else if (value === "09") {
+    dataController.setInformationCoder(user.id) // Lista información en coders
 
 } else if (value === "10") {
 
@@ -129,10 +132,8 @@ if (value === "01") {
 //Fin de cagadores de pagina
 
 //dataController.listCodersByClan()
+
 //Globales
-
-
-
 
 document.getElementById("buttonIdChangeLangEs")?.addEventListener("click", () => {
     utils.setSessionStorage("leng", "es")
@@ -219,6 +220,9 @@ function pageRedirectionEn(){
 document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
     login.validateLogin()
 });
+document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
+    login.validateLogin()
+});
 
 document.getElementById("redirectbuttonidToLogin")?.addEventListener("click",()=>{
     let language = utils.getSessionStorage("leng")
@@ -251,6 +255,8 @@ document.getElementById("idCorazon")?.addEventListener("click",()=>{
 
 
 // Inicio Menu Toggle
+
+
 const htmlContent = `
   <div class="toggle"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256"><path fill="#141414" d="M228 128a12 12 0 0 1-12 12h-76v76a12 12 0 0 1-24 0v-76H40a12 12 0 0 1 0-24h76V40a12 12 0 0 1 24 0v76h76a12 12 0 0 1 12 12"/></svg></div>
   <li style="--i:-2;--clr:#141414"  >
@@ -277,7 +283,9 @@ const htmlContent = `
     menuToggleElement.innerHTML = htmlContent;
   } else {
     console.log('No se encontró el elemento con el id "menuToggle".');
-  }
+  } 
+
+
 
   // Fin Menu Toggle
 
@@ -296,8 +304,6 @@ toggle?.addEventListener("click",()=>{
 
 
 
-
-
 //inicio de listado de categorias
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1,validateLenguge)
@@ -429,6 +435,7 @@ document.getElementById("selectionNavItem2")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
+
 document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
     console.log("entro aki")
     let language = utils.getSessionStorage("leng")
@@ -491,7 +498,13 @@ document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
 
 
 
+document.getElementById("idEditCoder")?.addEventListener("click",()=>{
+    dataController.updateCoders()
+});
 
+// document.getElementById("")?.addEventListener("click",()=>{
+//     dataController.editCoders()
+// });
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1)
 });
@@ -511,21 +524,10 @@ document.getElementById("idrateCoder")?.addEventListener("click",()=>{
 });
 
 
-
-
-
-
-
-
-const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-popoverTriggerList
-  popover
-
-
-  // velocidad Slide
 const myCarouselElement = document.querySelector('#carouselHome')
-
-const carousel = new bootstrap.Carousel(myCarouselElement, {
-interval: 3000,
-touch: false
-})
+if (myCarouselElement){
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+    interval: 3000,
+    touch: false
+}) 
+}
