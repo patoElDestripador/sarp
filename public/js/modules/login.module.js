@@ -1,5 +1,6 @@
 import crud from './crud.module.js'
 import utils from './utils.module.js'
+
 const APP_URL= "http://127.0.0.1:5500/public/html/";
 
 class LoginModule {
@@ -27,19 +28,15 @@ class LoginModule {
         //location.href ="./listTrainer.html";
       } else if (newUser.rol == "3") {
         location.href = APP_URL + "userProfileAdmin.html";
+        utils.alertToastAprov()
+
       }
     }else {
-      Swal.fire({
-        position: "top-end",
-        icon: "info",
-        title: "El correo o la contraseña no son correctos",
-        showConfirmButton: false,
-        timer: 1000
-      });
+      utils.alertToastNeg()
     }
   }
 
-  validateStatusLogin() {
+  validateStatusLogin(){
     /*
       1 = coder 
       2 = trainer 
@@ -58,6 +55,7 @@ class LoginModule {
     08 : userProfileAdmin - just admin
     09 : userProfileCoder - just coder
     */
+  
     let { value } = document.getElementById("pagName").attributes.getNamedItem("value");
     let publicAccess = ["01","02","03","07"]
     let adminAccess = [];
@@ -82,10 +80,7 @@ class LoginModule {
         location.href ="./erro401.html";
       }
     }
-
-    
   }
-
 }
 
 /*

@@ -12,10 +12,7 @@ let actualPage = document.querySelector("title").text
 //Section to addEnventListeners
 
 //dataController.setPointsInCard(40)
-//// Lista historico en coders
- // Lista historico en coders
-//dataController.editCoders() // Edita Coders
-//dataController.updateCodersById(dataSend)
+
 
 let validateLenguge = utils.getSessionStorage("leng")
 if (!validateLenguge) {
@@ -25,7 +22,7 @@ if (!validateLenguge) {
 //login.validateStatusLogin();
 
 let user = utilsModule.getSessionStorage("user")
-console.log(user)
+//console.log(user)
 
 function validationAccess() {
     let user = utilsModule.getSessionStorage("user")
@@ -105,16 +102,23 @@ if (value === "01") {
 
 } else if (value === "05") {
 dataController.setCodersInList() 
-//dataController.setInformationTrainer(user)
+dataController.setCodersInList() // Lista coders
+    dataController.editCoders() // Edita Coders
+    dataController.updateCoders() // Actualiza coders
 } else if (value === "06") {
 dataController.setTrainerInList() 
-//dataController.setTrainerInList()
+    dataController.setTrainerInList() // Lista trainers
+    dataController.editTrainer(user=222) // Edita trainers
+    dataController.updateTrainers() // Actualiza trainers
+
 } else if (value === "07") {
 
 } else if (value === "08") {
+    dataController.setInformationTrainer(user) // Lista información en Trainers
 
 } else if (value === "09") {
-    dataController.setInformationCoder(user.id) 
+    dataController.setInformationCoder(user.id) // Lista información en coders
+
 } else if (value === "10") {
 
 }
@@ -122,6 +126,7 @@ dataController.setTrainerInList()
 //Fin de cagadores de pagina
 
 //dataController.listCodersByClan()
+
 //Globales
 
 
@@ -212,6 +217,9 @@ function pageRedirectionEn(){
 document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
     login.validateLogin()
 });
+document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
+    login.validateLogin()
+});
 
 document.getElementById("redirectbuttonidToLogin")?.addEventListener("click",()=>{
     let language = utils.getSessionStorage("leng")
@@ -288,8 +296,6 @@ toggle?.addEventListener("click",()=>{
 
 
 
-
-
 //inicio de listado de categorias
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1,validateLenguge)
@@ -483,7 +489,13 @@ document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
 
 
 
+document.getElementById("idEditCoder")?.addEventListener("click",()=>{
+    dataController.updateCoders()
+});
 
+// document.getElementById("")?.addEventListener("click",()=>{
+//     dataController.editCoders()
+// });
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1)
 });
@@ -502,16 +514,11 @@ document.getElementById("idrateCoder")?.addEventListener("click",()=>{
 });
 
 
-
-
-
-
-
   // velocidad Slide
 const myCarouselElement = document.querySelector('#carouselHome')
-if(myCarouselElement){
+if (myCarouselElement){
     const carousel = new bootstrap.Carousel(myCarouselElement, {
-        interval: 3000,
-        touch: false
-        })
+    interval: 3000,
+    touch: false
+}) 
 }
