@@ -380,6 +380,51 @@ async setTrainerInList() {
       });
     }
   //===============================================================================================================//
+  // Funcion para listar clanes
+  async getClansInListRankig(){
+    let tBody = document.getElementById("rankig")
+    let contador=1  
+    
+    
+    let clans = await crudModule.getClans()
+    console.log(clans)
+    clans.forEach(async (element) =>{ 
+        if (element.id == 1){
+            tBody.innerHTML += `
+          <tr>
+            <th scope="row">${contador}</th>
+            <td>${element.name}</td>
+            <td>400</td>
+          </tr>                 `
+          contador ++
+
+        }else if (element.id ==2 ){
+          tBody.innerHTML += `<tr>
+          <th scope="row">${contador}</th>
+          <td>${element.name}</td>
+          <td>300</td>
+        </tr> `
+          contador ++
+         }else if (element.id == 3){
+          tBody.innerHTML += `<tr>
+          <th scope="row">${contador}</th>
+          <td>${element.name}</td>
+          <td>290</td>
+        </tr> `
+          contador ++
+         }else if (element.id_clan == 4){
+            tBody.innerHTML += `
+            <tr>
+            <th scope="row">${contador}</th>
+            <td>${element.name}</td>
+            <td>224</td>
+          </tr> `
+          contador ++
+        }
+      });
+    }
+
+  //===============================================================================================================//
   //Crear Coders
   async crearCoders(){   
     let newDocumento=document.getElementById('documentId')

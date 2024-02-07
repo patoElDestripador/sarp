@@ -121,6 +121,7 @@ dataController.setTrainerInList() // Lista trainers
 } else if (value === "07") {
 
 } else if (value === "08") {
+    dataController.getClansInListRankig()
 dataController.setInformationAdmin(user.id) // Lista información en Trainers
 dataController.setTrainerInList()
 
