@@ -344,6 +344,7 @@ class CrudModule {
     return data;
   }
   async setTrainers(dataSend) {
+    console.log("aqui paso"  )
     let data = "";
     await fetch(`${urlBase}trainers/`, {
       method: "POST",

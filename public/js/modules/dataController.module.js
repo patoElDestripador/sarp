@@ -380,7 +380,7 @@ async setTrainerInList() {
       });
     }
   //===============================================================================================================//
-  // Funcion para listar clanes
+  // Funcion ranking clanes
   async getClansInListRankig(){
     let tBody = document.getElementById("rankig")
     let contador=1  
@@ -423,7 +423,6 @@ async setTrainerInList() {
         }
       });
     }
-
   //===============================================================================================================//
   //Crear Coders
   async crearCoders(){   
@@ -435,19 +434,7 @@ async setTrainerInList() {
     let newClan=document.getElementById('idSelectClan')   
     let newRol = document.getElementById('idSelectRol')
     console.log("aqui va el programa")
-    //Validacion no exista datos iguales
-    /*
-    let users= await crudModule.getUsuario()
-      users.forEach(resul=>{
-        console.log(users.correo)
-          if(resul.correo == newCorreo.value || resul.img==newImg.value){
-            alert("Este Correo Ya Esta Registrado")
-            location.href=""   
-          }else{
-          }
-    })
-    */
-        
+    
     let dataSend = { 
 
       correo: newCorreo.value,
@@ -493,25 +480,49 @@ async setTrainerInList() {
   }
   //===============================================================================================================//
   //Crear trainers
-  async crearTrainers(){
-    let nameClan=document.getElementById('name')
-    let imgClan=document.getElementById('imgUser')
+  async crearTrainers(){   
+    let newDocumento=document.getElementById('documentId')
+    let newName =document.getElementById('name')
+    let newCorreo = document.getElementById('email')
+    let newPassword =document.getElementById('password')
+    let newImg = document.getElementById('imgUser')
+    let newArea=document.getElementById('idSelectArea')   
+    let newRol = document.getElementById('idSelectRol')
+    console.log("aqui va el programa")
+    
+    let dataSend = { 
 
-    let dataSend ={
-      name:nameClan.value,
-      date_created:utils.obtenerFecha(),
-      date_retirement: null,
-      status:true
+      correo: newCorreo.value,
+      password: newPassword.value,
+      img: newImg.value,
+
+    };
+    let usuario = await crudModule.setUsuario(dataSend)  
+    let datasend2 ={
+      
+      id_user:usuario.id,
+      id_rol:newRol.value,
+      fecha_creacion:utils.obtenerFecha(),
+      estado:true,
     }
-    console.log(dataSend)
-  //
-    let clans= await crudModule.setClanes(dataSend)
-    console.log(clans)
+
+    let trainer = await crudModule.setTrainers(datasend2)
+    let datasend3={
+      document:newDocumento.value,
+      id_user:trainer.id_user,
+      id_area:newArea.value,
+      name:newName.value,
+      date_created:trainer.fecha_creacion,
+      fecha_retiro:undefined,
+      estado:trainer.estado
+    
+    }
+    alert("trainer resgistrado con exito")
   }
 
 
     //Inicio de list porpierty
-  listInSelectPropierty(level,language){
+    async listInSelectPropierty(level,language){
     let propiertys = document.getElementById("containerDropdownItemForCategory")
     if(level == 1 && language == "es"){
       //clan
@@ -539,7 +550,7 @@ async setTrainerInList() {
       `
     }else if(level == 4 && language == "en"){
     }
-  }
+   }
     //fin de list propierty
     //``
   async searchAndlistCoder(){
@@ -625,7 +636,8 @@ async setTrainerInList() {
 
   }
 
-}
+  }
+
 
 export default new DataControllerModule();
 

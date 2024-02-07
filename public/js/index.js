@@ -112,18 +112,18 @@ dataController.setCodersInList()
 dataController.listClansInselect()
 dataController.setCodersInList() // Lista coders
 } else if (value === "06") {
-dataController.setTrainerInList() 
-    dataController.setTrainerInList() // Lista trainers
+//dataController.setTrainerInList() 
+    //dataController.setTrainerInList() // Lista trainers
     //dataController.editTrainer() // Edita trainers
     //dataController.updateTrainers() // Actualiza trainers
-dataController.setTrainerInList() // Lista trainers
+//dataController.setTrainerInList() // Lista trainers
 
 } else if (value === "07") {
 
 } else if (value === "08") {
     dataController.getClansInListRankig()
 dataController.setInformationAdmin(user.id) // Lista información en Trainers
-dataController.setTrainerInList()
+//dataController.setTrainerInList()
 
 } else if (value === "09") {
     dataController.getClansInListRankig()
@@ -379,6 +379,15 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
 document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{    
 
 });
+
+
+document.getElementById("crearTrainer")?.addEventListener("click",()=>{    
+   console.log("hola")
+    dataController.crearTrainers()
+    
+});
+
+
 
 
 
