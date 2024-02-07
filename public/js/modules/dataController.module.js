@@ -27,8 +27,6 @@ class DataControllerModule {
       let dataEmail = await crudModule.getUserById(element.id);
       let puntosCoder = await crudModule.getRiwiPointsByUserid(element.id);
       let clans = await crudModule.getClansById(element.id_clan)
-
-      console.log(puntosCoder)
       tBody.innerHTML += `
         <tr>
             <th scope="row" class="text-center">${contador}</th>
@@ -48,32 +46,33 @@ class DataControllerModule {
     }
 
   // Listar Trainers
-  async setTrainerInList () {
-    let tBody = document.getElementById("historyTrainers")
-    let trainers = await crudModule.getTrainers()
-    let contador = 1;
-    for (const element of trainers) {
-      let dataArea = await crudModule.getAreaById(element.id_area)
-      tBody.innerHTML += `
-      <tr>
-        <th scope="row" class="text-center">${contador}</th>
-        <td class="text-center">${element.document}</td>
-        <td>${element.name}</td>
-        <td>${dataArea.name}</td>
-        <td class="fw-bold text-center">${element.points_available}</td>
-        <td class="text-center">
-          <svg ${element} xmlns="http://www.w3.org/2000/svg" class="daIconTable" viewBox="0 0 20 20"><g><path d="M11.937 4.5H8.062A2.003 2.003 0 0 1 10 2a2.003 2.003 0 0 1 1.937 2.5Z"/><path d="M4.5 5.5a1 1 0 0 1 0-2h11a1 1 0 1 1 0 2h-11Z"/><path fill-rule="evenodd" d="M14.5 18.5a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1v10.5a1 1 0 0 0 1 1h9Zm-2-10a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7ZM10 8a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 1 0v-7A.5.5 0 0 0 10 8Zm-3.5.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7Z" clip-rule="evenodd"/></g></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="daIconTable" viewBox="0 0 24 24"><path d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h8.925l-2 2H5v14h14v-6.95l2-2V19q0 .825-.587 1.413T19 21zm4-7v-2.425q0-.4.15-.763t.425-.637l8.6-8.6q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.137.738t-.438.662l-8.6 8.6q-.275.275-.637.438t-.763.162H10q-.425 0-.712-.288T9 14m12.025-9.6l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z"/></svg>                          
-        </td>
-      </tr>
-      `
-      contador ++;
-    } 
-  }
+async setTrainerInList() {
+  let tBody = document.getElementById("historyTrainers")
+  let trainers = await crudModule.getTrainers()
+  let contador = 1;
+  
+  for (const element of trainers) {
+    let dataArea = await crudModule.getAreaById(element.id); 
+    let areaName = dataArea[0].name;
 
+    tBody.innerHTML += `
+    <tr>
+      <th scope="row" class="text-center">${contador}</th>
+      <td class="text-center">${element.document}</td>
+      <td>${element.name}</td>
+      <td>${areaName}</td>
+      <td class="fw-bold text-center">${element.points_available}</td>
+      <td class="text-center">
+        <!-- Aquí va tu SVG -->
+      </td>
+    </tr>
+    `;
+    contador++;
+  }
+}
   // Editar Coders
   // Se envia la información al formulario
-  async editCoders (id=8){
+  async editCoders (id){
     let dataCoder = await crudModule.getCodersById(id)
     let dataUser = await crudModule.getUserById(dataCoder[0].id_user)
     let dataClan = await crudModule.getClansById(dataCoder[0].id_clan)
@@ -141,12 +140,11 @@ class DataControllerModule {
   
   // Editar Trainers
   // Se envia la información al formulario
-  async editTrainer (id=222){
+  async editTrainer (id){
     let dataTrainer = await crudModule.getTrainersById(id)
     let dataUser = await crudModule.getUserById(dataTrainer[0].id_user)
     let dataArea = await crudModule.getAreaById(dataTrainer[0].id_area)
     let dataPermits = await crudModule.getPermitsByIdUSer(dataTrainer[0].id_user)
-    console.log(dataTrainer)
     
     document.getElementById("documentId").value = (dataTrainer[0].document)
     document.getElementById("name").value = dataTrainer[0].name
@@ -197,7 +195,7 @@ class DataControllerModule {
 
     await crudModule.updateTrainersById(datatrainer,idTrainer[0].id);
     await crudModule.updateUsersById(dataUser,idTrainer[0].id_user)
-    await crudModule.updatePermitById(dataPermit,idTrainer);
+    let hola = await crudModule.updatePermitById(dataPermit,idTrainer);
 
 
     document.getElementById("documentId").value = ""
@@ -209,10 +207,9 @@ class DataControllerModule {
     document.getElementById("idSelectRol").value = ""
   }
 
-
   // Profile coders
   // El idUserLogin se debe traer del session storage 
-  async setInformationCoder(idUserLogin=10) {
+  async setInformationCoder(id) {
     // if (idUserLogin =)
     let tBody = document.getElementById("informationCoder")
     let contador = 1;
@@ -256,20 +253,19 @@ class DataControllerModule {
   
   // Profile Trainer
   // El idUserLogin se debe traer del session storage 
-  async setInformationTrainer(user) {   
-    let idUserLogin = user.rol
+  async setInformationTrainer(id) {   
+    //let idUserLogin = user.rol
     this.setPointsInCard(idUserLogin) 
     let tBody = document.getElementById("informationTrainer")
     let contador = 1;
     let puntosPositivos = 0;
     let puntosNegativos = 0;
-
-    let dataUser = await crudModule.getUserById(idUserLogin)
-    console.log(dataUser)
-    let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id) //Revisar
-    let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
+    
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
-    console.log(dataUsersProfile)
+    let dataUser = await crudModule.getUserById(idUserLogin.id)
+    let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser[0].id) //Revisar
+    console.log(dataPermits)
+    let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
     let dataArea = await crudModule.getAreaById(dataUsersProfile[0].id_areas)
     let dataPoint = await crudModule.getRiwiPointsByTrainer(dataUsersProfile[0].id)
     
@@ -355,7 +351,7 @@ class DataControllerModule {
               <svg xmlns="http://www.w3.org/2000/svg" class="daIconTable" viewBox="0 0 24 24"><path d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h8.925l-2 2H5v14h14v-6.95l2-2V19q0 .825-.587 1.413T19 21zm4-7v-2.425q0-.4.15-.763t.425-.637l8.6-8.6q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.137.738t-.438.662l-8.6 8.6q-.275.275-.637.438t-.763.162H10q-.425 0-.712-.288T9 14m12.025-9.6l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z"/></svg>                          </td>
           </tr> `
           contador ++
-         }else if (element.id_clan == 4){
+        }else if (element.id_clan == 4){
             tBody.innerHTML += `
               <tr>
                 <th scope="row">${contador}</th>
