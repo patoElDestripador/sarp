@@ -120,7 +120,8 @@ dataController.setTrainerInList() // Lista trainers
 } else if (value === "07") {
 
 } else if (value === "08") {
-    dataController.setInformationTrainer(id) // Lista información en Trainers
+dataController.setInformationAdmin(user.id) // Lista información en Trainers
+dataController.setTrainerInList()
 
 } else if (value === "09") {
     dataController.setInformationCoder(id) // Lista información en coders
@@ -372,13 +373,8 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
-document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
-    let language = utils.getSessionStorage("leng")
-    if(lenguage == "es"){
-        location.href =APP_URL+"index.html";
-    }else{
-        location.href =APP_URL+"en/index.html";
-    }
+document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{    
+
 });
 
 
@@ -445,17 +441,17 @@ document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
           });
     }else{
         Swal.fire({
-            title: "Do you want to save the changes?",
+            title: "Create new user",
+            text: "What type of user do you want to create?",
             showDenyButton: true,
             showCancelButton: true,
-            confirmButtonText: "Save",
-            denyButtonText: `Don't save`
+            confirmButtonText: "Coder",
+            denyButtonText: `Trainer`,
           }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-              Swal.fire("Saved!", "", "success");
+                location.href =  APP_URL + "listCoder.html";
             } else if (result.isDenied) {
-              Swal.fire("Changes are not saved", "", "info");
+                location.href =  APP_URL + "listTrainer.html";
             }
           });
     }
@@ -463,19 +459,15 @@ document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
 document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
     let language = utils.getSessionStorage("leng")
     if(language == "es"){
-        location.href =APP_URL+"index.html";
+        location.href =APP_URL2+"listCoder.html";
     }else{
-        location.href =APP_URL+"en/index.html";
+        location.href =APP_URL+"en/listCoder.html";
     }
 });
 document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
-    let language = utils.getSessionStorage("leng")
-    if(lenguage == "es"){
-        location.href =APP_URL+"index.html";
-    }else{
-        location.href =APP_URL+"en/index.html";
-    }
+    dataController.loadModalList()
 });
+
 
 
 document.getElementById("idEditCoder")?.addEventListener("click",()=>{
@@ -518,6 +510,8 @@ function selectionCoder(id) {
 
 
 document.getElementById("idrateCoder")?.addEventListener("click",()=>{
+    console.log("hoas")
+    dataController.loadModalList()
     dataController.searchCoderTorate()
 });
 

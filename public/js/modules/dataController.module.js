@@ -254,7 +254,7 @@ async setTrainerInList() {
   
   // Profile Trainer
   // El idUserLogin se debe traer del session storage 
-  async setInformationTrainer(id) {   
+  async setInformationTrainer(idUserLogin) {   
     //let idUserLogin = user.rol
     this.setPointsInCard(idUserLogin) 
     let tBody = document.getElementById("informationTrainer")
@@ -264,15 +264,15 @@ async setTrainerInList() {
     
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
     let dataUser = await crudModule.getUserById(idUserLogin.id)
-    let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser[0].id) //Revisar
-    let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
-    let dataArea = await crudModule.getAreaById(dataUsersProfile[0].id_areas)
-    let dataPoint = await crudModule.getRiwiPointsByTrainer(dataUsersProfile[0].id)
-    
+    //let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser[0].id) //Revisar
+    //let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
+    //let dataArea = await crudModule.getAreaById(dataUsersProfile[0].id_areas)
+    //let dataPoint = await crudModule.getRiwiPointsByTrainer(dataUsersProfile[0].id)
+    console.log(dataUsersProfile)
     // Se completan los datos en la card del perfil
-    document.getElementById("emailUser").placeholder  = dataUser.email
+    document.getElementById("emailUser").placeholder  = dataUser.email 
     document.getElementById("imgUser").setAttribute ("src", dataUser.img)
-    document.getElementById("rolUser").innerText = dataRol[0].name
+    //document.getElementById("rolUser").innerText = dataRol[0].name
     document.getElementById("nameUser").innerText = dataUsersProfile[0].name
     document.getElementById("documentId").placeholder  = dataUsersProfile[0].document
     document.getElementById("materiaUser").placeholder = dataArea.name
@@ -295,6 +295,18 @@ async setTrainerInList() {
     `
       contador ++;
     }
+  }
+  async setInformationAdmin(idUserLogin) {   
+    //let idUserLogin = user.rol
+    let tBody = document.getElementById("informationTrainer")
+    
+    let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
+    document.getElementById("emailUser").placeholder  = "admin@riwi.io.com"
+    document.getElementById("imgUser").setAttribute ("src", "https://imgdb.net/storage/uploads/60cd0f9f76145fc6a1fd28332d0c1b9d7918bb5848a5956acec4e5e8cd783267.png")
+    document.getElementById("nameUser").innerText = "Admin"
+    document.getElementById("documentId").placeholder  = "3333335"
+    document.getElementById("materiaUser").placeholder = "Admin"
+
   }
   //===============================================================================================================//
   //Lista Clanes
@@ -501,9 +513,43 @@ async setTrainerInList() {
 
   }
 
+  loadModalList(){
+    let modal = document.getElementById("idmodalBody")
+    modal.innerHTML = `
+    
+    <div class="card-body">
+    <div class="flex-fill">
+      <nav class="navbar">
+        <div class="row overflow-hidden flex-fill">
+          <div class="col d-flex col-sm-12">
+            <input class="form-control m-2 " type="search" placeholder="Buscar"  id="idSearchRate" aria-label="Buscar">
+            <button class="btn btn-primary my-2" type="submit">Buscar</button>
+          </div>
+        </div>
+      </nav>
+      <div class="col g-2 flex-fill">
+      </div>
+      <div class="table-responsive my-3 height-table-profile">
+        <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Documento</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody id="idlistRateCoders">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>`
+  
+
+  }
+
 }
-
-
 
 export default new DataControllerModule();
 
