@@ -10,11 +10,11 @@ class DataControllerModule {
   async setPointsInCard(id){
     let validation = !document.getElementById("totalPtsPositive") ? 0 : true
     if(validation){
-      let {positivepoints,negativePoints,total} = await crudModule.getRiwiPointsByUserid(id);
-      document.getElementById("totalPtsPositive").innerText = positivepoints
+      let {positivePoints,negativePoints,total} = await crudModule.getOnlyRiwiPointsByUserid(id);
+      document.getElementById("totalPtsPositive").innerText = positivePoints
       document.getElementById("totalPtsNegative").innerText = negativePoints
+      document.getElementById("totalPtsAvailable").innerText = total
     }
-    //document.getElementById("totalPtsAvailable")
   }
   
   // Listar Coders
@@ -45,7 +45,7 @@ class DataControllerModule {
         `  
         contador ++
       }
-    }
+  }
 
   // Listar Trainers
   async setTrainerInList () {
@@ -212,9 +212,9 @@ class DataControllerModule {
 
   // Profile coders
   // El idUserLogin se debe traer del session storage 
-  async setInformationCoder(idUserLogin=10) {
-    // if (idUserLogin =)
-    let tBody = document.getElementById("informationCoder")
+  async setInformationCoder(idUserLogin) {
+    
+    let tBody = document.getElementById("codersHistoryPoints")
     let contador = 1;
     let puntosPositivos = 0;
     let puntosNegativos = 0;
@@ -225,8 +225,7 @@ class DataControllerModule {
     let dataUsersProfile = await crudModule.getCodersById(idUserLogin)
     let dataPoints = await crudModule.getRiwiPointsByUserid(dataUsersProfile[0].id)
     let dataClans = await crudModule.getClansById(dataUsersProfile[0].id_clan)
-    let dataTrainer = await crudModule.getTrainersById(dataPoints[0].id_trainers)
-    
+    this.setPointsInCard(dataUsersProfile[0].id)
     // Se completan los datos en la card del perfil
     document.getElementById("emailUser").placeholder  = dataUser.email
     document.getElementById("imgUser").setAttribute ("src", dataUser.img)
@@ -237,6 +236,9 @@ class DataControllerModule {
     
     // Se completan los datos en la el historico de puntos
     for (const element of dataPoints){
+      let dataTrainer = await crudModule.getTrainersById(element.id_trainers)
+      console.log(element.id_trainers)
+      console.log(dataTrainer)
       puntosPositivos = parseInt(element.positive_point) || 0;
       puntosNegativos = parseInt(element.negative_point) || 0;
       

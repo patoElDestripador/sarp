@@ -84,9 +84,8 @@ class CrudModule {
     return data;
   }
   async getTrainersById(id) {
-
     let data = "";
-    await fetch(`${urlBase}trainers?id_user=${id}`, {
+    await fetch(`${urlBase}trainers?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -134,31 +133,37 @@ class CrudModule {
   return data;
   }
   
-  async getRiwiPointsByUserid(id) {
-    try {
-      const response = await fetch(`${urlBase}riwi_points?id=${id}`);
-      const puntosCoder = await response.json();
-      
-      let positivePoints = 0;
-      let negativePoints = 0;
-  
-      puntosCoder.forEach((element) => {
-        positivePoints += parseInt(element.positive_point) || 0;
-        negativePoints += parseInt(element.negative_point) || 0;
-      });
-  
-      let riwiPointsTotal = positivePoints - negativePoints;
-  
-      return {
-        positivePoints: positivePoints,
-        negativePoints: negativePoints,
-        riwiPointsTotal: riwiPointsTotal
-      };
-    } catch (error) {
-      console.error("Error al procesar getRiwiPointsByUserid:", error);
-    }
+  async getOnlyRiwiPointsByUserid(id){
+    let data = "";
+    await fetch(`${urlBase}riwi_points?id_coders=${id}`)
+      .then((response) => response.json())
+      .then((res) => {
+        let riwiPoints = {
+          positivePoints: 0,
+          negativePoints: 0,
+          total: 0
+        }
+        res.forEach(element => {
+        riwiPoints.positivePoints += !parseInt(element.positive_point) ? 0 : element.positive_point
+        riwiPoints.negativePoints += !parseInt(element.negative_point) ? 0 : element.negative_point
+        })
+        console.log()
+        riwiPoints.total = riwiPoints.positivePoints - riwiPoints.negativePoints
+          data =  riwiPoints;
+      })
+      .catch((err) => this.erroRequest("getOnlyRiwiPointsByUserid", err))
+      return data
   }
-  
+  async getRiwiPointsByUserid(id){
+    let data = "";
+    await fetch(`${urlBase}riwi_points?id_coders=${id}`)
+      .then((response) => response.json())
+      .then((res) => {
+          data =  res;
+      })
+      .catch((err) => this.erroRequest("getRiwiPointsByUserid", err))
+      return data
+  }
 
   async getRiwiPointsByTrainer(id) {
 
