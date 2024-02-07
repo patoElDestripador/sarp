@@ -268,34 +268,23 @@ const htmlContent = `
   </li>
   `;
 
-
-  const menuToggleElement  = document.getElementById("menuToggle");
-
-  if (menuToggleElement) {
-    menuToggleElement.innerHTML = htmlContent;
-  } else {
-    console.log('No se encontró el elemento con el id "menuToggle".');
-  } 
-
-
-
-  // Fin Menu Toggle
-
-
-
-
-
 // Menu toggle
-const menu =document.querySelector(".menu");
-const toggle = document.querySelector(".toggle");
+if(user && user.rol != 1){
+    const menuToggleElement  = document.getElementById("menuToggle");
+    if (menuToggleElement) {
+        menuToggleElement.innerHTML = htmlContent;
+    } else {
+        console.log('No se encontró el elemento con el id "menuToggle".');
+    } 
+}
 
+const menu =document.querySelector(".menu");
+const toggle = document.querySelector(".toggle");    
 toggle?.addEventListener("click",()=>{
     menu.classList.toggle("active");
 })
 
 
-
-
 //inicio de listado de categorias
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1,validateLenguge)
@@ -418,7 +407,6 @@ document.getElementById("selectionNavItem1")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
-
 document.getElementById("selectionNavItem2")?.addEventListener("click",()=>{
     let language = utils.getSessionStorage("leng")
     if(language == "es"){
@@ -427,7 +415,6 @@ document.getElementById("selectionNavItem2")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
-
 document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
     console.log("entro aki")
     let language = utils.getSessionStorage("leng")
@@ -481,13 +468,6 @@ document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
-
-
-
-
-
-
-
 
 
 document.getElementById("idEditCoder")?.addEventListener("click",()=>{
@@ -508,6 +488,24 @@ document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
 });
 
 
+document.getElementById("idSearchRate")?.addEventListener("keypress", e=>{
+    addEventListener("keyup",e=>{
+        document.getElementById("idlistRateCoders").innerHTML = ""
+      dataController.searchAndlistCoder()
+    })
+  })
+document.getElementById("idSearchCoder")?.addEventListener("keypress", e=>{
+    addEventListener("keyup",e=>{
+        dataController.searchAndlistCoder()
+    })
+})
+
+
+function selectionCoder(id) {
+     //borrar el modal body y cargar la card info de el coder 
+    dataController.editCoders(id)
+
+}
 
 
 document.getElementById("idrateCoder")?.addEventListener("click",()=>{
