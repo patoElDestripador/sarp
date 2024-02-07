@@ -400,56 +400,34 @@ async setTrainerInList() {
     }
     //fin de list propierty
     //``
+    async searchAndlistCoder(){
+      let tbodyList = document.getElementById("idlistRateCoders")
+      let contador = 1;
+      let coders = await this.filterCoderBynameOrDocument()
+      tbodyList.innerHTML =""
+      coders.forEach(async element => {
+        let {total} = await crudModule.getOnlyRiwiPointsByUserid(element.id);
+        tbodyList.innerHTML +=`
+        <tr>
+          <th scope="row">${contador}</th>
+          <td>${element.name}</td>
+          <td>${element.document}</td>
+          <td>${total}</td>
+          <td><button class="btn btn-info m-2" onclick="selectionCoder('${element.id}')" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#ffffff" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg>Puntuar</a></td>
+        </tr>
+        `
+        contador++
+      });
 
-    searchCoderTorate(){
-          Swal.fire({
-      title: "Agregar Riwi point",
-      text: "Busca por documento o por nombre",
-      input: "text",
-      inputAttributes: {
-        autocapitalize: "off"
-      },
-      showCancelButton: true,
-      confirmButtonText: "buscar",
-      showLoaderOnConfirm: true,
-      preConfirm: async (login) => {
-        try {
-            let buscarCoder = await  crudModule.getCoders()
-            console.log(buscarCoder)
-            let buscar = () => {
-              return buscarCoder.filter(user => {
-                return user.name.startsWith(usuario) || user.document.startsWith(usuario) 
-              });
-            };
+    }
 
-            let input = document.getElementById("swal2-input")
-            input.setAttribute("list","browsers")
-            input.innerHTML += `<datalist id="browsers">
-              <option value="Chrome"></option>
-              <option value="Firefox"></option>
-              <option value="Internet Explorer"></option>
-              <option value="Opera"></option>
-              <option value="Safari"></option>
-              <option value="Microsoft Edge"></option>
-            </datalist>`
-
-            buscar()
-        } catch (error) {
-          Swal.showValidationMessage(`
-            Request failed: ${error}
-          `);
-        }
-      },
-      allowOutsideClick: () => !Swal.isLoading()
-        }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: `${result.value.login}'s avatar`,
-            imageUrl: result.value.avatar_url
-          });
-        }
-        });
-     }
+   async filterCoderBynameOrDocument(){
+    let usuario = (document.getElementById("idSearchRate").value).toLowerCase()
+      let buscarCoder = await crudModule.getCoders();
+      return buscarCoder.filter(user => {
+        return user.name.toLowerCase().startsWith(usuario) || user.document.startsWith(usuario) 
+      })
+    }
 
 }
 

@@ -169,6 +169,63 @@
 </footer>
 <!-- footer fin -->
 
+
+
+<!-- inicio Toggle menu fin -->
+<div id="menuToggle" class="menu justify-content-end px-4">
+</div>
+<!-- Fin Toggle menu fin -->
+<!-- inicio modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#idModalRateRiwiPoints">
+  prueba
+</button>
+<div class="modal fade modal-lg" id="idModalRateRiwiPoints" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="idModalTitle">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="idmodalBody">
+        <div class="card-body">
+          <div class="flex-fill">
+            <nav class="navbar">
+              <div class="row overflow-hidden flex-fill">
+                <div class="col d-flex col-sm-12">
+                  <input class="form-control m-2 " type="search" placeholder="Buscar"  id="idSearchRate" aria-label="Buscar">
+                  <button class="btn btn-primary my-2" type="submit">Buscar</button>
+                </div>
+              </div>
+            </nav>
+            <div class="col g-2 flex-fill">
+            </div>
+            <div class="table-responsive my-3 height-table-profile">
+              <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Total Pts</th>
+                    <th scope="col">Opciones</th>
+                  </tr>
+                </thead>
+                <tbody id="idlistRateCoders">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin modal y toggle-->
+
+
 <!-- Scripts para funcionamiento de pagina-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
