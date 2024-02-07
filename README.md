@@ -3,6 +3,8 @@
 
 Sarp es una aplicación web diseñada para transformar la forma en que los Trainers y el personal administrativo asignan y gestionan puntos para los Coders. No solo facilita un proceso transparente y eficiente para la asignación de recompensas, sino que también integra capacidades avanzadas de seguimiento y análisis para impulsar la motivación y el rendimiento de los estudiantes en entornos de aprendizaje de programación.
 
+**Importante** 
+para incializar el proyecto es necesario correr el otro archivo backendsarp
 
 **Características**
 

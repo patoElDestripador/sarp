@@ -48,24 +48,24 @@ class CrudModule {
   async getAreaById(id) {
 
     let user = "";
-    await fetch(`${urlBase}areas?id=${id}`, {
+    await fetch(`${urlBase}areas/?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
       .then((data) => {
-        user = data[0];
+        user = data;
       })
       .catch((err) => console.error("getAreaById", err));
     return user;
   }
   async getUserById(id) {
     let user = "";
-    await fetch(`${urlBase}users?id=${id}`, {
+    await fetch(`${urlBase}users/?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
       .then((data) => {
-        user = data[0];
+        user = data;
       })
       .catch((err) => console.error("getUserById",err));
     return user;
@@ -241,9 +241,10 @@ class CrudModule {
       .catch((err) => this.erroRequest("getTrainers", err));
     return data;
   }
-  async 1() {
+  async getUsuario() {
+    let urlBase = "http://localhost:3000/"
     let data = "";
-    await fetch(`${urlBase}usuario`, {
+    await fetch(`${urlBase}users `, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -356,7 +357,7 @@ class CrudModule {
   }
   async setUsuario(dataSend) {
     let data = "";
-    await fetch(`${urlBase}usuario/`, {
+    await fetch(`${urlBase}users/`, {
       method: "POST",
       headers: { "Content-type": "aplication/json" },
       body: JSON.stringify(dataSend),
@@ -489,10 +490,10 @@ class CrudModule {
 
   async updatePermitById(dataSend, id) {
     let data = "";
-    await fetch(`${urlBase}permits/id=${id}`, {
+    await fetch(`${urlBase}permits/${id}`, {
       method: "PUT",
       headers: {
-        "Content/-Type": "applicatioPUTon",
+      "Content-Type": "application/json",
       },
       body: JSON.stringify(dataSend),
     })
@@ -508,7 +509,8 @@ class CrudModule {
     let data = "";
     await fetch(`${urlBase}usuario/`, {
       method: "PUT",
-      headers: { "Content-type": "aplication/json" },
+      headers: { 
+        "Content-type": "aplication/json" },
       body: JSON.stringify(dataSend),
     })
       .then((response) => response.json())
