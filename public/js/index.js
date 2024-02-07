@@ -19,6 +19,7 @@ if (!validateLenguge) {
     utils.setSessionStorage("leng","es")
 }
 
+
 //login.validateStatusLogin();
 
 let user = utilsModule.getSessionStorage("user")
@@ -103,7 +104,7 @@ if (value === "01") {
 
 } else if (value === "05") {
     dataController.setCodersInList() // Lista coders
-    //dataController.editCoders() // Edita Coders
+    dataController.editCoders() // Edita Coders
     //dataController.updateCoders() // Actualiza coders
     //dataController.setInformationTrainer(user)
 
@@ -209,10 +210,6 @@ function pageRedirectionEn(){
         break;
     }
 }
-
-
-
-
 
 document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
     login.validateLogin()
@@ -470,9 +467,6 @@ document.getElementById("idEditCoder")?.addEventListener("click",()=>{
     dataController.updateCoders()
 });
 
-// document.getElementById("")?.addEventListener("click",()=>{
-//     dataController.editCoders()
-// });
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1)
 });
@@ -503,8 +497,7 @@ document.getElementById("idSearchCoder")?.addEventListener("keypress", e=>{
 
 function selectionCoder(id) {
      //borrar el modal body y cargar la card info de el coder 
-    dataController.editCoders(id)
-
+    dataController.editCoders(id) // Edita Coders
 }
 
 
