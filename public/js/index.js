@@ -102,6 +102,9 @@ if (value === "01") {
 
 
 } else if (value === "05") {
+    dataController.setCodersInList() // Lista coders
+    //dataController.editCoders() // Edita Coders
+    //dataController.updateCoders() // Actualiza coders
     //dataController.setInformationTrainer(user)
 
 dataController.setCodersInList() 
@@ -109,15 +112,18 @@ dataController.listClansInselect()
 dataController.setCodersInList() // Lista coders
 } else if (value === "06") {
 dataController.setTrainerInList() 
+    dataController.setTrainerInList() // Lista trainers
+    //dataController.editTrainer() // Edita trainers
+    //dataController.updateTrainers() // Actualiza trainers
 dataController.setTrainerInList() // Lista trainers
 
 } else if (value === "07") {
 
 } else if (value === "08") {
-    dataController.setInformationTrainer(user) // Lista información en Trainers
+    dataController.setInformationTrainer(id) // Lista información en Trainers
 
 } else if (value === "09") {
-    dataController.setInformationCoder(user.id) // Lista información en coders
+    dataController.setInformationCoder(id) // Lista información en coders
 
 } else if (value === "10") {
 
