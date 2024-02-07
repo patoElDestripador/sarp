@@ -104,13 +104,10 @@ if (value === "01") {
 
 } else if (value === "05") {
     dataController.setCodersInList() // Lista coders
-    dataController.editCoders() // Edita Coders
+     // Edita Coders
     //dataController.updateCoders() // Actualiza coders
     //dataController.setInformationTrainer(user)
-
-dataController.setCodersInList() 
 dataController.listClansInselect()
-dataController.setCodersInList() // Lista coders
 } else if (value === "06") {
     //dataController.editTrainer() // Edita trainers
     //dataController.updateTrainers() // Actualiza trainers
@@ -132,6 +129,7 @@ dataController.setInformationAdmin(user.id) // Lista información en Trainers
 //dataController.listCodersByClan()
 
 //Globales
+
 
 document.getElementById("buttonIdChangeLangEs")?.addEventListener("click", () => {
     utils.setSessionStorage("leng", "es")
@@ -494,13 +492,6 @@ document.getElementById("idSearchCoder")?.addEventListener("keypress", e=>{
     })
 })
 
-
-function selectionCoder(id) {
-     //borrar el modal body y cargar la card info de el coder 
-    dataController.editCoders(id) // Edita Coders
-}
-
-
 document.getElementById("idrateCoder")?.addEventListener("click",()=>{
     dataController.loadModalList()
 });
@@ -514,9 +505,21 @@ if (myCarouselElement){
 }) 
 }
 
-document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
-    dataController.crearCoders()
+function setTrainerInForm(id) {
+    dataController.editCoders(id) // Edita Coders
+}
+
+// document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
+//     dataController.crearCoders()
+// });
+// document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
+//     dataController.crearClans()
+// });
+
+document.getElementById("editCoderByProp")?.addEventListener("click",()=>{
+    console.log(Event.target)
+    dataController.editCoderIndex(Event.target.dataset.user)
 });
-document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
-    dataController.crearClans()
-});
+
+
+
