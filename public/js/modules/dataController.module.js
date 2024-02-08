@@ -29,11 +29,12 @@ class DataControllerModule {
     for (const element of coders) {
         let dataEmail = await crudModule.getUserById(element.id);
         let { total } = await crudModule.getOnlyRiwiPointsByUserid(element.id);
+        let clans = await crudModule.getClansById(element.id_clan);
         let newInfo = {
             contador,
             document: element.document,
             name: element.name,
-            otracosa: "que va aqui?",
+            otracosa: clans[0].name,
             email: dataEmail[0].email,
             total,
             id: element.id
@@ -43,7 +44,7 @@ class DataControllerModule {
     }
     console.log(newCoders.length)
     tBody.innerHTML = "";
-    await Promise.all(newCoders.forEach(async (element) => {
+    await Promise.all(newCoders.map(async (element) => {
         tBody.innerHTML += `
         <tr>
             <th scope="row" class="text-center">${element.contador}</th>
