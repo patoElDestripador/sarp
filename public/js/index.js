@@ -99,30 +99,46 @@ if (value === "01") {
 } else if (value === "03") {
 
 } else if (value === "04") {
+    dataController.setClansInList()
     
 
 
 } else if (value === "05") {
     dataController.setCodersInList() // Lista coders
-    dataController.editCoders() // Edita Coders
+    //dataController.editCoders() // Edita Coders
     //dataController.updateCoders() // Actualiza coders
     //dataController.setInformationTrainer(user)
-
-dataController.setCodersInList() 
-dataController.listClansInselect()
-dataController.setCodersInList() // Lista coders
+    dataController.listClansInselect()
 } else if (value === "06") {
+//dataController.setTrainerInList() 
+    //dataController.setTrainerInList() // Lista trainers
     //dataController.editTrainer() // Edita trainers
     //dataController.updateTrainers() // Actualiza trainers
+//dataController.setTrainerInList() // Lista trainers
 
 } else if (value === "07") {
 
 } else if (value === "08") {
+    dataController.getClansInListRankig()
 dataController.setInformationAdmin(user.id) // Lista información en Trainers
+//dataController.setTrainerInList()
 
 } else if (value === "09") {
-    dataController.setInformationCoder(id) // Lista información en coders
-
+    dataController.getClansInListRankig()
+    dataController.setInformationCoder(id)
+    // Lista información en coders
+    /*   
+    promiseDatatable()
+      function promiseDatatable(val) {
+        const promise = new Promise((resolve, reject) => resolve(val));
+        promise.then((res) => {
+            console.log("se incia promesa")
+            async function editCoder(id) {
+                // Aquí puedes implementar la lógica para editar el codificador con el ID proporcionado
+                console.log("Editar codificador con ID:", id);
+            }
+        });
+    } */
 } else if (value === "10") {
 
 }
@@ -236,17 +252,6 @@ document.getElementById("redirectbuttonidToIndex")?.addEventListener("click", ()
     }
 })
 
-//button cambiar idioma
-document.getElementById("buttonIdChangeLangEng")?.addEventListener("click",()=>{
-    //funcion para cambiar lenguaje a ingles
-});
-document.getElementById("buttonIdChangeLangEs")?.addEventListener("click",()=>{
-    //funcion para cambiar lenguaje a spanish
-});
-document.getElementById("idCorazon")?.addEventListener("click",()=>{
-    //funcion secreta
-});
-
 
 // Inicio Menu Toggle
 
@@ -268,7 +273,9 @@ const htmlContent = `
   <li style="--i:2;--clr:#141414" >
       <a data-bs-toggle="modal" data-bs-target="#idModalRateRiwiPoints" href="#" id="selectionNavItem5"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="#141414" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg></a>
   </li>
-  `;
+`;
+
+document.getElementById("redirectbuttonidToLogin").style.display = user ? 'none' : 'inline-block';
 
 // Menu toggle
 if(user && user.rol != 1){
@@ -366,9 +373,14 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
-document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{    
 
+document.getElementById("crearTrainer")?.addEventListener("click",()=>{    
+   console.log("hola")
+    dataController.crearTrainers()
+    
 });
+
+
 
 
 
@@ -458,7 +470,10 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
     }
 });
 document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
+    
     dataController.loadModalList()
+
+
 });
 
 
@@ -478,31 +493,22 @@ document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
 });
 
 
-document.getElementById("idSearchRateButton")?.addEventListener("click", e=>{
-    dataController.searchAndlistCoder()
-  })
-document.getElementById("idSearchRate")?.addEventListener("keypress", e=>{
-    console.log("holi")
-    addEventListener("keyup",e=>{
-        document.getElementById("idlistRateCoders").innerHTML = ""
-      dataController.searchAndlistCoder()
-    })
-  })
+
+
 document.getElementById("idSearchCoder")?.addEventListener("keypress", e=>{
     addEventListener("keyup",e=>{
-        dataController.searchAndlistCoder()
+        this.searchAndlistCoder()
     })
 })
 
 
-function selectionCoder(id) {
-     //borrar el modal body y cargar la card info de el coder 
-    dataController.editCoders(id) // Edita Coders
-}
 
 
 document.getElementById("idrateCoder")?.addEventListener("click",()=>{
     dataController.loadModalList()
+});
+document.getElementById("holasoyUnButton")?.addEventListener("click",()=>{
+    let holi = document.getElementById("holasoyUnButton")
 });
 
 
@@ -520,3 +526,5 @@ document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
 document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
     dataController.crearClans()
 });
+
+
