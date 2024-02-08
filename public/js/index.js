@@ -104,13 +104,10 @@ if (value === "01") {
 
 } else if (value === "05") {
     dataController.setCodersInList() // Lista coders
-    dataController.editCoders() // Edita Coders
+    //dataController.editCoders() // Edita Coders
     //dataController.updateCoders() // Actualiza coders
     //dataController.setInformationTrainer(user)
-
-dataController.setCodersInList() 
-dataController.listClansInselect()
-dataController.setCodersInList() // Lista coders
+    dataController.listClansInselect()
 } else if (value === "06") {
     //dataController.editTrainer() // Edita trainers
     //dataController.updateTrainers() // Actualiza trainers
@@ -495,14 +492,15 @@ document.getElementById("idSearchCoder")?.addEventListener("keypress", e=>{
 })
 
 
-function selectionCoder(id) {
-     //borrar el modal body y cargar la card info de el coder 
-    dataController.editCoders(id) // Edita Coders
-}
 
 
 document.getElementById("idrateCoder")?.addEventListener("click",()=>{
     dataController.loadModalList()
+});
+document.getElementById("holasoyUnButton")?.addEventListener("click",()=>{
+    let holi = document.getElementById("holasoyUnButton")
+    console.log(event.target)
+    console.log(holi)
 });
 
 
@@ -518,5 +516,12 @@ document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
     dataController.crearCoders()
 });
 document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
+    dataController.crearClans()
+});
+if(document.getElementById("elbotncito")){
+    console.log(document.getElementById("elbotncito"))
+}
+
+document.getElementById("elbotncito")?.addEventListener("click",()=>{
     dataController.crearClans()
 });
