@@ -1,6 +1,8 @@
 import crud from './crud.module.js'
 import utils from './utils.module.js'
 
+const APP_URL= "http://127.0.0.1:5500/public/html/";
+
 class LoginModule {
 
     constructor() {
@@ -10,36 +12,28 @@ class LoginModule {
   
   
   async validateLogin() {
-    console.log("sd")
     this.email= document.getElementById("inputIdEmailLogin").value;
     this.password = document.getElementById("inputIdPasswordLogin").value;
     let crudUser = await crud.getUserByEmail(this.email)
-    console.log("cuando no encunetra",crudUser)
-    if(crudUser && crudUser.correo == this.email && crudUser.password == this.password ){
-      //createTrainerPage()
-      let permits  = await crud.getRolByIdUSer(crudUser.id_usuario);
-      let temporaryArray = []
+    if(crudUser && crudUser.email == this.email && crudUser.password == this.password ){
+      let permits  = await crud.getRolByIdUSer(crudUser.id);
+      let temporaryArray = [];
       permits.forEach(e=>{temporaryArray.push(e.id_rol)})
-      let newUser = {...crudUser,permisos :temporaryArray};
+      let newUser = {...crudUser,rol :temporaryArray[0]};
+      console.log("holi",newUser)
+      utils.setSessionStorage("user",newUser);
+      if (newUser.rol == "1") {
+        location.href = APP_URL + "userProfileCoder.html";
+      } else if (newUser.rol == "2") {
+        //location.href ="./listTrainer.html";
+      } else if (newUser.rol == "3") {
+        location.href = APP_URL + "userProfileAdmin.html";
+        utils.alertToastAprov()
 
-      //utils.setSessionStorage("user",crudUser);
-      //location.href ="./listTrainer.html";
-      /*       if(crudUser. == "trainer" ){
-      }else if(crudUser == "admin" ){
-        location.href ="./listTrainer.html";
-      }*/
-
+      }
     }else {
-      console.log("nada pai no existe");
+      utils.alertToastNeg()
     }
-  }
-  validateRolLogin() {
-    let user = JSON.parse(utils.getSessionStorage("user"))
-    console.log(user)
-    if(user){
-      
-    }
-    
   }
 
 }

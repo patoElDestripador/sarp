@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" id="pagName" value="01">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body >
+<!-- header inicio -->                
+<header class="py-2 px-3 paraElHeader fixed-top">
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <div class="navbar-brand flex-grow-1">
+            <a class="align-content-around mx-3" href="./index.html">
+                <img class="logoSarp"  src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp" >
+            </a>
+        </div>      
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="daIcon nav-link" >
+            <label class="hamburger">
+                <input type="checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+                </label>
+        </span>
+        </button>
+        <div class="collapse navbar-collapse mt-2 justify-content-end" id="navbarNav">
+        <ul class= "p-0 m-0 d-flex justify-content-center">
+            <li class="nav-item mx-2 my-1">
+                <a href="./about.html" class="nav-item nav-link active fs-5 nosotros-mdf-txt fw-bold daIcon">About us</a>        
+            </li>
+        </ul>
+        <ul class= "p-0 m-0 d-flex justify-content-center">
+            <li class="nav-item mx-2 my-1">
+                <span class="dropdown">
+                    <svg type="button" xmlns="http://www.w3.org/2000/svg" class="daIcon dropdown-toggle daiconSize" data-bs-toggle="dropdown" width="40" height="32" viewBox="0 0 640 512"><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6l.5.5c12.4-13.1 22.5-28.3 29.8-45H376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+                    <ul class="dropdown-menu mt-3">
+                        <li><a class="dropdown-item" id="buttonIdChangeLangEs"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 64 64"><path fill="#2b3990" d="M0 25h64v17H0z"/><path fill="#f9cb38" d="M54 10H10C3.373 10 0 14.925 0 21v11h64V21c0-6.075-3.373-11-10-11"/><path fill="#ec1c24" d="M0 43c0 6.075 3.373 11 10 11h44c6.627 0 10-4.925 10-11v-1H0z"/></svg> Spanish</a></li>
+                        <li><a class="dropdown-item" id="buttonIdChangeLangEn" ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 36 36"><path fill="#B22334" d="M35.445 7C34.752 5.809 33.477 5 32 5H18v2zM0 25h36v2H0zm18-8h18v2H18zm0-4h18v2H18zM0 21h36v2H0zm4 10h28c1.477 0 2.752-.809 3.445-2H.555c.693 1.191 1.968 2 3.445 2M18 9h18v2H18z"/><path fill="#EEE" d="M.068 27.679c.017.093.036.186.059.277c.026.101.058.198.092.296c.089.259.197.509.333.743L.555 29h34.89l.002-.004a4.22 4.22 0 0 0 .332-.741a3.75 3.75 0 0 0 .152-.576c.041-.22.069-.446.069-.679H0c0 .233.028.458.068.679M0 23h36v2H0zm0-4v2h36v-2H18zm18-4h18v2H18zm0-4h18v2H18zM.555 7l-.003.005zM.128 8.044c.025-.102.06-.199.092-.297a3.78 3.78 0 0 0-.092.297M18 9h18c0-.233-.028-.459-.069-.68a3.606 3.606 0 0 0-.153-.576A4.21 4.21 0 0 0 35.445 7H18z"/><path fill="#3C3B6E" d="M18 5H4a4 4 0 0 0-4 4v10h18z"/><path fill="#FFF" d="m2.001 7.726l.618.449l-.236.725L3 8.452l.618.448l-.236-.725L4 7.726h-.764L3 7l-.235.726zm2 2l.618.449l-.236.725l.617-.448l.618.448l-.236-.725L6 9.726h-.764L5 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 9l-.235.726zm-8 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L5 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 13l-.235.726zm-6-6l.618.449l-.236.725L7 8.452l.618.448l-.236-.725L8 7.726h-.764L7 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 7l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 11l-.235.726zM6.383 12.9L7 12.452l.618.448l-.236-.725l.618-.449h-.764L7 11l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 11l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 11l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 15l-.235.726zM6.383 16.9L7 16.452l.618.448l-.236-.725l.618-.449h-.764L7 15l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 15l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 15l-.235.726z"/></svg> English</a></li>
+                    </ul>
+                </span>
+            </li>
+        </ul>
+        <ul class= "p-0 m-0 d-flex justify-content-center">
+            <li class="nav-item mx-2 my-1">
+                <button class="btn login-mdf-btn fw-bold btn-primary" id="redirectbuttonidToLogin" type="button">Login</button>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+</header>
+<!-- header fin -->  
+
+<!-- container inicio -->
+<main>  
+    <div class="container-fluid red"> 
+        <!-- Inicio Seccion Slide Home-->
+        <section>
+            <div id="carouselHome" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner roundedTop">
+                    <div class="carousel-item slideHome active card-dark slideHome pt-5"><!--Slide Home 1-->
+                        <div class="row py-5 d-flex flex-md-row flex-sm-row  justify-content-center flex-column-reverse flex-sm-column-reverse align-items-center">
+                            <div class="col col-md-5 col-12  d-flex text-md-start text-center justify-content-center">
+                                <div class="justify-content-center m-2">
+                                    <h1 class="card-title fs-1 fw-bold focus">Welcome to Sarp!</h1>
+                                    <h2 class="card-text">A system designed for you</h2>
+                                    <p class="card-text">Discover a revolutionary points management experience for Coders with Sarp, our innovative web application!</p>
+                                    <a href="./html/login.html" class="btn btn-primary">Login</a>
+                                </div>
+                            </div>
+                            <div class="col col-md-5 col-sm-4  d-flex align-self-center justify-content-center">
+                                <img src="../../img/Image-2.png" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item slideHome card-dark pt-5"><!--Slide Home 2-->
+                        <div class="row py-5 d-flex flex-md-row flex-sm-row  justify-content-center flex-column-reverse flex-sm-column-reverse align-items-center">
+                            <div class="col col-md-5 col-12  d-flex text-md-start text-center justify-content-center">
+                                <div class="justify-content-center m-2">
+                                    <h1 class="card-title fs-1 fw-bold focus">Coder</h1>
+                                    <h2 class="card-text">Live an innovative experience</h2>
+                                    <p class="card-text">Sarp is the web application specifically designed to provide Coders with direct access and detailed visualization of information related to their individual and clan points.</p>
+                                    <a href="#" class="btn btn-primary">Login</a>
+                                </div>
+                            </div>
+                            <div class="col col-md-5 col-sm-4  d-flex align-self-center justify-content-center">
+                                <img src="../../img/Image-3.png" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item slideHome card-dark pt-5"><!--Slide Home 3-->
+                        <div class="row py-5 d-flex flex-md-row flex-sm-row  justify-content-center flex-column-reverse flex-sm-column-reverse align-items-center">
+                            <div class="col col-md-5 col-12  d-flex text-md-start text-center justify-content-center">
+                                <div class="justify-content-center m-2">
+                                    <h1 class="card-title fs-1 fw-bold focus">Trainer</h1>
+                                    <h2 class="card-text">The Adventure Begins </h2>
+                                    <p class="card-text">We simplify the process of assigning points, allowing Trainers and administrative staff to optimize time.</p>
+                                    <a href="#" class="btn btn-primary">Login</a>
+                                </div>
+                            </div>
+                            <div class="col col-md-5 col-sm-4  d-flex align-self-center justify-content-center">
+                                <img src="../../img/Image-4.png" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+                    <span class="arrow daIcon carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+                    <span class="arrow daIcon carousel-control-next-icon mx-5" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <!-- Fin Seccion Slide Home-->
+        
+        <!-- Inicio Section ventajas y beneficios-->
+        <section class="text-center">
+            <h1 class="mb-5 text-center fw-bold">Advantages and Benefits</h1>      
+            <div class="row d-flex p-0 justify-content-evently justify-content-center w-100">
+
+                <div class="card card-dark p-0 sizeCard col d-flex justify-content-center">
+                    <div>
+                        <svg class="iconHome" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#7c3aed" d="M12.025 21.025q-3.425 0-5.725-2.475T4 12.725V5.5q0-.825.588-1.413Q5.175 3.5 6 3.5h12q.825 0 1.413.587Q20 4.675 20 5.5v1.75q0 .4-.15.762q-.15.363-.425.638l-5.775 5.775q-.575.575-1.412.575q-.838 0-1.413-.575L8 11.6l1.4-1.425L12.25 13L18 7.25V5.5H6v7.3q0 2.55 1.725 4.375Q9.45 19 12.025 19q2.5 0 4.237-1.75Q18 15.5 18 13h2q0 3.35-2.312 5.688q-2.313 2.337-5.663 2.337Z"/></svg>                    
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Guarantees</h3>
+                        <p class="card-text">Ensures faster and more accurate allocation of riwipoint</p>
+                    </div>
+                </div>
+                <div class="card card-dark p-0 sizeCard col d-flex justify-content-center">
+                    <div>
+                        <svg class="iconHome" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="#7c3aed" fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 0 0 1.745-.723a3.066 3.066 0 0 1 3.976 0a3.066 3.066 0 0 0 1.745.723a3.066 3.066 0 0 1 2.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 0 1 0 3.976a3.066 3.066 0 0 0-.723 1.745a3.066 3.066 0 0 1-2.812 2.812a3.066 3.066 0 0 0-1.745.723a3.066 3.066 0 0 1-3.976 0a3.066 3.066 0 0 0-1.745-.723a3.066 3.066 0 0 1-2.812-2.812a3.066 3.066 0 0 0-.723-1.745a3.066 3.066 0 0 1 0-3.976a3.066 3.066 0 0 0 .723-1.745a3.066 3.066 0 0 1 2.812-2.812m7.44 5.252a1 1 0 0 0-1.414-1.414L9 10.586L7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0z" clip-rule="evenodd"/></svg>                    
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Simplify</h3>
+                        <p class="card-text">Facilitates the allocation of points for trainers</p>
+                    </div>
+                </div>
+                <div class="card card-dark p-0 sizeCard col d-flex justify-content-center">
+                    <div>
+                        <svg class="iconHome" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none"><path d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="#7c3aed" d="M20 9a1 1 0 0 1 1 1v1a8 8 0 0 1-8 8H9.414l.793.793a1 1 0 0 1-1.414 1.414l-2.496-2.496a.997.997 0 0 1-.287-.567L6 17.991a.996.996 0 0 1 .237-.638l.056-.06l2.5-2.5a1 1 0 0 1 1.414 1.414L9.414 17H13a6 6 0 0 0 6-6v-1a1 1 0 0 1 1-1m-4.793-6.207l2.5 2.5a1 1 0 0 1 0 1.414l-2.5 2.5a1 1 0 1 1-1.414-1.414L14.586 7H11a6 6 0 0 0-6 6v1a1 1 0 1 1-2 0v-1a8 8 0 0 1 8-8h3.586l-.793-.793a1 1 0 0 1 1.414-1.414"/></g></svg>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Updates</h3>
+                        <p class="card-text">Provides real-time informationProvides real-time information</p>
+                    </div>
+                </div>
+                <div class="card card-dark p-0 sizeCard col d-flex justify-content-center">
+                    <div>
+                        <svg class="iconHome" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="#7c3aed" d="m512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4c-11.8-4.4-22.6-10.7-32.1-18.6c-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3c-2-12-2.1-24.6 0-37.1c1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7c9.5-7.9 20.4-14.2 32.1-18.6c5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4c11.8 4.4 22.6 10.7 32.1 18.6c4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3c2 12 2.1 24.6 0 37.1c-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7c-9.5 7.9-20.4 14.2-32.1 18.6c-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0m-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8c-38.5-29.7-82.4 14.3-52.8 52.8M386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1c-8.9 24.2-26.4 46.4-42.6 65.8c-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6c-24.6 4.2-50.4 4.4-75.9 0c-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3c-16.2-19.4-33.3-41.6-42.2-65.7c-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29c8.9-24.2 26-46.4 42.2-65.8c7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5c24.6-4.2 50.5-4.4 76-.1c11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3c16.2 19.4 33.2 41.6 42.1 65.8c4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5m-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7c-59.2 77 28.7 164.9 105.7 105.7m243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4c-11.8-4.4-22.6-10.7-32.1-18.6c-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3c-2-12-2.1-24.6 0-37.1c1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7c9.5-7.9 20.4-14.2 32.1-18.6c5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4c11.8 4.4 22.6 10.7 32.1 18.6c4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3c2 12 2.1 24.6 0 37.1c-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7c-9.5 7.9-20.4 14.2-32.1 18.6c-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0M501.6 431c38.5 29.6 82.4-14.3 52.8-52.8c-38.5-29.6-82.4 14.3-52.8 52.8"/></svg>                    
+                        </div>
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Stimulates</h3>
+                        <p class="card-text">Motivate students through new incentive strategies.</p>
+                    </div>
+                </div>
+                <div class="card card-dark p-0 sizeCard col d-flex justify-content-center">
+                    <div>
+                        <svg class="iconHome" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#7c3aed" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m8.5 12.5l2 2l5-5"/><path d="M7 3.338A9.954 9.954 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Optimize</h3>
+                        <p class="card-text">Simplifies daily operations</p>
+                    </div>
+                </div>
+
+            </div>
+        </section> 
+        <!-- Fin Section ventajas y beneficios-->
+
+        <!--Inicio Section informativa-->
+        <section>
+            <div class="row justify-content-center text-center my-5">
+                <div class="col-md-9 mb-3">
+                    <div class="card px-4">
+                        <div class="row justify-content-center align-items-center my-3 d-flex flex-md-row flex-column flex-column-reverse flex-sm-column flex-sm-column-reverse flex-xs-column flex-xs-column-reverse">
+                            <div class="col col-md-6 d-flex flex-column align-self-center justify-content-center px-3">
+                                <h1 class="fw-bold text-center text-md-start">Real-time information</h1>
+                                
+                                <p class="text-center text-md-start mx-auto">Get detailed reports and accurate statistics that will motivate you to reach new levels of excellence.</p>
+                                <div class="d-flex d-grid gab-2 justify-content-center  justify-content-md-start">
+                                    <button type="button" class="btn btn-primary">Login</button>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-self-center justify-content-center">
+                                <img src="../../img/Image-1.png" class="img-fluid p-2" alt="">
+                            </div>                             
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin Section informativa-->
+
+        <!--Section plan recompensas-->          
+        <section>  
+            <div class="row d-flex justify-content-center mx-1 my-4">
+                <h1 class="fw-bold text-center">RiwiPoints Rewards Plan</h1>          
+                <!-- Inicio Seccion Ganar-->
+                <div class="card col-sm-8 col-md-3 d-flex align-self-star" >
+                    <div class="my-3">
+                        <!--Card Como Ganar -->
+                        <div class="card-body">
+                            <h2 class="card-title fw-bold text-center">How do you win?</h2>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#5ACCA4" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Ensures constant updating of all your project deliverables</p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#5ACCA4" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Encourage good attitudes towards your colleagues and other Riwi staff.</p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#5ACCA4" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Promotes a collaborative and respectful environment in the training center.</p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#5ACCA4" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Attends all classes punctually</p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#5ACCA4" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Cultivate positive and constructive relationships with your Riwi partners.</p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#5ACCA4" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Consistently participating in class</p></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fin Seccion Ganar-->
+
+                <!-- Inicio Seccion Perder-->
+                <div class="card col-sm-8 col-md-3 d-flex align-self-star" >
+                    <div class="my-3">
+                        <div class="card-body">
+                            <h2 class="card-title fw-bold text-center">How do you lose?</h2>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#FE654F" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Lack of courtesy towards colleagues and administrative personnel</p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#FE654F" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Misuse of facilities</p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#FE654F" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Remain in the playground during training hours.</p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#FE654F" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Distraction with mobile devices during lessons </p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#FE654F" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Inappropriate treatment of fellow employees and administrative personnel</p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#FE654F" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Consumption of food in unauthorized areas</p></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action"> 
+                                <div class="row d-flex justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex align-self-center">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256"><path fill="#FE654F" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/></svg></span>
+                                    </div>
+                                    <div class="col-9 align-self-center"><p>Disorder in common areas</p></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fin Seccion Perder-->
+            </div>
+        </section>
+        <!--Fin plan recompensas-->          
+
+        <!-- inicio Section login + texto-->
+        <section>
+            <div class="row justify-content-center text-center my-5">
+                <div class="col-sm-10 col-md-8 mb-3 my-sm-0">
+                    <div class="card card-dark">
+                        <div class="card-body">
+                            <h1 class="card-title fs-1 fw-bold focus">Sarp</h1>
+                            <p class="card-text">The web application that will revolutionize the way we assign points to our coders</p>
+                            <a href="#" class="btn btn-primary">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin Seccion login + texto -->
+</main>
+<!-- container fin -->
+<!-- inicio Toggle menu fin -->
+<div id="menuToggle" class="menu justify-content-end px-4">
+</div>
+<!-- Fin Toggle menu fin -->
+<!-- inicio modal -->
+
+<div class="modal fade modal-lg" id="idModalRateRiwiPoints" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="idModalTitle">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="idmodalBody">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin modal y toggle-->
+<!-- footer inicio -->
+<footer class="py-2 mt-4 paraElFooter">
+    <a href="./index.html" class="nav justify-content-center pt-3">
+        <img class="logoSarpFooter" src="https://imgdb.net/storage/uploads/551d2c0da210902ce1146f417b23a412cb6ddb399eec910b078367df6f4bac22.png" alt="LogotipoSarp">
+    </a>
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3 align-items-center">
+    <li class="nav-item"><a href="https://www.instagram.com/riwi.io/" target="_blank" class="daIcon nav-link px-2 text-body-secondary" ><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M13.028 2c1.125.003 1.696.009 2.189.023l.194.007c.224.008.445.018.712.03c1.064.05 1.79.218 2.427.465c.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428c.012.266.022.487.03.712l.006.194c.015.492.021 1.063.023 2.188l.001.746v1.31a78.831 78.831 0 0 1-.023 2.188l-.006.194c-.008.225-.018.446-.03.712c-.05 1.065-.22 1.79-.466 2.428a4.883 4.883 0 0 1-1.153 1.772a4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.427.465a72.11 72.11 0 0 1-.712.03l-.194.006c-.493.014-1.064.021-2.189.023l-.746.001h-1.309a78.43 78.43 0 0 1-2.189-.023l-.194-.006a63.036 63.036 0 0 1-.712-.031c-1.064-.05-1.79-.218-2.428-.465a4.889 4.889 0 0 1-1.771-1.153a4.904 4.904 0 0 1-1.154-1.772c-.247-.637-.415-1.363-.465-2.428a74.1 74.1 0 0 1-.03-.712l-.005-.194A79.047 79.047 0 0 1 2 13.028v-2.056a78.82 78.82 0 0 1 .022-2.188l.007-.194c.008-.225.018-.446.03-.712c.05-1.065.218-1.79.465-2.428A4.88 4.88 0 0 1 3.68 3.678a4.897 4.897 0 0 1 1.77-1.153c.638-.247 1.363-.415 2.428-.465c.266-.012.488-.022.712-.03l.194-.006a79 79 0 0 1 2.188-.023zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10m0 2a3 3 0 1 1 .001 6a3 3 0 0 1 0-6m5.25-3.5a1.25 1.25 0 0 0 0 2.5a1.25 1.25 0 0 0 0-2.5"/></svg></a></li>
+    <li class="nav-item"><a href="https://www.facebook.com/people/Riwi/100092420949391/?locale=es_LA" target="_blank" class="daIcon nav-link p-1 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" viewBox="0 0 464 488"><path d="M462 78q0-30-23-53T386 2H78Q48 2 25 25T2 78v308q0 30 23 53t53 23h154V288h-56v-76h56v-30q0-39 25.5-68.5T318 84h62v76h-62q-5 0-9.5 6t-4.5 15v31h76v76h-76v174h82q30 0 53-23t23-53z"/></svg></a></li>
+    <li class="nav-item"><a href="https://twitter.com/InfoRiwi4424" target="_blank" class="daIcon nav-link px-2 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm297.1 84L257.3 234.6L379.4 396h-95.6L209 298.1L123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5l78.2-89.5zm-37.8 251.6L153.4 142.9h-28.3l171.8 224.7h26.3z"/></svg></a></li>
+    </ul>
+    <p class="text-center text-light ">Made with <svg class="animate" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 128 128"><path fill="#DB0A28" d="M64.8 120.71c3.68 0 32.11-24.18 48.7-44.07c15.96-19.14 10.2-41.74 6.69-48.03c-4.15-7.43-56.94 17.01-56.94 17.01S14.07 17.99 10.39 23.99C5.4 32.13-1.59 53.54 12.52 73.45C27.5 94.6 60.85 120.71 64.8 120.71"/><path fill="#FF262E" d="M64.55 114.2s52.26-38.68 56.75-62.3c4.25-22.37-4.45-33.22-15.16-38.45C78.99.19 65.29 26.21 64 26.21S49.95.14 23.7 11.42C9.24 17.63 3.18 34.53 8.91 53.57c8.41 27.94 55.64 60.63 55.64 60.63"/></svg> Coder.</p>
+    <p class="text-center text-light">© 2024 SARP Inc.</p>
+</footer>
+<!-- footer fin -->
+
+<!-- Scripts para funcionamiento de pagina-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../js/index.js" type="module" ></script>
+<script> 
+//dejar de codigo de pagina de ultimo siempre para poder hacer uso de funciones compartidas provinientes desde otros archivos 
+</script>
+</body>
+</html>
