@@ -7,7 +7,7 @@ const APP_URL= "http://127.0.0.1:5500/public/html/";
 const APP_URL2= "http://127.0.0.1:5500/public/";
 
 let actualPage = document.querySelector("title").text
- let { value }   = document.getElementById("pagName").attributes.getNamedItem("value")
+let { value }   = document.getElementById("pagName").attributes.getNamedItem("value")
 
 //Section to addEnventListeners
 
@@ -72,7 +72,7 @@ if(!validationAccess() && value != "03"){
     07 : login      - public
     08 : userProfileAdmin - just admin
     09 : userProfileCoder - just coder
-    10 : userProfileCoder - just Trainer
+    10 : userProfiletrainer - just Trainer
     */
 /*
 Muchchos cada pagina tiene un value que hace referencia a su numero independientemente si esta en ingles o esp.
@@ -88,7 +88,7 @@ esta les devolvera el siguiente objeto donde se encuntra el id del usaurio y el 
     "id": "223",
     "email": "admin@riwi.io.com",
     "password": "789456123",
-    "img": "https://imgdb.net/storage/uploads/60cd0f9f76145fc6a1fd28332d0c1b9d7918bb5848a5956acec4e5e8cd783267.png",
+    "img": "https://imgdb.net/storage/uploads/59e3b509e16a9948b5b5b18fde235cbb634264298eac15ad222ced91e84511eb.jpg",
     "rol": 3
 }
 */
@@ -140,6 +140,7 @@ dataController.setInformationAdmin(user.id) // Lista información en Trainers
         });
     } */
 } else if (value === "10") {
+    dataController.setInformationTrainer(user)
 
 }
 
@@ -148,6 +149,10 @@ dataController.setInformationAdmin(user.id) // Lista información en Trainers
 //dataController.listCodersByClan()
 
 //Globales
+
+
+
+
 
 document.getElementById("buttonIdChangeLangEs")?.addEventListener("click", () => {
     utils.setSessionStorage("leng", "es")
@@ -234,6 +239,7 @@ document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
     login.validateLogin()
 });
 
+
 document.getElementById("redirectbuttonidToLogin")?.addEventListener("click",()=>{
     let language = utils.getSessionStorage("leng")
     if(language == "es"){
@@ -271,7 +277,7 @@ const htmlContent = `
   <a href="#" id="selectionNavItem4"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256"><path fill="#141414" d="M64.12 147.8a4 4 0 0 1-4 4.2H16a8 8 0 0 1-7.8-6.17a8.35 8.35 0 0 1 1.62-6.93A67.79 67.79 0 0 1 37 117.51a40 40 0 1 1 66.46-35.8a3.94 3.94 0 0 1-2.27 4.18A64.08 64.08 0 0 0 64 144c0 1.28 0 2.54.12 3.8m182-8.91A67.76 67.76 0 0 0 219 117.51a40 40 0 1 0-66.46-35.8a3.94 3.94 0 0 0 2.27 4.18A64.08 64.08 0 0 1 192 144c0 1.28 0 2.54-.12 3.8a4 4 0 0 0 4 4.2H240a8 8 0 0 0 7.8-6.17a8.33 8.33 0 0 0-1.63-6.94Zm-89 43.18a48 48 0 1 0-58.37 0A72.13 72.13 0 0 0 65.07 212A8 8 0 0 0 72 224h112a8 8 0 0 0 6.93-12a72.15 72.15 0 0 0-33.74-29.93Z"/></svg></a>
   </li>
   <li style="--i:2;--clr:#141414" >
-      <a data-bs-toggle="modal" data-bs-target="#idModalRateRiwiPoints" href="#" id="selectionNavItem5"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="#141414" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg></a>
+      <a data-bs-toggle="modal" data-bs-target="#idModalAddRiwiPoints" href="#" id="selectionNavItem5"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="#141414" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg></a>
   </li>
 `;
 

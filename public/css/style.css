@@ -314,15 +314,15 @@ overflow: hidden;
 }
 
 .daIconTable {
-    width : 1.5em;
-    height: 1.5em;
+    width : 2em;
+    height: 2em;
     fill: var(--color2);
     transform: scale(1);
     transition: ease 0.3s;
 }
 
 .daIconTable:hover {
-    fill: var(--color6);
+    fill: var(--color8);
     transform: scale(1.08);
     transition: ease 0.3s;
     cursor: pointer;

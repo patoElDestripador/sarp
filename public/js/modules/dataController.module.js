@@ -73,15 +73,16 @@ class DataControllerModule {
 }
 
 
-  // Listar Trainers
+  // Listar Trainers en la tabla general
 async setTrainerInList() {
   let tBody = document.getElementById("historyTrainers")
   let trainers = await crudModule.getTrainers()
+  
   let contador = 1;
   
   for (let element of trainers) {
     let dataArea = await crudModule.getAreaById(element.id); 
-    //let areaName = dataArea[0].name;
+    let areaName = dataArea[0].name;
 
     tBody.innerHTML += `
     <tr>
@@ -99,6 +100,7 @@ async setTrainerInList() {
   }
 }
   // Editar Coders
+
   // Se envia la información al formulario
   async editCoders (id=8){
     let dataCoder = await crudModule.getCodersById(id)
@@ -113,7 +115,8 @@ async setTrainerInList() {
     document.getElementById("imgUser").value = dataUser.img
     document.getElementById("idSelectClan").value = dataClan[0].id
     document.getElementById("idSelectRol").value = dataPermits[0].id_rol
-  }
+  };
+
   // Se envia la información al la base de datos
   async updateCoders(){
     let documentId = document.getElementById("documentId").value
@@ -269,6 +272,7 @@ async setTrainerInList() {
       puntosPositivos = parseInt(element.positive_point) || 0;
       puntosNegativos = parseInt(element.negative_point) || 0;
       
+      
       tBody.innerHTML +=`
       <tr>
         <th scope="row" class="text-center">${contador}</th>
@@ -306,9 +310,10 @@ async setTrainerInList() {
     document.getElementById("emailUser").placeholder  = dataUser.email
     document.getElementById("imgUser").setAttribute ("src", dataUser.img)
     document.getElementById("rolUser").innerText = dataRol[0].name
+    document.getElementById("rolUser").innerText = dataRol[0].name
     document.getElementById("nameUser").innerText = dataUsersProfile[0].name
     document.getElementById("documentId").placeholder  = dataUsersProfile[0].document
-    document.getElementById("materiaUser").placeholder = dataArea.name
+    document.getElementById("materiaUser").placeholder = dataArea[0].name
     
     // Se completan los datos en la el historico de puntos
     for (let element of dataPoint){
@@ -335,9 +340,9 @@ async setTrainerInList() {
     
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
     document.getElementById("emailUser").placeholder  = "admin@riwi.io.com"
-    document.getElementById("imgUser").setAttribute ("src", "http://www.marketingtool.online/en/face-generator/img/faces/avatar-11275282410ba32d3bac1efbf87b208b.jpg")
+    document.getElementById("imgUser").setAttribute ("src", "https://imgdb.net/storage/uploads/59e3b509e16a9948b5b5b18fde235cbb634264298eac15ad222ced91e84511eb.jpg")
     document.getElementById("nameUser").innerText = "Admin"
-    document.getElementById("documentId").placeholder  = "3333335"
+    document.getElementById("documentId").placeholder  = "00000000"
     document.getElementById("materiaUser").placeholder = "Admin"
 
   }

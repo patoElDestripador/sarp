@@ -25,7 +25,7 @@ class LoginModule {
       if (newUser.rol == "1") {
         location.href = APP_URL + "userProfileCoder.html";
       } else if (newUser.rol == "2") {
-        //location.href ="./listTrainer.html";
+        location.href = APP_URL + "userProfileTrainer.html";
       } else if (newUser.rol == "3") {
         location.href = APP_URL + "userProfileAdmin.html";
         utils.alertToastAprov()

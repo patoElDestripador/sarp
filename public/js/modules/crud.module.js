@@ -95,6 +95,18 @@ class CrudModule {
       .catch((err) => this.erroRequest("getTrainers", err));
     return data;
   }
+  async getTrainersByIdUsers(id) {
+    let data = "";
+    await fetch(`${urlBase}trainers?id_user=${id}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => this.erroRequest("getTrainers", err));
+    return data;
+  }
   async getPermitsByIdUSer(id) {
 
     let data = "";
@@ -112,7 +124,7 @@ class CrudModule {
   async getRolByIdUSer(id) {
 
     let data = "";
-    await fetch(`${urlBase}permits?id_user=${id}`, {
+    await fetch(`${urlBase}roles?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -144,8 +156,8 @@ class CrudModule {
           total: 0
         }
         res.forEach(element => {
-        riwiPoints.positivePoints += !parseInt(element.positive_point) ? 0 : element.positive_point
-        riwiPoints.negativePoints += !parseInt(element.negative_point) ? 0 : element.negative_point
+        riwiPoints.positivePoints += !parseInt(element.positive_point) || 0 
+        riwiPoints.negativePoints += !parseInt(element.negative_point) || 0
         })
         console.log()
         riwiPoints.total = riwiPoints.positivePoints - riwiPoints.negativePoints
@@ -230,8 +242,8 @@ class CrudModule {
       .catch((err) => this.erroRequest("getPermisos", err));
     return data;
   }
-  async getTrainers() {
 
+  async getTrainers() {
     let data = "";
     await fetch(`${urlBase}trainers`, {
       method: "GET",
