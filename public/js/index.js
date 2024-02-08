@@ -19,6 +19,7 @@ if (!validateLenguge) {
     utils.setSessionStorage("leng","es")
 }
 
+
 //login.validateStatusLogin();
 
 let user = utilsModule.getSessionStorage("user")
@@ -107,10 +108,7 @@ if (value === "01") {
     //dataController.editCoders() // Edita Coders
     //dataController.updateCoders() // Actualiza coders
     //dataController.setInformationTrainer(user)
-
-dataController.setCodersInList() 
-dataController.listClansInselect()
-dataController.setCodersInList() // Lista coders
+    dataController.listClansInselect()
 } else if (value === "06") {
 //dataController.setTrainerInList() 
     //dataController.setTrainerInList() // Lista trainers
@@ -127,8 +125,20 @@ dataController.setInformationAdmin(user.id) // Lista información en Trainers
 
 } else if (value === "09") {
     dataController.getClansInListRankig()
-    dataController.setInformationCoder(id) // Lista información en coders
-
+    dataController.setInformationCoder(id)
+    // Lista información en coders
+    /*   
+    promiseDatatable()
+      function promiseDatatable(val) {
+        const promise = new Promise((resolve, reject) => resolve(val));
+        promise.then((res) => {
+            console.log("se incia promesa")
+            async function editCoder(id) {
+                // Aquí puedes implementar la lógica para editar el codificador con el ID proporcionado
+                console.log("Editar codificador con ID:", id);
+            }
+        });
+    } */
 } else if (value === "10") {
 
 }
@@ -217,10 +227,6 @@ function pageRedirectionEn(){
     }
 }
 
-
-
-
-
 document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
     login.validateLogin()
 });
@@ -246,17 +252,6 @@ document.getElementById("redirectbuttonidToIndex")?.addEventListener("click", ()
     }
 })
 
-//button cambiar idioma
-document.getElementById("buttonIdChangeLangEng")?.addEventListener("click",()=>{
-    //funcion para cambiar lenguaje a ingles
-});
-document.getElementById("buttonIdChangeLangEs")?.addEventListener("click",()=>{
-    //funcion para cambiar lenguaje a spanish
-});
-document.getElementById("idCorazon")?.addEventListener("click",()=>{
-    //funcion secreta
-});
-
 
 // Inicio Menu Toggle
 
@@ -264,7 +259,7 @@ document.getElementById("idCorazon")?.addEventListener("click",()=>{
 const htmlContent = `
   <div class="toggle"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256"><path fill="#141414" d="M228 128a12 12 0 0 1-12 12h-76v76a12 12 0 0 1-24 0v-76H40a12 12 0 0 1 0-24h76V40a12 12 0 0 1 24 0v76h76a12 12 0 0 1 12 12"/></svg></div>
   <li style="--i:-2;--clr:#141414"  >
-      <a href="#" id="selectionNavItem1"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#141414" d="M17 2H7C5.3 2 4 3.3 4 5v6h8.6l-2.3-2.3c-.4-.4-.4-1 0-1.4c.4-.4 1-.4 1.4 0l4 4c.4.4.4 1 0 1.4l-4 4c-.4.4-1 .4-1.4 0c-.4-.4-.4-1 0-1.4l2.3-2.3H4v6c0 1.7 1.3 3 3 3h10c1.7 0 3-1.3 3-3V5c0-1.7-1.3-3-3-3"/></svg></a>
+      <a  href="#" id="selectionNavItem1"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#141414" d="M17 2H7C5.3 2 4 3.3 4 5v6h8.6l-2.3-2.3c-.4-.4-.4-1 0-1.4c.4-.4 1-.4 1.4 0l4 4c.4.4.4 1 0 1.4l-4 4c-.4.4-1 .4-1.4 0c-.4-.4-.4-1 0-1.4l2.3-2.3H4v6c0 1.7 1.3 3 3 3h10c1.7 0 3-1.3 3-3V5c0-1.7-1.3-3-3-3"/></svg></a>
   </li>
   <li style="--i:-1;--clr:#141414"  >
       <a href="#" id="selectionNavItem2"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#141414" d="M4 19v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-3q-.425 0-.712-.288T14 20v-5q0-.425-.288-.712T13 14h-2q-.425 0-.712.288T10 15v5q0 .425-.288.713T9 21H6q-.825 0-1.412-.587T4 19"/></svg></a>
@@ -276,9 +271,11 @@ const htmlContent = `
   <a href="#" id="selectionNavItem4"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256"><path fill="#141414" d="M64.12 147.8a4 4 0 0 1-4 4.2H16a8 8 0 0 1-7.8-6.17a8.35 8.35 0 0 1 1.62-6.93A67.79 67.79 0 0 1 37 117.51a40 40 0 1 1 66.46-35.8a3.94 3.94 0 0 1-2.27 4.18A64.08 64.08 0 0 0 64 144c0 1.28 0 2.54.12 3.8m182-8.91A67.76 67.76 0 0 0 219 117.51a40 40 0 1 0-66.46-35.8a3.94 3.94 0 0 0 2.27 4.18A64.08 64.08 0 0 1 192 144c0 1.28 0 2.54-.12 3.8a4 4 0 0 0 4 4.2H240a8 8 0 0 0 7.8-6.17a8.33 8.33 0 0 0-1.63-6.94Zm-89 43.18a48 48 0 1 0-58.37 0A72.13 72.13 0 0 0 65.07 212A8 8 0 0 0 72 224h112a8 8 0 0 0 6.93-12a72.15 72.15 0 0 0-33.74-29.93Z"/></svg></a>
   </li>
   <li style="--i:2;--clr:#141414" >
-      <a href="#" id="selectionNavItem5"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="#141414" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg></a>
+      <a data-bs-toggle="modal" data-bs-target="#idModalRateRiwiPoints" href="#" id="selectionNavItem5"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="#141414" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg></a>
   </li>
-  `;
+`;
+
+document.getElementById("redirectbuttonidToLogin").style.display = user ? 'none' : 'inline-block';
 
 // Menu toggle
 if(user && user.rol != 1){
@@ -376,10 +373,6 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
-document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{    
-
-});
-
 
 document.getElementById("crearTrainer")?.addEventListener("click",()=>{    
    console.log("hola")
@@ -477,7 +470,10 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
     }
 });
 document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
+    
     dataController.loadModalList()
+
+
 });
 
 
@@ -486,9 +482,6 @@ document.getElementById("idEditCoder")?.addEventListener("click",()=>{
     dataController.updateCoders()
 });
 
-// document.getElementById("")?.addEventListener("click",()=>{
-//     dataController.editCoders()
-// });
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1)
 });
@@ -501,30 +494,21 @@ document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
 
 
 
-document.getElementById("idSearchRate")?.addEventListener("keypress", e=>{
-    addEventListener("keyup",e=>{
-        document.getElementById("idlistRateCoders").innerHTML = ""
-      dataController.searchAndlistCoder()
-    })
-  })
+
 document.getElementById("idSearchCoder")?.addEventListener("keypress", e=>{
     addEventListener("keyup",e=>{
-        dataController.searchAndlistCoder()
+        this.searchAndlistCoder()
     })
 })
 
 
-function selectionCoder(id) {
-     //borrar el modal body y cargar la card info de el coder 
-    dataController.editCoders(id)
-
-}
 
 
 document.getElementById("idrateCoder")?.addEventListener("click",()=>{
-    console.log("hoas")
     dataController.loadModalList()
-    dataController.searchCoderTorate()
+});
+document.getElementById("holasoyUnButton")?.addEventListener("click",()=>{
+    let holi = document.getElementById("holasoyUnButton")
 });
 
 
@@ -542,3 +526,5 @@ document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
 document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
     dataController.crearClans()
 });
+
+

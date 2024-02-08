@@ -183,7 +183,7 @@ class CrudModule {
     
 
     let data = "";
-    await fetch(`${urlBase}coders`, {
+    await fetch(`${urlBase}coders?_limit=20`, {
       method: "GET",
     })
       .then((response) => response.json())
