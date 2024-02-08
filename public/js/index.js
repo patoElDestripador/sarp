@@ -88,7 +88,7 @@ esta les devolvera el siguiente objeto donde se encuntra el id del usaurio y el 
     "id": "223",
     "email": "admin@riwi.io.com",
     "password": "789456123",
-    "img": "https://imgdb.net/storage/uploads/60cd0f9f76145fc6a1fd28332d0c1b9d7918bb5848a5956acec4e5e8cd783267.png",
+    "img": "https://imgdb.net/storage/uploads/59e3b509e16a9948b5b5b18fde235cbb634264298eac15ad222ced91e84511eb.jpg",
     "rol": 3
 }
 */
@@ -104,15 +104,13 @@ if (value === "01") {
 
 } else if (value === "05") {
     
-    function dataUserForm() {
-    let idUser =  document.getElementById("btnEdit2")?.value // Edita Coders
-    console.log(idUser)
-    }
+function dataUserForm() {
+let idUser =  document.getElementById("btnEdit")?.value // Edita Coders
+console.log(idUser)
+}
 
-
-
-    dataController.setCodersInList() // Lista coders
-    //dataController.updateCoders() // Actualiza coders
+dataController.setCodersInList() // Lista coders
+//dataController.updateCoders() // Actualiza coders
 dataController.listClansInselect()
 } else if (value === "06") {
     //dataController.editTrainer() // Edita trainers
