@@ -15,9 +15,11 @@ class LoginModule {
     this.email= document.getElementById("inputIdEmailLogin").value;
     this.password = document.getElementById("inputIdPasswordLogin").value;
     let crudUser = await crud.getUserByEmail(this.email)
+
     if(crudUser && crudUser.email == this.email && crudUser.password == this.password ){
       let permits  = await crud.getRolByIdUSer(crudUser.id);
-      let temporaryArray = [];
+      let temporaryArray = []; 
+      console.log(crudUser)
       permits.forEach(e=>{temporaryArray.push(e.id_rol)})
       let newUser = {...crudUser,rol :temporaryArray[0]};
       console.log("holi",newUser)
@@ -29,7 +31,6 @@ class LoginModule {
       } else if (newUser.rol == "3") {
         location.href = APP_URL + "userProfileAdmin.html";
         utils.alertToastAprov()
-
       }
     }else {
       utils.alertToastNeg()

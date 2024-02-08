@@ -266,6 +266,17 @@ overflow: hidden;
 
 /* Fin estilos de alert */
 
+/* Inicio estilos modadl*/
+.modal-content{
+    margin: 10px;
+    border-radius: var(--bs-border-radius);
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.modal-title{
+    color: var(--color7);
+}
+
 
 /* Inicio estilos indicadores y selectores */
 .rounded{
