@@ -118,8 +118,20 @@ if (value === "01") {
 dataController.setInformationAdmin(user.id) // Lista información en Trainers
 
 } else if (value === "09") {
-    dataController.setInformationCoder(id) // Lista información en coders
-
+    dataController.setInformationCoder(id)
+    // Lista información en coders
+    /*   
+    promiseDatatable()
+      function promiseDatatable(val) {
+        const promise = new Promise((resolve, reject) => resolve(val));
+        promise.then((res) => {
+            console.log("se incia promesa")
+            async function editCoder(id) {
+                // Aquí puedes implementar la lógica para editar el codificador con el ID proporcionado
+                console.log("Editar codificador con ID:", id);
+            }
+        });
+    } */
 } else if (value === "10") {
 
 }
@@ -232,17 +244,6 @@ document.getElementById("redirectbuttonidToIndex")?.addEventListener("click", ()
         location.href =APP_URL+"en/index.html";
     }
 })
-
-//button cambiar idioma
-document.getElementById("buttonIdChangeLangEng")?.addEventListener("click",()=>{
-    //funcion para cambiar lenguaje a ingles
-});
-document.getElementById("buttonIdChangeLangEs")?.addEventListener("click",()=>{
-    //funcion para cambiar lenguaje a spanish
-});
-document.getElementById("idCorazon")?.addEventListener("click",()=>{
-    //funcion secreta
-});
 
 
 // Inicio Menu Toggle
@@ -518,10 +519,5 @@ document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
 document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
     dataController.crearClans()
 });
-if(document.getElementById("elbotncito")){
-    console.log(document.getElementById("elbotncito"))
-}
 
-document.getElementById("elbotncito")?.addEventListener("click",()=>{
-    dataController.crearClans()
-});
+
