@@ -99,6 +99,7 @@ if (value === "01") {
 } else if (value === "03") {
 
 } else if (value === "04") {
+    dataController.setClansInList()
     
 
 
@@ -109,15 +110,21 @@ if (value === "01") {
     //dataController.setInformationTrainer(user)
     dataController.listClansInselect()
 } else if (value === "06") {
+//dataController.setTrainerInList() 
+    //dataController.setTrainerInList() // Lista trainers
     //dataController.editTrainer() // Edita trainers
     //dataController.updateTrainers() // Actualiza trainers
+//dataController.setTrainerInList() // Lista trainers
 
 } else if (value === "07") {
 
 } else if (value === "08") {
+    dataController.getClansInListRankig()
 dataController.setInformationAdmin(user.id) // Lista información en Trainers
+//dataController.setTrainerInList()
 
 } else if (value === "09") {
+    dataController.getClansInListRankig()
     dataController.setInformationCoder(id)
     // Lista información en coders
     /*   
@@ -366,6 +373,14 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
+
+document.getElementById("crearTrainer")?.addEventListener("click",()=>{    
+   console.log("hola")
+    dataController.crearTrainers()
+    
+});
+
+
 
 
 

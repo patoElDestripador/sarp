@@ -180,6 +180,7 @@ class CrudModule {
   //getCodersByClan()
 
   async getCoders() {
+    
 
     let data = "";
     await fetch(`${urlBase}coders?_limit=20`, {
@@ -193,6 +194,7 @@ class CrudModule {
     return data;
   }
   async getClans() {
+    let urlBase = "http://localhost:3000/";
     let data = "";
     await fetch(`${urlBase}clans`, {
       method: "GET",
@@ -342,6 +344,7 @@ class CrudModule {
     return data;
   }
   async setTrainers(dataSend) {
+    console.log("aqui paso"  )
     let data = "";
     await fetch(`${urlBase}trainers/`, {
       method: "POST",
