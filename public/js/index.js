@@ -7,7 +7,7 @@ const APP_URL= "http://127.0.0.1:5500/public/html/";
 const APP_URL2= "http://127.0.0.1:5500/public/";
 
 let actualPage = document.querySelector("title").text
- let { value }   = document.getElementById("pagName").attributes.getNamedItem("value")
+let { value }   = document.getElementById("pagName").attributes.getNamedItem("value")
 
 //Section to addEnventListeners
 
@@ -72,7 +72,7 @@ if(!validationAccess() && value != "03"){
     07 : login      - public
     08 : userProfileAdmin - just admin
     09 : userProfileCoder - just coder
-    10 : userProfileCoder - just Trainer
+    10 : userProfiletrainer - just Trainer
     */
 /*
 Muchchos cada pagina tiene un value que hace referencia a su numero independientemente si esta en ingles o esp.
@@ -103,24 +103,29 @@ if (value === "01") {
 
 
 } else if (value === "05") {
+    
+    function dataUserForm() {
+    let idUser =  document.getElementById("btnEdit2")?.value // Edita Coders
+    console.log(idUser)
+    }
+
+
+
     dataController.setCodersInList() // Lista coders
-     // Edita Coders
     //dataController.updateCoders() // Actualiza coders
-    //dataController.setInformationTrainer(user)
 dataController.listClansInselect()
 } else if (value === "06") {
     //dataController.editTrainer() // Edita trainers
     //dataController.updateTrainers() // Actualiza trainers
-
 } else if (value === "07") {
 
 } else if (value === "08") {
 dataController.setInformationAdmin(user.id) // Lista información en Trainers
-
 } else if (value === "09") {
     dataController.setInformationCoder(id) // Lista información en coders
-
+    
 } else if (value === "10") {
+    dataController.setInformationTrainer(user)
 
 }
 
@@ -129,6 +134,9 @@ dataController.setInformationAdmin(user.id) // Lista información en Trainers
 //dataController.listCodersByClan()
 
 //Globales
+
+
+
 
 
 document.getElementById("buttonIdChangeLangEs")?.addEventListener("click", () => {
@@ -215,6 +223,7 @@ document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
 document.getElementById("buttonIdLogin")?.addEventListener("click",()=>{
     login.validateLogin()
 });
+
 
 document.getElementById("redirectbuttonidToLogin")?.addEventListener("click",()=>{
     let language = utils.getSessionStorage("leng")
@@ -505,9 +514,7 @@ if (myCarouselElement){
 }) 
 }
 
-function setTrainerInForm(id) {
-    dataController.editCoders(id) // Edita Coders
-}
+
 
 // document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
 //     dataController.crearCoders()
@@ -516,10 +523,10 @@ function setTrainerInForm(id) {
 //     dataController.crearClans()
 // });
 
-document.getElementById("editCoderByProp")?.addEventListener("click",()=>{
-    console.log(Event.target)
-    dataController.editCoderIndex(Event.target.dataset.user)
-});
+// document.getElementById("editCoderByProp")?.addEventListener("click",()=>{
+//     console.log(Event.target)
+//     dataController.editCoderIndex(Event.target.dataset.user)
+// });
 
 
 
