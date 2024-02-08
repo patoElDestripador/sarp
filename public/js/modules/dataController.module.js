@@ -442,19 +442,50 @@ class DataControllerModule {
   //===============================================================================================================//
   //Crear trainers
   async crearTrainers(){
-    let nameClan=document.getElementById('name')
-    let imgClan=document.getElementById('imgUser')
-
-    let dataSend ={
-      name:nameClan.value,
-      date_created:utils.obtenerFecha(),
-      date_retirement: null,
-      status:true
-    }
-    console.log(dataSend)
-  //
-    let clans= await crudModule.setClanes(dataSend)
-    console.log(clans)
+      
+      let newDocumento=document.getElementById('documentId')
+      let newName =document.getElementById('name')
+      let newCorreo = document.getElementById('email')
+      let newPassword =document.getElementById('password')
+      let newImg = document.getElementById('imgUser')
+      let newArea=document.getElementById('idSelectArea')   
+      let newRol = document.getElementById('idSelectRol')
+      console.log("aqui va el programa")
+      
+      
+          
+      let dataSend = { 
+  
+        correo: newCorreo.value,
+        password: newPassword.value,
+        img: newImg.value,
+  
+      };
+      console.log(dataSend)
+      let usuario = await crudModule.setUsuario(dataSend)  
+      console.log(usuario.id)
+      let datasend2 ={
+        
+        id_user:usuario.id,
+        id_rol:newRol.value,
+        fecha_creacion:utils.obtenerFecha(),
+        estado:true,
+      }
+      console.log(datasend2)
+  
+      let trainer = await crudModule.setTrainers(datasend2)
+      let datasend3={
+        documento:newDocumento.value,
+        id_user:trainer.id_user,
+        id_clan:newArea.value,
+        nombre:newName.value,
+        fecha_creacion:trainer.fecha_creacion,
+        fecha_retiro:undefined,
+        estado:trainer.estado
+      
+      }
+      console.log(datasend3)
+      alert("Trainer Se Registro Correctamente")
   }
 
 
