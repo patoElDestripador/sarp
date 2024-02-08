@@ -268,7 +268,7 @@ const htmlContent = `
   </li>
 `;
 
-document.getElementById("redirectbuttonidToLogin")?.style.display = user ? 'none' : 'inline-block';
+document.getElementById("redirectbuttonidToLogin").style.display = user ? 'none' : 'inline-block';
 
 // Menu toggle
 if(user && user.rol != 1){
@@ -366,9 +366,6 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
         location.href =APP_URL+"en/index.html";
     }
 });
-document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{    
-
-});
 
 
 
@@ -458,7 +455,10 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
     }
 });
 document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
+    
     dataController.loadModalList()
+
+
 });
 
 
@@ -478,19 +478,11 @@ document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
 });
 
 
-document.getElementById("idSearchRateButton")?.addEventListener("click", e=>{
-    dataController.searchAndlistCoder()
-  })
-document.getElementById("idSearchRate")?.addEventListener("keypress", e=>{
-    console.log("holi")
-    addEventListener("keyup",e=>{
-        document.getElementById("idlistRateCoders").innerHTML = ""
-      dataController.searchAndlistCoder()
-    })
-  })
+
+
 document.getElementById("idSearchCoder")?.addEventListener("keypress", e=>{
     addEventListener("keyup",e=>{
-        dataController.searchAndlistCoder()
+        this.searchAndlistCoder()
     })
 })
 
@@ -502,8 +494,6 @@ document.getElementById("idrateCoder")?.addEventListener("click",()=>{
 });
 document.getElementById("holasoyUnButton")?.addEventListener("click",()=>{
     let holi = document.getElementById("holasoyUnButton")
-    console.log(event.target)
-    console.log(holi)
 });
 
 

@@ -26,7 +26,7 @@ class DataControllerModule {
 
     let newCoders = [];
 
-    for (const element of coders) {
+    for (let element of coders) {
         let dataEmail = await crudModule.getUserById(element.id);
         let { total } = await crudModule.getOnlyRiwiPointsByUserid(element.id);
         let clans = await crudModule.getClansById(element.id_clan);
@@ -62,9 +62,8 @@ class DataControllerModule {
 
         document.querySelectorAll('.editBtn').forEach(button => {
           button.addEventListener('click', (event) => {
-              const id = event.currentTarget.getAttribute('data-id');
+              let id = event.currentTarget.getAttribute('data-id');
               console.log('mi pai el id ', id,"cargoo");
-              // Aquí puedes realizar cualquier acción que necesites con el ID obtenido
           });
       });
       
@@ -80,7 +79,7 @@ async setTrainerInList() {
   let trainers = await crudModule.getTrainers()
   let contador = 1;
   
-  for (const element of trainers) {
+  for (let element of trainers) {
     let dataArea = await crudModule.getAreaById(element.id); 
     //let areaName = dataArea[0].name;
 
@@ -261,7 +260,7 @@ async setTrainerInList() {
     document.getElementById("clanUser").placeholder = dataClans[0].name
     
     // Se completan los datos en la el historico de puntos
-    for (const element of dataPoints){
+    for (let element of dataPoints){
       let dataTrainer = await crudModule.getTrainersById(element.id_trainers)
       puntosPositivos = parseInt(element.positive_point) || 0;
       puntosNegativos = parseInt(element.negative_point) || 0;
@@ -306,7 +305,7 @@ async setTrainerInList() {
     document.getElementById("materiaUser").placeholder = dataArea.name
     
     // Se completan los datos en la el historico de puntos
-    for (const element of dataPoint){
+    for (let element of dataPoint){
       let dataCoder = await crudModule.getCodersById(element.id_coders);
       puntosPositivos = parseInt(element.positive_point) || 0;
       puntosNegativos = parseInt(element.negative_point) || 0;
@@ -499,25 +498,44 @@ async setTrainerInList() {
       let contador = 1;
       let coders = await this.filterCoderBynameOrDocument();
       tbodyList.innerHTML = "";
-      for (const element of coders) {
+
+    document.getElementById("idSearchRate")?.addEventListener("keypress", e => {
+        if(document.getElementById("idSearchRate")){
+          addEventListener("keyup",e=>{
+              document.getElementById("idlistRateCoders").innerHTML = ""
+              this.searchAndlistCoder()
+          })
+        }
+      })
+    for (let element of coders) {
+        
         tbodyList.innerHTML +=  `
           <tr>
             <th scope="row">${contador}</th>
             <td>${element.name}</td>
             <td>${element.document}</td>
-            <td><button class="btn btn-info m-2" onclick="selectionCoder('${element.id}')" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#ffffff" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg>Puntuar</a></td>
+            <td><button class="btn btn-info m-2 rateBtn" data-id="${element.id}" id="buttonRateCoderId" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#ffffff" fill-opacity="0" stroke="#ffffff" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="32;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg>Puntuar</a></td>
           </tr>
         `;
         contador++;
-      }
+    }
+        document.querySelectorAll('.rateBtn').forEach(button => {
+          button.addEventListener('click', (event) => {
+              let id = event.currentTarget.getAttribute('data-id');
+              this.loadModalPoints(id)
+            });
+        });
+
   }
 
-  async filterCoderBynameOrDocument(){
+  async filterCoderBynameOrDocument() {
+    if(document.getElementById("idSearchRate")){
     let usuario = (document.getElementById("idSearchRate").value).toLowerCase()
       let buscarCoder = await crudModule.getCoders();
       return buscarCoder.filter(user => {
         return user.name.toLowerCase().startsWith(usuario) || user.document.startsWith(usuario) 
       })
+    }
   }
 
 
@@ -530,26 +548,20 @@ async setTrainerInList() {
     });
   }
 
-  setPointsToCoder(){
-    let point = document.getElementById("point").value 
-    let typePoint = document.getElementById("point") 
-    let Concept = document.getElementById("").value
-    let observation = document.getElementById("").valu
-  }
+
 
   loadModalList(){
     let modal = document.getElementById("idmodalBody")
     let title = document.getElementById("idModalTitle")
     title.innerText = "Buscar Coder" 
     modal.innerHTML = `
-    
     <div class="card-body">
     <div class="flex-fill">
       <nav class="navbar">
         <div class="row overflow-hidden flex-fill">
           <div class="col d-flex col-sm-12">
             <input class="form-control m-2 " type="search" placeholder="Buscar"  id="idSearchRate" aria-label="Buscar">
-            <button class="btn btn-primary my-2" type="button" id="idSearchRateButton" >Buscar</button>
+            <button id="idSearchRateButton" class="btn btn-primary my-2" type="button"  >Buscar</button>
           </div>
         </div>
       </nav>
@@ -571,35 +583,24 @@ async setTrainerInList() {
       </div>
     </div>
   </div>`
-  
-
+    document.getElementById("idSearchRate")?.addEventListener("keypress", e=>{
+          addEventListener("keyup",e=>{
+              this.searchAndlistCoder()
+          })
+      })
   }
 
-  loadModalPoints(){
+  loadModalPoints(theId){
     let modal = document.getElementById("idmodalBody")
-    modal.innerHTML = `  <div class="modal-dialog">
-    <div class="modal-content ">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <h1 class="fs-1 fw-bold focus text-center" id="exampleModalLabel">Puntos a asignar</h1>
-      <div class="modal-body">
+    modal.innerHTML = `        
+      <div class="modal-body" id="idmodalBody">
         <div class="container-fluid">
-          <!-- <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> -->
-        </div>
-        <div class="container-fluid">
-
           <!-- Cantidad -->
           <div class="row d-flex justify-content-around p-3">
             <div class="modal-footer justify-content-center">
               <p class="fs-4 fw-bold">Cantidad</p>
             </div>
-        <input class="col-sm-4 card form-control form-control-lg" type="number" placeholder="Cantidad de Pts." aria-label="Cantidad de Pts.">
-          </input>
-
+            <input id="idCantPoints" class="col-sm-4 card form-control form-control-lg" type="number" placeholder="Cantidad de Pts." aria-label="Cantidad de Pts."></input>
           <!-- Concepto -->
           <div class="modal-footer justify-content-center">
             <p class="fs-4 fw-bold">Concepto</p>
@@ -607,36 +608,37 @@ async setTrainerInList() {
           <div class="mb-3">
               <div class="form-floating mb-3">
                 <div class="form-floating">
-                  <select class="form-select" id="floatingSelectDisabled" aria-label="Selecciona una opción">
-                    <label for="floatingSelectDisabled">Selecciona una opción</label>
+                  <select class="form-select" id="idSelectConcept">
                     <option selected>Seleciona una opción</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="Uso celular en clase">Uso celular en clase</option>
+                    <option value="Llegada Tarde">Llegada Tarde</option>
+                    <option value="Irrespeto">Irrespeto</option>
+                    <option value="Participacion en clase">Participacion en clase</option>
+                    <option value="Buen comportamiento">Buen comportamiento</option>
+                    <option value="porque si">Porque si</option>
+                    <option value="Hacer trampa durante exámenes o evaluaciones.">Hacer trampa durante exámenes o evaluaciones.</option>
                   </select>
                 </div>
               </div>
               <div class="form-floating mb-3">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled" style="height: 100px" ></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" id="idinputTextarea" style="height: 100px" ></textarea>
                 <label for="floatingTextarea2Disabled">Escríbe una observación</label>
               </div>
-
             </div>
-
           <!-- Tipo punto-->
           <div class="modal-footer justify-content-center">
               <p class="fs-4 fw-bold ">Tipo de punto</p>
             </div>
               <div class="row justify-content-center">
-                <button class="col-sm-4 pt-2 card d-flex flex-column justify-content-center align-items-center">
+                <button class="col-sm-4 pt-2 card d-flex flex-column justify-content-center align-items-center" data-id="${theId}" data-point="1" id="buttonPointPostive">
                   <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" viewBox="0 0 256 256">
                       <path fill="#5ACCA4" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/>
                     </svg>
                   </span>
-                  <p class="fs-4 fw-bold">Negativos</p>
+                  <p class="fs-4 fw-bold">Positivo</p>
                 </button>
-                <button class="col-sm-4 p-2 card d-flex flex-column justify-content-center align-items-center">
+                <button class="col-sm-4 p-2 card d-flex flex-column justify-content-center align-items-center"data-id="${theId}" data-point="0"  id="buttonPointNegative">
                   <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" viewBox="0 0 256 256">
                       <path fill="#FE654F" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/>
@@ -651,8 +653,41 @@ async setTrainerInList() {
           </div>
         </div>
       </div>
-    </div>
-  </div>`
+        `
+        document.getElementById("buttonPointPostive")?.addEventListener("click", e =>{
+             let point = e.currentTarget.getAttribute('data-point');
+             let id = e.currentTarget.getAttribute('data-id');
+            this.addPointToCoder(id,point)
+        })
+        document.getElementById("buttonPointNegative")?.addEventListener("click", e=>{
+             let point = e.currentTarget.getAttribute('data-point');
+             let id = e.currentTarget.getAttribute('data-id');
+            this.addPointToCoder(id,point)
+        })
+    
+  }
+
+  addPointToCoder(id, type) {
+    let point = document.getElementById("idCantPoints").value 
+    let concept = document.getElementById("idSelectConcept").value
+    let observation = document.getElementById("idinputTextarea").valu
+    let messaje =  type != 0 ? `Se asignaran ${point} positivos al coder`:`Se asignaran -${point} negativos al coder`
+  console.log("entro aki")
+    Swal.fire({
+      title:messaje,
+      showDenyButton: true,
+      confirmButtonText: "Agregar",
+      denyButtonText: `Cancelar`
+    }).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+      
+        Swal.fire("Saved!", "", "success");
+    } else if (result.isDenied) {
+      
+      Swal.fire("Los cambios no se han guardado", "", "info");
+    }
+});
   }
 
 }

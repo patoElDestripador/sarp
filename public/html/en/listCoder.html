@@ -269,6 +269,7 @@
 </div>
 <!-- Fin Toggle menu fin -->
 <!-- inicio modal -->
+<button type="button"data-bs-toggle="modal" data-bs-target="#idModalRateRiwiPoints" >Holi </button>
 
 <div class="modal fade modal-lg" id="idModalRateRiwiPoints" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -278,6 +279,64 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="idmodalBody">
+        <div class="container-fluid">
+          <!-- Cantidad -->
+          <div class="row d-flex justify-content-around p-3">
+            <div class="modal-footer justify-content-center">
+              <p class="fs-4 fw-bold">Cantidad</p>
+            </div>
+            <input id="idCantPoints" class="col-sm-4 card form-control form-control-lg" type="number" placeholder="Cantidad de Pts." aria-label="Cantidad de Pts."></input>
+          <!-- Concepto -->
+          <div class="modal-footer justify-content-center">
+            <p class="fs-4 fw-bold">Concepto</p>
+          </div>            
+          <div class="mb-3">
+              <div class="form-floating mb-3">
+                <div class="form-floating">
+                  <select class="form-select" id="idSelectConcept">
+                    <option selected>Seleciona una opción</option>
+                    <option value="Uso celular en clase">Uso celular en clase</option>
+                    <option value="Llegada Tarde">Llegada Tarde</option>
+                    <option value="Irrespeto">Irrespeto</option>
+                    <option value="Participacion en clase">Participacion en clase</option>
+                    <option value="Buen comportamiento">Buen comportamiento</option>
+                    <option value="porque si">Porque si</option>
+                    <option value="Hacer trampa durante exámenes o evaluaciones.">Hacer trampa durante exámenes o evaluaciones.</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="idinputTextarea" style="height: 100px" ></textarea>
+                <label for="floatingTextarea2Disabled">Escríbe una observación</label>
+              </div>
+            </div>
+          <!-- Tipo punto-->
+          <div class="modal-footer justify-content-center">
+              <p class="fs-4 fw-bold ">Tipo de punto</p>
+            </div>
+              <div class="row justify-content-center">
+                <button class="col-sm-4 pt-2 card d-flex flex-column justify-content-center align-items-center" data-id="${}" data-point="1" id="buttonPointPostive">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" viewBox="0 0 256 256">
+                      <path fill="#5ACCA4" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/>
+                    </svg>
+                  </span>
+                  <p class="fs-4 fw-bold">Positivo</p>
+                </button>
+                <button class="col-sm-4 p-2 card d-flex flex-column justify-content-center align-items-center"data-id="${}" data-point="0"  id="buttonPointNegative">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" viewBox="0 0 256 256">
+                      <path fill="#FE654F" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/>
+                    </svg>
+                  </span>
+                  <p class="fs-4 fw-bold">Negativos</p>
+                </button>
+              </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-secondary col-6" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
