@@ -119,8 +119,8 @@ if (value === "01") {
 } else if (value === "07") {
 
 } else if (value === "08") {
-    dataController.getClansInListRankig()
-dataController.setInformationAdmin(user.id) // Lista información en Trainers
+    //dataController.getClansInListRankig()
+    dataController.setInformationAdmin(user.id) // Lista información en Trainers
 //dataController.setTrainerInList()
 
 } else if (value === "09") {

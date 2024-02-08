@@ -666,7 +666,7 @@ async setTrainerInList() {
             <div class="modal-footer justify-content-center">
               <p class="fs-4 fw-bold">Cantidad</p>
             </div>
-            <input id="idCantPoints" class="col-sm-4 card form-control form-control-lg" type="number" placeholder="Cantidad de Pts." aria-label="Cantidad de Pts."></input>
+            <input id="idCantPoints" class="col-sm-4 card form-control form-control-lg" type="number" min="-20" max="20"  placeholder="Cantidad de Pts." aria-label="Cantidad de Pts."></input>
           <!-- Concepto -->
           <div class="modal-footer justify-content-center">
             <p class="fs-4 fw-bold">Concepto</p>
@@ -737,8 +737,17 @@ async setTrainerInList() {
     let point = document.getElementById("idCantPoints").value 
     let concept = document.getElementById("idSelectConcept").value
     let observation = document.getElementById("idinputTextarea").valu
-    let messaje =  type != 0 ? `Se asignaran ${point} positivos al coder`:`Se asignaran -${point} negativos al coder`
-  console.log("entro aki")
+    let messaje = ""
+    let positive =  null
+    let negative = null
+
+    if (type != 0) {
+      messaje = `Se asignaran ${point} positivos al coder`
+      positive = point
+    } else {
+        messaje =`Se asignaran -${point} negativos al coder`
+      negative = point
+    }
     Swal.fire({
       title:messaje,
       showDenyButton: true,
@@ -747,8 +756,21 @@ async setTrainerInList() {
     }).then((result) => {
   /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-      
+        let dataSend = {
+            id_coders: id,
+            id_trainers: (utils.getSessionStorage(user)).id,
+            positive_point:positive ,
+            negative_point:negative ,
+            date_created: utils.obtenerFecha(),
+            specific_reason: concept,
+            observation: observation,
+            status: true
+        
+        }
+        crudModule.setRiwiPoints(dataSend)
+
         Swal.fire("Saved!", "", "success");
+        
     } else if (result.isDenied) {
       
       Swal.fire("Los cambios no se han guardado", "", "info");
