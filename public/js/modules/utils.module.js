@@ -110,7 +110,6 @@ function mensajeFuncionDesactivada() {
       };
 
 
-
     setSessionStorage(key,value) {return localStorage.setItem(key, JSON.stringify(value));}
     
     getSessionStorage(key) { return JSON.parse(localStorage.getItem(key)); }

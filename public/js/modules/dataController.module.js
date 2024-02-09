@@ -293,12 +293,12 @@ async setTrainerInList() {
     let contador = 1;
     let puntosPositivos = 0;
     let puntosNegativos = 0;
-    console.log(contador)
 
     let dataUser = await crudModule.getUserById(idUserLogin)
     let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id) //Revisar
     let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
+    console.log(dataArea)
     let dataArea = await crudModule.getAreaById(dataUsersProfile[0].id_areas)
     let dataPoint = await crudModule.getRiwiPointsByTrainer(dataUsersProfile[0].id)
     
@@ -340,8 +340,9 @@ async setTrainerInList() {
     document.getElementById("imgUser").setAttribute ("src", "http://www.marketingtool.online/en/face-generator/img/faces/avatar-11275282410ba32d3bac1efbf87b208b.jpg")
     document.getElementById("nameUser").innerText = "Admin"
     document.getElementById("documentId").placeholder  = "123456789"
-    document.getElementById("materiaUser").placeholder = "Admin"
+    document.getElementById("materiaUser").placeholder = "1"
     document.getElementById("rolUser").innerHTML = "Admin"
+
 
   }
   //===============================================================================================================//
