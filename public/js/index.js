@@ -479,7 +479,31 @@ document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
 
 
 document.getElementById("idEditCoder")?.addEventListener("click",()=>{
-    dataController.updateCoders()
+    Swal.fire({
+        title: "¿Seguro que quiere guardar los cambios?",
+        confirmButtonText: "Guardar",
+        icon: "warning",
+        customClass: {
+            container: 'my-container',
+            popup: 'my-popup',
+            header: 'my-header',
+            title: 'my-title',
+            closeButton: 'my-close-button',
+            confirmButton: 'btn btn-success w-5 m-2',
+            cancelButton: 'btn btn-danger  d-grid m-2',
+          },
+          buttonsStyling: false,
+          showCancelButton: true,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            dataController.updateCoders()
+          Swal.fire("¡Modificación exitosa!", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("Modificación cancelada", "", "info");
+        }
+      });
+    
 });
 
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{

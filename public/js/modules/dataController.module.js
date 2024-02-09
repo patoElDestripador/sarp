@@ -63,7 +63,7 @@ class DataControllerModule {
         document.querySelectorAll('.editBtn').forEach(button => {
           button.addEventListener('click', (event) => {
               let id = event.currentTarget.getAttribute('data-id');
-              console.log('mi pai el id ', id,"cargoo");
+              this.editCoders(id)
           });
       });
       
@@ -108,9 +108,9 @@ async setTrainerInList() {
     
     document.getElementById("documentId").value = (dataCoder[0].document)
     document.getElementById("name").value = dataCoder[0].name
-    document.getElementById("email").value = dataUser.email
-    document.getElementById("password").value = dataUser.password
-    document.getElementById("imgUser").value = dataUser.img
+    document.getElementById("email").value = dataUser[0].email
+    document.getElementById("password").value = dataUser[0].password
+    document.getElementById("imgUser").value = dataUser[0].img
     document.getElementById("idSelectClan").value = dataClan[0].id
     document.getElementById("idSelectRol").value = dataPermits[0].id_rol
   }
@@ -164,6 +164,7 @@ async setTrainerInList() {
     document.getElementById("imgUser").value = ""
     document.getElementById("idSelectClan").value = ""
     document.getElementById("idSelectRol").value = ""
+    this.setCodersInList()
   }
   
   // Editar Trainers
@@ -309,7 +310,7 @@ async setTrainerInList() {
     document.getElementById("nameUser").innerText = dataUsersProfile[0].name
     document.getElementById("documentId").placeholder  = dataUsersProfile[0].document
     document.getElementById("materiaUser").placeholder = dataArea.name
-    
+    tBody.innerHTML = " "
     // Se completan los datos en la el historico de puntos
     for (let element of dataPoint){
       let dataCoder = await crudModule.getCodersById(element.id_coders);
@@ -333,11 +334,13 @@ async setTrainerInList() {
     //let idUserLogin = user.rol
     let tBody = document.getElementById("informationTrainer")
     
+    //funcionalidad no realizada :C
+
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
     document.getElementById("emailUser").placeholder  = "admin@riwi.io.com"
     document.getElementById("imgUser").setAttribute ("src", "http://www.marketingtool.online/en/face-generator/img/faces/avatar-11275282410ba32d3bac1efbf87b208b.jpg")
     document.getElementById("nameUser").innerText = "Admin"
-    document.getElementById("documentId").placeholder  = "3333335"
+    document.getElementById("documentId").placeholder  = "123456789"
     document.getElementById("materiaUser").placeholder = "Admin"
 
   }
@@ -742,10 +745,10 @@ async setTrainerInList() {
     let negative = null
 
     if (type != 0) {
-      messaje = `Se asignaran ${point} positivos al coder`
+      messaje = `Se asignaran ${point} puntos positivos al coder`
       positive = point
     } else {
-        messaje =`Se asignaran -${point} negativos al coder`
+        messaje =`Se asignaran -${point} puntos negativos al coder`
       negative = point
     }
     Swal.fire({
@@ -757,19 +760,18 @@ async setTrainerInList() {
   /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         let dataSend = {
-            id_coders: id,
-            id_trainers: (utils.getSessionStorage(user)).id,
-            positive_point:positive ,
-            negative_point:negative ,
-            date_created: utils.obtenerFecha(),
-            specific_reason: concept,
-            observation: observation,
-            status: true
-        
-        }
+          id_coders: id,
+          id_trainers: (utils.getSessionStorage("user")).id,
+          positive_point:positive ,
+          negative_point:negative ,
+          date_created: utils.obtenerFecha(),
+          specific_reason: concept,
+          observation: observation,
+          status: true,
+      }
         crudModule.setRiwiPoints(dataSend)
+        pointsAdd()
 
-        Swal.fire("Saved!", "", "success");
         
     } else if (result.isDenied) {
       
