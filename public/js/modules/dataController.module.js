@@ -96,7 +96,7 @@ class DataControllerModule {
           });
       });
       
-    }));
+    };
 
     console.log('todo allriigt como dicen por ahi');
 }
@@ -110,7 +110,6 @@ async setTrainerInList() {
   let contador = 1;
   for (const element of trainers) {
     let dataArea = await crudModule.getAreaById(element.id); 
-    let areaName = dataArea[0].name;
     let areaName = dataArea[0].name;
 
     tBody.innerHTML += `
