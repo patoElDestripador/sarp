@@ -293,13 +293,12 @@ async setTrainerInList() {
     let contador = 1;
     let puntosPositivos = 0;
     let puntosNegativos = 0;
+    console.log(contador)
 
     let dataUser = await crudModule.getUserById(idUserLogin)
-    console.log(dataUser)
     let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id) //Revisar
     let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
-    console.log(dataUsersProfile)
     let dataArea = await crudModule.getAreaById(dataUsersProfile[0].id_areas)
     let dataPoint = await crudModule.getRiwiPointsByTrainer(dataUsersProfile[0].id)
     
@@ -342,6 +341,7 @@ async setTrainerInList() {
     document.getElementById("nameUser").innerText = "Admin"
     document.getElementById("documentId").placeholder  = "123456789"
     document.getElementById("materiaUser").placeholder = "Admin"
+    document.getElementById("rolUser").innerHTML = "Admin"
 
   }
   //===============================================================================================================//
@@ -363,7 +363,7 @@ async setTrainerInList() {
         else if(resultado.id_clan == 4){clan4++}
     })
     let clans = await crudModule.getClans()
-    console.log(clans)
+    tBody.innerHTML = ""
     clans.forEach(async (element) =>{ 
         if (element.id == 1){
             tBody.innerHTML += `
