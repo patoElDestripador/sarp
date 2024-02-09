@@ -95,8 +95,8 @@ class CrudModule {
       .catch((err) => this.erroRequest("getTrainers", err));
     return data;
   }
-  async getPermitsByIdUSer(id) {
 
+  async getPermitsByIdUSer(id) {
     let data = "";
     await fetch(`${urlBase}permits?id=${id}`, {
       method: "GET",
@@ -105,7 +105,7 @@ class CrudModule {
       .then((res) => {
         data = res;
       })
-      .catch((err) => this.erroRequest("getPermitsByIdUSer", err));
+      .catch((err) => this.erroRequest("getTrainers", err));
     return data;
   }
 
@@ -133,27 +133,25 @@ class CrudModule {
   return data;
   }
   
-  async getOnlyRiwiPointsByUserid(id){
-    let data = "";
-    await fetch(`${urlBase}riwi_points?id_coders=${id}`)
-      .then((response) => response.json())
-      .then((res) => {
-        let riwiPoints = {
-          positivePoints: 0,
-          negativePoints: 0,
-          total: 0
-        }
-        res.forEach(element => {
-        riwiPoints.positivePoints += !parseInt(element.positive_point) ? 0 : element.positive_point
-        riwiPoints.negativePoints += !parseInt(element.negative_point) ? 0 : element.negative_point
-        })
-        console.log()
-        riwiPoints.total = riwiPoints.positivePoints - riwiPoints.negativePoints
-          data =  riwiPoints;
-      })
-      .catch((err) => this.erroRequest("getOnlyRiwiPointsByUserid", err))
-      return data
+  async getOnlyRiwiPointsByUserid(id) {
+    let totalPoints = 0;
+    try {
+      const response = await fetch(`${urlBase}riwi_points?id_coders=${id}`);
+      const pointsData = await response.json();
+  
+      pointsData.forEach(element => {
+        const positivePoints = parseInt(element.positive_point) || 0;
+        const negativePoints = parseInt(element.negative_point) || 0;
+        totalPoints += positivePoints - negativePoints;
+      });
+    } catch (err) {
+      console.error("Error en getOnlyRiwiPointsByUserid", err);
+    }
+    return { total: totalPoints };
   }
+  
+  
+  
   async getRiwiPointsByUserid(id){
     let data = "";
     await fetch(`${urlBase}riwi_points?id_coders=${id}`)
@@ -204,6 +202,19 @@ class CrudModule {
         data = res;
       })
       .catch((err) => this.erroRequest("getClans", err));
+    return data;
+  }
+  async getRol() {
+    let urlBase = "http://localhost:3000/";
+    let data = "";
+    await fetch(`${urlBase}roles`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        data = res;
+      })
+      .catch((err) => this.erroRequest("getRol", err));
     return data;
   }
   async getArea() {

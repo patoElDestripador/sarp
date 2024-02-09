@@ -108,7 +108,9 @@ if (value === "01") {
     //dataController.editCoders() // Edita Coders
     //dataController.updateCoders() // Actualiza coders
     //dataController.setInformationTrainer(user)
-    dataController.listClansInselect()
+    dataController.listClansInselect() // Selector de clanes
+    dataController.listRolInselect() // Selector de roles
+
 } else if (value === "06") {
 //dataController.setTrainerInList() 
     //dataController.setTrainerInList() // Lista trainers

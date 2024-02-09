@@ -34,15 +34,14 @@ class DataControllerModule {
             contador,
             document: element.document,
             name: element.name,
-            otracosa: clans[0].name,
+            clan: clans[0].name,
             email: dataEmail[0].email,
-            total,
+            total: total,
             id: element.id
         };
         newCoders.push(newInfo);
         contador++;
     }
-    console.log(newCoders.length)
     tBody.innerHTML = "";
     await Promise.all(newCoders.map(async (element) => {
         tBody.innerHTML += `
@@ -51,7 +50,7 @@ class DataControllerModule {
             <td class="text-center">${element.document}</td>
             <td>${element.name}</td>
             <td>${element.email}</td>
-            <td class="text-center">${element.otracosa}</td>
+            <td class="text-center">${element.clan}</td>
             <td class="fw-bold text-center">${element.total}</td>
             <td class="text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="daIconTable" viewBox="0 0 20 20"><g><path d="M11.937 4.5H8.062A2.003 2.003 0 0 1 10 2a2.003 2.003 0 0 1 1.937 2.5Z"/><path d="M4.5 5.5a1 1 0 0 1 0-2h11a1 1 0 1 1 0 2h-11Z"/><path fill-rule="evenodd" d="M14.5 18.5a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1v10.5a1 1 0 0 0 1 1h9Zm-2-10a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7ZM10 8a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 1 0v-7A.5.5 0 0 0 10 8Zm-3.5.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7Z" clip-rule="evenodd"/></g></svg>                                
@@ -69,7 +68,7 @@ class DataControllerModule {
       
     }));
 
-    console.log('todo allriigt como dicen por ahi');
+    console.log('Coder listados correctamente');
 }
 
 
@@ -162,14 +161,14 @@ async setTrainerInList() {
     document.getElementById("email").value = ""
     document.getElementById("password").value = ""
     document.getElementById("imgUser").value = ""
-    document.getElementById("idSelectClan").value = ""
-    document.getElementById("idSelectRol").value = ""
+    document.getElementById("idSelectClan").value = 0
+    document.getElementById("idSelectRol").value = 0
     this.setCodersInList()
   }
   
   // Editar Trainers
   // Se envia la información al formulario
-  async editTrainer (id=222){
+  async editTrainer (id){
     let dataTrainer = await crudModule.getTrainersById(id)
     let dataUser = await crudModule.getUserById(dataTrainer[0].id_user)
     let dataArea = await crudModule.getAreaById(dataTrainer[0].id_area)
@@ -252,6 +251,7 @@ async setTrainerInList() {
     let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
     let dataUsersProfile = await crudModule.getCodersById(idUserLogin)
     let dataPoints = await crudModule.getRiwiPointsByUserid(dataUsersProfile[0].id)
+    console.log(dataPoints)
     let dataClans = await crudModule.getClansById(dataUsersProfile[0].id_clan)
     this.setPointsInCard(dataUsersProfile[0].id)
     // Se completan los datos en la card del perfil
@@ -284,7 +284,7 @@ async setTrainerInList() {
     }
   }
   
-  // Profile Trainer
+  // Información del perfil del  Trainer
   // El idUserLogin se debe traer del session storage 
   async setInformationTrainer(user) {   
     let idUserLogin = user.rol
@@ -310,6 +310,7 @@ async setTrainerInList() {
     document.getElementById("documentId").placeholder  = dataUsersProfile[0].document
     document.getElementById("materiaUser").placeholder = dataArea.name
     tBody.innerHTML = " "
+    
     // Se completan los datos en la el historico de puntos
     for (let element of dataPoint){
       let dataCoder = await crudModule.getCodersById(element.id_coders);
@@ -329,21 +330,20 @@ async setTrainerInList() {
       contador ++;
     }
   }
-  async setInformationAdmin(idUserLogin) {   
-    //let idUserLogin = user.rol
+
+  async setInformationAdmin(user) {   
+    let idUserLogin = user.rol
     let tBody = document.getElementById("informationTrainer")
     
     //funcionalidad no realizada :C
 
-    let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
+    //let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
     document.getElementById("emailUser").placeholder  = "admin@riwi.io.com"
-    document.getElementById("imgUser").setAttribute ("src", "http://www.marketingtool.online/en/face-generator/img/faces/avatar-11275282410ba32d3bac1efbf87b208b.jpg")
+    document.getElementById("imgUser").setAttribute ("src", "https://imgdb.net/storage/uploads/59e3b509e16a9948b5b5b18fde235cbb634264298eac15ad222ced91e84511eb.jpg")
     document.getElementById("nameUser").innerText = "Admin"
     document.getElementById("documentId").placeholder  = "123456789"
-    document.getElementById("materiaUser").placeholder = "1"
-    document.getElementById("rolUser").innerHTML = "Admin"
-
-
+    document.getElementById("materiaUser").placeholder = "Admin"
+    document.getElementById("rolUser").innerText = "Admin"
   }
 
   
@@ -533,38 +533,38 @@ async setTrainerInList() {
   }
 
 
-    //Inicio de list porpierty
-    listInSelectPropierty(level,language){
-      let propiertys = document.getElementById("containerDropdownItemForCategory")
-      if(level == 1 && language == "es"){
-        //clan
-      }else if(level == 1 && language == "en"){
+//Inicio de list porpierty
+  listInSelectPropierty(level,language){
+    let propiertys = document.getElementById("containerDropdownItemForCategory")
+    if(level == 1 && language == "es"){
+      //clan
+    }else if(level == 1 && language == "en"){
 
-      }
-      if(level == 2 && language == "es"){
-        propiertys.innerHtml = `
-        <li><a class="dropdown-item" href="#">Mayor</a></li>
-        <li><a class="dropdown-item" href="#">Menor</a></li>
-        `
-      }else if(level == 2 && language == "en"){
-        
-      }
-      if(level == 3 && language == "es"){
-        propiertys.innerHtml = `
-        <li><a class="dropdown-item" href="#">A-Z</a></li>
-        <li><a class="dropdown-item" href="#">Z-A</a></li>
-        `
-      }  
-      if(level == 4 && language == "es"){
-        //materia
-        propiertys.innerHtml = `
-        <li><a class="dropdown-item" href="#"></a></li>
-        `
-      }else if(level == 4 && language == "en"){
-      }
     }
-    //fin de list propierty
-    //``
+    if(level == 2 && language == "es"){
+      propiertys.innerHtml = `
+      <li><a class="dropdown-item" href="#">Mayor</a></li>
+      <li><a class="dropdown-item" href="#">Menor</a></li>
+      `
+    }else if(level == 2 && language == "en"){
+      
+    }
+    if(level == 3 && language == "es"){
+      propiertys.innerHtml = `
+      <li><a class="dropdown-item" href="#">A-Z</a></li>
+      <li><a class="dropdown-item" href="#">Z-A</a></li>
+      `
+    }  
+    if(level == 4 && language == "es"){
+      //materia
+      propiertys.innerHtml = `
+      <li><a class="dropdown-item" href="#"></a></li>
+      `
+    }else if(level == 4 && language == "en"){
+    }
+  }
+//fin de list propierty
+//``
   async searchAndlistCoder(){
       let tbodyList = document.getElementById("idlistRateCoders");
       let contador = 1;
@@ -611,17 +611,29 @@ async setTrainerInList() {
   }
 
 
+// Envia los datos de los clanes a los selectores al la tabla de edición
   async listClansInselect(){
     let clans =  await crudModule.getClans()
     let listClans = document.getElementById("idSelectClan")
-    listClans.innerHTML = `<option select>Clan</option>`
+    listClans.innerHTML = `<option value="0" select>Selecciona un Clan</option>`
     clans.forEach(element => {
       listClans.innerHTML += `<option value="${element.id}">${element.name}</option>`
     });
   }
 
+  // Envia los datos de los roles a los selectores al la tabla de edición
+  async listRolInselect(){
+    let clans =  await crudModule.getRol()
+    let listRols = document.getElementById("idSelectRol")
+    listRols.innerHTML = `<option value="0" select>Selecciona un Rol</option>`
+    clans.forEach(element => {
+      listRols.innerHTML += `<option value="${element.id}">${element.name}</option>`
+    });
+  }
 
 
+// Modales de asignación de puntos
+// Modal de busqueda
   loadModalList(){
     let modal = document.getElementById("idmodalBody")
     let title = document.getElementById("idModalTitle")
@@ -662,6 +674,7 @@ async setTrainerInList() {
       })
   }
 
+// Modal de asignación
   loadModalPoints(theId){
     let modal = document.getElementById("idmodalBody")
     modal.innerHTML = `        
@@ -739,6 +752,7 @@ async setTrainerInList() {
     
   }
 
+// funcion para agregar los puntos
   addPointToCoder(id, type) {
     let point = document.getElementById("idCantPoints").value 
     let concept = document.getElementById("idSelectConcept").value
@@ -782,7 +796,6 @@ async setTrainerInList() {
     }
 });
   }
-
 }
 
 
