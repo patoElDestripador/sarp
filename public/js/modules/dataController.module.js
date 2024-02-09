@@ -81,7 +81,7 @@ async setTrainerInList() {
   
   for (let element of trainers) {
     let dataArea = await crudModule.getAreaById(element.id); 
-    //let areaName = dataArea[0].name;
+    let areaName = dataArea[0].name;
 
     tBody.innerHTML += `
     <tr>
@@ -345,6 +345,8 @@ async setTrainerInList() {
 
 
   }
+
+  
   //===============================================================================================================//
   //Lista Clanes
   // Funcion para listar clanes
