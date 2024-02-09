@@ -368,8 +368,8 @@ async setTrainerInList() {
     document.getElementById("imgUser").setAttribute ("src", "https://imgdb.net/storage/uploads/59e3b509e16a9948b5b5b18fde235cbb634264298eac15ad222ced91e84511eb.jpg")
     document.getElementById("nameUser").innerText = "Admin"
     document.getElementById("documentId").placeholder  = "123456789"
-    document.getElementById("materiaUser").placeholder = "1"
-    document.getElementById("rolUser").innerHTML = "Admin"
+    document.getElementById("materiaUser").placeholder = "Admin"
+    document.getElementById("rolUser").innerText = "Admin"
 
 
   }
