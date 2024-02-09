@@ -46,30 +46,28 @@ function mensajeFuncionDesactivada() {
     validarCorreo(){
     }
 
-        // Nega
-        loginInvalide() {
-          Swal.fire({
-            position: "top-center",
-            icon: "info",
-            title: "El correo o la contraseña no son correctos intenta nuevamente",
-            showConfirmButton: false,
-            timer: 2000,
-            customClass: {
-              container: 'my-container',
-              popup: 'my-popup',
-              header: 'my-header',
-              title: 'my-title',
-              closeButton: 'my-close-button',
-              confirmButton: 'btn btn-success',
-              cancelButton: 'btn btn-danger',
-              // Añade o reemplaza según los elementos que necesites personalizar
-            },
-            buttonsStyling: false, // Importante para que SweetAlert2 no aplique sus estilos por defecto sobre tus botones
-            showCancelButton: true, // Muestra el botón cancelar para que puedas ver la clase aplicada
-            confirmButtonText: 'Aceptar',
-            cancelButtonText: 'Cancelar',
-          });
-        } 
+    // Login denegado
+    pointsAdd() {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title:"Puntos Cargados!",
+        timer: 2000,
+        customClass: {
+          container: 'my-container',
+          popup: 'my-popup',
+          header: 'my-header',
+          title: 'my-title',
+          closeButton: 'my-close-button',
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger',
+        },
+        buttonsStyling: false, // Importante para que SweetAlert2 no aplique sus estilos por defecto sobre tus botones
+        showCancelButton: true, // Muestra el botón cancelar para que puedas ver la clase aplicada
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar',
+      });
+    } 
     
       // Login aprobado
       alertToastAprov() {
@@ -110,7 +108,6 @@ function mensajeFuncionDesactivada() {
           title: 'El correo o la contraseña no son correctos. Intente nuevamente.'
         });
       };
-
 
 
     setSessionStorage(key,value) {return localStorage.setItem(key, JSON.stringify(value));}

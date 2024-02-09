@@ -86,11 +86,20 @@ class DataControllerModule {
             <button class="btn" id="btnEdit" value="1" type="button"><svg xmlns="http://www.w3.org/2000/svg"' class="daIconTable" viewBox="0 0 24 24"><path d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h8.925l-2 2H5v14h14v-6.95l2-2V19q0 .825-.587 1.413T19 21zm4-7v-2.425q0-.4.15-.763t.425-.637l8.6-8.6q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.137.738t-.438.662l-8.6 8.6q-.275.275-.637.438t-.763.162H10q-.425 0-.712-.288T9 14m12.025-9.6l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z"/></svg></button>
             </button>
             </td>
-          </tr>
-        `  
-      contador++;
+        </tr>
+        `;
 
-    }  }
+        document.querySelectorAll('.editBtn').forEach(button => {
+          button.addEventListener('click', (event) => {
+              let id = event.currentTarget.getAttribute('data-id');
+              this.editCoders(id)
+          });
+      });
+      
+    }));
+
+    console.log('todo allriigt como dicen por ahi');
+}
 
 
   // Listar Trainers en la tabla general
@@ -101,6 +110,7 @@ async setTrainerInList() {
   let contador = 1;
   for (const element of trainers) {
     let dataArea = await crudModule.getAreaById(element.id); 
+    let areaName = dataArea[0].name;
     let areaName = dataArea[0].name;
 
     tBody.innerHTML += `
@@ -129,9 +139,9 @@ async setTrainerInList() {
     
     document.getElementById("documentId").value = (dataCoder[0].document)
     document.getElementById("name").value = dataCoder[0].name
-    document.getElementById("email").value = dataUser.email
-    document.getElementById("password").value = dataUser.password
-    document.getElementById("imgUser").value = dataUser.img
+    document.getElementById("email").value = dataUser[0].email
+    document.getElementById("password").value = dataUser[0].password
+    document.getElementById("imgUser").value = dataUser[0].img
     document.getElementById("idSelectClan").value = dataClan[0].id
     document.getElementById("idSelectRol").value = dataPermits[0].id_rol
   };
@@ -186,6 +196,7 @@ async setTrainerInList() {
     document.getElementById("imgUser").value = ""
     document.getElementById("idSelectClan").value = ""
     document.getElementById("idSelectRol").value = ""
+    this.setCodersInList()
   }
   
   // Editar Trainers
@@ -309,11 +320,12 @@ async setTrainerInList() {
     let contador = 1;
     let puntosPositivos = 0;
     let puntosNegativos = 0;
-    console.log(idUserLogin)
-    let dataUsersProfile = await crudModule.getTrainersByIdUsers(idUserLogin.id)
-    let dataUser = await crudModule.getUserById(idUserLogin.id)
-     let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser[0].id) //Revisar
-     let dataRol = await crudModule.getRolByIdUSer(idUserLogin.rol) // Revisar
+
+    let dataUser = await crudModule.getUserById(idUserLogin)
+    let dataPermits  = await crudModule.getPermitsByIdUSer(dataUser.id) //Revisar
+    let dataRol = await crudModule.getRolByIdUSer(dataPermits[0].id_rol) // Revisar
+    let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
+    console.log(dataArea)
     let dataArea = await crudModule.getAreaById(dataUsersProfile[0].id_areas)
     console.log(dataUsersProfile)
 
@@ -325,8 +337,8 @@ async setTrainerInList() {
     document.getElementById("rolUser").innerText = dataRol[0].name
     document.getElementById("nameUser").innerText = dataUsersProfile[0].name
     document.getElementById("documentId").placeholder  = dataUsersProfile[0].document
-    document.getElementById("materiaUser").placeholder = dataArea[0].name
-    
+    document.getElementById("materiaUser").placeholder = dataArea.name
+    tBody.innerHTML = " "
     // Se completan los datos en la el historico de puntos
     for (const element of dataPoint){
       let dataCoder = await crudModule.getCodersById(element.id_coders);
@@ -350,14 +362,20 @@ async setTrainerInList() {
     //let idUserLogin = user.rol
     let tBody = document.getElementById("informationTrainer")
     
+    //funcionalidad no realizada :C
+
     let dataUsersProfile = await crudModule.getTrainersById(idUserLogin)
     document.getElementById("emailUser").placeholder  = "admin@riwi.io.com"
     document.getElementById("imgUser").setAttribute ("src", "https://imgdb.net/storage/uploads/59e3b509e16a9948b5b5b18fde235cbb634264298eac15ad222ced91e84511eb.jpg")
     document.getElementById("nameUser").innerText = "Admin"
-    document.getElementById("documentId").placeholder  = "00000000"
-    document.getElementById("materiaUser").placeholder = "Admin"
+    document.getElementById("documentId").placeholder  = "123456789"
+    document.getElementById("materiaUser").placeholder = "1"
+    document.getElementById("rolUser").innerHTML = "Admin"
+
 
   }
+
+  
   //===============================================================================================================//
   //Lista Clanes
   // Funcion para listar clanes
@@ -370,12 +388,13 @@ async setTrainerInList() {
     let clan4=0;
     let coders = await crudModule.getCoders();
     coders.forEach(async (resultado) =>{
-        if (resultado.Id_clan == 1){ clan1++}
-        else if(resultado.Id_clan == 2){clan2++}
-        else if(resultado.Id_clan == 3){clan3++}
-        else if(resultado.Id_clan == 4){clan4++}
-    });
-    let clans = await crudModule.getClans();
+        if (resultado.id_clan == 1){ clan1++} 
+        else if(resultado.id_clan == 2){clan2++}
+        else if(resultado.id_clan == 3){clan3++}
+        else if(resultado.id_clan == 4){clan4++}
+    })
+    let clans = await crudModule.getClans()
+    tBody.innerHTML = ""
     clans.forEach(async (element) =>{ 
         if (element.id_clan == 1){
             tBody.innerHTML += `
@@ -620,9 +639,7 @@ async setTrainerInList() {
             <div class="modal-footer justify-content-center">
               <p class="fs-4 fw-bold">Cantidad</p>
             </div>
-        <input class="col-sm-4 card form-control form-control-lg" type="number" placeholder="Cantidad de Pts." aria-label="Cantidad de Pts.">
-          </input>
-
+            <input id="idCantPoints" class="col-sm-4 card form-control form-control-lg" type="number" min="-20" max="20"  placeholder="Cantidad de Pts." aria-label="Cantidad de Pts."></input>
           <!-- Concepto -->
           <div class="modal-footer justify-content-center">
             <p class="fs-4 fw-bold">Concepto</p>
@@ -671,10 +688,67 @@ async setTrainerInList() {
           </div>
         </div>
       </div>
-    </div>
-  </div>`
+        `
+        document.getElementById("buttonPointPostive")?.addEventListener("click", e =>{
+             let point = e.currentTarget.getAttribute('data-point');
+             let id = e.currentTarget.getAttribute('data-id');
+            this.addPointToCoder(id,point)
+        })
+        document.getElementById("buttonPointNegative")?.addEventListener("click", e=>{
+             let point = e.currentTarget.getAttribute('data-point');
+             let id = e.currentTarget.getAttribute('data-id');
+            this.addPointToCoder(id,point)
+        })
+    
+  }
+
+  addPointToCoder(id, type) {
+    let point = document.getElementById("idCantPoints").value 
+    let concept = document.getElementById("idSelectConcept").value
+    let observation = document.getElementById("idinputTextarea").valu
+    let messaje = ""
+    let positive =  null
+    let negative = null
+
+    if (type != 0) {
+      messaje = `Se asignaran ${point} puntos positivos al coder`
+      positive = point
+    } else {
+        messaje =`Se asignaran -${point} puntos negativos al coder`
+      negative = point
+    }
+    Swal.fire({
+      title:messaje,
+      showDenyButton: true,
+      confirmButtonText: "Agregar",
+      denyButtonText: `Cancelar`
+    }).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        let dataSend = {
+          id_coders: id,
+          id_trainers: (utils.getSessionStorage("user")).id,
+          positive_point:positive ,
+          negative_point:negative ,
+          date_created: utils.obtenerFecha(),
+          specific_reason: concept,
+          observation: observation,
+          status: true,
+      }
+        crudModule.setRiwiPoints(dataSend)
+        pointsAdd()
+
+        
+    } else if (result.isDenied) {
+      
+      Swal.fire("Los cambios no se han guardado", "", "info");
+    }
+});
   }
 
 }
+
+
+
 export default new DataControllerModule();
 
