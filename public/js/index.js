@@ -19,6 +19,22 @@ if (!validateLenguge) {
     utils.setSessionStorage("leng","es")
 }
 
+// Propiedades globales de los alerts
+
+const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+        container: 'my-container',
+        popup: 'my-popup',
+        header: 'my-header',
+        title: 'my-title',
+        closeButton: 'my-close-button',
+        confirmButton: 'btn btn-success w-5 m-2',
+        cancelButton: 'btn btn-danger  d-grid m-2',
+        denyButton: 'btn btn-primary  d-grid m-2',
+    },
+    buttonsStyling: false
+});
+
 
 //login.validateStatusLogin();
 
@@ -331,18 +347,15 @@ document.getElementById("selectionNavItem2")?.addEventListener("click",()=>{
     }
 });
 document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
-    console.log("entro aki")
     let language = utils.getSessionStorage("leng")
     if(language == "es"){
-        Swal.fire({
+        swalWithBootstrapButtons.fire({
             title: "Crear nuevo usuario",
             text: "¿Que usuario tipo deseas crear?",
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: "Coder",
             denyButtonText: `Trainer`,
-            cancelButtonColor: "#3085d6",
-            confirmButtonColor: "#3085d6"
           }).then((result) => {
             if (result.isConfirmed) {
                 location.href =  APP_URL + "listCoder.html";
@@ -351,8 +364,13 @@ document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
             }
           });
     }else{
-        Swal.fire({
+        swalWithBootstrapButtons.fire({
             title: "Do you want to save the changes?",
+            icon: "question",
+            showConfirmButton: false,
+            buttonsStyling: false,
+            timer: 1500,
+            position: "top-center",
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: "Save",
@@ -381,17 +399,6 @@ document.getElementById("crearTrainer")?.addEventListener("click",()=>{
     dataController.crearTrainers()
     
 });
-
-
-
-
-
-
-
-
-
-
-
 
 //inicio de listado de categorias
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
@@ -430,15 +437,15 @@ document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
     console.log("entro aki")
     let language = utils.getSessionStorage("leng")
     if(language == "es"){
-        Swal.fire({
+
+        
+        swalWithBootstrapButtons.fire({
             title: "Crear nuevo usuario",
             text: "¿Que usuario tipo deseas crear?",
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: "Coder",
             denyButtonText: `Trainer`,
-            cancelButtonColor: "#3085d6",
-            confirmButtonColor: "#3085d6"
           }).then((result) => {
             if (result.isConfirmed) {
                 location.href =  APP_URL + "listCoder.html";
@@ -447,7 +454,7 @@ document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
             }
           });
     }else{
-        Swal.fire({
+        swalWithBootstrapButtons.fire({
             title: "Create new user",
             text: "What type of user do you want to create?",
             showDenyButton: true,
@@ -463,6 +470,8 @@ document.getElementById("selectionNavItem3")?.addEventListener("click",()=>{
           });
     }
 });
+
+// se agregan los eventos a los botones del traductor
 document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
     let language = utils.getSessionStorage("leng")
     if(language == "es"){
@@ -472,41 +481,60 @@ document.getElementById("selectionNavItem4")?.addEventListener("click",()=>{
     }
 });
 document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
-    
     dataController.loadModalList()
-
-
 });
 
 
-
+// Alerts para edicion de user
 document.getElementById("idEditCoder")?.addEventListener("click",()=>{
-    Swal.fire({
+    swalWithBootstrapButtons.fire({
         title: "¿Seguro que quiere guardar los cambios?",
-        confirmButtonText: "Guardar",
         icon: "warning",
-        customClass: {
-            container: 'my-container',
-            popup: 'my-popup',
-            header: 'my-header',
-            title: 'my-title',
-            closeButton: 'my-close-button',
-            confirmButton: 'btn btn-success w-5 m-2',
-            cancelButton: 'btn btn-danger  d-grid m-2',
-          },
-          buttonsStyling: false,
-          showCancelButton: true,
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
+        showCancelButton: true,
+        confirmButtonText: "Guardar",
+        cancelButtonText: "Cancelar",
+        reverseButtons: true,
+        buttonsStyling: false,
+        showCancelButton: true,
+        position: "top-center",
+
+
+    }).then((result) => {
         if (result.isConfirmed) {
-            dataController.updateCoders()
-          Swal.fire("¡Modificación exitosa!", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("Modificación cancelada", "", "info");
+            dataController.updateCoders().then(() => {
+                swalWithBootstrapButtons.fire({
+                    title: "¡Guardado!",
+                    text: "¡Modificación guardada exitosamente!",
+                    icon: "success",
+                    showConfirmButton: false,
+                    buttonsStyling: false,
+                    timer: 1500,
+                    position: "top-center",
+                });
+
+            }).catch((error) => {
+                console.error("Error al actualizar:", error);
+                swalWithBootstrapButtons.fire({
+                    title: "Error",
+                    text: "Hubo un problema al guardar los cambios.",
+                    icon: "error",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            });
+
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            swalWithBootstrapButtons.fire({
+                title: "¡Cancelada!",
+                text: "¡Modificación cancelada, no se efectuaron cambios!",
+                icon: "error",
+                showConfirmButton: false,
+                timer: 1500,
+                position: "top-center",
+            });
         }
-      });
-    
-});
+    });
+})
 
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1)
@@ -518,17 +546,11 @@ document.getElementById("idListCatByAz")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(3)
 });
 
-
-
-
 document.getElementById("idSearchCoder")?.addEventListener("keypress", e=>{
     addEventListener("keyup",e=>{
         this.searchAndlistCoder()
     })
 })
-
-
-
 
 document.getElementById("idrateCoder")?.addEventListener("click",()=>{
     dataController.loadModalList()
@@ -536,15 +558,6 @@ document.getElementById("idrateCoder")?.addEventListener("click",()=>{
 document.getElementById("holasoyUnButton")?.addEventListener("click",()=>{
     let holi = document.getElementById("holasoyUnButton")
 });
-
-
-const myCarouselElement = document.querySelector('#carouselHome')
-if (myCarouselElement){
-    const carousel = new bootstrap.Carousel(myCarouselElement, {
-    interval: 3000,
-    touch: false
-}) 
-}
 
 document.getElementById("idCreateCoder")?.addEventListener("click",()=>{
     dataController.crearCoders()
@@ -554,3 +567,11 @@ document.getElementById("botonCrearClan")?.addEventListener("click",()=>{
 });
 
 
+// se controla la velocidad del carrucel del home
+const myCarouselElement = document.querySelector('#carouselHome')
+if (myCarouselElement){
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+    interval: 3000,
+    touch: false
+}) 
+}

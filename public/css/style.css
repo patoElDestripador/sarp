@@ -124,6 +124,23 @@ padding: 30px;
     cursor: pointer;
 }
 
+
+.btn-danger {
+    transform: scale(1);
+    transition: ease 0.3s; 
+    cursor: pointer;
+}
+.btn-danger:hover {
+    transform: scale(1.08);
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+
+.btnOptions{
+    min-width: 50px;
+}
+
 .btn-info {
     --bs-btn-color: #fff;
     --bs-btn-bg: #EAA2FC;
@@ -316,13 +333,12 @@ overflow: hidden;
 .daIconTable {
     width : 1.5em;
     height: 1.5em;
-    fill: var(--color2);
+    fill: var(--color8);
     transform: scale(1);
     transition: ease 0.3s;
 }
 
 .daIconTable:hover {
-    fill: var(--color6);
     transform: scale(1.08);
     transition: ease 0.3s;
     cursor: pointer;
