@@ -312,6 +312,8 @@ toggle?.addEventListener("click",()=>{
 })
 
 
+
+
 //inicio de listado de categorias
 document.getElementById("idListCatByClan")?.addEventListener("click",()=>{
     dataController.listInSelectPropierty(1,validateLenguge)
@@ -484,6 +486,33 @@ document.getElementById("selectionNavItem5")?.addEventListener("click",()=>{
     dataController.loadModalList()
 });
 
+// alertas para los botones del historico
+const btnInform = document.getElementById("btnInform")
+const btnUpPoints = document.getElementById("btnUpPoints")
+const btnAddPoints = document.getElementById("btnAddPoints")
+
+btnInform.addEventListener("click", (event) => {
+    event.preventDefault();
+    alertFuntionNoCreated()
+});
+
+btnUpPoints.addEventListener("click", (event) => {
+    event.preventDefault();
+    alertFuntionNoCreated()
+});
+
+
+function alertFuntionNoCreated(){
+    swalWithBootstrapButtons.fire({
+        title: "Función no creada!",
+        text: "Intenta mas tarde",
+        icon: "error",
+        showConfirmButton: false,
+        timer: 1500,
+        position: "top-center",
+    });
+}
+
 
 // Alerts para edicion de user
 document.getElementById("idEditCoder")?.addEventListener("click",()=>{
@@ -575,3 +604,5 @@ if (myCarouselElement){
     touch: false
 }) 
 }
+
+
